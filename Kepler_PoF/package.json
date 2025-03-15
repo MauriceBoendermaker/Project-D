@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@kepler.gl/components": "^3.1.1",
+    "@kepler.gl/reducers": "^3.1.1",
+    "kepler.gl": "^3.1.1"
+  }
+}
