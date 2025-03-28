@@ -1,0 +1,254 @@
+[
+  {
+      "_id": "67d68bb8972fcb65d0c7c283",
+      "index": 0,
+      "tracking_number": "fd6f2574-f797-46de-8e38-15559842068d",
+      "isActive": true,
+      "shipment_status": "Cancelled",
+      "shipment_value": "$2,49.82",
+      "vehicle": {
+        "type": "Airplane",
+        "license_plate": "CD-8514",
+        "capacity_kg": 4196
+      },
+      "driver": {
+        "name": "Roxie Johnston",
+        "age": 38,
+        "license_number": "DL-214231",
+        "phone": "+1 (965) 534-2614"
+      },
+      "company": "SKINSERVE",
+      "customer": {
+        "name": "Durham Serrano",
+        "email": "durhamserrano@skinserve.com",
+        "phone": "+1 (958) 443-3476",
+        "address": "821 Hampton Avenue, Tampico, New York, 91029"
+      },
+      "pickup_location": {
+        "address": "109 Gold Street, Zarephath, Maine, 30831",
+        "latitude": -8.888559,
+        "longitude": 101.059098
+      },
+      "delivery_location": {
+        "address": "645 Plymouth Street, Statenville, Virgin Islands, 70468",
+        "latitude": 34.279959,
+        "longitude": 62.144539
+      },
+      "estimated_delivery": "2025-11-21T08:46:05 -01:00",
+      "current_location": {
+        "latitude": -17.775293,
+        "longitude": -29.788864
+      },
+      "last_updated": "2024-08-27T09:15:24 -02:00"
+    },
+    {
+      "_id": "67d68bb84344d263118c8240",
+      "index": 1,
+      "tracking_number": "fadc17f3-a670-4a4c-97be-a79cd756e608",
+      "isActive": false,
+      "shipment_status": "Cancelled",
+      "shipment_value": "$1,778.30",
+      "vehicle": {
+        "type": "Van",
+        "license_plate": "EF-5382",
+        "capacity_kg": 28329
+      },
+      "driver": {
+        "name": "West Fry",
+        "age": 53,
+        "license_number": "DL-918427",
+        "phone": "+1 (876) 583-2362"
+      },
+      "company": "TEMORAK",
+      "customer": {
+        "name": "Cooke Park",
+        "email": "cookepark@temorak.com",
+        "phone": "+1 (918) 600-2642",
+        "address": "975 Berry Street, Riviera, New Jersey, 76623"
+      },
+      "pickup_location": {
+        "address": "817 Morton Street, Morningside, West Virginia, 89240",
+        "latitude": -46.471747,
+        "longitude": -49.363145
+      },
+      "delivery_location": {
+        "address": "929 Cypress Court, Eastvale, Alaska, 94137",
+        "latitude": -43.482102,
+        "longitude": 170.871353
+      },
+      "estimated_delivery": "2025-07-24T07:14:39 -02:00",
+      "current_location": {
+        "latitude": -20.77136,
+        "longitude": 18.594978
+      },
+      "last_updated": "2024-10-19T07:29:11 -02:00"
+    },
+    {
+      "_id": "67d68bb887c2e03cab9eb090",
+      "index": 2,
+      "tracking_number": "b18e0c4a-6fe2-4aa7-8958-6c50e88ac317",
+      "isActive": false,
+      "shipment_status": "Delayed",
+      "shipment_value": "$3,284.47",
+      "vehicle": {
+        "type": "Cargo Ship",
+        "license_plate": "GH-5399",
+        "capacity_kg": 28510
+      },
+      "driver": {
+        "name": "Hayes Aguilar",
+        "age": 47,
+        "license_number": "DL-623173",
+        "phone": "+1 (956) 503-3885"
+      },
+      "company": "ZILPHUR",
+      "customer": {
+        "name": "Burns Garcia",
+        "email": "burnsgarcia@zilphur.com",
+        "phone": "+1 (829) 512-2059",
+        "address": "307 Victor Road, Berwind, North Carolina, 27199"
+      },
+      "pickup_location": {
+        "address": "422 Dewey Place, Bentley, Massachusetts, 79467",
+        "latitude": 89.688288,
+        "longitude": 35.680484
+      },
+      "delivery_location": {
+        "address": "318 Division Place, Lowell, Florida, 66479",
+        "latitude": -57.753553,
+        "longitude": -140.089783
+      },
+      "estimated_delivery": "2025-11-07T08:55:24 -01:00",
+      "current_location": {
+        "latitude": -74.218374,
+        "longitude": -31.429821
+      },
+      "last_updated": "2024-06-07T04:27:46 -02:00"
+    },
+    {
+      "_id": "67d68bb81d3ebbcbb6e3f8d9",
+      "index": 3,
+      "tracking_number": "a71146ca-68a4-4c00-954d-7796882971a7",
+      "isActive": true,
+      "shipment_status": "Delayed",
+      "shipment_value": "$369.93",
+      "vehicle": {
+        "type": "Motorcycle",
+        "license_plate": "GH-1991",
+        "capacity_kg": 14378
+      },
+      "driver": {
+        "name": "Mcknight Hood",
+        "age": 36,
+        "license_number": "DL-477392",
+        "phone": "+1 (995) 466-3239"
+      },
+      "company": "ZIGGLES",
+      "customer": {
+        "name": "Holcomb Mccray",
+        "email": "holcombmccray@ziggles.com",
+        "phone": "+1 (935) 500-3856",
+        "address": "861 Vanderbilt Avenue, Waumandee, Colorado, 86156"
+      },
+      "pickup_location": {
+        "address": "245 Dean Street, Fidelis, North Dakota, 24109",
+        "latitude": -33.937535,
+        "longitude": 154.151209
+      },
+      "delivery_location": {
+        "address": "850 Woods Place, Ezel, Texas, 46493",
+        "latitude": 66.1833,
+        "longitude": 169.921203
+      },
+      "estimated_delivery": "2025-10-11T02:56:14 -02:00",
+      "current_location": {
+        "latitude": 46.060927,
+        "longitude": 173.145321
+      },
+      "last_updated": "2024-08-05T06:28:02 -02:00"
+    },
+    {
+      "_id": "67d68bb81524ff5a00152501",
+      "index": 4,
+      "tracking_number": "0ea6138f-15cd-4f0f-8f03-bbbd39c0e5b5",
+      "isActive": false,
+      "shipment_status": "Delivered",
+      "shipment_value": "$2,747.13",
+      "vehicle": {
+        "type": "Truck",
+        "license_plate": "EF-7805",
+        "capacity_kg": 19189
+      },
+      "driver": {
+        "name": "Tucker Sloan",
+        "age": 44,
+        "license_number": "DL-353840",
+        "phone": "+1 (936) 496-2014"
+      },
+      "company": "TALKOLA",
+      "customer": {
+        "name": "Kirsten Rosario",
+        "email": "kirstenrosario@talkola.com",
+        "phone": "+1 (946) 594-2933",
+        "address": "141 Macdougal Street, Turah, Idaho, 71262"
+      },
+      "pickup_location": {
+        "address": "568 Boardwalk , Warren, New Hampshire, 98056",
+        "latitude": -33.400082,
+        "longitude": 96.425724
+      },
+      "delivery_location": {
+        "address": "143 Powers Street, Hobucken, Hawaii, 10297",
+        "latitude": -14.420788,
+        "longitude": -139.137876
+      },
+      "estimated_delivery": "2025-06-14T10:17:18 -02:00",
+      "current_location": {
+        "latitude": 30.921975,
+        "longitude": 37.497031
+      },
+      "last_updated": "2024-07-04T09:14:15 -02:00"
+    },
+    {
+      "_id": "67d68bb8eefc4f21dfd47d55",
+      "index": 5,
+      "tracking_number": "3a77c03e-5e14-4a28-b4a6-b952213e14ce",
+      "isActive": false,
+      "shipment_status": "In Transit",
+      "shipment_value": "$3,855.36",
+      "vehicle": {
+        "type": "Van",
+        "license_plate": "CD-8745",
+        "capacity_kg": 18008
+      },
+      "driver": {
+        "name": "Pauline Hebert",
+        "age": 53,
+        "license_number": "DL-423915",
+        "phone": "+1 (897) 417-3368"
+      },
+      "company": "PIGZART",
+      "customer": {
+        "name": "Obrien Mcgee",
+        "email": "obrienmcgee@pigzart.com",
+        "phone": "+1 (981) 445-2400",
+        "address": "552 Montana Place, Beyerville, Nebraska, 75526"
+      },
+      "pickup_location": {
+        "address": "950 Bleecker Street, Nile, Alabama, 99169",
+        "latitude": 20.383482,
+        "longitude": -71.678471
+      },
+      "delivery_location": {
+        "address": "371 Bayview Place, Allamuchy, Arkansas, 13425",
+        "latitude": -66.483888,
+        "longitude": 156.044575
+      },
+      "estimated_delivery": "2025-04-21T12:26:40 -02:00",
+      "current_location": {
+        "latitude": 11.503463,
+        "longitude": -36.665889
+      },
+      "last_updated": "2024-02-05T11:21:14 -01:00"
+    }
+  ]
