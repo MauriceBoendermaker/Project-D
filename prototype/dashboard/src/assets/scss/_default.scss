@@ -1,0 +1,32 @@
+* {
+    line-height: normal;
+    font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: $bg-color;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    min-height: calc(100vh - 199px);
+}
+
+.divider {
+    &-horizontal {
+        max-width: 1px;
+        height: 100%;
+        border: 0px;
+        border-radius: 10px;
+        margin: 0 auto;
+        background-color: $text-color-50;
+    }
+}
