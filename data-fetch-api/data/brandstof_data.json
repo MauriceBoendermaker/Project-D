@@ -1,0 +1,596 @@
+[
+    {
+      "voertuig_id": "TRK-1",
+      "kenteken": "AB-0-CD",
+      "merk": "Volvo",
+      "model": "FH16",
+      "brandstof_type": "Diesel",
+      "ritten": [
+        {
+          "rit_id": "RIT-1",
+          "datum": "Sat Mar 29 2025 17:42:19 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 947,
+          "brandstof_verbruik_l": 55,
+          "gemiddeld_verbruik_l_per_100km": 26
+        },
+        {
+          "rit_id": "RIT-2",
+          "datum": "Wed Feb 07 2024 15:33:38 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 411,
+          "brandstof_verbruik_l": 62,
+          "gemiddeld_verbruik_l_per_100km": 50
+        },
+        {
+          "rit_id": "RIT-3",
+          "datum": "Wed Nov 13 2024 05:58:39 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 756,
+          "brandstof_verbruik_l": 6,
+          "gemiddeld_verbruik_l_per_100km": 46
+        },
+        {
+          "rit_id": "RIT-4",
+          "datum": "Wed Nov 20 2024 23:19:10 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 956,
+          "brandstof_verbruik_l": 44,
+          "gemiddeld_verbruik_l_per_100km": 40
+        },
+        {
+          "rit_id": "RIT-5",
+          "datum": "Thu Jul 04 2024 11:13:38 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 263,
+          "brandstof_verbruik_l": 53,
+          "gemiddeld_verbruik_l_per_100km": 28
+        },
+        {
+          "rit_id": "RIT-6",
+          "datum": "Mon Dec 02 2024 06:12:54 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 681,
+          "brandstof_verbruik_l": 69,
+          "gemiddeld_verbruik_l_per_100km": 30
+        },
+        {
+          "rit_id": "RIT-7",
+          "datum": "Tue Oct 01 2024 08:49:18 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 159,
+          "brandstof_verbruik_l": 22,
+          "gemiddeld_verbruik_l_per_100km": 24
+        }
+      ]
+    },
+    {
+      "voertuig_id": "TRK-2",
+      "kenteken": "AB-1-CD",
+      "merk": "Volvo",
+      "model": "FH16",
+      "brandstof_type": "Diesel",
+      "ritten": [
+        {
+          "rit_id": "RIT-1",
+          "datum": "Fri Feb 28 2025 11:38:17 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 216,
+          "brandstof_verbruik_l": 6,
+          "gemiddeld_verbruik_l_per_100km": 23
+        },
+        {
+          "rit_id": "RIT-2",
+          "datum": "Tue Jul 02 2024 17:22:52 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 927,
+          "brandstof_verbruik_l": 28,
+          "gemiddeld_verbruik_l_per_100km": 37
+        },
+        {
+          "rit_id": "RIT-3",
+          "datum": "Tue Jun 11 2024 13:46:14 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 2,
+          "brandstof_verbruik_l": 89,
+          "gemiddeld_verbruik_l_per_100km": 27
+        },
+        {
+          "rit_id": "RIT-4",
+          "datum": "Sun Mar 31 2024 14:40:51 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 254,
+          "brandstof_verbruik_l": 21,
+          "gemiddeld_verbruik_l_per_100km": 43
+        },
+        {
+          "rit_id": "RIT-5",
+          "datum": "Wed Feb 26 2025 22:35:14 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 357,
+          "brandstof_verbruik_l": 29,
+          "gemiddeld_verbruik_l_per_100km": 31
+        },
+        {
+          "rit_id": "RIT-6",
+          "datum": "Mon Nov 25 2024 19:21:08 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 129,
+          "brandstof_verbruik_l": 43,
+          "gemiddeld_verbruik_l_per_100km": 49
+        },
+        {
+          "rit_id": "RIT-7",
+          "datum": "Fri Oct 04 2024 01:49:17 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 662,
+          "brandstof_verbruik_l": 6,
+          "gemiddeld_verbruik_l_per_100km": 49
+        },
+        {
+          "rit_id": "RIT-8",
+          "datum": "Mon Feb 10 2025 14:47:58 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 866,
+          "brandstof_verbruik_l": 45,
+          "gemiddeld_verbruik_l_per_100km": 45
+        }
+      ]
+    },
+    {
+      "voertuig_id": "TRK-3",
+      "kenteken": "AB-2-CD",
+      "merk": "Volvo",
+      "model": "FH16",
+      "brandstof_type": "Diesel",
+      "ritten": [
+        {
+          "rit_id": "RIT-1",
+          "datum": "Mon Jan 01 2024 11:51:13 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 857,
+          "brandstof_verbruik_l": 61,
+          "gemiddeld_verbruik_l_per_100km": 50
+        },
+        {
+          "rit_id": "RIT-2",
+          "datum": "Mon Apr 29 2024 08:58:05 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 551,
+          "brandstof_verbruik_l": 14,
+          "gemiddeld_verbruik_l_per_100km": 30
+        },
+        {
+          "rit_id": "RIT-3",
+          "datum": "Tue Apr 02 2024 13:38:44 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 400,
+          "brandstof_verbruik_l": 60,
+          "gemiddeld_verbruik_l_per_100km": 27
+        },
+        {
+          "rit_id": "RIT-4",
+          "datum": "Thu Feb 01 2024 03:42:27 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 827,
+          "brandstof_verbruik_l": 19,
+          "gemiddeld_verbruik_l_per_100km": 48
+        },
+        {
+          "rit_id": "RIT-5",
+          "datum": "Sun May 12 2024 23:34:36 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 91,
+          "brandstof_verbruik_l": 22,
+          "gemiddeld_verbruik_l_per_100km": 43
+        },
+        {
+          "rit_id": "RIT-6",
+          "datum": "Sun Feb 09 2025 21:20:14 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 105,
+          "brandstof_verbruik_l": 69,
+          "gemiddeld_verbruik_l_per_100km": 43
+        }
+      ]
+    },
+    {
+      "voertuig_id": "TRK-4",
+      "kenteken": "AB-3-CD",
+      "merk": "Volvo",
+      "model": "FH16",
+      "brandstof_type": "Diesel",
+      "ritten": [
+        {
+          "rit_id": "RIT-1",
+          "datum": "Fri Apr 12 2024 23:46:45 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 144,
+          "brandstof_verbruik_l": 27,
+          "gemiddeld_verbruik_l_per_100km": 34
+        },
+        {
+          "rit_id": "RIT-2",
+          "datum": "Tue May 07 2024 16:22:24 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 7,
+          "brandstof_verbruik_l": 81,
+          "gemiddeld_verbruik_l_per_100km": 21
+        },
+        {
+          "rit_id": "RIT-3",
+          "datum": "Fri Jan 24 2025 03:38:55 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 637,
+          "brandstof_verbruik_l": 37,
+          "gemiddeld_verbruik_l_per_100km": 29
+        },
+        {
+          "rit_id": "RIT-4",
+          "datum": "Sat Feb 22 2025 15:12:46 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 727,
+          "brandstof_verbruik_l": 11,
+          "gemiddeld_verbruik_l_per_100km": 39
+        },
+        {
+          "rit_id": "RIT-5",
+          "datum": "Tue Jan 07 2025 02:43:13 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 158,
+          "brandstof_verbruik_l": 28,
+          "gemiddeld_verbruik_l_per_100km": 23
+        },
+        {
+          "rit_id": "RIT-6",
+          "datum": "Sat Sep 14 2024 08:54:39 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 993,
+          "brandstof_verbruik_l": 22,
+          "gemiddeld_verbruik_l_per_100km": 28
+        },
+        {
+          "rit_id": "RIT-7",
+          "datum": "Fri Sep 13 2024 12:32:27 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 956,
+          "brandstof_verbruik_l": 59,
+          "gemiddeld_verbruik_l_per_100km": 30
+        },
+        {
+          "rit_id": "RIT-8",
+          "datum": "Tue Feb 11 2025 05:03:25 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 545,
+          "brandstof_verbruik_l": 44,
+          "gemiddeld_verbruik_l_per_100km": 20
+        },
+        {
+          "rit_id": "RIT-9",
+          "datum": "Sun Nov 24 2024 01:18:28 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 859,
+          "brandstof_verbruik_l": 77,
+          "gemiddeld_verbruik_l_per_100km": 29
+        }
+      ]
+    },
+    {
+      "voertuig_id": "TRK-5",
+      "kenteken": "AB-4-CD",
+      "merk": "Volvo",
+      "model": "FH16",
+      "brandstof_type": "Diesel",
+      "ritten": [
+        {
+          "rit_id": "RIT-1",
+          "datum": "Thu Mar 14 2024 13:04:50 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 137,
+          "brandstof_verbruik_l": 7,
+          "gemiddeld_verbruik_l_per_100km": 39
+        },
+        {
+          "rit_id": "RIT-2",
+          "datum": "Sat Mar 02 2024 11:55:28 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 87,
+          "brandstof_verbruik_l": 64,
+          "gemiddeld_verbruik_l_per_100km": 31
+        },
+        {
+          "rit_id": "RIT-3",
+          "datum": "Thu Mar 14 2024 11:44:52 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 170,
+          "brandstof_verbruik_l": 37,
+          "gemiddeld_verbruik_l_per_100km": 20
+        },
+        {
+          "rit_id": "RIT-4",
+          "datum": "Fri Feb 23 2024 01:27:42 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 31,
+          "brandstof_verbruik_l": 6,
+          "gemiddeld_verbruik_l_per_100km": 49
+        },
+        {
+          "rit_id": "RIT-5",
+          "datum": "Mon Jan 27 2025 08:53:46 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 494,
+          "brandstof_verbruik_l": 40,
+          "gemiddeld_verbruik_l_per_100km": 48
+        }
+      ]
+    },
+    {
+      "voertuig_id": "TRK-6",
+      "kenteken": "AB-5-CD",
+      "merk": "Volvo",
+      "model": "FH16",
+      "brandstof_type": "Diesel",
+      "ritten": [
+        {
+          "rit_id": "RIT-1",
+          "datum": "Tue Mar 04 2025 23:15:26 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 1,
+          "brandstof_verbruik_l": 4,
+          "gemiddeld_verbruik_l_per_100km": 25
+        },
+        {
+          "rit_id": "RIT-2",
+          "datum": "Sun Apr 07 2024 20:21:48 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 514,
+          "brandstof_verbruik_l": 20,
+          "gemiddeld_verbruik_l_per_100km": 20
+        },
+        {
+          "rit_id": "RIT-3",
+          "datum": "Fri Oct 18 2024 12:39:21 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 703,
+          "brandstof_verbruik_l": 73,
+          "gemiddeld_verbruik_l_per_100km": 47
+        },
+        {
+          "rit_id": "RIT-4",
+          "datum": "Sat Nov 09 2024 04:38:46 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 195,
+          "brandstof_verbruik_l": 98,
+          "gemiddeld_verbruik_l_per_100km": 27
+        },
+        {
+          "rit_id": "RIT-5",
+          "datum": "Thu Aug 29 2024 20:22:30 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 444,
+          "brandstof_verbruik_l": 75,
+          "gemiddeld_verbruik_l_per_100km": 41
+        },
+        {
+          "rit_id": "RIT-6",
+          "datum": "Sat Oct 26 2024 14:16:46 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 238,
+          "brandstof_verbruik_l": 100,
+          "gemiddeld_verbruik_l_per_100km": 27
+        },
+        {
+          "rit_id": "RIT-7",
+          "datum": "Sun Feb 25 2024 04:15:32 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 931,
+          "brandstof_verbruik_l": 53,
+          "gemiddeld_verbruik_l_per_100km": 26
+        },
+        {
+          "rit_id": "RIT-8",
+          "datum": "Thu Dec 12 2024 20:46:53 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 436,
+          "brandstof_verbruik_l": 19,
+          "gemiddeld_verbruik_l_per_100km": 28
+        }
+      ]
+    },
+    {
+      "voertuig_id": "TRK-7",
+      "kenteken": "AB-6-CD",
+      "merk": "Volvo",
+      "model": "FH16",
+      "brandstof_type": "Diesel",
+      "ritten": [
+        {
+          "rit_id": "RIT-1",
+          "datum": "Fri Feb 28 2025 05:21:56 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 816,
+          "brandstof_verbruik_l": 68,
+          "gemiddeld_verbruik_l_per_100km": 39
+        },
+        {
+          "rit_id": "RIT-2",
+          "datum": "Sun Feb 16 2025 22:16:30 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 98,
+          "brandstof_verbruik_l": 69,
+          "gemiddeld_verbruik_l_per_100km": 39
+        },
+        {
+          "rit_id": "RIT-3",
+          "datum": "Tue Jan 14 2025 16:20:31 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 489,
+          "brandstof_verbruik_l": 21,
+          "gemiddeld_verbruik_l_per_100km": 45
+        },
+        {
+          "rit_id": "RIT-4",
+          "datum": "Sun Apr 21 2024 09:55:10 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 42,
+          "brandstof_verbruik_l": 27,
+          "gemiddeld_verbruik_l_per_100km": 20
+        },
+        {
+          "rit_id": "RIT-5",
+          "datum": "Thu Nov 21 2024 05:29:25 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 85,
+          "brandstof_verbruik_l": 59,
+          "gemiddeld_verbruik_l_per_100km": 38
+        }
+      ]
+    },
+    {
+      "voertuig_id": "TRK-8",
+      "kenteken": "AB-7-CD",
+      "merk": "Volvo",
+      "model": "FH16",
+      "brandstof_type": "Diesel",
+      "ritten": [
+        {
+          "rit_id": "RIT-1",
+          "datum": "Wed Apr 10 2024 06:56:47 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 30,
+          "brandstof_verbruik_l": 96,
+          "gemiddeld_verbruik_l_per_100km": 35
+        },
+        {
+          "rit_id": "RIT-2",
+          "datum": "Mon Jun 03 2024 08:00:40 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 800,
+          "brandstof_verbruik_l": 77,
+          "gemiddeld_verbruik_l_per_100km": 24
+        },
+        {
+          "rit_id": "RIT-3",
+          "datum": "Fri Mar 15 2024 13:14:22 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 387,
+          "brandstof_verbruik_l": 63,
+          "gemiddeld_verbruik_l_per_100km": 35
+        },
+        {
+          "rit_id": "RIT-4",
+          "datum": "Fri Mar 14 2025 07:27:43 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 227,
+          "brandstof_verbruik_l": 60,
+          "gemiddeld_verbruik_l_per_100km": 40
+        },
+        {
+          "rit_id": "RIT-5",
+          "datum": "Tue Sep 17 2024 15:40:22 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 318,
+          "brandstof_verbruik_l": 58,
+          "gemiddeld_verbruik_l_per_100km": 47
+        },
+        {
+          "rit_id": "RIT-6",
+          "datum": "Mon Mar 10 2025 18:13:27 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 921,
+          "brandstof_verbruik_l": 74,
+          "gemiddeld_verbruik_l_per_100km": 49
+        },
+        {
+          "rit_id": "RIT-7",
+          "datum": "Sun Oct 06 2024 12:26:02 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 274,
+          "brandstof_verbruik_l": 40,
+          "gemiddeld_verbruik_l_per_100km": 36
+        },
+        {
+          "rit_id": "RIT-8",
+          "datum": "Thu May 09 2024 02:30:14 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 177,
+          "brandstof_verbruik_l": 29,
+          "gemiddeld_verbruik_l_per_100km": 30
+        },
+        {
+          "rit_id": "RIT-9",
+          "datum": "Wed Mar 20 2024 06:02:48 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 719,
+          "brandstof_verbruik_l": 16,
+          "gemiddeld_verbruik_l_per_100km": 23
+        },
+        {
+          "rit_id": "RIT-10",
+          "datum": "Thu Jun 13 2024 00:32:33 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 269,
+          "brandstof_verbruik_l": 100,
+          "gemiddeld_verbruik_l_per_100km": 42
+        }
+      ]
+    },
+    {
+      "voertuig_id": "TRK-9",
+      "kenteken": "AB-8-CD",
+      "merk": "Volvo",
+      "model": "FH16",
+      "brandstof_type": "Diesel",
+      "ritten": [
+        {
+          "rit_id": "RIT-1",
+          "datum": "Tue May 28 2024 02:34:02 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 473,
+          "brandstof_verbruik_l": 99,
+          "gemiddeld_verbruik_l_per_100km": 24
+        },
+        {
+          "rit_id": "RIT-2",
+          "datum": "Fri Jan 26 2024 02:36:27 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 351,
+          "brandstof_verbruik_l": 55,
+          "gemiddeld_verbruik_l_per_100km": 28
+        },
+        {
+          "rit_id": "RIT-3",
+          "datum": "Sat Mar 16 2024 09:41:17 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 733,
+          "brandstof_verbruik_l": 98,
+          "gemiddeld_verbruik_l_per_100km": 33
+        },
+        {
+          "rit_id": "RIT-4",
+          "datum": "Sat Jul 13 2024 08:36:34 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 511,
+          "brandstof_verbruik_l": 69,
+          "gemiddeld_verbruik_l_per_100km": 21
+        },
+        {
+          "rit_id": "RIT-5",
+          "datum": "Wed Feb 28 2024 06:04:09 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 267,
+          "brandstof_verbruik_l": 68,
+          "gemiddeld_verbruik_l_per_100km": 39
+        },
+        {
+          "rit_id": "RIT-6",
+          "datum": "Sun Mar 03 2024 04:42:10 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 174,
+          "brandstof_verbruik_l": 54,
+          "gemiddeld_verbruik_l_per_100km": 39
+        },
+        {
+          "rit_id": "RIT-7",
+          "datum": "Thu May 16 2024 22:02:28 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 401,
+          "brandstof_verbruik_l": 78,
+          "gemiddeld_verbruik_l_per_100km": 39
+        },
+        {
+          "rit_id": "RIT-8",
+          "datum": "Sun Jun 09 2024 11:32:14 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 778,
+          "brandstof_verbruik_l": 95,
+          "gemiddeld_verbruik_l_per_100km": 34
+        }
+      ]
+    },
+    {
+      "voertuig_id": "TRK-10",
+      "kenteken": "AB-9-CD",
+      "merk": "Volvo",
+      "model": "FH16",
+      "brandstof_type": "Diesel",
+      "ritten": [
+        {
+          "rit_id": "RIT-1",
+          "datum": "Fri Sep 27 2024 08:13:56 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 701,
+          "brandstof_verbruik_l": 69,
+          "gemiddeld_verbruik_l_per_100km": 29
+        },
+        {
+          "rit_id": "RIT-2",
+          "datum": "Thu Jan 30 2025 07:26:46 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 816,
+          "brandstof_verbruik_l": 17,
+          "gemiddeld_verbruik_l_per_100km": 45
+        },
+        {
+          "rit_id": "RIT-3",
+          "datum": "Mon Feb 19 2024 05:47:28 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 744,
+          "brandstof_verbruik_l": 26,
+          "gemiddeld_verbruik_l_per_100km": 20
+        },
+        {
+          "rit_id": "RIT-4",
+          "datum": "Sun Sep 22 2024 14:50:47 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 551,
+          "brandstof_verbruik_l": 11,
+          "gemiddeld_verbruik_l_per_100km": 29
+        },
+        {
+          "rit_id": "RIT-5",
+          "datum": "Sat Apr 06 2024 20:00:00 GMT+0200 (Midden-Europese zomertijd)",
+          "afstand_km": 886,
+          "brandstof_verbruik_l": 80,
+          "gemiddeld_verbruik_l_per_100km": 45
+        },
+        {
+          "rit_id": "RIT-6",
+          "datum": "Tue Jan 02 2024 06:06:54 GMT+0100 (Midden-Europese standaardtijd)",
+          "afstand_km": 910,
+          "brandstof_verbruik_l": 45,
+          "gemiddeld_verbruik_l_per_100km": 42
+        }
+      ]
+    }
+  ]
