@@ -23,5 +23,16 @@ namespace Controllers{
             }
             return NotFound("Geen voertuigen gevonden");
         }
+
+        [HttpGet("gemiddelde/{VehicleId}")]
+        public async Task<IActionResult> GetVehicleAverage([FromRoute] string VehicleId)
+        {
+            var result = await _fuelService.GetVehicleAverage(VehicleId);
+            if (result != 0)
+            {
+                return Ok($"gemiddelde brandstof per rit voor {VehicleId}: {result} Liter");
+            }
+            return NotFound("Voertuig bestaat niet of geen ritten");
+        }
     }
 }
