@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import { Breadcrumbs } from './components/misc/Breadcrumbs';
 import { Nav } from './components/nav/Nav';
+import { SideNav } from './components/nav/SideNav';
 import { Footer } from './components/misc/Footer';
 
 import './assets/scss/style.scss';
@@ -13,6 +14,7 @@ const App: React.FC = () => {
     return (
         <Router>
             <Nav />
+            <SideNav />
 
             <main className="container main-content g-0 flex-1">
                 <Breadcrumbs />
