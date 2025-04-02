@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import { Breadcrumbs } from './components/misc/Breadcrumbs';
-import { Nav } from './components/misc/nav/Nav';
+import { Nav } from './components/nav/Nav';
 import { Footer } from './components/misc/Footer';
 
 import './assets/scss/style.scss';
