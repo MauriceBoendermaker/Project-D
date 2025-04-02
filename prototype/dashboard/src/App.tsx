@@ -6,6 +6,7 @@ import { Nav } from './components/nav/Nav';
 import { Footer } from './components/misc/Footer';
 
 import './assets/scss/style.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const App: React.FC = () => {
