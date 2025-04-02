@@ -1,24 +1,24 @@
-$primary-color: #6C3BAA;
-$primary-50: rgba(108, 59, 170, 0.5);
-$primary-light: #BBA1DE;
-$secondary-color: #FFD700;
-$secondary-light: #FFEC80;
+$primary-color: #95191D;
+$primary-light: #FFA0A3;
 
-$text-color: #383A43;
-$text-color-50: rgba(56, 58, 67, 0.5);
-$dark-text-color: #191B20;
+$secondary-color: #40B64F;
+
+$accent-color: #f4f2e6;
+
+$text-color: #212121;
+$text-color-light: rgba(33, 33, 33, 0.6);
 
 $header-color: #191B20;
 $footer-color: #191B20;
 
 $white: #FFF;
-$bg-color: #EEEEEE;
+$bg-color: $accent-color;
 
 $good-green: #CCFFE0;
 $bad-red: #FFCCCC;
 
-$delete-red: rgba(255, 0, 0, 0.75);
-$delete-red-hover: rgba(255, 0, 0, 0.5);
+$delete-red: #6d1216;
+$delete-red-hover: #580e12;
 
 $corner-radius: 10px;
 $box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
