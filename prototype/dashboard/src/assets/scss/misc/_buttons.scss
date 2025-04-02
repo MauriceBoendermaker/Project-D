@@ -42,7 +42,7 @@ button {
     transition: background-color .15s ease-in-out;
 
     &:hover {
-        background-color: $primary-50;
+        background-color: $primary-light;
     }
 
     i {
@@ -72,14 +72,14 @@ button {
 }
 
 .btn-simple {
-    color: $text-color-50;
+    color: $text-color-light;
     font-size: 16px;
     font-weight: 400;
     transition: color .15s ease-in-out;
     cursor: pointer;
 
     &:hover {
-        color: $primary-50;
+        color: $secondary-color;
     }
 }
 
