@@ -5,14 +5,13 @@ import logoImage from '../../assets/images/lafeber logo transparant 1@2x.png';
 export const Nav = () => {
     return (
         <div className="container-fluid navbar-parent">
-            <nav className="container navbar">
-                <div className="row">
-                    {/* Logo container */}
-                    <div className="col-auto logo-container">
-                        <a href="/">
-                            Office<span>Calendar<b>.</b></span>
-                        </a>
-                    </div>
+            <nav className="container-fluid navbar d-flex align-items-center">
+                {/* Logo */}
+                <div className="logo-container me-3">
+                    <a href="/">
+                        <img src={logoImage} alt='' width={75} height={75} />
+                    </a>
+                </div>
 
                     {/* Navigation container */}
                     <div className="col-auto nav-container position-absolute top-50 start-50 translate-middle">
