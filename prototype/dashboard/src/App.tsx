@@ -27,7 +27,7 @@ const App: React.FC = () => {
                         element={
                             <div className="g-0 pt-4">
                                 <h3>
-                                    <strong>Error 404 - Not Found</strong>
+                                    <strong>Error 404 - Page Not Found</strong>
                                 </h3>
                             </div>
                         }
