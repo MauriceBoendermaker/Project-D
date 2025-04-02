@@ -1,5 +1,6 @@
-// Import placeholder profile image
+// Import images
 import profileImage from '../../assets/images/profile-image-placeholder@4x.png';
+import logoImage from '../../assets/images/lafeber logo transparant 1@2x.png';
 
 export const Nav = () => {
     return (
@@ -22,11 +23,12 @@ export const Nav = () => {
                         </nav>
                     </div>
 
-                    {/* Login status container */}
-                    <div className="col-auto login-status-container">
-                        <span className="login-status-text"><a target='_blank' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                        {localStorage.getItem('CurrentUserEmail') || "Please login to continue"}</a></span>
-                        <img src={profileImage} alt='' width={40} height={40} />
+                {/* Profile (flush right) */}
+                <div className="login-status-container d-flex align-items-center gap-2 ms-auto">
+                    <img src={profileImage} alt='' width={40} height={40} />
+                    <div className="profile-placeholder d-flex flex-column gap-1">
+                        <div className="rounded-pill bg-white bg-opacity-75" style={{ width: '60px', height: '10px' }}></div>
+                        <div className="rounded-pill bg-white bg-opacity-50" style={{ width: '90px', height: '10px' }}></div>
                     </div>
                 </div>
             </nav>
