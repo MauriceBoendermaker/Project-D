@@ -1,0 +1,111 @@
+button {
+    border: unset;
+}
+
+.button-group {
+    button {
+        display: inline-block;
+
+        &:not(:first-child) {
+            margin-left: 15px;
+        }
+    }
+}
+
+.button-group-modal-footer {
+    padding: 15px;
+
+    button {
+        display: inline-block;
+
+        &:not(:first-child) {
+            margin-left: 15px;
+        }
+    }
+}
+
+.btn-primary {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: center;
+    color: $white;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    background-color: $primary-color;
+    border-radius: $corner-radius;
+    border: 1px solid $primary-color;
+    box-shadow: $box-shadow;
+    padding: 10px 12px;
+    transition: background-color .15s ease-in-out;
+
+    &:hover {
+        background-color: $primary-light;
+    }
+
+    i {
+        color: $white;
+        margin-left: 10px;
+    }
+
+    &-delete {
+        background-color: $delete-red !important;
+        border: 1px solid red;
+        transition: background-color .15s ease-in-out;
+
+        &:hover {
+            background-color: $delete-red-hover !important;
+        }
+    }
+
+    &-close {
+        background-color: $delete-red !important;
+        border: 1px solid red;
+        transition: background-color .15s ease-in-out;
+
+        &:hover {
+            background-color: $delete-red-hover !important;
+        }
+    }
+}
+
+.btn-simple {
+    color: $text-color-light;
+    font-size: 16px;
+    font-weight: 400;
+    transition: color .15s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+.prev-btn,
+.next-btn {
+    color: $primary-color;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    padding: auto;
+    border-radius: $corner-radius;
+    background-color: $white;
+    box-shadow: $box-shadow-soft;
+    transition: color .15s ease-in-out;
+
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+a.btn-link {
+    color: $secondary-color;
+    text-decoration: none;
+    transition: color .15s ease-in-out;
+
+    &:hover {
+        color: $primary-light;
+    }
+}

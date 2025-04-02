@@ -1,0 +1,48 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+body,
+span,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: normal;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $bg-color !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    line-height: 1;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    min-height: calc(100vh - 202px);
+    margin-top: 100px; // match navbar
+    margin-left: 100px; // match side navbar
+}
+
+.divider {
+    &-horizontal {
+        max-width: 1px;
+        height: 100%;
+        border: 0px;
+        border-radius: 10px;
+        margin: 0 auto;
+    }
+}
