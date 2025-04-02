@@ -3,12 +3,12 @@
 @import 'variables';
 @import 'default';
 
-@import 'misc/nav';
 @import 'misc/footer';
 @import 'misc/buttons';
 @import 'misc/breadcrumbs';
 
-// Components stylesheets
-
+// Component specific stylesheets
+@import 'components/nav/nav';
+@import 'components/nav/sidenav';
 
 // Page specific stylesheets
