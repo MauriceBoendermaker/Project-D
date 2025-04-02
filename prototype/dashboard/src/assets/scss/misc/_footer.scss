@@ -14,4 +14,21 @@
             margin-bottom: 0;
         }
     }
+
+    .footer-bottom-row {
+        margin-left: 100px; // default when sidebar is visible
+        transition: margin 0.3s ease;
+
+        a {
+            color: $primary-light;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+body.sidebar-collapsed .footer-bottom-row {
+    margin-left: 0 !important;
 }
