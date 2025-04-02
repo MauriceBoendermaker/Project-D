@@ -13,14 +13,12 @@ export const Nav = () => {
                     </a>
                 </div>
 
-                    {/* Navigation container */}
-                    <div className="col-auto nav-container position-absolute top-50 start-50 translate-middle">
-                        <nav>
-                            <a href="/">Home</a>
-                            <a href="/about">About</a>
-                            <a href="/contact">Contact</a>
-                        </nav>
-                    </div>
+                {/* Center nav link */}
+                <div className="nav-container position-absolute top-50 start-50 translate-middle">
+                    <nav>
+                        <a href="/">Home</a>
+                    </nav>
+                </div>
 
                 {/* Profile (flush right) */}
                 <div className="login-status-container d-flex align-items-center gap-2 ms-auto">
@@ -33,4 +31,4 @@ export const Nav = () => {
             </nav>
         </div>
     );
-}
+};
