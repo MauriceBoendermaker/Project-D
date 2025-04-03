@@ -3,7 +3,7 @@ using Models;
 
 namespace Services
 {
-    public class JsonShipmentService : IJsonSHipmentService
+    public class JsonShipmentService : IJsonShipmentService
     {
         private string Path = "data/Zending_data.json";
         public async Task<IEnumerable<Zending>?> GetAllShipments()
