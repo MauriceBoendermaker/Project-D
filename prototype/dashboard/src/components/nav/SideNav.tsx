@@ -11,15 +11,20 @@ export const SideNav = () => {
         }
     }, [collapsed]);
 
+    const handleZoom = (index: number) => {
+        const event = new CustomEvent("zoomChart", { detail: index });
+        window.dispatchEvent(event);
+    };
+
     return (
         <div className={`side-navbar-parent ${collapsed ? "collapsed" : ""}`}>
             <div className="inner-sidebar d-flex flex-column justify-content-between h-100">
                 <div className="top-section">
                     <div className="nav-buttons d-flex flex-column align-items-center gap-4 mt-5 pt-4">
-                        {[1, 2, 3, 4].map((num) => (
-                            <a key={num} href={`/graph${num}`} className="graph-button">
+                        {[1, 2, 3, 4].map((num, i) => (
+                            <button key={i} onClick={() => handleZoom(i)} className="graph-button">
                                 <i className="fas fa-chart-bar fa-lg"></i>
-                            </a>
+                            </button>
                         ))}
                     </div>
                 </div>
