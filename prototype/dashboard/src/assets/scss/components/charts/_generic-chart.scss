@@ -1,9 +1,40 @@
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .generic-chart {
     background-color: $white;
     border-radius: $corner-radius;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     min-height: 340px;
     transition: all 0.2s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+
+    &.chart-delay-0 {
+        animation-delay: 0.12s;
+    }
+
+    &.chart-delay-1 {
+        animation-delay: 0.22s;
+    }
+
+    &.chart-delay-2 {
+        animation-delay: 0.32s;
+    }
+
+    &.chart-delay-3 {
+        animation-delay: 0.42s;
+    }
 
     h5 {
         font-weight: 600;
@@ -33,4 +64,9 @@
             }
         }
     }
+}
+
+.chart-container.zoomed .generic-chart {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
