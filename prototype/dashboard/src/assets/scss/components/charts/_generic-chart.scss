@@ -1,0 +1,36 @@
+.generic-chart {
+    background-color: $white;
+    border-radius: $corner-radius;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    min-height: 340px;
+    transition: all 0.2s ease;
+
+    h5 {
+        font-weight: 600;
+        color: $text-color;
+    }
+
+    .chart-toggle {
+        display: flex;
+        background: $primary-25;
+        padding: 6px;
+        border-radius: 15px;
+        font-size: 14px;
+        font-weight: 500;
+        gap: 5px;
+
+        span {
+            padding: 10px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: $primary-color;
+            background-color: transparent;
+            transition: all 0.2s ease;
+
+            &.active {
+                background-color: $primary-color;
+                color: $white;
+            }
+        }
+    }
+}

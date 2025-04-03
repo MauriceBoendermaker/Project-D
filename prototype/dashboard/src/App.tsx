@@ -1,13 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
+// Import stylesheets
+import './assets/scss/style.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Import misc components
 import { Breadcrumbs } from './components/misc/Breadcrumbs';
 import { Nav } from './components/nav/Nav';
 import { SideNav } from './components/nav/SideNav';
 import { Footer } from './components/misc/Footer';
 
-import './assets/scss/style.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// Import components
+import { ChartsWrapper } from './components/ChartsWrapper';
 
 
 const App: React.FC = () => {
@@ -18,18 +23,21 @@ const App: React.FC = () => {
 
             <main className="container main-content g-0 flex-1">
                 <Breadcrumbs />
+
                 <Routes>
                     {/* Public routes */}
-                    {/* <Route path="/" element={<Login />} /> */}
+                    <Route path="/" element={<ChartsWrapper />} />
 
                     <Route
                         path="/404"
                         element={
-                            <div className="g-0 pt-4">
-                                <h3>
-                                    <strong>Error 404 - Page Not Found</strong>
-                                </h3>
-                            </div>
+                            <section>
+                                <div className="g-0 pt-4">
+                                    <h3>
+                                        <strong>Error 404 - Page Not Found</strong>
+                                    </h3>
+                                </div>
+                            </section>
                         }
                     />
                     <Route path="*" element={<Navigate replace to="/404" />} />

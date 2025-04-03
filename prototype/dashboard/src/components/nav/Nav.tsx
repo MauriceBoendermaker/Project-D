@@ -8,7 +8,7 @@ export const Nav = () => {
             <nav className="container-fluid navbar d-flex align-items-center">
                 {/* Logo */}
                 <div className="logo-container me-3">
-                    <a href="/">
+                    <a target='_blank' href="https://www.elafeber.nl/">
                         <img src={logoImage} alt='' width={75} height={75} />
                     </a>
                 </div>
