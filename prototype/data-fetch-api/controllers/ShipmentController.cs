@@ -5,12 +5,21 @@ namespace Controllers
 {
     [ApiController]
     [Route("api/zending")]
-    public class ShipmentController
+    public class ShipmentController : ControllerBase
     {
+        private IJsonSHipmentService _ShipmentService;
+
+        public ShipmentController(IJsonSHipmentService service)
+        {
+            _ShipmentService = service;
+
+        }
         [HttpGet]
         public async Task<IActionResult> GetAllShipments()
         {
-            throw new NotImplementedException();
+            var Shipments = await _ShipmentService.GetAllShipments();
+
+            return Shipments is null ? NotFound("Geen zendingen gevonden..") : Ok(Shipments);
         }
 
         // Per zending de max capaciteit
