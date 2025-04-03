@@ -3,9 +3,9 @@ using Models;
 public interface IJsonSHipmentService
 {
     Task<IEnumerable<Zending>?> GetAllShipments();
-    Task<int> GetMaxCapacity();
-    Task<int> GetEmptyMiles();
-    Task<int> GetAverageLoadDegree();
-    Task<int> GetLoadDegree();
+    Task<int> GetMaxCapacity(int ZendingId);
+    Task<int> GetTotalEmptyMiles();
+    Task<double> GetAverageLoadDegree();
+    Task<double> GetLoadDegree(int ZendingId);
 
 }
