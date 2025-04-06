@@ -13,6 +13,7 @@ import { Footer } from './components/misc/Footer';
 
 // Import components
 import { ChartsWrapper } from './components/ChartsWrapper';
+import FuelChart from "./components/FuelChart"
 
 
 const App: React.FC = () => {
@@ -27,6 +28,7 @@ const App: React.FC = () => {
                 <Routes>
                     {/* Public routes */}
                     <Route path="/" element={<ChartsWrapper />} />
+                    <Route path="/testing" element={<FuelChart />} />
 
                     <Route
                         path="/404"
