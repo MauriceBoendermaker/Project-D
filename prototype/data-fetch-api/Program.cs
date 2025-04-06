@@ -7,6 +7,15 @@ builder.Services.AddScoped<IJsonSHipmentService, JsonShipmentService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:300") // Your frontend domain
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -15,7 +24,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
-app.Urls.Add("http://localhost:3000");
+app.UseCors("AllowFrontend");
+app.Urls.Add("http://localhost:3001");
 app.MapControllers();
 app.Run();

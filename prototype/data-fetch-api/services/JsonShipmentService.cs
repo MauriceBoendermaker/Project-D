@@ -129,6 +129,15 @@ namespace Services
             }
         }
 
+        public async Task<Dictionary<int, double>?> GetTotalLoadDegree()
+        {
+            IEnumerable<Zending>? Shipments = await this.GetAllShipments();
+            if (Shipments == null) return null;
+            Dictionary<int, double> Dict = Shipments.Select(x => new KeyValuePair<int, double>(x.ShipmentId, double.Round((double)x.CurrentLoadKg / x.MaxCapacityKg, 4))).ToDictionary();
+
+            return Dict;
+
+        }
     }
 
 }

@@ -18,7 +18,7 @@ namespace Models
         [JsonPropertyName("huidige_capaciteit")]
 
         public int CurrentLoadKg { get; set; }
-        [JsonPropertyName("onbenutte-kilometers")]
+        [JsonPropertyName("onbenutte_kilometers")]
 
         public int EmptyKilometers { get; set; }
     }

@@ -1,3 +1,5 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 using Services;
 
@@ -19,7 +21,7 @@ namespace Controllers
         {
             var Shipments = await _ShipmentService.GetAllShipments();
 
-            return Shipments is null ? NotFound("Geen zendingen gevonden..") : Ok(Shipments);
+            return Shipments is null ? NotFound(new { error = "Geen zendingen gevonden.." }) : Ok(Shipments);
         }
 
         // Per zending de max capaciteit
@@ -27,7 +29,7 @@ namespace Controllers
         public async Task<IActionResult> GetMaxCapacity([FromQuery] int ZendingId)
         {
             int MaxCapacityKg = await _ShipmentService.GetMaxCapacity(ZendingId);
-            return MaxCapacityKg < 0 ? NotFound($"De zending met Id: {ZendingId} bestaat niet of het berekenen van de gegevens is niet mogelijk ") : Ok($"De Maximale capaciteit van Zending: {ZendingId}: {MaxCapacityKg}Kg");
+            return MaxCapacityKg < 0 ? NotFound(new { error = $"De zending met Id: {ZendingId} bestaat niet of het berekenen van de gegevens is niet mogelijk " }) : Ok(new { maxCapacity = MaxCapacityKg });
 
         }
 
@@ -37,16 +39,27 @@ namespace Controllers
         public async Task<IActionResult> GetLoadDegree([FromQuery] int ZendingId)
         {
             double LoadDegree = await _ShipmentService.GetLoadDegree(ZendingId);
-            return LoadDegree < 0 ? NotFound($"De zending met Id: {ZendingId} bestaat niet of het berekenen van de gegevens is niet mogelijk ") :
-                                    Ok($"De beladingsgraad van zending {ZendingId}: {LoadDegree * 100}%");
+            return LoadDegree < 0 ? NotFound(new { error = $"De zending met Id: {ZendingId} bestaat niet of het berekenen van de gegevens is niet mogelijk" }) :
+                                    Ok(new { loadDegree = LoadDegree });
         }
+
+        // voor alle Zendingen de beladingsgraad
+        [HttpGet("beladingsgraad/totaal")]
+        public async Task<IActionResult> GetTotalLoadDegree()
+        {
+            Dictionary<int, double>? LoadDegrees = await _ShipmentService.GetTotalLoadDegree();
+            var response = JsonSerializer.Serialize(LoadDegrees);
+
+            return LoadDegrees == null ? NotFound(new { error = "No Shipments available" }) : Ok(response);
+        }
+
 
         // Voor alle zendingen de gemiddelde beladingsgraad %
         [HttpGet("beladingsgraad/gemiddeld")]
         public async Task<IActionResult> GetAverageLoadDegree()
         {
             double AverageLoadDegree = await _ShipmentService.GetAverageLoadDegree();
-            return AverageLoadDegree < 0 ? NotFound("Het berekenen van de gegevens is niet mogelijk") : Ok($"De gemiddelde beladingsgraad: {AverageLoadDegree * 100}%");
+            return AverageLoadDegree < 0 ? NotFound(new { error = $"Het berekenen van de gegevens is niet mogelijk" }) : Ok(new { averageLoadDegree = AverageLoadDegree });
         }
 
         // De totale onbenutte kilometers
@@ -54,7 +67,7 @@ namespace Controllers
         public async Task<IActionResult> GetTotalEmptyMiles()
         {
             int TotalEmptyMiles = await _ShipmentService.GetTotalEmptyMiles();
-            return TotalEmptyMiles < 0 ? NotFound("Het berekenen van de gegevens is niet mogelijk") : Ok($"De totale onbenutte kilometers: {TotalEmptyMiles}km");
+            return TotalEmptyMiles < 0 ? NotFound(new { error = "Het berekenen van de gegevens is niet mogelijk" }) : Ok(new { totalEmptyMiles = TotalEmptyMiles });
         }
     }
 }
