@@ -35,25 +35,26 @@ const FuelChart: React.FC = () => {
 
     // Process data to calculate values
     const processedData = data ? data.map((voertuig: any) => {
-        const totaleAfstand = voertuig.ritten.reduce((sum: number, rit: any) => sum + rit.afstand_km, 0);
-        const totaleBrandstof = voertuig.ritten.reduce((sum: number, rit: any) => sum + rit.brandstof_verbruik_l, 0);
-        const gemiddeldVerbruik = Math.round((voertuig.ritten.reduce((sum: number, rit: any) => sum + rit.gemiddeld_verbruik_l_per_100km, 0) / voertuig.ritten.length) * 10) / 10;
+        const gemiddeldeAfstand = Math.round((voertuig.ritten.reduce((sum: number, rit: any) => sum + rit.afstand_km, 0) / voertuig.ritten.length) * 10) / 10;
+        const gemiddeldeBrandstof = Math.round((voertuig.ritten.reduce((sum: number, rit: any) => sum + rit.brandstof_verbruik_l, 0) / voertuig.ritten.length) * 10) / 10;
+        const brandstofKosten = 2;
+        const gemiddeldVerbruik = Math.round(((voertuig.ritten.reduce((sum: number, rit: any) => sum + rit.gemiddeld_verbruik_l_per_100km, 0) / voertuig.ritten.length) * 10) / 10) * brandstofKosten;
 
         return {
             voertuig_id: voertuig.voertuig_id,
-            totaleAfstand,
-            totaleBrandstof,
+            gemiddeldeAfstand,
+            gemiddeldeBrandstof,
             gemiddeldVerbruik,
         };
     }) : [];
 
     const chartOptions = {
         title: {
-            text: 'Brandstof gebruik per voertuig',
+            text: 'Brandstof verbruik per voertuig',
         },
         tooltip: {},
         legend: {
-            data: ['Totale Afstand in km', 'Totale Brandstof in L', 'Gemiddeld Verbruik in L'],
+            data: ['Gemiddelde Afstand in km', 'Gemiddelde Brandstof in L', 'Gemiddelde Ritkosten in Euro'],
         },
         xAxis: {
             type: 'category',
@@ -64,17 +65,17 @@ const FuelChart: React.FC = () => {
         },
         series: [
             {
-                name: 'Totale Afstand in km',
+                name: 'Gemiddelde Afstand in km',
                 type: 'bar',
-                data: processedData.map((item: any) => item.totaleAfstand),
+                data: processedData.map((item: any) => item.gemiddeldeAfstand),
             },
             {
-                name: 'Totale Brandstof in L',
+                name: 'Gemiddelde Brandstof in L',
                 type: 'bar',
-                data: processedData.map((item: any) => item.totaleBrandstof),
+                data: processedData.map((item: any) => item.gemiddeldeBrandstof),
             },
             {
-                name: 'Gemiddeld Verbruik in L',
+                name: 'Gemiddelde Ritkosten in Euro',
                 type: 'bar',
                 data: processedData.map((item: any) => item.gemiddeldVerbruik),
             },
@@ -83,7 +84,6 @@ const FuelChart: React.FC = () => {
 
     return (
         <div>
-            <h1>Brandstof gebruik per voertuig</h1>
             {data ? (
                 <ReactECharts option={chartOptions} />
             ) : (
