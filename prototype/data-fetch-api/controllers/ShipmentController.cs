@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using Services;
 
 namespace Controllers
@@ -47,10 +48,8 @@ namespace Controllers
         [HttpGet("beladingsgraad/totaal")]
         public async Task<IActionResult> GetTotalLoadDegree()
         {
-            Dictionary<int, double>? LoadDegrees = await _ShipmentService.GetTotalLoadDegree();
-            var response = JsonSerializer.Serialize(LoadDegrees);
-
-            return LoadDegrees == null ? NotFound(new { error = "No Shipments available" }) : Ok(response);
+            List<loadDegree>? LoadDegrees = await _ShipmentService.GetTotalLoadDegree();
+            return LoadDegrees == null ? NotFound(new { error = "No Shipments available" }) : Ok(LoadDegrees);
         }
 
 
@@ -67,7 +66,7 @@ namespace Controllers
         public async Task<IActionResult> GetTotalEmptyMiles()
         {
             int TotalEmptyMiles = await _ShipmentService.GetTotalEmptyMiles();
-            return TotalEmptyMiles < 0 ? NotFound(new { error = "Het berekenen van de gegevens is niet mogelijk" }) : Ok(new { totalEmptyMiles = TotalEmptyMiles });
+            return TotalEmptyMiles < 0 ? NotFound(new Error { Message = "Het berekenen van de gegevens is niet mogelijk" }) : Ok(new { totalEmptyMiles = TotalEmptyMiles });
         }
     }
 }

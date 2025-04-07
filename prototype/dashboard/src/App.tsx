@@ -1,52 +1,57 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 // Import stylesheets
-import './assets/scss/style.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./assets/scss/style.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Import misc components
-import { Breadcrumbs } from './components/misc/Breadcrumbs';
-import { Nav } from './components/nav/Nav';
-import { SideNav } from './components/nav/SideNav';
-import { Footer } from './components/misc/Footer';
+import { Breadcrumbs } from "./components/misc/Breadcrumbs";
+import { Nav } from "./components/nav/Nav";
+import { SideNav } from "./components/nav/SideNav";
+import { Footer } from "./components/misc/Footer";
 
 // Import components
-import { ChartsWrapper } from './components/ChartsWrapper';
-
+import { ChartsWrapper } from "./components/ChartsWrapper";
+import { Test } from "components/Test";
 
 const App: React.FC = () => {
-    return (
-        <Router>
-            <Nav />
-            <SideNav />
+  return (
+    <Router>
+      <Nav />
+      <SideNav />
 
-            <main className="container main-content g-0 flex-1">
-                <Breadcrumbs />
+      <main className="container main-content g-0 flex-1">
+        <Breadcrumbs />
 
-                <Routes>
-                    {/* Public routes */}
-                    <Route path="/" element={<ChartsWrapper />} />
+        <Routes>
+          {/* Public routes */}
+          <Route path="/" element={<ChartsWrapper />} />
 
-                    <Route
-                        path="/404"
-                        element={
-                            <section>
-                                <div className="g-0 pt-4">
-                                    <h3>
-                                        <strong>Error 404 - Page Not Found</strong>
-                                    </h3>
-                                </div>
-                            </section>
-                        }
-                    />
-                    <Route path="*" element={<Navigate replace to="/404" />} />
-                </Routes>
-            </main>
+          <Route
+            path="/404"
+            element={
+              <section>
+                <div className="g-0 pt-4">
+                  <h3>
+                    <strong>Error 404 - Page Not Found</strong>
+                  </h3>
+                </div>
+              </section>
+            }
+          />
+          <Route path="*" element={<Navigate replace to="/404" />} />
+        </Routes>
+      </main>
 
-            <Footer />
-        </Router>
-    );
+      <Footer />
+    </Router>
+  );
 };
 
 export default App;

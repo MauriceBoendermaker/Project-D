@@ -11,7 +11,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:300") // Your frontend domain
+        policy.WithOrigins("http://localhost:3000") // Your frontend domain
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -25,6 +25,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowFrontend");
-app.Urls.Add("http://localhost:3001");
+app.Urls.Add("http://localhost:3000");
 app.MapControllers();
 app.Run();

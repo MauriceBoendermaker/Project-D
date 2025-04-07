@@ -7,5 +7,5 @@ public interface IJsonSHipmentService
     Task<int> GetTotalEmptyMiles();
     Task<double> GetAverageLoadDegree();
     Task<double> GetLoadDegree(int ZendingId);
-    Task<Dictionary<int, double>?> GetTotalLoadDegree();
+    Task<List<loadDegree>?> GetTotalLoadDegree();
 }

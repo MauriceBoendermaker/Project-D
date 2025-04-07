@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 
-const API_URL = "http://localhost:3000/api/zending";
+const API_URL = "http://localhost:3001/api/zending";
 
+type error = {
+  message: string;
+};
 // Fetch all shipments
 export type Zending = {
   zending_id: number;
@@ -105,9 +108,24 @@ export async function fetchTotalEmptyMiles(): Promise<number> {
   }
 }
 // Fetch Total Load Degree
-export async function fetchTotalLoadDegree() {
+export type TotalDegree = {
+  shipmentId: number;
+  loadDegree: number;
+};
+
+export type TotalDegreeResponse =
+  | {
+      response: TotalDegree[];
+    }
+  | error;
+export async function fetchTotalLoadDegree(): Promise<TotalDegreeResponse> {
   const response = await fetch(API_URL + "/beladingsgraad/totaal");
-  const data = await response.json();
-  console.log(JSON.stringify(data));
-  return data;
+  if (response.ok) {
+    const data = await response.json();
+    const output: TotalDegreeResponse = { response: data };
+
+    return output;
+  } else {
+    return { message: "Failed to fetch data" };
+  }
 }

@@ -22,4 +22,12 @@ namespace Models
 
         public int EmptyKilometers { get; set; }
     }
+
+
+    public class loadDegree
+    {
+        public int ShipmentId { get; set; }
+        public double LoadDegree { get; set; }
+
+    }
 }
