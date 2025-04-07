@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Services;
 
-namespace Controllers{
+namespace Controllers
+{
     [Route("api/brandstof")]
     [ApiController]
     public class FuelController : ControllerBase
@@ -31,6 +32,17 @@ namespace Controllers{
             if (result != 0)
             {
                 return Ok($"gemiddelde brandstof per rit voor {VehicleId}: {result} Liter");
+            }
+            return NotFound("Voertuig bestaat niet of geen ritten");
+        }
+
+        [HttpGet("kosten/{VehicleId}/{RitId}")]
+        public async Task<IActionResult> GetRitCost([FromRoute] string VehicleId, [FromRoute] string RitId)
+        {
+            var result = await _fuelService.GetRitCost(VehicleId, RitId);
+            if (result != 0)
+            {
+                return Ok($"De Benzinekosten voor {RitId} van {VehicleId} zijn : {result} Euro");
             }
             return NotFound("Voertuig bestaat niet of geen ritten");
         }
