@@ -13,7 +13,7 @@ import { Footer } from './components/misc/Footer';
 
 // Import components
 import { ChartsWrapper } from './components/ChartsWrapper';
-import { FuelChart } from "./components/FuelUsageChart"
+import { FuelChart } from "./components/FuelUsageChart";
 import { TripCostChart } from './components/TripCostChart';
 
 
