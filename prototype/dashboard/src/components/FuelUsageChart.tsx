@@ -52,7 +52,7 @@ export const FuelChart: React.FC = () => {
         tooltip: {},
         legend: {
             data: ['Gemiddelde Afstand in km', 'Gemiddelde Brandstof in L',
-                ],
+            ],
         },
         xAxis: {
             type: 'category',

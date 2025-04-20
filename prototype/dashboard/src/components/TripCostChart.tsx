@@ -20,16 +20,16 @@ export const TripCostChart: React.FC = () => {
                     for (const rit of voertuig.ritten) {
                         const kostenResponse = await fetch(`http://localhost:3000/api/brandstof/kosten/${voertuig.voertuig_id}/${rit.rit_id}`);
                         if (kostenResponse.ok) {
-                            const tekst = await kostenResponse.text();        
+                            const tekst = await kostenResponse.text();
 
                             const matches = tekst.match(/(\d+)(?=\s*Euro)/);
                             const kosten = matches ? parseFloat(matches[1]) : 0;
-                            
+
                             kostenData.push({
                                 label: `${voertuig.voertuig_id} - ${rit.rit_id}`,
                                 kosten,
                             });
-                            
+
                         } else {
                             console.warn(`Geen data voor ${voertuig.voertuig_id}/${rit.rit_id}`);
                         }
