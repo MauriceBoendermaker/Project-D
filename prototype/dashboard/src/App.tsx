@@ -19,6 +19,7 @@ import { Footer } from "./components/misc/Footer";
 // Import components
 import { ChartsWrapper } from "./components/ChartsWrapper";
 import { Test } from "components/Test";
+import { Chart } from "components/Chart";
 
 const App: React.FC = () => {
   return (
@@ -31,7 +32,7 @@ const App: React.FC = () => {
 
         <Routes>
           {/* Public routes */}
-          <Route path="/" element={<ChartsWrapper />} />
+          <Route path="/" element={<Chart />} />
 
           <Route
             path="/404"

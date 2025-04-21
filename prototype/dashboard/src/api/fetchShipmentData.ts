@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_URL = "http://localhost:3001/api/zending";
+const API_URL = "http://localhost:3000/api/zending";
 
 type error = {
   message: string;
