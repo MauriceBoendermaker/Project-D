@@ -38,7 +38,7 @@ const App: React.FC = () => {
                             <section>
                                 <div className="g-0 pt-4">
                                     <h3>
-                                        <strong>Error 404 - Page Not Found</strong>
+                                        <strong>Error 404 - Pagina niet gevonden</strong>
                                     </h3>
                                 </div>
                             </section>
