@@ -20,20 +20,10 @@
     transform: translateY(20px);
     animation: fadeInUp 0.5s ease forwards;
 
-    &.chart-delay-0 {
-        animation-delay: 0.12s;
-    }
-
-    &.chart-delay-1 {
-        animation-delay: 0.22s;
-    }
-
-    &.chart-delay-2 {
-        animation-delay: 0.32s;
-    }
-
-    &.chart-delay-3 {
-        animation-delay: 0.42s;
+    @for $i from 1 through 4 {
+        &.chart-delay-#{$i} {
+            animation-delay: #{0.02s + ($i * 0.10s)};
+        }
     }
 
     h5 {

@@ -1,7 +1,6 @@
 // This component is meant to act as a wrapper for all four charts on the main page
 
 import { useState, useEffect } from "react";
-import { GenericChart } from "./GenericChart";
 import { FuelChart } from "./charts/FuelUsageChart";
 import { TripCostChart } from "./charts/TripCostChart";
 
@@ -10,8 +9,9 @@ export const ChartsWrapper = () => {
     const [zoomedChart, setZoomedChart] = useState<number | null>(null);
 
     const chartConfigs = [
-        { type: "fuel", id: "fuelChart", title: "Fuel Chart" },
-        { type: "tripCost", id: "tripChart", title: "Trip Cost Chart" },
+        { type: "fuel", id: "fuelChart"},
+        { type: "tripCost", id: "tripChart"},
+        { type: "tripCost", id: "tripChart1"},
     ];
 
     useEffect(() => {
@@ -40,19 +40,13 @@ export const ChartsWrapper = () => {
                                 <FuelChart delayIndex={i} />
                             ) : cfg.type === "tripCost" ? (
                                 <TripCostChart delayIndex={i} />
-                            ) : (
-                                <GenericChart
-                                    title={cfg.title}
-                                    subtitle="Pretitel"
-                                    chartId={cfg.id}
-                                    chartType="horizontalBar"
-                                    delayIndex={i}
-                                />
-                            )}
+                            ) : cfg.type === "tripCost" ? (
+                                <FuelChart delayIndex={i} />
+                            ) : cfg.type === "tripCost"
+                            }
                         </div>
                     );
                 })}
-
             </div>
         </section>
     );
