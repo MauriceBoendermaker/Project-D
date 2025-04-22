@@ -1,7 +1,6 @@
 // This component is meant to act as a wrapper for all four charts on the main page
 
 import { useState, useEffect } from "react";
-import { GenericChart } from "./GenericChart";
 import { FuelChart } from "./charts/FuelUsageChart";
 import { TripCostChart } from "./charts/TripCostChart";
 
@@ -40,19 +39,10 @@ export const ChartsWrapper = () => {
                                 <FuelChart delayIndex={i} />
                             ) : cfg.type === "tripCost" ? (
                                 <TripCostChart delayIndex={i} />
-                            ) : (
-                                <GenericChart
-                                    title={cfg.title}
-                                    subtitle="Pretitel"
-                                    chartId={cfg.id}
-                                    chartType="horizontalBar"
-                                    delayIndex={i}
-                                />
-                            )}
+                            ) : null}
                         </div>
                     );
                 })}
-
             </div>
         </section>
     );
