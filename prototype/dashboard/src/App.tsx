@@ -17,9 +17,10 @@ import { SideNav } from "./components/nav/SideNav";
 import { Footer } from "./components/misc/Footer";
 
 // Import components
-import { ChartsWrapper } from "./components/ChartsWrapper";
-import { Test } from "components/Test";
-import { Chart } from "components/Chart";
+import { ChartsWrapper } from './components/ChartsWrapper';
+import { FuelChart } from "./components/FuelUsageChart";
+import { TripCostChart } from './components/TripCostChart';
+
 
 const App: React.FC = () => {
   return (
@@ -30,9 +31,11 @@ const App: React.FC = () => {
       <main className="container main-content g-0 flex-1">
         <Breadcrumbs />
 
-        <Routes>
-          {/* Public routes */}
-          <Route path="/" element={<Chart />} />
+                <Routes>
+                    {/* Public routes */}
+                    <Route path="/" element={<ChartsWrapper />} />
+                    <Route path="/verbruik" element={<FuelChart />} />
+                    <Route path="/benzinekosten" element={<TripCostChart />} />
 
           <Route
             path="/404"
