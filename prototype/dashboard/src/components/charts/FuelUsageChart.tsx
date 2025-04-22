@@ -83,7 +83,7 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
             {data ? (
                 <ReactECharts option={chartOptions} style={{ height: 300, width: "100%" }} />
             ) : (
-                <div>Loading chart...</div>
+                <div>Laden van data...</div>
             )}
         </StyledChartWrapper>
     );
