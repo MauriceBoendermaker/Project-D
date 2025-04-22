@@ -55,7 +55,9 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
       {
         name: "Zending",
         type: "bar",
-        data: chartData.map((item: TotalDegree) => item.loadDegree * 100),
+        data: chartData.map((item: TotalDegree) =>
+          (item.loadDegree * 100).toFixed(2)
+        ),
         itemStyle: {
           color: "#95191D",
           barBorderRadius: [5, 5, 0, 0],
@@ -78,7 +80,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
       title="beladingsgraad per zending"
       delayIndex={delayIndex}
     >
-      {chartData ? (
+      {chartData.length > 0 ? (
         <ReactECharts
           option={chartOptions}
           style={{ height: 300, width: "100%" }}
