@@ -17,6 +17,14 @@ export const Nav = () => {
                 <div className="nav-container position-absolute top-50 start-50 translate-middle">
                     <nav>
                         <a href="/">Home</a>
+                        <div className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="/planning" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Planning
+                            </a>
+                            <ul className="dropdown-menu">
+                                <li><a className="dropdown-item" href="/planning/voeg-rit-toe">Voeg rit toe</a></li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
 

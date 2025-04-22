@@ -28,6 +28,25 @@
                     color: $primary-light;
                 }
             }
+
+            .dropdown {
+
+                .dropdown-menu {
+                    margin-top: 10px;
+                }
+
+                .dropdown-item {
+                    color: $text-color;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+
+                    &:active {
+                        background-color: $accent-color;
+                    }
+                }
+            }
         }
     }
 

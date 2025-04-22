@@ -17,10 +17,9 @@ import { SideNav } from "./components/nav/SideNav";
 import { Footer } from "./components/misc/Footer";
 
 // Import components
-import { ChartsWrapper } from './components/ChartsWrapper';
-import { FuelChart } from "./components/FuelUsageChart";
-import { TripCostChart } from './components/TripCostChart';
-
+import { ChartsWrapper } from "./components/ChartsWrapper";
+import { FuelChart } from "./components/charts/FuelUsageChart";
+import { TripCostChart } from "./components/charts/TripCostChart";
 
 const App: React.FC = () => {
   return (
@@ -31,11 +30,14 @@ const App: React.FC = () => {
       <main className="container main-content g-0 flex-1">
         <Breadcrumbs />
 
-                <Routes>
-                    {/* Public routes */}
-                    <Route path="/" element={<ChartsWrapper />} />
-                    <Route path="/verbruik" element={<FuelChart />} />
-                    <Route path="/benzinekosten" element={<TripCostChart />} />
+        <Routes>
+          {/* Public routes */}
+          <Route path="/" element={<ChartsWrapper />} />
+          <Route path="/verbruik" element={<FuelChart />} />
+          <Route path="/benzinekosten" element={<TripCostChart />} />
+
+          {/* Planning routes */}
+          <Route path="/planning/voeg-rit-toe" />
 
           <Route
             path="/404"
@@ -43,7 +45,7 @@ const App: React.FC = () => {
               <section>
                 <div className="g-0 pt-4">
                   <h3>
-                    <strong>Error 404 - Page Not Found</strong>
+                    <strong>Error 404 - Pagina niet gevonden</strong>
                   </h3>
                 </div>
               </section>

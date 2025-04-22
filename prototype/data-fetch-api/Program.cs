@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        policy => policy.WithOrigins("http://localhost:3001")
+        policy => policy.WithOrigins("http://localhost:5000")
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials());

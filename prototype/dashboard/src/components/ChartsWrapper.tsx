@@ -1,17 +1,17 @@
 // This component is meant to act as a wrapper for all four charts on the main page
 
 import { useState, useEffect } from "react";
-import { GenericChart } from "./GenericChart";
+import { FuelChart } from "./charts/FuelUsageChart";
+import { TripCostChart } from "./charts/TripCostChart";
 
 export const ChartsWrapper = () => {
   const [zoomedChart, setZoomedChart] = useState<number | null>(null);
 
-  const chartConfigs = [
-    { title: "Beladingsgraad", id: "chart1", type: "verticalbar" },
-    { title: "Barchart #2", id: "chart2", type: "verticalBar" },
-    { title: "Barchart #3", id: "chart3", type: "placeholder" },
-    { title: "Barchart #4", id: "chart4", type: "placeholder" },
-  ];
+    const chartConfigs = [
+        { type: "fuel", id: "fuelChart"},
+        { type: "tripCost", id: "tripChart"},
+        { type: "tripCost", id: "tripChart1"},
+    ];
 
   useEffect(() => {
     const onZoom = (e: any) => {
@@ -29,24 +29,23 @@ export const ChartsWrapper = () => {
           const isZoomed = zoomedChart === i;
           const isHidden = zoomedChart !== null && zoomedChart !== i;
 
-          return (
-            <div
-              key={cfg.id}
-              className={`chart-container ${
-                isZoomed ? "col-12 zoomed" : isHidden ? "d-none" : "col-md-6"
-              }`}
-            >
-              <GenericChart
-                title={cfg.title}
-                subtitle="Pretitel"
-                chartId={cfg.id}
-                chartType={cfg.type as any}
-                delayIndex={i}
-              />
+                    return (
+                        <div
+                            key={cfg.id}
+                            className={`chart-container ${isZoomed ? "col-12 zoomed" : isHidden ? "d-none" : "col-md-6"}`}
+                        >
+                            {cfg.type === "fuel" ? (
+                                <FuelChart delayIndex={i} />
+                            ) : cfg.type === "tripCost" ? (
+                                <TripCostChart delayIndex={i} />
+                            ) : cfg.type === "tripCost" ? (
+                                <FuelChart delayIndex={i} />
+                            ) : cfg.type === "tripCost"
+                            }
+                        </div>
+                    );
+                })}
             </div>
-          );
-        })}
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
