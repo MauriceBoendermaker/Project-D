@@ -13,8 +13,8 @@ import { Footer } from './components/misc/Footer';
 
 // Import components
 import { ChartsWrapper } from './components/ChartsWrapper';
-import { FuelChart } from "./components/FuelUsageChart";
-import { TripCostChart } from './components/TripCostChart';
+import { FuelChart } from "./components/charts/FuelUsageChart";
+import { TripCostChart } from './components/charts/TripCostChart';
 
 
 const App: React.FC = () => {
@@ -38,7 +38,7 @@ const App: React.FC = () => {
                             <section>
                                 <div className="g-0 pt-4">
                                     <h3>
-                                        <strong>Error 404 - Page Not Found</strong>
+                                        <strong>Error 404 - Pagina niet gevonden</strong>
                                     </h3>
                                 </div>
                             </section>
