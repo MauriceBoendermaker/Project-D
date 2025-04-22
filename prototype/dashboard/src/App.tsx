@@ -31,6 +31,9 @@ const App: React.FC = () => {
                     <Route path="/" element={<ChartsWrapper />} />
                     <Route path="/verbruik" element={<FuelChart />} />
                     <Route path="/benzinekosten" element={<TripCostChart />} />
+                    
+                    {/* Planning routes */}
+                    <Route path="/planning/voeg-rit-toe" />
 
                     <Route
                         path="/404"
