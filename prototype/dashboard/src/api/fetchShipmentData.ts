@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const API_URL = "http://localhost:3000/api/zending";
 
-type error = {
+export type error = {
   message: string;
 };
 // Fetch all shipments

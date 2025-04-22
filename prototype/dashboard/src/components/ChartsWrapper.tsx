@@ -11,7 +11,6 @@ export const ChartsWrapper = () => {
   const chartConfigs = [
     { type: "fuel", id: "fuelChart" },
     { type: "tripCost", id: "tripChart" },
-    { type: "tripCost", id: "tripChart1" },
     { type: "Beladingsgraad", id: "beladingsgraadChart" },
   ];
 
@@ -42,7 +41,7 @@ export const ChartsWrapper = () => {
                 <FuelChart delayIndex={i} />
               ) : cfg.type === "tripCost" ? (
                 <TripCostChart delayIndex={i} />
-              ) : cfg.type === "tripCost" ? (
+              ) : cfg.type === "Beladingsgraad" ? (
                 <LoadDegreeChart delayIndex={i} />
               ) : (
                 cfg.type === "tripCost"

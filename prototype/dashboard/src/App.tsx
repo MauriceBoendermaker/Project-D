@@ -20,6 +20,7 @@ import { Footer } from "./components/misc/Footer";
 import { ChartsWrapper } from "./components/ChartsWrapper";
 import { FuelChart } from "./components/charts/FuelUsageChart";
 import { TripCostChart } from "./components/charts/TripCostChart";
+import { LoadDegreeChart } from "components/charts/LoadDegreeChart";
 
 const App: React.FC = () => {
   return (
