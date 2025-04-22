@@ -63,7 +63,6 @@ export const Footer = () => {
                         flexDirection: 'column'
                     }}
                 >
-                    <p style={{ fontSize: '40px', color: 'white', marginBottom: '20px' }}>u i i a</p>
                     <img
                         src={oiaUiaGif}
                         alt="oia uia"
