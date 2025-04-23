@@ -2,8 +2,22 @@
 import profileImage from '../../assets/images/profile-image-placeholder@4x.png';
 import logoImage from '../../assets/images/lafeber logo transparant 1@2x.png';
 
+import { useAuth } from '../Context/AuthContext';
+import { useNavigate } from "react-router-dom";
+
+
 export const Nav = () => {
+    const { isLoggedIn, logout } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        alert("U bent uitgelogd.");
+        navigate("/login");
+    }
+    
     return (
+        <>
         <div className="container-fluid navbar-parent">
             <nav className="container-fluid navbar d-flex align-items-center">
                 {/* Logo */}
@@ -36,7 +50,13 @@ export const Nav = () => {
                         <div className="rounded-pill bg-white bg-opacity-50" style={{ width: '90px', height: '10px' }}></div>
                     </div>
                 </div>
+            {isLoggedIn && (
+                <button className="logout-button" onClick={handleLogout}>
+                    Logout
+                </button>
+            )}
             </nav>
         </div>
+        </>
     );
 };

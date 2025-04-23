@@ -1,10 +1,9 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-const PrivateLayout: React.FC = () => {
+export const PrivateLayout: React.FC = () => {
   const token = localStorage.getItem("token");
 
   return token ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
-export default PrivateLayout;
