@@ -53,4 +53,16 @@
     .login-status-container {
         margin-right: 100px;
     }
+
+    .logout-button {
+        color: white;
+        padding: 10px 5px;
+        background-color: $primary-25;
+        border-radius: $corner-radius;
+        box-shadow: $box-shadow;
+
+        &:hover {
+            background-color: $primary-light;
+        }
+    }
 }
