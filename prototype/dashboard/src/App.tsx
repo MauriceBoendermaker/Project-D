@@ -15,6 +15,7 @@ import { Footer } from './components/misc/Footer';
 import { ChartsWrapper } from './components/ChartsWrapper';
 import { FuelChart } from "./components/charts/FuelUsageChart";
 import { TripCostChart } from './components/charts/TripCostChart';
+import { TripOverview } from './components/planning/TripOverview';
 
 
 const App: React.FC = () => {
@@ -34,6 +35,7 @@ const App: React.FC = () => {
                     
                     {/* Planning routes */}
                     <Route path="/planning/voeg-rit-toe" />
+                    <Route path="/planning/toon-rit-overzicht" element={<TripOverview />} />
 
                     <Route
                         path="/404"
