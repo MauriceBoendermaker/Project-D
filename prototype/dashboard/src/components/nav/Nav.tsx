@@ -1,8 +1,13 @@
+import { useLocation } from "react-router-dom";
+
 // Import images
 import profileImage from '../../assets/images/profile-image-placeholder@4x.png';
 import logoImage from '../../assets/images/lafeber logo transparant 1@2x.png';
 
 export const Nav = () => {
+    const location = useLocation();
+    const currentPath = location.pathname;
+
     return (
         <div className="container-fluid navbar-parent">
             <nav className="container-fluid navbar d-flex align-items-center">
@@ -16,13 +21,27 @@ export const Nav = () => {
                 {/* Center nav link */}
                 <div className="nav-container position-absolute top-50 start-50 translate-middle">
                     <nav>
-                        <a href="/">Home</a>
+                        <a href="/" className={currentPath === "/" ? "active" : ""}>Home</a>
                         <div className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="/planning" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a
+                                className={`nav-link dropdown-toggle ${currentPath.startsWith("/planning") ? "active" : ""}`}
+                                href="/planning"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
                                 Planning
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="/planning/voeg-rit-toe">Voeg rit toe</a></li>
+                                <li>
+                                    <a
+                                        className={`dropdown-item ${currentPath === "/planning/voeg-rit-toe" ? "active" : ""}`}
+                                        href="/planning/voeg-rit-toe"
+                                    >
+                                        Voeg rit toe
+                                    </a>
+                                </li>
+                                </li>
                             </ul>
                         </div>
                     </nav>
