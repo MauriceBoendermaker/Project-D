@@ -33,7 +33,7 @@ export const LoginForm: React.FC = () => {
 
   return (
     <div className="p-4 max-w-sm mx-auto">
-      <form onSubmit={handleLogin} className="flex flex-col gap-2">
+      <form onSubmit={handleLogin} className="login-form">
         <input
           type="text"
           name="username"
@@ -52,10 +52,7 @@ export const LoginForm: React.FC = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button
-          type="submit"
-          className=""
-        >
+        <button type="submit" className="login-button">
           Login
         </button>
       </form>

@@ -1,0 +1,13 @@
+.login-form{
+    border: 2px solid #0e0d0d;
+}
+
+input{
+    display: block;
+    width: 100%;
+}
+
+.login-buton {
+    @extend %btn-primary;
+    
+}
