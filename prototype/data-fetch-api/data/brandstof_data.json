@@ -1,1695 +1,1695 @@
 [
   {
     "voertuig_id": "TRK-0",
-    "kenteken": "YMW-7-DLC",
-    "merk": "MAN",
-    "model": "XF",
+    "kenteken": "WSS-9-FVA",
+    "merk": "Mercedes",
+    "model": "R580",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2025-03-18T08:28:50 -01:00",
-        "afstand_km": 64,
-        "duurMinuten": 148,
-        "brandstof_verbruik_l": 7,
+        "datum": "2024-10-18T08:15:37",
+        "afstand_km": 99,
+        "duur_minuten": 85,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 14,
         "kosten": {
-          "onderhoud": 3.2049,
-          "verzekering": 2.263,
-          "afschrijving": 5.5636,
-          "totaleKosten": 12.9927
+          "onderhoud": 1.2619,
+          "verzekering": 2.1096,
+          "tolwegen": 2.2793
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2025-03-03T04:48:44 -01:00",
-        "afstand_km": 138,
-        "duurMinuten": 108,
-        "brandstof_verbruik_l": 18,
+        "datum": "2025-03-26T01:44:02",
+        "afstand_km": 145,
+        "duur_minuten": 166,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 5,
         "kosten": {
-          "onderhoud": 3.52,
-          "verzekering": 1.1087,
-          "afschrijving": 3.3262,
-          "totaleKosten": 11.9189
+          "onderhoud": 4.7326,
+          "verzekering": 2.9947,
+          "tolwegen": 5.7729
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2025-04-03T04:15:59 -02:00",
-        "afstand_km": 118,
-        "duurMinuten": 60,
-        "brandstof_verbruik_l": 19,
+        "datum": "2024-07-31T02:32:26",
+        "afstand_km": 103,
+        "duur_minuten": 135,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 9,
         "kosten": {
-          "onderhoud": 3.2093,
-          "verzekering": 1.4187,
-          "afschrijving": 2.5282,
-          "totaleKosten": 31.033
+          "onderhoud": 3.3319,
+          "verzekering": 1.1661,
+          "tolwegen": 6.7445
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2024-12-08T01:12:37 -01:00",
-        "afstand_km": 131,
-        "duurMinuten": 142,
-        "brandstof_verbruik_l": 18,
+        "datum": "2024-12-13T12:08:05",
+        "afstand_km": 74,
+        "duur_minuten": 76,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 1.4391,
-          "verzekering": 2.7001,
-          "afschrijving": 2.286,
-          "totaleKosten": 27.4625
+          "onderhoud": 3.9581,
+          "verzekering": 1.0504,
+          "tolwegen": 6.1749
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2025-04-20T01:01:50 -02:00",
-        "afstand_km": 145,
-        "duurMinuten": 63,
-        "brandstof_verbruik_l": 16,
+        "datum": "2024-06-01T02:31:51",
+        "afstand_km": 131,
+        "duur_minuten": 63,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 7,
         "kosten": {
-          "onderhoud": 3.6984,
-          "verzekering": 2.9024,
-          "afschrijving": 2.7128,
-          "totaleKosten": 18.3031
+          "onderhoud": 1.5914,
+          "verzekering": 2.8998,
+          "tolwegen": 5.8655
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2025-04-13T11:02:18 -02:00",
-        "afstand_km": 57,
-        "duurMinuten": 91,
-        "brandstof_verbruik_l": 14,
+        "datum": "2025-04-01T11:39:47",
+        "afstand_km": 60,
+        "duur_minuten": 122,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 10,
         "kosten": {
-          "onderhoud": 1.4065,
-          "verzekering": 2.4062,
-          "afschrijving": 5.2303,
-          "totaleKosten": 15.4197
+          "onderhoud": 4.5289,
+          "verzekering": 1.4734,
+          "tolwegen": 6.7036
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2025-01-04T03:17:29 -01:00",
-        "afstand_km": 96,
-        "duurMinuten": 84,
-        "brandstof_verbruik_l": 6,
+        "datum": "2024-10-28T04:51:29",
+        "afstand_km": 145,
+        "duur_minuten": 139,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 13,
         "kosten": {
-          "onderhoud": 2.3643,
-          "verzekering": 1.7246,
-          "afschrijving": 2.7732,
-          "totaleKosten": 12.7178
+          "onderhoud": 2.6597,
+          "verzekering": 2.3395,
+          "tolwegen": 4.4466
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2024-12-27T01:54:18 -01:00",
-        "afstand_km": 126,
-        "duurMinuten": 159,
-        "brandstof_verbruik_l": 12,
+        "datum": "2025-02-02T03:54:46",
+        "afstand_km": 130,
+        "duur_minuten": 151,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 11,
         "kosten": {
-          "onderhoud": 2.2857,
-          "verzekering": 1.2012,
-          "afschrijving": 3.0355,
-          "totaleKosten": 33.6802
+          "onderhoud": 3.8655,
+          "verzekering": 1.3131,
+          "tolwegen": 5.0371
         }
       }
     ]
   },
   {
     "voertuig_id": "TRK-1",
-    "kenteken": "MRD-2-MNM",
-    "merk": "Volvo",
-    "model": "R580",
+    "kenteken": "LJR-2-ASA",
+    "merk": "MAN",
+    "model": "Actros",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2024-12-09T05:20:44 -01:00",
-        "afstand_km": 53,
-        "duurMinuten": 90,
-        "brandstof_verbruik_l": 11,
+        "datum": "2024-09-13T11:21:21",
+        "afstand_km": 102,
+        "duur_minuten": 70,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 4.7374,
-          "verzekering": 1.5198,
-          "afschrijving": 4.4414,
-          "totaleKosten": 26.3055
+          "onderhoud": 4.249,
+          "verzekering": 1.1785,
+          "tolwegen": 4.5078
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2024-11-02T02:11:12 -01:00",
-        "afstand_km": 144,
-        "duurMinuten": 107,
-        "brandstof_verbruik_l": 11,
+        "datum": "2024-05-30T10:13:27",
+        "afstand_km": 105,
+        "duur_minuten": 87,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 5,
         "kosten": {
-          "onderhoud": 1.6463,
-          "verzekering": 2.0878,
-          "afschrijving": 3.2235,
-          "totaleKosten": 20.3659
+          "onderhoud": 3.3619,
+          "verzekering": 1.1851,
+          "tolwegen": 6.8792
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2024-12-04T06:08:00 -01:00",
-        "afstand_km": 132,
-        "duurMinuten": 105,
-        "brandstof_verbruik_l": 15,
+        "datum": "2024-05-03T07:36:28",
+        "afstand_km": 142,
+        "duur_minuten": 139,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 9,
         "kosten": {
-          "onderhoud": 1.8234,
-          "verzekering": 2.7247,
-          "afschrijving": 6.4443,
-          "totaleKosten": 30.0294
+          "onderhoud": 4.9567,
+          "verzekering": 1.3929,
+          "tolwegen": 2.8034
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2025-03-01T04:28:22 -01:00",
-        "afstand_km": 129,
-        "duurMinuten": 82,
-        "brandstof_verbruik_l": 5,
+        "datum": "2024-07-03T11:20:38",
+        "afstand_km": 66,
+        "duur_minuten": 103,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 8,
         "kosten": {
-          "onderhoud": 3.3293,
-          "verzekering": 1.0759,
-          "afschrijving": 5.7737,
-          "totaleKosten": 38.933
+          "onderhoud": 1.0303,
+          "verzekering": 2.8403,
+          "tolwegen": 3.2108
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2025-02-23T09:16:49 -01:00",
-        "afstand_km": 147,
-        "duurMinuten": 159,
-        "brandstof_verbruik_l": 11,
+        "datum": "2023-11-12T09:36:50",
+        "afstand_km": 105,
+        "duur_minuten": 82,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 3.7146,
-          "verzekering": 1.4015,
-          "afschrijving": 2.7451,
-          "totaleKosten": 10.8931
+          "onderhoud": 1.0234,
+          "verzekering": 2.0514,
+          "tolwegen": 4.174
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2025-02-12T11:51:56 -01:00",
-        "afstand_km": 109,
-        "duurMinuten": 107,
-        "brandstof_verbruik_l": 6,
+        "datum": "2025-02-14T06:46:21",
+        "afstand_km": 86,
+        "duur_minuten": 93,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 11,
         "kosten": {
-          "onderhoud": 4.1232,
-          "verzekering": 2.1604,
-          "afschrijving": 5.8327,
-          "totaleKosten": 21.0492
+          "onderhoud": 2.8452,
+          "verzekering": 1.7572,
+          "tolwegen": 4.0554
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2025-01-27T01:24:44 -01:00",
-        "afstand_km": 56,
-        "duurMinuten": 105,
-        "brandstof_verbruik_l": 12,
+        "datum": "2024-12-21T04:30:58",
+        "afstand_km": 142,
+        "duur_minuten": 145,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 8,
         "kosten": {
-          "onderhoud": 1.4014,
-          "verzekering": 1.1624,
-          "afschrijving": 6.6124,
-          "totaleKosten": 32.6202
+          "onderhoud": 3.7435,
+          "verzekering": 1.5084,
+          "tolwegen": 5.6712
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2025-01-30T11:41:38 -01:00",
-        "afstand_km": 63,
-        "duurMinuten": 153,
-        "brandstof_verbruik_l": 17,
+        "datum": "2024-04-30T12:06:29",
+        "afstand_km": 110,
+        "duur_minuten": 130,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 8,
         "kosten": {
-          "onderhoud": 4.1925,
-          "verzekering": 2.6181,
-          "afschrijving": 4.1824,
-          "totaleKosten": 35.1272
+          "onderhoud": 3.4973,
+          "verzekering": 1.438,
+          "tolwegen": 4.8181
         }
       }
     ]
   },
   {
     "voertuig_id": "TRK-2",
-    "kenteken": "GVC-0-FKR",
-    "merk": "DAF",
+    "kenteken": "BHC-5-DCM",
+    "merk": "MAN",
     "model": "R580",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2025-04-10T08:38:59 -02:00",
-        "afstand_km": 104,
-        "duurMinuten": 149,
-        "brandstof_verbruik_l": 11,
+        "datum": "2024-04-08T11:42:14",
+        "afstand_km": 145,
+        "duur_minuten": 105,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 13,
         "kosten": {
-          "onderhoud": 4.6038,
-          "verzekering": 2.4326,
-          "afschrijving": 2.0068,
-          "totaleKosten": 21.3572
+          "onderhoud": 2.1611,
+          "verzekering": 1.3453,
+          "tolwegen": 2.6727
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2025-03-07T05:54:52 -01:00",
-        "afstand_km": 76,
-        "duurMinuten": 64,
-        "brandstof_verbruik_l": 7,
+        "datum": "2024-01-27T04:30:54",
+        "afstand_km": 138,
+        "duur_minuten": 91,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 4.2075,
-          "verzekering": 1.8673,
-          "afschrijving": 5.4516,
-          "totaleKosten": 28.5125
+          "onderhoud": 3.4798,
+          "verzekering": 1.4163,
+          "tolwegen": 5.8202
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2024-11-28T05:34:53 -01:00",
-        "afstand_km": 96,
-        "duurMinuten": 65,
-        "brandstof_verbruik_l": 10,
+        "datum": "2024-04-20T11:58:12",
+        "afstand_km": 150,
+        "duur_minuten": 78,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 8,
         "kosten": {
-          "onderhoud": 2.3582,
-          "verzekering": 2.7507,
-          "afschrijving": 2.8692,
-          "totaleKosten": 37.9357
+          "onderhoud": 1.7681,
+          "verzekering": 2.3975,
+          "tolwegen": 2.2714
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2024-12-09T07:51:36 -01:00",
-        "afstand_km": 124,
-        "duurMinuten": 62,
+        "datum": "2023-12-15T08:57:50",
+        "afstand_km": 55,
+        "duur_minuten": 99,
+        "uurtarief": 11,
         "brandstof_verbruik_l": 9,
         "kosten": {
-          "onderhoud": 2.5374,
-          "verzekering": 2.1461,
-          "afschrijving": 5.2714,
-          "totaleKosten": 39.3476
+          "onderhoud": 1.5492,
+          "verzekering": 2.9785,
+          "tolwegen": 6.2296
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2025-01-07T11:44:29 -01:00",
-        "afstand_km": 119,
-        "duurMinuten": 124,
-        "brandstof_verbruik_l": 18,
+        "datum": "2024-11-03T06:16:43",
+        "afstand_km": 62,
+        "duur_minuten": 105,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 9,
         "kosten": {
-          "onderhoud": 3.9634,
-          "verzekering": 2.5891,
-          "afschrijving": 3.434,
-          "totaleKosten": 14.9995
+          "onderhoud": 2.0839,
+          "verzekering": 1.7245,
+          "tolwegen": 2.7881
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2025-02-27T05:07:09 -01:00",
-        "afstand_km": 53,
-        "duurMinuten": 124,
-        "brandstof_verbruik_l": 20,
+        "datum": "2025-01-06T02:38:54",
+        "afstand_km": 54,
+        "duur_minuten": 157,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 13,
         "kosten": {
-          "onderhoud": 4.4686,
-          "verzekering": 1.9765,
-          "afschrijving": 5.1478,
-          "totaleKosten": 22.9517
+          "onderhoud": 4.9553,
+          "verzekering": 1.1199,
+          "tolwegen": 2.9432
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2025-01-27T08:00:43 -01:00",
-        "afstand_km": 66,
-        "duurMinuten": 140,
-        "brandstof_verbruik_l": 9,
+        "datum": "2024-01-20T09:56:20",
+        "afstand_km": 58,
+        "duur_minuten": 131,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 1.5799,
-          "verzekering": 1.3353,
-          "afschrijving": 2.9164,
-          "totaleKosten": 30.1029
+          "onderhoud": 4.0131,
+          "verzekering": 1.7272,
+          "tolwegen": 4.5929
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2025-03-28T07:08:26 -01:00",
-        "afstand_km": 127,
-        "duurMinuten": 125,
-        "brandstof_verbruik_l": 19,
+        "datum": "2023-11-20T04:31:16",
+        "afstand_km": 75,
+        "duur_minuten": 156,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 11,
         "kosten": {
-          "onderhoud": 3.8974,
-          "verzekering": 1.2347,
-          "afschrijving": 3.0395,
-          "totaleKosten": 14.9211
+          "onderhoud": 4.1631,
+          "verzekering": 1.496,
+          "tolwegen": 4.0792
         }
       }
     ]
   },
   {
     "voertuig_id": "TRK-3",
-    "kenteken": "LWM-4-DWS",
-    "merk": "Scania",
+    "kenteken": "REA-9-BJM",
+    "merk": "Volvo",
     "model": "XF",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2025-02-10T01:28:04 -01:00",
-        "afstand_km": 52,
-        "duurMinuten": 155,
-        "brandstof_verbruik_l": 12,
+        "datum": "2024-08-19T08:58:15",
+        "afstand_km": 61,
+        "duur_minuten": 85,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 5,
         "kosten": {
-          "onderhoud": 3.4576,
-          "verzekering": 2.0267,
-          "afschrijving": 5.4398,
-          "totaleKosten": 34.9265
+          "onderhoud": 1.6635,
+          "verzekering": 2.8389,
+          "tolwegen": 2.8856
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2025-01-01T02:55:56 -01:00",
-        "afstand_km": 101,
-        "duurMinuten": 81,
-        "brandstof_verbruik_l": 17,
+        "datum": "2024-09-03T03:57:34",
+        "afstand_km": 121,
+        "duur_minuten": 91,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 14,
         "kosten": {
-          "onderhoud": 3.8545,
-          "verzekering": 1.6816,
-          "afschrijving": 6.3334,
-          "totaleKosten": 18.2717
+          "onderhoud": 4.7141,
+          "verzekering": 2.5369,
+          "tolwegen": 6.9286
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2025-04-22T05:56:26 -02:00",
-        "afstand_km": 70,
-        "duurMinuten": 168,
-        "brandstof_verbruik_l": 5,
+        "datum": "2024-03-25T03:13:21",
+        "afstand_km": 97,
+        "duur_minuten": 83,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 12,
         "kosten": {
-          "onderhoud": 4.3492,
-          "verzekering": 1.7712,
-          "afschrijving": 3.0746,
-          "totaleKosten": 16.5401
+          "onderhoud": 2.9336,
+          "verzekering": 1.0638,
+          "tolwegen": 3.17
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2024-11-27T06:12:58 -01:00",
-        "afstand_km": 145,
-        "duurMinuten": 80,
-        "brandstof_verbruik_l": 16,
+        "datum": "2025-02-28T09:08:05",
+        "afstand_km": 65,
+        "duur_minuten": 154,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 11,
         "kosten": {
-          "onderhoud": 2.5316,
-          "verzekering": 1.7488,
-          "afschrijving": 3.833,
-          "totaleKosten": 38.4121
+          "onderhoud": 4.9283,
+          "verzekering": 2.3718,
+          "tolwegen": 6.6996
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2025-01-07T12:38:24 -01:00",
-        "afstand_km": 138,
-        "duurMinuten": 135,
-        "brandstof_verbruik_l": 12,
+        "datum": "2025-03-07T05:35:54",
+        "afstand_km": 105,
+        "duur_minuten": 155,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 8,
         "kosten": {
-          "onderhoud": 2.9717,
-          "verzekering": 1.1147,
-          "afschrijving": 5.8653,
-          "totaleKosten": 34.5141
+          "onderhoud": 3.6244,
+          "verzekering": 1.5804,
+          "tolwegen": 3.9235
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2025-01-26T11:54:16 -01:00",
-        "afstand_km": 60,
-        "duurMinuten": 83,
-        "brandstof_verbruik_l": 5,
+        "datum": "2023-11-07T12:51:18",
+        "afstand_km": 72,
+        "duur_minuten": 134,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 12,
         "kosten": {
-          "onderhoud": 3.5699,
-          "verzekering": 1.5978,
-          "afschrijving": 4.6566,
-          "totaleKosten": 20.3694
+          "onderhoud": 2.4027,
+          "verzekering": 1.5704,
+          "tolwegen": 2.1408
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2025-02-10T03:01:05 -01:00",
-        "afstand_km": 59,
-        "duurMinuten": 72,
-        "brandstof_verbruik_l": 9,
+        "datum": "2024-09-18T06:01:28",
+        "afstand_km": 128,
+        "duur_minuten": 77,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 13,
         "kosten": {
-          "onderhoud": 2.1928,
-          "verzekering": 2.0292,
-          "afschrijving": 2.8267,
-          "totaleKosten": 26.2704
+          "onderhoud": 3.6093,
+          "verzekering": 2.9385,
+          "tolwegen": 6.3965
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2025-04-08T03:36:53 -02:00",
-        "afstand_km": 74,
-        "duurMinuten": 67,
-        "brandstof_verbruik_l": 18,
+        "datum": "2024-12-31T09:03:26",
+        "afstand_km": 132,
+        "duur_minuten": 108,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 7,
         "kosten": {
-          "onderhoud": 3.0544,
-          "verzekering": 2.6017,
-          "afschrijving": 4.7837,
-          "totaleKosten": 27.8612
+          "onderhoud": 2.7855,
+          "verzekering": 1.5601,
+          "tolwegen": 4.802
         }
       }
     ]
   },
   {
     "voertuig_id": "TRK-4",
-    "kenteken": "BGE-5-GMK",
-    "merk": "Scania",
-    "model": "XF",
-    "brandstof_type": "Diesel",
-    "ritten": [
-      {
-        "rit_id": "RIT-0",
-        "datum": "2025-03-27T01:40:38 -01:00",
-        "afstand_km": 117,
-        "duurMinuten": 75,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 2.332,
-          "verzekering": 2.6556,
-          "afschrijving": 6.3872,
-          "totaleKosten": 20.7476
-        }
-      },
-      {
-        "rit_id": "RIT-1",
-        "datum": "2024-11-12T01:19:44 -01:00",
-        "afstand_km": 103,
-        "duurMinuten": 147,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 3.0627,
-          "verzekering": 1.8549,
-          "afschrijving": 6.1191,
-          "totaleKosten": 34.6931
-        }
-      },
-      {
-        "rit_id": "RIT-2",
-        "datum": "2024-11-29T01:12:28 -01:00",
-        "afstand_km": 150,
-        "duurMinuten": 174,
-        "brandstof_verbruik_l": 14,
-        "kosten": {
-          "onderhoud": 3.35,
-          "verzekering": 2.7003,
-          "afschrijving": 4.2159,
-          "totaleKosten": 17.3926
-        }
-      },
-      {
-        "rit_id": "RIT-3",
-        "datum": "2025-04-12T03:48:04 -02:00",
-        "afstand_km": 74,
-        "duurMinuten": 80,
-        "brandstof_verbruik_l": 20,
-        "kosten": {
-          "onderhoud": 3.0804,
-          "verzekering": 1.3434,
-          "afschrijving": 2.4002,
-          "totaleKosten": 22.7867
-        }
-      },
-      {
-        "rit_id": "RIT-4",
-        "datum": "2024-11-03T05:53:11 -01:00",
-        "afstand_km": 87,
-        "duurMinuten": 67,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 1.5244,
-          "verzekering": 2.2222,
-          "afschrijving": 4.5506,
-          "totaleKosten": 21.6007
-        }
-      },
-      {
-        "rit_id": "RIT-5",
-        "datum": "2025-02-12T03:12:18 -01:00",
-        "afstand_km": 123,
-        "duurMinuten": 172,
-        "brandstof_verbruik_l": 10,
-        "kosten": {
-          "onderhoud": 2.6213,
-          "verzekering": 2.9702,
-          "afschrijving": 5.1837,
-          "totaleKosten": 27.1597
-        }
-      },
-      {
-        "rit_id": "RIT-6",
-        "datum": "2025-02-16T02:32:25 -01:00",
-        "afstand_km": 50,
-        "duurMinuten": 81,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 4.4391,
-          "verzekering": 1.7852,
-          "afschrijving": 5.951,
-          "totaleKosten": 31.4589
-        }
-      },
-      {
-        "rit_id": "RIT-7",
-        "datum": "2025-01-18T09:54:37 -01:00",
-        "afstand_km": 84,
-        "duurMinuten": 64,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 3.0133,
-          "verzekering": 2.7186,
-          "afschrijving": 4.7418,
-          "totaleKosten": 29.7881
-        }
-      }
-    ]
-  },
-  {
-    "voertuig_id": "TRK-5",
-    "kenteken": "WHB-2-GMJ",
-    "merk": "DAF",
-    "model": "XF",
-    "brandstof_type": "Diesel",
-    "ritten": [
-      {
-        "rit_id": "RIT-0",
-        "datum": "2025-01-08T10:48:08 -01:00",
-        "afstand_km": 51,
-        "duurMinuten": 126,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 2.3102,
-          "verzekering": 1.936,
-          "afschrijving": 3.3187,
-          "totaleKosten": 16.1032
-        }
-      },
-      {
-        "rit_id": "RIT-1",
-        "datum": "2024-11-16T02:54:21 -01:00",
-        "afstand_km": 85,
-        "duurMinuten": 81,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 4.3426,
-          "verzekering": 2.566,
-          "afschrijving": 2.2799,
-          "totaleKosten": 38.3616
-        }
-      },
-      {
-        "rit_id": "RIT-2",
-        "datum": "2024-12-30T02:57:16 -01:00",
-        "afstand_km": 116,
-        "duurMinuten": 140,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 2.8881,
-          "verzekering": 2.2368,
-          "afschrijving": 4.0481,
-          "totaleKosten": 25.5703
-        }
-      },
-      {
-        "rit_id": "RIT-3",
-        "datum": "2024-12-24T10:39:19 -01:00",
-        "afstand_km": 84,
-        "duurMinuten": 101,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 4.2824,
-          "verzekering": 1.4167,
-          "afschrijving": 2.1524,
-          "totaleKosten": 28.4983
-        }
-      },
-      {
-        "rit_id": "RIT-4",
-        "datum": "2024-11-23T11:53:44 -01:00",
-        "afstand_km": 123,
-        "duurMinuten": 65,
-        "brandstof_verbruik_l": 19,
-        "kosten": {
-          "onderhoud": 1.6161,
-          "verzekering": 1.3835,
-          "afschrijving": 5.2118,
-          "totaleKosten": 16.4312
-        }
-      },
-      {
-        "rit_id": "RIT-5",
-        "datum": "2024-11-07T08:28:53 -01:00",
-        "afstand_km": 131,
-        "duurMinuten": 82,
-        "brandstof_verbruik_l": 17,
-        "kosten": {
-          "onderhoud": 2.4743,
-          "verzekering": 1.3327,
-          "afschrijving": 4.0717,
-          "totaleKosten": 21.2378
-        }
-      },
-      {
-        "rit_id": "RIT-6",
-        "datum": "2025-04-04T11:49:04 -02:00",
-        "afstand_km": 86,
-        "duurMinuten": 66,
-        "brandstof_verbruik_l": 16,
-        "kosten": {
-          "onderhoud": 3.7451,
-          "verzekering": 1.9866,
-          "afschrijving": 6.466,
-          "totaleKosten": 27.7001
-        }
-      },
-      {
-        "rit_id": "RIT-7",
-        "datum": "2024-11-29T01:41:02 -01:00",
-        "afstand_km": 103,
-        "duurMinuten": 74,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 1.27,
-          "verzekering": 2.8844,
-          "afschrijving": 3.4785,
-          "totaleKosten": 27.3708
-        }
-      }
-    ]
-  },
-  {
-    "voertuig_id": "TRK-6",
-    "kenteken": "ACT-1-ERN",
+    "kenteken": "RHA-5-PKM",
     "merk": "Scania",
     "model": "TGX",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2025-03-26T03:08:50 -01:00",
-        "afstand_km": 63,
-        "duurMinuten": 84,
-        "brandstof_verbruik_l": 15,
+        "datum": "2023-12-15T02:02:23",
+        "afstand_km": 149,
+        "duur_minuten": 133,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 7,
         "kosten": {
-          "onderhoud": 1.1225,
-          "verzekering": 1.1328,
-          "afschrijving": 5.8547,
-          "totaleKosten": 27.8692
+          "onderhoud": 3.2926,
+          "verzekering": 2.7021,
+          "tolwegen": 6.7215
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2025-01-28T11:48:15 -01:00",
-        "afstand_km": 149,
-        "duurMinuten": 109,
-        "brandstof_verbruik_l": 11,
+        "datum": "2024-05-10T03:54:48",
+        "afstand_km": 51,
+        "duur_minuten": 131,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 4.2646,
-          "verzekering": 2.0165,
-          "afschrijving": 2.3685,
-          "totaleKosten": 31.8559
+          "onderhoud": 3.5163,
+          "verzekering": 2.9419,
+          "tolwegen": 3.6209
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2025-01-08T01:47:23 -01:00",
-        "afstand_km": 72,
-        "duurMinuten": 66,
-        "brandstof_verbruik_l": 18,
+        "datum": "2025-02-22T01:15:09",
+        "afstand_km": 120,
+        "duur_minuten": 112,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 6,
         "kosten": {
-          "onderhoud": 1.5916,
-          "verzekering": 1.6473,
-          "afschrijving": 5.5313,
-          "totaleKosten": 33.3505
+          "onderhoud": 4.0057,
+          "verzekering": 2.1734,
+          "tolwegen": 6.879
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2025-01-16T07:48:08 -01:00",
-        "afstand_km": 145,
-        "duurMinuten": 118,
-        "brandstof_verbruik_l": 7,
+        "datum": "2024-05-01T02:32:26",
+        "afstand_km": 143,
+        "duur_minuten": 122,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 11,
         "kosten": {
-          "onderhoud": 4.69,
-          "verzekering": 1.9013,
-          "afschrijving": 2.0512,
-          "totaleKosten": 37.3658
+          "onderhoud": 3.9813,
+          "verzekering": 1.7604,
+          "tolwegen": 6.8475
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2024-11-14T08:33:37 -01:00",
-        "afstand_km": 120,
-        "duurMinuten": 69,
-        "brandstof_verbruik_l": 7,
+        "datum": "2024-05-20T02:58:07",
+        "afstand_km": 88,
+        "duur_minuten": 119,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 9,
         "kosten": {
-          "onderhoud": 1.6632,
-          "verzekering": 1.5177,
-          "afschrijving": 2.1085,
-          "totaleKosten": 13.065
+          "onderhoud": 3.9361,
+          "verzekering": 2.7914,
+          "tolwegen": 4.8016
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2024-12-24T05:21:01 -01:00",
-        "afstand_km": 112,
-        "duurMinuten": 115,
-        "brandstof_verbruik_l": 16,
+        "datum": "2023-12-04T08:18:44",
+        "afstand_km": 86,
+        "duur_minuten": 88,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 8,
         "kosten": {
-          "onderhoud": 4.4233,
-          "verzekering": 2.5044,
-          "afschrijving": 6.7401,
-          "totaleKosten": 15.6725
+          "onderhoud": 4.9258,
+          "verzekering": 1.7626,
+          "tolwegen": 4.1523
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2024-11-03T10:24:45 -01:00",
-        "afstand_km": 94,
-        "duurMinuten": 130,
-        "brandstof_verbruik_l": 6,
+        "datum": "2025-01-14T12:33:03",
+        "afstand_km": 115,
+        "duur_minuten": 118,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 12,
         "kosten": {
-          "onderhoud": 1.6846,
-          "verzekering": 2.1155,
-          "afschrijving": 4.5201,
-          "totaleKosten": 39.6605
+          "onderhoud": 2.1245,
+          "verzekering": 2.3563,
+          "tolwegen": 6.8249
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2025-03-01T03:23:42 -01:00",
-        "afstand_km": 146,
-        "duurMinuten": 105,
+        "datum": "2024-03-18T03:58:41",
+        "afstand_km": 131,
+        "duur_minuten": 77,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 1.4812,
+          "verzekering": 2.4314,
+          "tolwegen": 4.1645
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-5",
+    "kenteken": "LWE-0-MLS",
+    "merk": "Volvo",
+    "model": "Actros",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2024-09-27T07:26:22",
+        "afstand_km": 83,
+        "duur_minuten": 65,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 13,
+        "kosten": {
+          "onderhoud": 3.7855,
+          "verzekering": 2.6823,
+          "tolwegen": 3.5656
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2023-11-03T10:52:01",
+        "afstand_km": 89,
+        "duur_minuten": 78,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 8,
+        "kosten": {
+          "onderhoud": 4.8407,
+          "verzekering": 1.8255,
+          "tolwegen": 3.8958
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2024-01-10T06:38:36",
+        "afstand_km": 58,
+        "duur_minuten": 130,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 15,
+        "kosten": {
+          "onderhoud": 2.4891,
+          "verzekering": 2.071,
+          "tolwegen": 5.6869
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2024-11-01T04:58:55",
+        "afstand_km": 78,
+        "duur_minuten": 127,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 8,
+        "kosten": {
+          "onderhoud": 1.3709,
+          "verzekering": 2.0482,
+          "tolwegen": 2.9221
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2024-08-20T09:03:59",
+        "afstand_km": 115,
+        "duur_minuten": 109,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 3.1182,
+          "verzekering": 1.1052,
+          "tolwegen": 2.854
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-02-06T03:43:04",
+        "afstand_km": 120,
+        "duur_minuten": 79,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 14,
+        "kosten": {
+          "onderhoud": 3.725,
+          "verzekering": 2.7109,
+          "tolwegen": 5.4403
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2024-06-30T07:06:23",
+        "afstand_km": 53,
+        "duur_minuten": 83,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 13,
+        "kosten": {
+          "onderhoud": 4.7198,
+          "verzekering": 2.7332,
+          "tolwegen": 6.3281
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2024-05-11T09:23:47",
+        "afstand_km": 84,
+        "duur_minuten": 149,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 3.1849,
+          "verzekering": 2.583,
+          "tolwegen": 4.11
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-6",
+    "kenteken": "SIN-9-FGG",
+    "merk": "DAF",
+    "model": "TGX",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2024-07-06T12:51:00",
+        "afstand_km": 138,
+        "duur_minuten": 73,
+        "uurtarief": 10,
         "brandstof_verbruik_l": 5,
         "kosten": {
-          "onderhoud": 3.2368,
-          "verzekering": 2.8891,
-          "afschrijving": 4.8106,
-          "totaleKosten": 24.4786
+          "onderhoud": 3.6527,
+          "verzekering": 2.7997,
+          "tolwegen": 5.5756
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2024-12-28T12:21:20",
+        "afstand_km": 93,
+        "duur_minuten": 84,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 14,
+        "kosten": {
+          "onderhoud": 1.882,
+          "verzekering": 2.6449,
+          "tolwegen": 2.0267
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2024-06-25T03:25:05",
+        "afstand_km": 137,
+        "duur_minuten": 97,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 10,
+        "kosten": {
+          "onderhoud": 1.1824,
+          "verzekering": 2.6353,
+          "tolwegen": 2.9352
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2024-10-20T04:50:04",
+        "afstand_km": 146,
+        "duur_minuten": 72,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 3.8801,
+          "verzekering": 1.6493,
+          "tolwegen": 4.2135
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2024-05-08T05:24:12",
+        "afstand_km": 112,
+        "duur_minuten": 104,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 1.7831,
+          "verzekering": 2.4826,
+          "tolwegen": 5.5209
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-07-12T05:48:17",
+        "afstand_km": 140,
+        "duur_minuten": 140,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 4.2644,
+          "verzekering": 2.5836,
+          "tolwegen": 2.8057
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2024-05-16T09:01:51",
+        "afstand_km": 102,
+        "duur_minuten": 139,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 13,
+        "kosten": {
+          "onderhoud": 3.2315,
+          "verzekering": 2.5838,
+          "tolwegen": 5.1345
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2024-09-03T04:24:09",
+        "afstand_km": 70,
+        "duur_minuten": 153,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 13,
+        "kosten": {
+          "onderhoud": 3.2902,
+          "verzekering": 1.7933,
+          "tolwegen": 3.6001
         }
       }
     ]
   },
   {
     "voertuig_id": "TRK-7",
-    "kenteken": "DKD-1-KCA",
+    "kenteken": "GPH-6-WRM",
     "merk": "MAN",
-    "model": "FH16",
+    "model": "TGX",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2025-01-14T07:54:46 -01:00",
-        "afstand_km": 91,
-        "duurMinuten": 166,
-        "brandstof_verbruik_l": 20,
+        "datum": "2024-03-01T08:29:47",
+        "afstand_km": 123,
+        "duur_minuten": 146,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 7,
         "kosten": {
-          "onderhoud": 4.001,
-          "verzekering": 1.3637,
-          "afschrijving": 6.8704,
-          "totaleKosten": 30.5212
+          "onderhoud": 3.573,
+          "verzekering": 1.7159,
+          "tolwegen": 2.906
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2025-01-15T11:25:03 -01:00",
-        "afstand_km": 85,
-        "duurMinuten": 121,
-        "brandstof_verbruik_l": 16,
+        "datum": "2024-04-25T06:17:24",
+        "afstand_km": 133,
+        "duur_minuten": 92,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 6,
         "kosten": {
-          "onderhoud": 1.1841,
-          "verzekering": 2.4264,
-          "afschrijving": 5.0871,
-          "totaleKosten": 20.9881
+          "onderhoud": 2.8948,
+          "verzekering": 2.5125,
+          "tolwegen": 3.3154
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2025-01-24T09:30:13 -01:00",
-        "afstand_km": 58,
-        "duurMinuten": 73,
-        "brandstof_verbruik_l": 20,
+        "datum": "2024-04-10T09:07:06",
+        "afstand_km": 115,
+        "duur_minuten": 67,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 5,
         "kosten": {
-          "onderhoud": 1.1873,
-          "verzekering": 1.2014,
-          "afschrijving": 2.9772,
-          "totaleKosten": 19.8512
+          "onderhoud": 4.1727,
+          "verzekering": 1.7595,
+          "tolwegen": 2.2234
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2025-04-04T12:39:32 -02:00",
-        "afstand_km": 82,
-        "duurMinuten": 67,
-        "brandstof_verbruik_l": 14,
+        "datum": "2024-10-21T02:21:38",
+        "afstand_km": 116,
+        "duur_minuten": 149,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 12,
         "kosten": {
-          "onderhoud": 2.6338,
-          "verzekering": 1.5469,
-          "afschrijving": 2.7285,
-          "totaleKosten": 19.8199
+          "onderhoud": 1.5337,
+          "verzekering": 2.5465,
+          "tolwegen": 2.1029
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2024-11-27T07:34:24 -01:00",
-        "afstand_km": 101,
-        "duurMinuten": 154,
-        "brandstof_verbruik_l": 9,
+        "datum": "2023-12-03T01:01:29",
+        "afstand_km": 111,
+        "duur_minuten": 61,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 7,
         "kosten": {
-          "onderhoud": 4.6562,
-          "verzekering": 1.3158,
-          "afschrijving": 5.5669,
-          "totaleKosten": 30.8894
+          "onderhoud": 1.5431,
+          "verzekering": 1.5894,
+          "tolwegen": 6.9955
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2025-03-16T02:49:00 -01:00",
-        "afstand_km": 133,
-        "duurMinuten": 137,
-        "brandstof_verbruik_l": 18,
+        "datum": "2025-01-05T05:29:31",
+        "afstand_km": 66,
+        "duur_minuten": 141,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 5,
         "kosten": {
-          "onderhoud": 4.5398,
-          "verzekering": 2.3523,
-          "afschrijving": 3.84,
-          "totaleKosten": 38.2246
+          "onderhoud": 1.3893,
+          "verzekering": 2.31,
+          "tolwegen": 4.2113
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2025-03-31T12:27:23 -02:00",
-        "afstand_km": 59,
-        "duurMinuten": 114,
-        "brandstof_verbruik_l": 19,
+        "datum": "2024-11-30T06:33:42",
+        "afstand_km": 138,
+        "duur_minuten": 89,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 10,
         "kosten": {
-          "onderhoud": 3.0952,
-          "verzekering": 1.629,
-          "afschrijving": 2.6854,
-          "totaleKosten": 32.3878
+          "onderhoud": 1.4473,
+          "verzekering": 2.6136,
+          "tolwegen": 5.3174
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2025-01-03T04:07:40 -01:00",
-        "afstand_km": 99,
-        "duurMinuten": 78,
-        "brandstof_verbruik_l": 11,
+        "datum": "2023-12-26T02:43:57",
+        "afstand_km": 55,
+        "duur_minuten": 77,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 9,
         "kosten": {
-          "onderhoud": 3.5619,
-          "verzekering": 1.9169,
-          "afschrijving": 5.068,
-          "totaleKosten": 15.5745
+          "onderhoud": 4.2136,
+          "verzekering": 1.4074,
+          "tolwegen": 3.5037
         }
       }
     ]
   },
   {
     "voertuig_id": "TRK-8",
-    "kenteken": "DAC-9-BLS",
-    "merk": "MAN",
-    "model": "R580",
+    "kenteken": "MJA-7-DHJ",
+    "merk": "Scania",
+    "model": "FH16",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2024-11-06T09:28:42 -01:00",
-        "afstand_km": 83,
-        "duurMinuten": 78,
-        "brandstof_verbruik_l": 13,
+        "datum": "2024-04-16T11:22:01",
+        "afstand_km": 84,
+        "duur_minuten": 148,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 6,
         "kosten": {
-          "onderhoud": 4.5475,
-          "verzekering": 1.431,
-          "afschrijving": 2.1823,
-          "totaleKosten": 17.3325
+          "onderhoud": 1.8275,
+          "verzekering": 1.9083,
+          "tolwegen": 4.4232
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2025-02-23T03:23:04 -01:00",
-        "afstand_km": 81,
-        "duurMinuten": 110,
-        "brandstof_verbruik_l": 13,
+        "datum": "2024-07-29T08:40:23",
+        "afstand_km": 111,
+        "duur_minuten": 173,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 7,
         "kosten": {
-          "onderhoud": 2.3589,
-          "verzekering": 1.5614,
-          "afschrijving": 5.6046,
-          "totaleKosten": 18.8096
+          "onderhoud": 4.5807,
+          "verzekering": 2.9355,
+          "tolwegen": 6.5686
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2025-01-28T04:40:05 -01:00",
-        "afstand_km": 98,
-        "duurMinuten": 108,
-        "brandstof_verbruik_l": 7,
+        "datum": "2024-09-22T12:00:38",
+        "afstand_km": 121,
+        "duur_minuten": 100,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 14,
         "kosten": {
-          "onderhoud": 3.4551,
-          "verzekering": 2.4198,
-          "afschrijving": 3.6956,
-          "totaleKosten": 20.2311
+          "onderhoud": 3.8472,
+          "verzekering": 1.03,
+          "tolwegen": 2.5585
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2025-03-25T03:27:38 -01:00",
-        "afstand_km": 72,
-        "duurMinuten": 174,
-        "brandstof_verbruik_l": 15,
+        "datum": "2024-11-14T05:16:19",
+        "afstand_km": 60,
+        "duur_minuten": 93,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 5,
         "kosten": {
-          "onderhoud": 4.2162,
-          "verzekering": 1.1023,
-          "afschrijving": 6.24,
-          "totaleKosten": 16.392
+          "onderhoud": 3.6185,
+          "verzekering": 2.1686,
+          "tolwegen": 4.9652
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2025-03-08T10:55:41 -01:00",
-        "afstand_km": 119,
-        "duurMinuten": 157,
-        "brandstof_verbruik_l": 19,
+        "datum": "2024-07-20T02:01:12",
+        "afstand_km": 129,
+        "duur_minuten": 134,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 11,
         "kosten": {
-          "onderhoud": 2.6603,
-          "verzekering": 1.4237,
-          "afschrijving": 2.0031,
-          "totaleKosten": 28.0185
+          "onderhoud": 2.2115,
+          "verzekering": 1.5214,
+          "tolwegen": 2.3628
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2024-11-19T11:29:19 -01:00",
-        "afstand_km": 140,
-        "duurMinuten": 112,
-        "brandstof_verbruik_l": 11,
+        "datum": "2024-05-01T08:22:10",
+        "afstand_km": 52,
+        "duur_minuten": 146,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 2.1005,
-          "verzekering": 1.7672,
-          "afschrijving": 2.3314,
-          "totaleKosten": 16.4876
+          "onderhoud": 4.6129,
+          "verzekering": 2.8195,
+          "tolwegen": 5.4884
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2024-12-07T04:42:55 -01:00",
-        "afstand_km": 122,
-        "duurMinuten": 125,
-        "brandstof_verbruik_l": 15,
+        "datum": "2024-06-19T07:03:58",
+        "afstand_km": 52,
+        "duur_minuten": 165,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 11,
         "kosten": {
-          "onderhoud": 2.9621,
-          "verzekering": 2.0484,
-          "afschrijving": 5.4495,
-          "totaleKosten": 12.6818
+          "onderhoud": 3.0334,
+          "verzekering": 1.3441,
+          "tolwegen": 6.7394
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2025-02-02T04:18:43 -01:00",
-        "afstand_km": 88,
-        "duurMinuten": 105,
+        "datum": "2024-05-22T05:10:37",
+        "afstand_km": 83,
+        "duur_minuten": 174,
+        "uurtarief": 11,
         "brandstof_verbruik_l": 6,
         "kosten": {
-          "onderhoud": 2.3568,
-          "verzekering": 1.6267,
-          "afschrijving": 4.0778,
-          "totaleKosten": 33.4053
+          "onderhoud": 3.051,
+          "verzekering": 1.9018,
+          "tolwegen": 5.1816
         }
       }
     ]
   },
   {
     "voertuig_id": "TRK-9",
-    "kenteken": "LJL-5-NNW",
+    "kenteken": "TBM-6-BNT",
     "merk": "Scania",
-    "model": "FH16",
+    "model": "Actros",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2024-11-29T07:02:18 -01:00",
-        "afstand_km": 70,
-        "duurMinuten": 174,
-        "brandstof_verbruik_l": 9,
+        "datum": "2024-08-03T04:36:22",
+        "afstand_km": 122,
+        "duur_minuten": 99,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 10,
         "kosten": {
-          "onderhoud": 4.5891,
-          "verzekering": 2.3513,
-          "afschrijving": 6.5276,
-          "totaleKosten": 14.6757
+          "onderhoud": 3.9304,
+          "verzekering": 1.5277,
+          "tolwegen": 6.4436
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2025-03-08T10:17:00 -01:00",
-        "afstand_km": 72,
-        "duurMinuten": 140,
-        "brandstof_verbruik_l": 18,
+        "datum": "2024-03-20T01:15:59",
+        "afstand_km": 140,
+        "duur_minuten": 108,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 5,
         "kosten": {
-          "onderhoud": 4.7129,
-          "verzekering": 1.5289,
-          "afschrijving": 4.7543,
-          "totaleKosten": 28.8857
+          "onderhoud": 1.2406,
+          "verzekering": 1.4615,
+          "tolwegen": 6.925
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2025-01-07T06:48:12 -01:00",
-        "afstand_km": 79,
-        "duurMinuten": 66,
-        "brandstof_verbruik_l": 13,
+        "datum": "2023-12-27T04:06:12",
+        "afstand_km": 82,
+        "duur_minuten": 113,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 8,
         "kosten": {
-          "onderhoud": 2.7616,
-          "verzekering": 1.7924,
-          "afschrijving": 3.4244,
-          "totaleKosten": 32.9612
+          "onderhoud": 1.9387,
+          "verzekering": 1.8372,
+          "tolwegen": 6.7141
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2025-01-24T11:34:46 -01:00",
-        "afstand_km": 87,
-        "duurMinuten": 87,
-        "brandstof_verbruik_l": 6,
+        "datum": "2024-07-17T02:26:40",
+        "afstand_km": 51,
+        "duur_minuten": 168,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 7,
         "kosten": {
-          "onderhoud": 3.0974,
-          "verzekering": 1.1368,
-          "afschrijving": 5.2682,
-          "totaleKosten": 36.9627
+          "onderhoud": 3.0163,
+          "verzekering": 1.8713,
+          "tolwegen": 5.725
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2025-01-29T12:21:53 -01:00",
-        "afstand_km": 93,
-        "duurMinuten": 65,
-        "brandstof_verbruik_l": 11,
+        "datum": "2024-01-09T04:41:36",
+        "afstand_km": 146,
+        "duur_minuten": 156,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 8,
         "kosten": {
-          "onderhoud": 2.106,
-          "verzekering": 2.2682,
-          "afschrijving": 4.3105,
-          "totaleKosten": 30.403
+          "onderhoud": 3.7708,
+          "verzekering": 2.5614,
+          "tolwegen": 5.4155
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2024-11-24T01:49:04 -01:00",
-        "afstand_km": 141,
-        "duurMinuten": 141,
-        "brandstof_verbruik_l": 11,
+        "datum": "2024-07-31T07:48:22",
+        "afstand_km": 137,
+        "duur_minuten": 157,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 10,
         "kosten": {
-          "onderhoud": 4.1205,
-          "verzekering": 2.1605,
-          "afschrijving": 6.4217,
-          "totaleKosten": 26.711
+          "onderhoud": 2.0611,
+          "verzekering": 1.2837,
+          "tolwegen": 2.8261
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2025-03-10T12:51:48 -01:00",
-        "afstand_km": 66,
-        "duurMinuten": 153,
-        "brandstof_verbruik_l": 7,
+        "datum": "2024-04-27T07:51:57",
+        "afstand_km": 121,
+        "duur_minuten": 92,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 3.7157,
-          "verzekering": 1.7595,
-          "afschrijving": 5.7698,
-          "totaleKosten": 26.9034
+          "onderhoud": 3.6637,
+          "verzekering": 1.3754,
+          "tolwegen": 3.112
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2024-11-28T01:16:24 -01:00",
-        "afstand_km": 75,
-        "duurMinuten": 172,
-        "brandstof_verbruik_l": 16,
+        "datum": "2025-01-14T03:58:45",
+        "afstand_km": 87,
+        "duur_minuten": 63,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 13,
         "kosten": {
-          "onderhoud": 4.8638,
-          "verzekering": 1.4481,
-          "afschrijving": 2.9927,
-          "totaleKosten": 21.9274
+          "onderhoud": 3.6684,
+          "verzekering": 2.2784,
+          "tolwegen": 4.0101
         }
       }
     ]
   },
   {
     "voertuig_id": "TRK-10",
-    "kenteken": "JMC-9-CBG",
-    "merk": "MAN",
-    "model": "FH16",
+    "kenteken": "DML-0-NWH",
+    "merk": "DAF",
+    "model": "TGX",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2025-02-01T08:30:01 -01:00",
-        "afstand_km": 118,
-        "duurMinuten": 130,
-        "brandstof_verbruik_l": 6,
+        "datum": "2024-09-06T08:16:08",
+        "afstand_km": 69,
+        "duur_minuten": 142,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 14,
         "kosten": {
-          "onderhoud": 3.6585,
-          "verzekering": 2.4818,
-          "afschrijving": 6.02,
-          "totaleKosten": 18.1115
+          "onderhoud": 3.0632,
+          "verzekering": 1.4386,
+          "tolwegen": 5.9297
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2024-12-25T01:09:11 -01:00",
-        "afstand_km": 58,
-        "duurMinuten": 88,
-        "brandstof_verbruik_l": 16,
+        "datum": "2024-06-26T02:30:00",
+        "afstand_km": 97,
+        "duur_minuten": 103,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 14,
         "kosten": {
-          "onderhoud": 2.9905,
-          "verzekering": 2.3252,
-          "afschrijving": 5.2921,
-          "totaleKosten": 34.6595
+          "onderhoud": 1.6238,
+          "verzekering": 1.933,
+          "tolwegen": 4.0838
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2025-04-07T10:21:26 -02:00",
-        "afstand_km": 58,
-        "duurMinuten": 150,
-        "brandstof_verbruik_l": 15,
+        "datum": "2025-01-24T08:11:27",
+        "afstand_km": 128,
+        "duur_minuten": 147,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 7,
         "kosten": {
-          "onderhoud": 3.6812,
-          "verzekering": 2.6917,
-          "afschrijving": 3.4357,
-          "totaleKosten": 11.7445
+          "onderhoud": 3.9964,
+          "verzekering": 1.3224,
+          "tolwegen": 3.3166
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2024-12-13T08:08:35 -01:00",
-        "afstand_km": 65,
-        "duurMinuten": 111,
-        "brandstof_verbruik_l": 19,
+        "datum": "2024-08-09T10:10:57",
+        "afstand_km": 87,
+        "duur_minuten": 68,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 13,
         "kosten": {
-          "onderhoud": 2.3413,
-          "verzekering": 2.8809,
-          "afschrijving": 6.8686,
-          "totaleKosten": 12.7913
+          "onderhoud": 2.8476,
+          "verzekering": 2.4099,
+          "tolwegen": 5.8992
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2025-03-09T11:58:18 -01:00",
-        "afstand_km": 63,
-        "duurMinuten": 110,
-        "brandstof_verbruik_l": 10,
+        "datum": "2024-02-08T03:48:02",
+        "afstand_km": 70,
+        "duur_minuten": 146,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 13,
         "kosten": {
-          "onderhoud": 1.5109,
-          "verzekering": 2.6225,
-          "afschrijving": 3.5835,
-          "totaleKosten": 20.3488
+          "onderhoud": 1.9079,
+          "verzekering": 1.935,
+          "tolwegen": 3.3346
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2024-12-21T06:41:42 -01:00",
-        "afstand_km": 120,
-        "duurMinuten": 155,
-        "brandstof_verbruik_l": 10,
+        "datum": "2024-12-26T12:23:29",
+        "afstand_km": 55,
+        "duur_minuten": 156,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 8,
         "kosten": {
-          "onderhoud": 4.7481,
-          "verzekering": 2.2812,
-          "afschrijving": 6.4515,
-          "totaleKosten": 10.7092
+          "onderhoud": 3.841,
+          "verzekering": 1.6395,
+          "tolwegen": 4.3482
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2024-11-02T03:28:16 -01:00",
-        "afstand_km": 142,
-        "duurMinuten": 92,
-        "brandstof_verbruik_l": 14,
+        "datum": "2024-06-02T11:43:23",
+        "afstand_km": 89,
+        "duur_minuten": 69,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 9,
         "kosten": {
-          "onderhoud": 1.1313,
-          "verzekering": 2.4102,
-          "afschrijving": 6.6992,
-          "totaleKosten": 14.3704
+          "onderhoud": 4.037,
+          "verzekering": 1.2018,
+          "tolwegen": 5.2371
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2024-12-26T01:56:49 -01:00",
-        "afstand_km": 84,
-        "duurMinuten": 87,
-        "brandstof_verbruik_l": 19,
+        "datum": "2024-11-20T03:38:53",
+        "afstand_km": 107,
+        "duur_minuten": 109,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 8,
         "kosten": {
-          "onderhoud": 1.9515,
-          "verzekering": 1.8411,
-          "afschrijving": 6.9099,
-          "totaleKosten": 21.9735
+          "onderhoud": 1.6954,
+          "verzekering": 2.1838,
+          "tolwegen": 4.5297
         }
       }
     ]
   },
   {
     "voertuig_id": "TRK-11",
-    "kenteken": "EGJ-3-DEK",
-    "merk": "Scania",
-    "model": "XF",
-    "brandstof_type": "Diesel",
-    "ritten": [
-      {
-        "rit_id": "RIT-0",
-        "datum": "2025-04-08T11:48:27 -02:00",
-        "afstand_km": 55,
-        "duurMinuten": 179,
-        "brandstof_verbruik_l": 20,
-        "kosten": {
-          "onderhoud": 4.9258,
-          "verzekering": 1.9143,
-          "afschrijving": 5.0002,
-          "totaleKosten": 33.8823
-        }
-      },
-      {
-        "rit_id": "RIT-1",
-        "datum": "2025-02-27T01:03:26 -01:00",
-        "afstand_km": 88,
-        "duurMinuten": 64,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 3.6329,
-          "verzekering": 1.3324,
-          "afschrijving": 6.4665,
-          "totaleKosten": 10.676
-        }
-      },
-      {
-        "rit_id": "RIT-2",
-        "datum": "2025-04-08T09:32:56 -02:00",
-        "afstand_km": 79,
-        "duurMinuten": 138,
-        "brandstof_verbruik_l": 14,
-        "kosten": {
-          "onderhoud": 4.4126,
-          "verzekering": 2.7952,
-          "afschrijving": 3.5461,
-          "totaleKosten": 25.6922
-        }
-      },
-      {
-        "rit_id": "RIT-3",
-        "datum": "2025-02-08T05:49:39 -01:00",
-        "afstand_km": 124,
-        "duurMinuten": 126,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 3.6836,
-          "verzekering": 1.2857,
-          "afschrijving": 3.9241,
-          "totaleKosten": 33.7826
-        }
-      },
-      {
-        "rit_id": "RIT-4",
-        "datum": "2025-01-03T10:30:00 -01:00",
-        "afstand_km": 79,
-        "duurMinuten": 163,
-        "brandstof_verbruik_l": 16,
-        "kosten": {
-          "onderhoud": 4.0716,
-          "verzekering": 2.1565,
-          "afschrijving": 5.1605,
-          "totaleKosten": 13.6172
-        }
-      },
-      {
-        "rit_id": "RIT-5",
-        "datum": "2024-12-29T03:30:51 -01:00",
-        "afstand_km": 148,
-        "duurMinuten": 135,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 1.9647,
-          "verzekering": 2.0231,
-          "afschrijving": 3.9168,
-          "totaleKosten": 18.9662
-        }
-      },
-      {
-        "rit_id": "RIT-6",
-        "datum": "2025-03-07T10:44:54 -01:00",
-        "afstand_km": 138,
-        "duurMinuten": 122,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 4.0432,
-          "verzekering": 2.5797,
-          "afschrijving": 2.5499,
-          "totaleKosten": 30.1741
-        }
-      },
-      {
-        "rit_id": "RIT-7",
-        "datum": "2025-02-23T05:51:10 -01:00",
-        "afstand_km": 60,
-        "duurMinuten": 140,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 4.6328,
-          "verzekering": 2.7145,
-          "afschrijving": 5.9878,
-          "totaleKosten": 23.8792
-        }
-      }
-    ]
-  },
-  {
-    "voertuig_id": "TRK-12",
-    "kenteken": "RPN-9-FBR",
-    "merk": "Scania",
-    "model": "XF",
-    "brandstof_type": "Diesel",
-    "ritten": [
-      {
-        "rit_id": "RIT-0",
-        "datum": "2025-03-08T05:43:17 -01:00",
-        "afstand_km": 60,
-        "duurMinuten": 126,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 1.4419,
-          "verzekering": 2.5898,
-          "afschrijving": 5.1166,
-          "totaleKosten": 17.94
-        }
-      },
-      {
-        "rit_id": "RIT-1",
-        "datum": "2025-03-30T12:11:38 -01:00",
-        "afstand_km": 68,
-        "duurMinuten": 169,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 3.0899,
-          "verzekering": 1.0595,
-          "afschrijving": 2.6101,
-          "totaleKosten": 33.6897
-        }
-      },
-      {
-        "rit_id": "RIT-2",
-        "datum": "2024-11-13T11:49:22 -01:00",
-        "afstand_km": 110,
-        "duurMinuten": 119,
-        "brandstof_verbruik_l": 19,
-        "kosten": {
-          "onderhoud": 2.3697,
-          "verzekering": 1.162,
-          "afschrijving": 5.6914,
-          "totaleKosten": 20.8095
-        }
-      },
-      {
-        "rit_id": "RIT-3",
-        "datum": "2025-02-18T09:07:21 -01:00",
-        "afstand_km": 75,
-        "duurMinuten": 127,
-        "brandstof_verbruik_l": 10,
-        "kosten": {
-          "onderhoud": 2.4461,
-          "verzekering": 1.3711,
-          "afschrijving": 2.2386,
-          "totaleKosten": 27.454
-        }
-      },
-      {
-        "rit_id": "RIT-4",
-        "datum": "2025-04-20T05:05:14 -02:00",
-        "afstand_km": 76,
-        "duurMinuten": 153,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 2.4595,
-          "verzekering": 1.2904,
-          "afschrijving": 6.34,
-          "totaleKosten": 11.9923
-        }
-      },
-      {
-        "rit_id": "RIT-5",
-        "datum": "2025-04-05T07:48:08 -02:00",
-        "afstand_km": 117,
-        "duurMinuten": 156,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 3.837,
-          "verzekering": 2.4155,
-          "afschrijving": 5.4221,
-          "totaleKosten": 15.0736
-        }
-      },
-      {
-        "rit_id": "RIT-6",
-        "datum": "2024-11-24T09:11:25 -01:00",
-        "afstand_km": 63,
-        "duurMinuten": 95,
-        "brandstof_verbruik_l": 16,
-        "kosten": {
-          "onderhoud": 1.3689,
-          "verzekering": 2.552,
-          "afschrijving": 5.0994,
-          "totaleKosten": 39.5217
-        }
-      },
-      {
-        "rit_id": "RIT-7",
-        "datum": "2024-12-26T08:27:39 -01:00",
-        "afstand_km": 102,
-        "duurMinuten": 178,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 1.1193,
-          "verzekering": 2.3653,
-          "afschrijving": 2.8195,
-          "totaleKosten": 36.6191
-        }
-      }
-    ]
-  },
-  {
-    "voertuig_id": "TRK-13",
-    "kenteken": "DHN-2-TER",
+    "kenteken": "EMM-3-MMW",
     "merk": "MAN",
     "model": "XF",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2025-03-13T06:26:47 -01:00",
-        "afstand_km": 147,
-        "duurMinuten": 91,
-        "brandstof_verbruik_l": 8,
+        "datum": "2024-06-10T02:06:19",
+        "afstand_km": 100,
+        "duur_minuten": 152,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 2.0046,
-          "verzekering": 1.793,
-          "afschrijving": 5.6618,
-          "totaleKosten": 18.5419
+          "onderhoud": 4.4711,
+          "verzekering": 2.3391,
+          "tolwegen": 5.8697
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2025-01-28T07:09:20 -01:00",
-        "afstand_km": 79,
-        "duurMinuten": 122,
-        "brandstof_verbruik_l": 11,
+        "datum": "2024-11-15T11:48:34",
+        "afstand_km": 108,
+        "duur_minuten": 110,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 1.101,
-          "verzekering": 1.2163,
-          "afschrijving": 2.051,
-          "totaleKosten": 15.1159
+          "onderhoud": 4.4762,
+          "verzekering": 2.6166,
+          "tolwegen": 4.3361
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2025-03-28T12:26:30 -01:00",
-        "afstand_km": 94,
-        "duurMinuten": 175,
-        "brandstof_verbruik_l": 16,
+        "datum": "2024-02-17T03:51:14",
+        "afstand_km": 85,
+        "duur_minuten": 175,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 13,
         "kosten": {
-          "onderhoud": 1.1922,
-          "verzekering": 1.8382,
-          "afschrijving": 3.3663,
-          "totaleKosten": 21.8879
+          "onderhoud": 1.8681,
+          "verzekering": 2.5221,
+          "tolwegen": 3.1495
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2024-11-24T09:37:37 -01:00",
-        "afstand_km": 120,
-        "duurMinuten": 98,
-        "brandstof_verbruik_l": 14,
+        "datum": "2023-11-03T02:53:00",
+        "afstand_km": 147,
+        "duur_minuten": 147,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 12,
         "kosten": {
-          "onderhoud": 4.9919,
-          "verzekering": 1.7944,
-          "afschrijving": 4.0342,
-          "totaleKosten": 31.237
+          "onderhoud": 2.4773,
+          "verzekering": 1.3543,
+          "tolwegen": 2.2414
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2024-12-03T04:10:26 -01:00",
-        "afstand_km": 82,
-        "duurMinuten": 168,
-        "brandstof_verbruik_l": 10,
+        "datum": "2024-01-22T12:24:25",
+        "afstand_km": 81,
+        "duur_minuten": 164,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 13,
         "kosten": {
-          "onderhoud": 1.0417,
-          "verzekering": 2.2187,
-          "afschrijving": 2.7613,
-          "totaleKosten": 11.1078
+          "onderhoud": 1.7976,
+          "verzekering": 1.1616,
+          "tolwegen": 2.6521
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2025-02-20T04:44:18 -01:00",
-        "afstand_km": 74,
-        "duurMinuten": 152,
-        "brandstof_verbruik_l": 6,
+        "datum": "2025-01-10T08:08:04",
+        "afstand_km": 67,
+        "duur_minuten": 90,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 15,
         "kosten": {
-          "onderhoud": 1.8802,
-          "verzekering": 2.6825,
-          "afschrijving": 3.2255,
-          "totaleKosten": 39.1048
+          "onderhoud": 4.0475,
+          "verzekering": 1.3559,
+          "tolwegen": 5.1617
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2024-11-26T12:09:51 -01:00",
-        "afstand_km": 83,
-        "duurMinuten": 69,
-        "brandstof_verbruik_l": 18,
+        "datum": "2024-03-25T08:33:49",
+        "afstand_km": 136,
+        "duur_minuten": 160,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 12,
         "kosten": {
-          "onderhoud": 4.9803,
-          "verzekering": 1.3783,
-          "afschrijving": 4.174,
-          "totaleKosten": 35.2934
+          "onderhoud": 4.7098,
+          "verzekering": 2.4279,
+          "tolwegen": 2.4952
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2025-01-30T04:07:51 -01:00",
-        "afstand_km": 88,
-        "duurMinuten": 150,
+        "datum": "2024-10-23T03:19:11",
+        "afstand_km": 108,
+        "duur_minuten": 72,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 1.5556,
+          "verzekering": 1.1705,
+          "tolwegen": 2.1323
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-12",
+    "kenteken": "EEE-4-SCJ",
+    "merk": "DAF",
+    "model": "FH16",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2024-01-13T12:30:34",
+        "afstand_km": 63,
+        "duur_minuten": 139,
+        "uurtarief": 10,
         "brandstof_verbruik_l": 10,
         "kosten": {
-          "onderhoud": 4.7355,
-          "verzekering": 1.604,
-          "afschrijving": 2.9109,
-          "totaleKosten": 39.7761
+          "onderhoud": 4.7522,
+          "verzekering": 1.8566,
+          "tolwegen": 5.5591
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-04-20T08:43:32",
+        "afstand_km": 92,
+        "duur_minuten": 124,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 8,
+        "kosten": {
+          "onderhoud": 1.817,
+          "verzekering": 1.6731,
+          "tolwegen": 2.7416
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2024-05-25T06:26:34",
+        "afstand_km": 68,
+        "duur_minuten": 134,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 1.992,
+          "verzekering": 2.843,
+          "tolwegen": 4.5953
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2024-08-28T05:55:43",
+        "afstand_km": 60,
+        "duur_minuten": 144,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 1.5392,
+          "verzekering": 1.9,
+          "tolwegen": 2.8516
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2024-05-25T06:29:25",
+        "afstand_km": 137,
+        "duur_minuten": 64,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 3.8133,
+          "verzekering": 2.501,
+          "tolwegen": 5.6545
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-09-11T11:19:03",
+        "afstand_km": 145,
+        "duur_minuten": 172,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 15,
+        "kosten": {
+          "onderhoud": 1.2525,
+          "verzekering": 1.2616,
+          "tolwegen": 6.0198
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2025-01-01T11:48:02",
+        "afstand_km": 150,
+        "duur_minuten": 150,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 13,
+        "kosten": {
+          "onderhoud": 3.6914,
+          "verzekering": 1.247,
+          "tolwegen": 4.8664
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2024-03-25T04:12:38",
+        "afstand_km": 147,
+        "duur_minuten": 179,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 2.5093,
+          "verzekering": 2.5988,
+          "tolwegen": 3.4729
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-13",
+    "kenteken": "MDM-5-PKJ",
+    "merk": "Mercedes",
+    "model": "XF",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2024-12-31T12:54:36",
+        "afstand_km": 108,
+        "duur_minuten": 78,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 1.6461,
+          "verzekering": 2.258,
+          "tolwegen": 4.0208
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2024-10-16T02:13:34",
+        "afstand_km": 147,
+        "duur_minuten": 126,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 3.3635,
+          "verzekering": 1.9088,
+          "tolwegen": 2.5057
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-04-07T06:07:39",
+        "afstand_km": 96,
+        "duur_minuten": 126,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 1.787,
+          "verzekering": 1.1617,
+          "tolwegen": 3.0193
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2024-06-27T03:53:25",
+        "afstand_km": 124,
+        "duur_minuten": 65,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 4.3809,
+          "verzekering": 2.6912,
+          "tolwegen": 5.8303
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2024-11-15T11:28:21",
+        "afstand_km": 117,
+        "duur_minuten": 136,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 1.7542,
+          "verzekering": 1.4259,
+          "tolwegen": 6.3507
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-12-10T10:47:21",
+        "afstand_km": 69,
+        "duur_minuten": 115,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 1.6985,
+          "verzekering": 2.1252,
+          "tolwegen": 6.119
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2024-04-12T07:32:39",
+        "afstand_km": 139,
+        "duur_minuten": 154,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 3.127,
+          "verzekering": 2.8715,
+          "tolwegen": 3.2362
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2023-11-24T05:13:17",
+        "afstand_km": 129,
+        "duur_minuten": 149,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 3.4612,
+          "verzekering": 2.5084,
+          "tolwegen": 5.296
         }
       }
     ]
   },
   {
     "voertuig_id": "TRK-14",
-    "kenteken": "RCA-2-HFP",
+    "kenteken": "CKW-8-TGL",
     "merk": "Mercedes",
-    "model": "FH16",
+    "model": "TGX",
     "brandstof_type": "Diesel",
     "ritten": [
       {
         "rit_id": "RIT-0",
-        "datum": "2025-03-08T08:23:39 -01:00",
-        "afstand_km": 104,
-        "duurMinuten": 128,
-        "brandstof_verbruik_l": 12,
+        "datum": "2025-01-15T10:56:11",
+        "afstand_km": 68,
+        "duur_minuten": 125,
+        "uurtarief": 10,
+        "brandstof_verbruik_l": 9,
         "kosten": {
-          "onderhoud": 1.7734,
-          "verzekering": 1.3633,
-          "afschrijving": 4.8033,
-          "totaleKosten": 21.9464
+          "onderhoud": 3.7626,
+          "verzekering": 1.8164,
+          "tolwegen": 5.0965
         }
       },
       {
         "rit_id": "RIT-1",
-        "datum": "2024-11-23T10:33:04 -01:00",
-        "afstand_km": 136,
-        "duurMinuten": 91,
-        "brandstof_verbruik_l": 17,
+        "datum": "2025-04-03T03:46:00",
+        "afstand_km": 112,
+        "duur_minuten": 81,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 6,
         "kosten": {
-          "onderhoud": 2.3044,
-          "verzekering": 1.7221,
-          "afschrijving": 2.4558,
-          "totaleKosten": 17.5664
+          "onderhoud": 4.4147,
+          "verzekering": 2.461,
+          "tolwegen": 6.7649
         }
       },
       {
         "rit_id": "RIT-2",
-        "datum": "2025-02-22T07:25:21 -01:00",
-        "afstand_km": 145,
-        "duurMinuten": 80,
-        "brandstof_verbruik_l": 11,
+        "datum": "2025-04-01T07:55:16",
+        "afstand_km": 79,
+        "duur_minuten": 81,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 7,
         "kosten": {
-          "onderhoud": 2.0243,
-          "verzekering": 2.2701,
-          "afschrijving": 3.7579,
-          "totaleKosten": 31.7491
+          "onderhoud": 2.5145,
+          "verzekering": 2.9293,
+          "tolwegen": 3.1678
         }
       },
       {
         "rit_id": "RIT-3",
-        "datum": "2025-04-23T02:35:44 -02:00",
-        "afstand_km": 78,
-        "duurMinuten": 76,
-        "brandstof_verbruik_l": 8,
+        "datum": "2024-09-28T09:02:39",
+        "afstand_km": 68,
+        "duur_minuten": 171,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 6,
         "kosten": {
-          "onderhoud": 4.7893,
-          "verzekering": 1.2264,
-          "afschrijving": 2.3153,
-          "totaleKosten": 36.8491
+          "onderhoud": 4.6843,
+          "verzekering": 2.6725,
+          "tolwegen": 5.6132
         }
       },
       {
         "rit_id": "RIT-4",
-        "datum": "2024-12-19T02:14:45 -01:00",
-        "afstand_km": 55,
-        "duurMinuten": 161,
-        "brandstof_verbruik_l": 6,
+        "datum": "2024-10-31T07:42:49",
+        "afstand_km": 146,
+        "duur_minuten": 146,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 14,
         "kosten": {
-          "onderhoud": 1.9336,
-          "verzekering": 1.6519,
-          "afschrijving": 5.8962,
-          "totaleKosten": 20.2969
+          "onderhoud": 3.7886,
+          "verzekering": 1.1361,
+          "tolwegen": 4.474
         }
       },
       {
         "rit_id": "RIT-5",
-        "datum": "2024-12-03T03:03:12 -01:00",
-        "afstand_km": 134,
-        "duurMinuten": 145,
-        "brandstof_verbruik_l": 7,
+        "datum": "2025-02-07T11:04:09",
+        "afstand_km": 112,
+        "duur_minuten": 114,
+        "uurtarief": 11,
+        "brandstof_verbruik_l": 10,
         "kosten": {
-          "onderhoud": 3.7248,
-          "verzekering": 2.4715,
-          "afschrijving": 5.7368,
-          "totaleKosten": 18.713
+          "onderhoud": 2.0882,
+          "verzekering": 2.5176,
+          "tolwegen": 2.8274
         }
       },
       {
         "rit_id": "RIT-6",
-        "datum": "2024-11-24T04:50:41 -01:00",
-        "afstand_km": 67,
-        "duurMinuten": 85,
+        "datum": "2024-09-04T10:18:10",
+        "afstand_km": 78,
+        "duur_minuten": 146,
+        "uurtarief": 12,
         "brandstof_verbruik_l": 11,
         "kosten": {
-          "onderhoud": 4.9543,
-          "verzekering": 2.5144,
-          "afschrijving": 6.599,
-          "totaleKosten": 39.0214
+          "onderhoud": 3.0865,
+          "verzekering": 1.2786,
+          "tolwegen": 6.7423
         }
       },
       {
         "rit_id": "RIT-7",
-        "datum": "2025-03-18T01:10:32 -01:00",
-        "afstand_km": 142,
-        "duurMinuten": 80,
-        "brandstof_verbruik_l": 7,
+        "datum": "2025-03-05T07:53:06",
+        "afstand_km": 78,
+        "duur_minuten": 177,
+        "uurtarief": 12,
+        "brandstof_verbruik_l": 13,
         "kosten": {
-          "onderhoud": 2.8559,
-          "verzekering": 1.7829,
-          "afschrijving": 4.3501,
-          "totaleKosten": 16.6573
+          "onderhoud": 3.1442,
+          "verzekering": 1.0767,
+          "tolwegen": 3.138
         }
       }
     ]

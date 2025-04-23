@@ -37,6 +37,23 @@ public class Rit
     [JsonPropertyName("brandstof_verbruik_l")]
     public int BrandstofVerbruikL { get; set; }
 
-    [JsonPropertyName("gemiddeld_verbruik_l_per_100km")]
-    public int GemiddeldVerbruikPer100Km { get; set; }
+    [JsonPropertyName("duur_minuten")]
+    public int DuurMinuten { get; set; }
+
+    [JsonPropertyName("kosten")]
+    public List<Kost>? Kosten {get;set;}
+
+}
+
+public class Kost
+{
+    [JsonPropertyName("onderhoud")]
+    public float Onderhoud {get; set;}
+
+    [JsonPropertyName("verzekering")]
+    public float Verzekering {get; set;}
+
+    [JsonPropertyName("tolwegen")]
+    public float Tolwegen {get; set;}
+
 }
