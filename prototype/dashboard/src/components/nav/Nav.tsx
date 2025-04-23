@@ -41,6 +41,13 @@ export const Nav = () => {
                                         Voeg rit toe
                                     </a>
                                 </li>
+                                <li>
+                                    <a
+                                        className={`dropdown-item ${currentPath === "/planning/toon-rit-overzicht" ? "active" : ""}`}
+                                        href="/planning/toon-rit-overzicht"
+                                    >
+                                        Toon rit overzicht
+                                    </a>
                                 </li>
                             </ul>
                         </div>
