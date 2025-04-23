@@ -16,6 +16,7 @@ import { ChartsWrapper } from './components/ChartsWrapper';
 import { FuelChart } from "./components/charts/FuelUsageChart";
 import { TripCostChart } from './components/charts/TripCostChart';
 import { LoginForm } from 'components/Login';
+import PrivateLayout from 'components/PrivateLayout';
 
 
 const App: React.FC = () => {
@@ -28,28 +29,32 @@ const App: React.FC = () => {
                 <Breadcrumbs />
 
                 <Routes>
-                    {/* Public routes */}
+                    {/* Login route */}
                     <Route path="/login" element={<LoginForm />} />
-                    <Route path="/" element={<ChartsWrapper />} />
-                    <Route path="/verbruik" element={<FuelChart />} />
-                    <Route path="/benzinekosten" element={<TripCostChart />} />
-                    
-                    {/* Planning routes */}
-                    <Route path="/planning/voeg-rit-toe" />
 
-                    <Route
-                        path="/404"
-                        element={
-                            <section>
-                                <div className="g-0 pt-4">
-                                    <h3>
-                                        <strong>Error 404 - Pagina niet gevonden</strong>
-                                    </h3>
-                                </div>
-                            </section>
-                        }
-                    />
-                    <Route path="*" element={<Navigate replace to="/404" />} />
+                    <Route element={<PrivateLayout />}>
+                        {/* Public routes */}
+                        <Route path="/" element={<ChartsWrapper />} />
+                        <Route path="/verbruik" element={<FuelChart />} />
+                        <Route path="/benzinekosten" element={<TripCostChart />} />
+                        
+                        {/* Planning routes */}
+                        <Route path="/planning/voeg-rit-toe" />
+
+                        <Route
+                            path="/404"
+                            element={
+                                <section>
+                                    <div className="g-0 pt-4">
+                                        <h3>
+                                            <strong>Error 404 - Pagina niet gevonden</strong>
+                                        </h3>
+                                    </div>
+                                </section>
+                            }
+                            />
+                        <Route path="*" element={<Navigate replace to="/404" />} />
+                    </Route>
                 </Routes>
             </main>
 

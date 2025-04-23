@@ -62,6 +62,7 @@ export const LoginForm: React.FC = () => {
             className="border p-2 rounded"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            required
           />
           <input
             type="password"
@@ -69,6 +70,7 @@ export const LoginForm: React.FC = () => {
             className="border p-2 rounded"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <button
             type="submit"
