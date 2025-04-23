@@ -14,6 +14,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 builder.Services.AddScoped<IFuelService, JsonFuelService>();
 builder.Services.AddScoped<IJsonShipmentService, JsonShipmentService>();
+builder.Services.AddScoped<ITripService, TripService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
