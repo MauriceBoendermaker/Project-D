@@ -32,13 +32,13 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="p-4 max-w-sm mx-auto">
+    <div className="login-page">
       <form onSubmit={handleLogin} className="login-form">
         <input
           type="text"
           name="username"
           placeholder="Username"
-          className="border p-2 rounded"
+          className="login-form-input"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -47,12 +47,12 @@ export const LoginForm: React.FC = () => {
           type="password"
           name="password"
           placeholder="Password"
-          className="border p-2 rounded"
+          className="login-form-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className="login-button">
+        <button type="submit" className="btn-primary login-button">
           Login
         </button>
       </form>
