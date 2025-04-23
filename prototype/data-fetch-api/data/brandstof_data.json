@@ -1,596 +1,1697 @@
 [
-    {
-      "voertuig_id": "TRK-1",
-      "kenteken": "AB-0-CD",
-      "merk": "Volvo",
-      "model": "FH16",
-      "brandstof_type": "Diesel",
-      "ritten": [
-        {
-          "rit_id": "RIT-1",
-          "datum": "Sat Mar 29 2025 17:42:19 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 947,
-          "brandstof_verbruik_l": 55,
-          "gemiddeld_verbruik_l_per_100km": 26
-        },
-        {
-          "rit_id": "RIT-2",
-          "datum": "Wed Feb 07 2024 15:33:38 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 411,
-          "brandstof_verbruik_l": 62,
-          "gemiddeld_verbruik_l_per_100km": 50
-        },
-        {
-          "rit_id": "RIT-3",
-          "datum": "Wed Nov 13 2024 05:58:39 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 756,
-          "brandstof_verbruik_l": 6,
-          "gemiddeld_verbruik_l_per_100km": 46
-        },
-        {
-          "rit_id": "RIT-4",
-          "datum": "Wed Nov 20 2024 23:19:10 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 956,
-          "brandstof_verbruik_l": 44,
-          "gemiddeld_verbruik_l_per_100km": 40
-        },
-        {
-          "rit_id": "RIT-5",
-          "datum": "Thu Jul 04 2024 11:13:38 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 263,
-          "brandstof_verbruik_l": 53,
-          "gemiddeld_verbruik_l_per_100km": 28
-        },
-        {
-          "rit_id": "RIT-6",
-          "datum": "Mon Dec 02 2024 06:12:54 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 681,
-          "brandstof_verbruik_l": 69,
-          "gemiddeld_verbruik_l_per_100km": 30
-        },
-        {
-          "rit_id": "RIT-7",
-          "datum": "Tue Oct 01 2024 08:49:18 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 159,
-          "brandstof_verbruik_l": 22,
-          "gemiddeld_verbruik_l_per_100km": 24
+  {
+    "voertuig_id": "TRK-0",
+    "kenteken": "YMW-7-DLC",
+    "merk": "MAN",
+    "model": "XF",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-03-18T08:28:50 -01:00",
+        "afstand_km": 64,
+        "duurMinuten": 148,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 3.2049,
+          "verzekering": 2.263,
+          "afschrijving": 5.5636,
+          "totaleKosten": 12.9927
         }
-      ]
-    },
-    {
-      "voertuig_id": "TRK-2",
-      "kenteken": "AB-1-CD",
-      "merk": "Volvo",
-      "model": "FH16",
-      "brandstof_type": "Diesel",
-      "ritten": [
-        {
-          "rit_id": "RIT-1",
-          "datum": "Fri Feb 28 2025 11:38:17 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 216,
-          "brandstof_verbruik_l": 6,
-          "gemiddeld_verbruik_l_per_100km": 23
-        },
-        {
-          "rit_id": "RIT-2",
-          "datum": "Tue Jul 02 2024 17:22:52 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 927,
-          "brandstof_verbruik_l": 28,
-          "gemiddeld_verbruik_l_per_100km": 37
-        },
-        {
-          "rit_id": "RIT-3",
-          "datum": "Tue Jun 11 2024 13:46:14 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 2,
-          "brandstof_verbruik_l": 89,
-          "gemiddeld_verbruik_l_per_100km": 27
-        },
-        {
-          "rit_id": "RIT-4",
-          "datum": "Sun Mar 31 2024 14:40:51 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 254,
-          "brandstof_verbruik_l": 21,
-          "gemiddeld_verbruik_l_per_100km": 43
-        },
-        {
-          "rit_id": "RIT-5",
-          "datum": "Wed Feb 26 2025 22:35:14 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 357,
-          "brandstof_verbruik_l": 29,
-          "gemiddeld_verbruik_l_per_100km": 31
-        },
-        {
-          "rit_id": "RIT-6",
-          "datum": "Mon Nov 25 2024 19:21:08 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 129,
-          "brandstof_verbruik_l": 43,
-          "gemiddeld_verbruik_l_per_100km": 49
-        },
-        {
-          "rit_id": "RIT-7",
-          "datum": "Fri Oct 04 2024 01:49:17 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 662,
-          "brandstof_verbruik_l": 6,
-          "gemiddeld_verbruik_l_per_100km": 49
-        },
-        {
-          "rit_id": "RIT-8",
-          "datum": "Mon Feb 10 2025 14:47:58 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 866,
-          "brandstof_verbruik_l": 45,
-          "gemiddeld_verbruik_l_per_100km": 45
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-03-03T04:48:44 -01:00",
+        "afstand_km": 138,
+        "duurMinuten": 108,
+        "brandstof_verbruik_l": 18,
+        "kosten": {
+          "onderhoud": 3.52,
+          "verzekering": 1.1087,
+          "afschrijving": 3.3262,
+          "totaleKosten": 11.9189
         }
-      ]
-    },
-    {
-      "voertuig_id": "TRK-3",
-      "kenteken": "AB-2-CD",
-      "merk": "Volvo",
-      "model": "FH16",
-      "brandstof_type": "Diesel",
-      "ritten": [
-        {
-          "rit_id": "RIT-1",
-          "datum": "Mon Jan 01 2024 11:51:13 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 857,
-          "brandstof_verbruik_l": 61,
-          "gemiddeld_verbruik_l_per_100km": 50
-        },
-        {
-          "rit_id": "RIT-2",
-          "datum": "Mon Apr 29 2024 08:58:05 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 551,
-          "brandstof_verbruik_l": 14,
-          "gemiddeld_verbruik_l_per_100km": 30
-        },
-        {
-          "rit_id": "RIT-3",
-          "datum": "Tue Apr 02 2024 13:38:44 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 400,
-          "brandstof_verbruik_l": 60,
-          "gemiddeld_verbruik_l_per_100km": 27
-        },
-        {
-          "rit_id": "RIT-4",
-          "datum": "Thu Feb 01 2024 03:42:27 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 827,
-          "brandstof_verbruik_l": 19,
-          "gemiddeld_verbruik_l_per_100km": 48
-        },
-        {
-          "rit_id": "RIT-5",
-          "datum": "Sun May 12 2024 23:34:36 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 91,
-          "brandstof_verbruik_l": 22,
-          "gemiddeld_verbruik_l_per_100km": 43
-        },
-        {
-          "rit_id": "RIT-6",
-          "datum": "Sun Feb 09 2025 21:20:14 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 105,
-          "brandstof_verbruik_l": 69,
-          "gemiddeld_verbruik_l_per_100km": 43
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-04-03T04:15:59 -02:00",
+        "afstand_km": 118,
+        "duurMinuten": 60,
+        "brandstof_verbruik_l": 19,
+        "kosten": {
+          "onderhoud": 3.2093,
+          "verzekering": 1.4187,
+          "afschrijving": 2.5282,
+          "totaleKosten": 31.033
         }
-      ]
-    },
-    {
-      "voertuig_id": "TRK-4",
-      "kenteken": "AB-3-CD",
-      "merk": "Volvo",
-      "model": "FH16",
-      "brandstof_type": "Diesel",
-      "ritten": [
-        {
-          "rit_id": "RIT-1",
-          "datum": "Fri Apr 12 2024 23:46:45 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 144,
-          "brandstof_verbruik_l": 27,
-          "gemiddeld_verbruik_l_per_100km": 34
-        },
-        {
-          "rit_id": "RIT-2",
-          "datum": "Tue May 07 2024 16:22:24 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 7,
-          "brandstof_verbruik_l": 81,
-          "gemiddeld_verbruik_l_per_100km": 21
-        },
-        {
-          "rit_id": "RIT-3",
-          "datum": "Fri Jan 24 2025 03:38:55 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 637,
-          "brandstof_verbruik_l": 37,
-          "gemiddeld_verbruik_l_per_100km": 29
-        },
-        {
-          "rit_id": "RIT-4",
-          "datum": "Sat Feb 22 2025 15:12:46 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 727,
-          "brandstof_verbruik_l": 11,
-          "gemiddeld_verbruik_l_per_100km": 39
-        },
-        {
-          "rit_id": "RIT-5",
-          "datum": "Tue Jan 07 2025 02:43:13 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 158,
-          "brandstof_verbruik_l": 28,
-          "gemiddeld_verbruik_l_per_100km": 23
-        },
-        {
-          "rit_id": "RIT-6",
-          "datum": "Sat Sep 14 2024 08:54:39 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 993,
-          "brandstof_verbruik_l": 22,
-          "gemiddeld_verbruik_l_per_100km": 28
-        },
-        {
-          "rit_id": "RIT-7",
-          "datum": "Fri Sep 13 2024 12:32:27 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 956,
-          "brandstof_verbruik_l": 59,
-          "gemiddeld_verbruik_l_per_100km": 30
-        },
-        {
-          "rit_id": "RIT-8",
-          "datum": "Tue Feb 11 2025 05:03:25 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 545,
-          "brandstof_verbruik_l": 44,
-          "gemiddeld_verbruik_l_per_100km": 20
-        },
-        {
-          "rit_id": "RIT-9",
-          "datum": "Sun Nov 24 2024 01:18:28 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 859,
-          "brandstof_verbruik_l": 77,
-          "gemiddeld_verbruik_l_per_100km": 29
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2024-12-08T01:12:37 -01:00",
+        "afstand_km": 131,
+        "duurMinuten": 142,
+        "brandstof_verbruik_l": 18,
+        "kosten": {
+          "onderhoud": 1.4391,
+          "verzekering": 2.7001,
+          "afschrijving": 2.286,
+          "totaleKosten": 27.4625
         }
-      ]
-    },
-    {
-      "voertuig_id": "TRK-5",
-      "kenteken": "AB-4-CD",
-      "merk": "Volvo",
-      "model": "FH16",
-      "brandstof_type": "Diesel",
-      "ritten": [
-        {
-          "rit_id": "RIT-1",
-          "datum": "Thu Mar 14 2024 13:04:50 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 137,
-          "brandstof_verbruik_l": 7,
-          "gemiddeld_verbruik_l_per_100km": 39
-        },
-        {
-          "rit_id": "RIT-2",
-          "datum": "Sat Mar 02 2024 11:55:28 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 87,
-          "brandstof_verbruik_l": 64,
-          "gemiddeld_verbruik_l_per_100km": 31
-        },
-        {
-          "rit_id": "RIT-3",
-          "datum": "Thu Mar 14 2024 11:44:52 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 170,
-          "brandstof_verbruik_l": 37,
-          "gemiddeld_verbruik_l_per_100km": 20
-        },
-        {
-          "rit_id": "RIT-4",
-          "datum": "Fri Feb 23 2024 01:27:42 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 31,
-          "brandstof_verbruik_l": 6,
-          "gemiddeld_verbruik_l_per_100km": 49
-        },
-        {
-          "rit_id": "RIT-5",
-          "datum": "Mon Jan 27 2025 08:53:46 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 494,
-          "brandstof_verbruik_l": 40,
-          "gemiddeld_verbruik_l_per_100km": 48
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2025-04-20T01:01:50 -02:00",
+        "afstand_km": 145,
+        "duurMinuten": 63,
+        "brandstof_verbruik_l": 16,
+        "kosten": {
+          "onderhoud": 3.6984,
+          "verzekering": 2.9024,
+          "afschrijving": 2.7128,
+          "totaleKosten": 18.3031
         }
-      ]
-    },
-    {
-      "voertuig_id": "TRK-6",
-      "kenteken": "AB-5-CD",
-      "merk": "Volvo",
-      "model": "FH16",
-      "brandstof_type": "Diesel",
-      "ritten": [
-        {
-          "rit_id": "RIT-1",
-          "datum": "Tue Mar 04 2025 23:15:26 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 1,
-          "brandstof_verbruik_l": 4,
-          "gemiddeld_verbruik_l_per_100km": 25
-        },
-        {
-          "rit_id": "RIT-2",
-          "datum": "Sun Apr 07 2024 20:21:48 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 514,
-          "brandstof_verbruik_l": 20,
-          "gemiddeld_verbruik_l_per_100km": 20
-        },
-        {
-          "rit_id": "RIT-3",
-          "datum": "Fri Oct 18 2024 12:39:21 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 703,
-          "brandstof_verbruik_l": 73,
-          "gemiddeld_verbruik_l_per_100km": 47
-        },
-        {
-          "rit_id": "RIT-4",
-          "datum": "Sat Nov 09 2024 04:38:46 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 195,
-          "brandstof_verbruik_l": 98,
-          "gemiddeld_verbruik_l_per_100km": 27
-        },
-        {
-          "rit_id": "RIT-5",
-          "datum": "Thu Aug 29 2024 20:22:30 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 444,
-          "brandstof_verbruik_l": 75,
-          "gemiddeld_verbruik_l_per_100km": 41
-        },
-        {
-          "rit_id": "RIT-6",
-          "datum": "Sat Oct 26 2024 14:16:46 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 238,
-          "brandstof_verbruik_l": 100,
-          "gemiddeld_verbruik_l_per_100km": 27
-        },
-        {
-          "rit_id": "RIT-7",
-          "datum": "Sun Feb 25 2024 04:15:32 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 931,
-          "brandstof_verbruik_l": 53,
-          "gemiddeld_verbruik_l_per_100km": 26
-        },
-        {
-          "rit_id": "RIT-8",
-          "datum": "Thu Dec 12 2024 20:46:53 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 436,
-          "brandstof_verbruik_l": 19,
-          "gemiddeld_verbruik_l_per_100km": 28
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2025-04-13T11:02:18 -02:00",
+        "afstand_km": 57,
+        "duurMinuten": 91,
+        "brandstof_verbruik_l": 14,
+        "kosten": {
+          "onderhoud": 1.4065,
+          "verzekering": 2.4062,
+          "afschrijving": 5.2303,
+          "totaleKosten": 15.4197
         }
-      ]
-    },
-    {
-      "voertuig_id": "TRK-7",
-      "kenteken": "AB-6-CD",
-      "merk": "Volvo",
-      "model": "FH16",
-      "brandstof_type": "Diesel",
-      "ritten": [
-        {
-          "rit_id": "RIT-1",
-          "datum": "Fri Feb 28 2025 05:21:56 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 816,
-          "brandstof_verbruik_l": 68,
-          "gemiddeld_verbruik_l_per_100km": 39
-        },
-        {
-          "rit_id": "RIT-2",
-          "datum": "Sun Feb 16 2025 22:16:30 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 98,
-          "brandstof_verbruik_l": 69,
-          "gemiddeld_verbruik_l_per_100km": 39
-        },
-        {
-          "rit_id": "RIT-3",
-          "datum": "Tue Jan 14 2025 16:20:31 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 489,
-          "brandstof_verbruik_l": 21,
-          "gemiddeld_verbruik_l_per_100km": 45
-        },
-        {
-          "rit_id": "RIT-4",
-          "datum": "Sun Apr 21 2024 09:55:10 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 42,
-          "brandstof_verbruik_l": 27,
-          "gemiddeld_verbruik_l_per_100km": 20
-        },
-        {
-          "rit_id": "RIT-5",
-          "datum": "Thu Nov 21 2024 05:29:25 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 85,
-          "brandstof_verbruik_l": 59,
-          "gemiddeld_verbruik_l_per_100km": 38
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2025-01-04T03:17:29 -01:00",
+        "afstand_km": 96,
+        "duurMinuten": 84,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 2.3643,
+          "verzekering": 1.7246,
+          "afschrijving": 2.7732,
+          "totaleKosten": 12.7178
         }
-      ]
-    },
-    {
-      "voertuig_id": "TRK-8",
-      "kenteken": "AB-7-CD",
-      "merk": "Volvo",
-      "model": "FH16",
-      "brandstof_type": "Diesel",
-      "ritten": [
-        {
-          "rit_id": "RIT-1",
-          "datum": "Wed Apr 10 2024 06:56:47 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 30,
-          "brandstof_verbruik_l": 96,
-          "gemiddeld_verbruik_l_per_100km": 35
-        },
-        {
-          "rit_id": "RIT-2",
-          "datum": "Mon Jun 03 2024 08:00:40 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 800,
-          "brandstof_verbruik_l": 77,
-          "gemiddeld_verbruik_l_per_100km": 24
-        },
-        {
-          "rit_id": "RIT-3",
-          "datum": "Fri Mar 15 2024 13:14:22 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 387,
-          "brandstof_verbruik_l": 63,
-          "gemiddeld_verbruik_l_per_100km": 35
-        },
-        {
-          "rit_id": "RIT-4",
-          "datum": "Fri Mar 14 2025 07:27:43 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 227,
-          "brandstof_verbruik_l": 60,
-          "gemiddeld_verbruik_l_per_100km": 40
-        },
-        {
-          "rit_id": "RIT-5",
-          "datum": "Tue Sep 17 2024 15:40:22 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 318,
-          "brandstof_verbruik_l": 58,
-          "gemiddeld_verbruik_l_per_100km": 47
-        },
-        {
-          "rit_id": "RIT-6",
-          "datum": "Mon Mar 10 2025 18:13:27 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 921,
-          "brandstof_verbruik_l": 74,
-          "gemiddeld_verbruik_l_per_100km": 49
-        },
-        {
-          "rit_id": "RIT-7",
-          "datum": "Sun Oct 06 2024 12:26:02 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 274,
-          "brandstof_verbruik_l": 40,
-          "gemiddeld_verbruik_l_per_100km": 36
-        },
-        {
-          "rit_id": "RIT-8",
-          "datum": "Thu May 09 2024 02:30:14 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 177,
-          "brandstof_verbruik_l": 29,
-          "gemiddeld_verbruik_l_per_100km": 30
-        },
-        {
-          "rit_id": "RIT-9",
-          "datum": "Wed Mar 20 2024 06:02:48 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 719,
-          "brandstof_verbruik_l": 16,
-          "gemiddeld_verbruik_l_per_100km": 23
-        },
-        {
-          "rit_id": "RIT-10",
-          "datum": "Thu Jun 13 2024 00:32:33 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 269,
-          "brandstof_verbruik_l": 100,
-          "gemiddeld_verbruik_l_per_100km": 42
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2024-12-27T01:54:18 -01:00",
+        "afstand_km": 126,
+        "duurMinuten": 159,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 2.2857,
+          "verzekering": 1.2012,
+          "afschrijving": 3.0355,
+          "totaleKosten": 33.6802
         }
-      ]
-    },
-    {
-      "voertuig_id": "TRK-9",
-      "kenteken": "AB-8-CD",
-      "merk": "Volvo",
-      "model": "FH16",
-      "brandstof_type": "Diesel",
-      "ritten": [
-        {
-          "rit_id": "RIT-1",
-          "datum": "Tue May 28 2024 02:34:02 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 473,
-          "brandstof_verbruik_l": 99,
-          "gemiddeld_verbruik_l_per_100km": 24
-        },
-        {
-          "rit_id": "RIT-2",
-          "datum": "Fri Jan 26 2024 02:36:27 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 351,
-          "brandstof_verbruik_l": 55,
-          "gemiddeld_verbruik_l_per_100km": 28
-        },
-        {
-          "rit_id": "RIT-3",
-          "datum": "Sat Mar 16 2024 09:41:17 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 733,
-          "brandstof_verbruik_l": 98,
-          "gemiddeld_verbruik_l_per_100km": 33
-        },
-        {
-          "rit_id": "RIT-4",
-          "datum": "Sat Jul 13 2024 08:36:34 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 511,
-          "brandstof_verbruik_l": 69,
-          "gemiddeld_verbruik_l_per_100km": 21
-        },
-        {
-          "rit_id": "RIT-5",
-          "datum": "Wed Feb 28 2024 06:04:09 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 267,
-          "brandstof_verbruik_l": 68,
-          "gemiddeld_verbruik_l_per_100km": 39
-        },
-        {
-          "rit_id": "RIT-6",
-          "datum": "Sun Mar 03 2024 04:42:10 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 174,
-          "brandstof_verbruik_l": 54,
-          "gemiddeld_verbruik_l_per_100km": 39
-        },
-        {
-          "rit_id": "RIT-7",
-          "datum": "Thu May 16 2024 22:02:28 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 401,
-          "brandstof_verbruik_l": 78,
-          "gemiddeld_verbruik_l_per_100km": 39
-        },
-        {
-          "rit_id": "RIT-8",
-          "datum": "Sun Jun 09 2024 11:32:14 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 778,
-          "brandstof_verbruik_l": 95,
-          "gemiddeld_verbruik_l_per_100km": 34
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-1",
+    "kenteken": "MRD-2-MNM",
+    "merk": "Volvo",
+    "model": "R580",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2024-12-09T05:20:44 -01:00",
+        "afstand_km": 53,
+        "duurMinuten": 90,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 4.7374,
+          "verzekering": 1.5198,
+          "afschrijving": 4.4414,
+          "totaleKosten": 26.3055
         }
-      ]
-    },
-    {
-      "voertuig_id": "TRK-10",
-      "kenteken": "AB-9-CD",
-      "merk": "Volvo",
-      "model": "FH16",
-      "brandstof_type": "Diesel",
-      "ritten": [
-        {
-          "rit_id": "RIT-1",
-          "datum": "Fri Sep 27 2024 08:13:56 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 701,
-          "brandstof_verbruik_l": 69,
-          "gemiddeld_verbruik_l_per_100km": 29
-        },
-        {
-          "rit_id": "RIT-2",
-          "datum": "Thu Jan 30 2025 07:26:46 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 816,
-          "brandstof_verbruik_l": 17,
-          "gemiddeld_verbruik_l_per_100km": 45
-        },
-        {
-          "rit_id": "RIT-3",
-          "datum": "Mon Feb 19 2024 05:47:28 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 744,
-          "brandstof_verbruik_l": 26,
-          "gemiddeld_verbruik_l_per_100km": 20
-        },
-        {
-          "rit_id": "RIT-4",
-          "datum": "Sun Sep 22 2024 14:50:47 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 551,
-          "brandstof_verbruik_l": 11,
-          "gemiddeld_verbruik_l_per_100km": 29
-        },
-        {
-          "rit_id": "RIT-5",
-          "datum": "Sat Apr 06 2024 20:00:00 GMT+0200 (Midden-Europese zomertijd)",
-          "afstand_km": 886,
-          "brandstof_verbruik_l": 80,
-          "gemiddeld_verbruik_l_per_100km": 45
-        },
-        {
-          "rit_id": "RIT-6",
-          "datum": "Tue Jan 02 2024 06:06:54 GMT+0100 (Midden-Europese standaardtijd)",
-          "afstand_km": 910,
-          "brandstof_verbruik_l": 45,
-          "gemiddeld_verbruik_l_per_100km": 42
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2024-11-02T02:11:12 -01:00",
+        "afstand_km": 144,
+        "duurMinuten": 107,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 1.6463,
+          "verzekering": 2.0878,
+          "afschrijving": 3.2235,
+          "totaleKosten": 20.3659
         }
-      ]
-    }
-  ]
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2024-12-04T06:08:00 -01:00",
+        "afstand_km": 132,
+        "duurMinuten": 105,
+        "brandstof_verbruik_l": 15,
+        "kosten": {
+          "onderhoud": 1.8234,
+          "verzekering": 2.7247,
+          "afschrijving": 6.4443,
+          "totaleKosten": 30.0294
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2025-03-01T04:28:22 -01:00",
+        "afstand_km": 129,
+        "duurMinuten": 82,
+        "brandstof_verbruik_l": 5,
+        "kosten": {
+          "onderhoud": 3.3293,
+          "verzekering": 1.0759,
+          "afschrijving": 5.7737,
+          "totaleKosten": 38.933
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2025-02-23T09:16:49 -01:00",
+        "afstand_km": 147,
+        "duurMinuten": 159,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 3.7146,
+          "verzekering": 1.4015,
+          "afschrijving": 2.7451,
+          "totaleKosten": 10.8931
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2025-02-12T11:51:56 -01:00",
+        "afstand_km": 109,
+        "duurMinuten": 107,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 4.1232,
+          "verzekering": 2.1604,
+          "afschrijving": 5.8327,
+          "totaleKosten": 21.0492
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2025-01-27T01:24:44 -01:00",
+        "afstand_km": 56,
+        "duurMinuten": 105,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 1.4014,
+          "verzekering": 1.1624,
+          "afschrijving": 6.6124,
+          "totaleKosten": 32.6202
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2025-01-30T11:41:38 -01:00",
+        "afstand_km": 63,
+        "duurMinuten": 153,
+        "brandstof_verbruik_l": 17,
+        "kosten": {
+          "onderhoud": 4.1925,
+          "verzekering": 2.6181,
+          "afschrijving": 4.1824,
+          "totaleKosten": 35.1272
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-2",
+    "kenteken": "GVC-0-FKR",
+    "merk": "DAF",
+    "model": "R580",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-04-10T08:38:59 -02:00",
+        "afstand_km": 104,
+        "duurMinuten": 149,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 4.6038,
+          "verzekering": 2.4326,
+          "afschrijving": 2.0068,
+          "totaleKosten": 21.3572
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-03-07T05:54:52 -01:00",
+        "afstand_km": 76,
+        "duurMinuten": 64,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 4.2075,
+          "verzekering": 1.8673,
+          "afschrijving": 5.4516,
+          "totaleKosten": 28.5125
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2024-11-28T05:34:53 -01:00",
+        "afstand_km": 96,
+        "duurMinuten": 65,
+        "brandstof_verbruik_l": 10,
+        "kosten": {
+          "onderhoud": 2.3582,
+          "verzekering": 2.7507,
+          "afschrijving": 2.8692,
+          "totaleKosten": 37.9357
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2024-12-09T07:51:36 -01:00",
+        "afstand_km": 124,
+        "duurMinuten": 62,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 2.5374,
+          "verzekering": 2.1461,
+          "afschrijving": 5.2714,
+          "totaleKosten": 39.3476
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2025-01-07T11:44:29 -01:00",
+        "afstand_km": 119,
+        "duurMinuten": 124,
+        "brandstof_verbruik_l": 18,
+        "kosten": {
+          "onderhoud": 3.9634,
+          "verzekering": 2.5891,
+          "afschrijving": 3.434,
+          "totaleKosten": 14.9995
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2025-02-27T05:07:09 -01:00",
+        "afstand_km": 53,
+        "duurMinuten": 124,
+        "brandstof_verbruik_l": 20,
+        "kosten": {
+          "onderhoud": 4.4686,
+          "verzekering": 1.9765,
+          "afschrijving": 5.1478,
+          "totaleKosten": 22.9517
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2025-01-27T08:00:43 -01:00",
+        "afstand_km": 66,
+        "duurMinuten": 140,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 1.5799,
+          "verzekering": 1.3353,
+          "afschrijving": 2.9164,
+          "totaleKosten": 30.1029
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2025-03-28T07:08:26 -01:00",
+        "afstand_km": 127,
+        "duurMinuten": 125,
+        "brandstof_verbruik_l": 19,
+        "kosten": {
+          "onderhoud": 3.8974,
+          "verzekering": 1.2347,
+          "afschrijving": 3.0395,
+          "totaleKosten": 14.9211
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-3",
+    "kenteken": "LWM-4-DWS",
+    "merk": "Scania",
+    "model": "XF",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-02-10T01:28:04 -01:00",
+        "afstand_km": 52,
+        "duurMinuten": 155,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 3.4576,
+          "verzekering": 2.0267,
+          "afschrijving": 5.4398,
+          "totaleKosten": 34.9265
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-01-01T02:55:56 -01:00",
+        "afstand_km": 101,
+        "duurMinuten": 81,
+        "brandstof_verbruik_l": 17,
+        "kosten": {
+          "onderhoud": 3.8545,
+          "verzekering": 1.6816,
+          "afschrijving": 6.3334,
+          "totaleKosten": 18.2717
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-04-22T05:56:26 -02:00",
+        "afstand_km": 70,
+        "duurMinuten": 168,
+        "brandstof_verbruik_l": 5,
+        "kosten": {
+          "onderhoud": 4.3492,
+          "verzekering": 1.7712,
+          "afschrijving": 3.0746,
+          "totaleKosten": 16.5401
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2024-11-27T06:12:58 -01:00",
+        "afstand_km": 145,
+        "duurMinuten": 80,
+        "brandstof_verbruik_l": 16,
+        "kosten": {
+          "onderhoud": 2.5316,
+          "verzekering": 1.7488,
+          "afschrijving": 3.833,
+          "totaleKosten": 38.4121
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2025-01-07T12:38:24 -01:00",
+        "afstand_km": 138,
+        "duurMinuten": 135,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 2.9717,
+          "verzekering": 1.1147,
+          "afschrijving": 5.8653,
+          "totaleKosten": 34.5141
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2025-01-26T11:54:16 -01:00",
+        "afstand_km": 60,
+        "duurMinuten": 83,
+        "brandstof_verbruik_l": 5,
+        "kosten": {
+          "onderhoud": 3.5699,
+          "verzekering": 1.5978,
+          "afschrijving": 4.6566,
+          "totaleKosten": 20.3694
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2025-02-10T03:01:05 -01:00",
+        "afstand_km": 59,
+        "duurMinuten": 72,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 2.1928,
+          "verzekering": 2.0292,
+          "afschrijving": 2.8267,
+          "totaleKosten": 26.2704
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2025-04-08T03:36:53 -02:00",
+        "afstand_km": 74,
+        "duurMinuten": 67,
+        "brandstof_verbruik_l": 18,
+        "kosten": {
+          "onderhoud": 3.0544,
+          "verzekering": 2.6017,
+          "afschrijving": 4.7837,
+          "totaleKosten": 27.8612
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-4",
+    "kenteken": "BGE-5-GMK",
+    "merk": "Scania",
+    "model": "XF",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-03-27T01:40:38 -01:00",
+        "afstand_km": 117,
+        "duurMinuten": 75,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 2.332,
+          "verzekering": 2.6556,
+          "afschrijving": 6.3872,
+          "totaleKosten": 20.7476
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2024-11-12T01:19:44 -01:00",
+        "afstand_km": 103,
+        "duurMinuten": 147,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 3.0627,
+          "verzekering": 1.8549,
+          "afschrijving": 6.1191,
+          "totaleKosten": 34.6931
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2024-11-29T01:12:28 -01:00",
+        "afstand_km": 150,
+        "duurMinuten": 174,
+        "brandstof_verbruik_l": 14,
+        "kosten": {
+          "onderhoud": 3.35,
+          "verzekering": 2.7003,
+          "afschrijving": 4.2159,
+          "totaleKosten": 17.3926
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2025-04-12T03:48:04 -02:00",
+        "afstand_km": 74,
+        "duurMinuten": 80,
+        "brandstof_verbruik_l": 20,
+        "kosten": {
+          "onderhoud": 3.0804,
+          "verzekering": 1.3434,
+          "afschrijving": 2.4002,
+          "totaleKosten": 22.7867
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2024-11-03T05:53:11 -01:00",
+        "afstand_km": 87,
+        "duurMinuten": 67,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 1.5244,
+          "verzekering": 2.2222,
+          "afschrijving": 4.5506,
+          "totaleKosten": 21.6007
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2025-02-12T03:12:18 -01:00",
+        "afstand_km": 123,
+        "duurMinuten": 172,
+        "brandstof_verbruik_l": 10,
+        "kosten": {
+          "onderhoud": 2.6213,
+          "verzekering": 2.9702,
+          "afschrijving": 5.1837,
+          "totaleKosten": 27.1597
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2025-02-16T02:32:25 -01:00",
+        "afstand_km": 50,
+        "duurMinuten": 81,
+        "brandstof_verbruik_l": 5,
+        "kosten": {
+          "onderhoud": 4.4391,
+          "verzekering": 1.7852,
+          "afschrijving": 5.951,
+          "totaleKosten": 31.4589
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2025-01-18T09:54:37 -01:00",
+        "afstand_km": 84,
+        "duurMinuten": 64,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 3.0133,
+          "verzekering": 2.7186,
+          "afschrijving": 4.7418,
+          "totaleKosten": 29.7881
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-5",
+    "kenteken": "WHB-2-GMJ",
+    "merk": "DAF",
+    "model": "XF",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-01-08T10:48:08 -01:00",
+        "afstand_km": 51,
+        "duurMinuten": 126,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 2.3102,
+          "verzekering": 1.936,
+          "afschrijving": 3.3187,
+          "totaleKosten": 16.1032
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2024-11-16T02:54:21 -01:00",
+        "afstand_km": 85,
+        "duurMinuten": 81,
+        "brandstof_verbruik_l": 5,
+        "kosten": {
+          "onderhoud": 4.3426,
+          "verzekering": 2.566,
+          "afschrijving": 2.2799,
+          "totaleKosten": 38.3616
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2024-12-30T02:57:16 -01:00",
+        "afstand_km": 116,
+        "duurMinuten": 140,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 2.8881,
+          "verzekering": 2.2368,
+          "afschrijving": 4.0481,
+          "totaleKosten": 25.5703
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2024-12-24T10:39:19 -01:00",
+        "afstand_km": 84,
+        "duurMinuten": 101,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 4.2824,
+          "verzekering": 1.4167,
+          "afschrijving": 2.1524,
+          "totaleKosten": 28.4983
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2024-11-23T11:53:44 -01:00",
+        "afstand_km": 123,
+        "duurMinuten": 65,
+        "brandstof_verbruik_l": 19,
+        "kosten": {
+          "onderhoud": 1.6161,
+          "verzekering": 1.3835,
+          "afschrijving": 5.2118,
+          "totaleKosten": 16.4312
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-11-07T08:28:53 -01:00",
+        "afstand_km": 131,
+        "duurMinuten": 82,
+        "brandstof_verbruik_l": 17,
+        "kosten": {
+          "onderhoud": 2.4743,
+          "verzekering": 1.3327,
+          "afschrijving": 4.0717,
+          "totaleKosten": 21.2378
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2025-04-04T11:49:04 -02:00",
+        "afstand_km": 86,
+        "duurMinuten": 66,
+        "brandstof_verbruik_l": 16,
+        "kosten": {
+          "onderhoud": 3.7451,
+          "verzekering": 1.9866,
+          "afschrijving": 6.466,
+          "totaleKosten": 27.7001
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2024-11-29T01:41:02 -01:00",
+        "afstand_km": 103,
+        "duurMinuten": 74,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 1.27,
+          "verzekering": 2.8844,
+          "afschrijving": 3.4785,
+          "totaleKosten": 27.3708
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-6",
+    "kenteken": "ACT-1-ERN",
+    "merk": "Scania",
+    "model": "TGX",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-03-26T03:08:50 -01:00",
+        "afstand_km": 63,
+        "duurMinuten": 84,
+        "brandstof_verbruik_l": 15,
+        "kosten": {
+          "onderhoud": 1.1225,
+          "verzekering": 1.1328,
+          "afschrijving": 5.8547,
+          "totaleKosten": 27.8692
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-01-28T11:48:15 -01:00",
+        "afstand_km": 149,
+        "duurMinuten": 109,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 4.2646,
+          "verzekering": 2.0165,
+          "afschrijving": 2.3685,
+          "totaleKosten": 31.8559
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-01-08T01:47:23 -01:00",
+        "afstand_km": 72,
+        "duurMinuten": 66,
+        "brandstof_verbruik_l": 18,
+        "kosten": {
+          "onderhoud": 1.5916,
+          "verzekering": 1.6473,
+          "afschrijving": 5.5313,
+          "totaleKosten": 33.3505
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2025-01-16T07:48:08 -01:00",
+        "afstand_km": 145,
+        "duurMinuten": 118,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 4.69,
+          "verzekering": 1.9013,
+          "afschrijving": 2.0512,
+          "totaleKosten": 37.3658
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2024-11-14T08:33:37 -01:00",
+        "afstand_km": 120,
+        "duurMinuten": 69,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 1.6632,
+          "verzekering": 1.5177,
+          "afschrijving": 2.1085,
+          "totaleKosten": 13.065
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-12-24T05:21:01 -01:00",
+        "afstand_km": 112,
+        "duurMinuten": 115,
+        "brandstof_verbruik_l": 16,
+        "kosten": {
+          "onderhoud": 4.4233,
+          "verzekering": 2.5044,
+          "afschrijving": 6.7401,
+          "totaleKosten": 15.6725
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2024-11-03T10:24:45 -01:00",
+        "afstand_km": 94,
+        "duurMinuten": 130,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 1.6846,
+          "verzekering": 2.1155,
+          "afschrijving": 4.5201,
+          "totaleKosten": 39.6605
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2025-03-01T03:23:42 -01:00",
+        "afstand_km": 146,
+        "duurMinuten": 105,
+        "brandstof_verbruik_l": 5,
+        "kosten": {
+          "onderhoud": 3.2368,
+          "verzekering": 2.8891,
+          "afschrijving": 4.8106,
+          "totaleKosten": 24.4786
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-7",
+    "kenteken": "DKD-1-KCA",
+    "merk": "MAN",
+    "model": "FH16",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-01-14T07:54:46 -01:00",
+        "afstand_km": 91,
+        "duurMinuten": 166,
+        "brandstof_verbruik_l": 20,
+        "kosten": {
+          "onderhoud": 4.001,
+          "verzekering": 1.3637,
+          "afschrijving": 6.8704,
+          "totaleKosten": 30.5212
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-01-15T11:25:03 -01:00",
+        "afstand_km": 85,
+        "duurMinuten": 121,
+        "brandstof_verbruik_l": 16,
+        "kosten": {
+          "onderhoud": 1.1841,
+          "verzekering": 2.4264,
+          "afschrijving": 5.0871,
+          "totaleKosten": 20.9881
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-01-24T09:30:13 -01:00",
+        "afstand_km": 58,
+        "duurMinuten": 73,
+        "brandstof_verbruik_l": 20,
+        "kosten": {
+          "onderhoud": 1.1873,
+          "verzekering": 1.2014,
+          "afschrijving": 2.9772,
+          "totaleKosten": 19.8512
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2025-04-04T12:39:32 -02:00",
+        "afstand_km": 82,
+        "duurMinuten": 67,
+        "brandstof_verbruik_l": 14,
+        "kosten": {
+          "onderhoud": 2.6338,
+          "verzekering": 1.5469,
+          "afschrijving": 2.7285,
+          "totaleKosten": 19.8199
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2024-11-27T07:34:24 -01:00",
+        "afstand_km": 101,
+        "duurMinuten": 154,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 4.6562,
+          "verzekering": 1.3158,
+          "afschrijving": 5.5669,
+          "totaleKosten": 30.8894
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2025-03-16T02:49:00 -01:00",
+        "afstand_km": 133,
+        "duurMinuten": 137,
+        "brandstof_verbruik_l": 18,
+        "kosten": {
+          "onderhoud": 4.5398,
+          "verzekering": 2.3523,
+          "afschrijving": 3.84,
+          "totaleKosten": 38.2246
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2025-03-31T12:27:23 -02:00",
+        "afstand_km": 59,
+        "duurMinuten": 114,
+        "brandstof_verbruik_l": 19,
+        "kosten": {
+          "onderhoud": 3.0952,
+          "verzekering": 1.629,
+          "afschrijving": 2.6854,
+          "totaleKosten": 32.3878
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2025-01-03T04:07:40 -01:00",
+        "afstand_km": 99,
+        "duurMinuten": 78,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 3.5619,
+          "verzekering": 1.9169,
+          "afschrijving": 5.068,
+          "totaleKosten": 15.5745
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-8",
+    "kenteken": "DAC-9-BLS",
+    "merk": "MAN",
+    "model": "R580",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2024-11-06T09:28:42 -01:00",
+        "afstand_km": 83,
+        "duurMinuten": 78,
+        "brandstof_verbruik_l": 13,
+        "kosten": {
+          "onderhoud": 4.5475,
+          "verzekering": 1.431,
+          "afschrijving": 2.1823,
+          "totaleKosten": 17.3325
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-02-23T03:23:04 -01:00",
+        "afstand_km": 81,
+        "duurMinuten": 110,
+        "brandstof_verbruik_l": 13,
+        "kosten": {
+          "onderhoud": 2.3589,
+          "verzekering": 1.5614,
+          "afschrijving": 5.6046,
+          "totaleKosten": 18.8096
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-01-28T04:40:05 -01:00",
+        "afstand_km": 98,
+        "duurMinuten": 108,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 3.4551,
+          "verzekering": 2.4198,
+          "afschrijving": 3.6956,
+          "totaleKosten": 20.2311
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2025-03-25T03:27:38 -01:00",
+        "afstand_km": 72,
+        "duurMinuten": 174,
+        "brandstof_verbruik_l": 15,
+        "kosten": {
+          "onderhoud": 4.2162,
+          "verzekering": 1.1023,
+          "afschrijving": 6.24,
+          "totaleKosten": 16.392
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2025-03-08T10:55:41 -01:00",
+        "afstand_km": 119,
+        "duurMinuten": 157,
+        "brandstof_verbruik_l": 19,
+        "kosten": {
+          "onderhoud": 2.6603,
+          "verzekering": 1.4237,
+          "afschrijving": 2.0031,
+          "totaleKosten": 28.0185
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-11-19T11:29:19 -01:00",
+        "afstand_km": 140,
+        "duurMinuten": 112,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 2.1005,
+          "verzekering": 1.7672,
+          "afschrijving": 2.3314,
+          "totaleKosten": 16.4876
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2024-12-07T04:42:55 -01:00",
+        "afstand_km": 122,
+        "duurMinuten": 125,
+        "brandstof_verbruik_l": 15,
+        "kosten": {
+          "onderhoud": 2.9621,
+          "verzekering": 2.0484,
+          "afschrijving": 5.4495,
+          "totaleKosten": 12.6818
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2025-02-02T04:18:43 -01:00",
+        "afstand_km": 88,
+        "duurMinuten": 105,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 2.3568,
+          "verzekering": 1.6267,
+          "afschrijving": 4.0778,
+          "totaleKosten": 33.4053
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-9",
+    "kenteken": "LJL-5-NNW",
+    "merk": "Scania",
+    "model": "FH16",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2024-11-29T07:02:18 -01:00",
+        "afstand_km": 70,
+        "duurMinuten": 174,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 4.5891,
+          "verzekering": 2.3513,
+          "afschrijving": 6.5276,
+          "totaleKosten": 14.6757
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-03-08T10:17:00 -01:00",
+        "afstand_km": 72,
+        "duurMinuten": 140,
+        "brandstof_verbruik_l": 18,
+        "kosten": {
+          "onderhoud": 4.7129,
+          "verzekering": 1.5289,
+          "afschrijving": 4.7543,
+          "totaleKosten": 28.8857
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-01-07T06:48:12 -01:00",
+        "afstand_km": 79,
+        "duurMinuten": 66,
+        "brandstof_verbruik_l": 13,
+        "kosten": {
+          "onderhoud": 2.7616,
+          "verzekering": 1.7924,
+          "afschrijving": 3.4244,
+          "totaleKosten": 32.9612
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2025-01-24T11:34:46 -01:00",
+        "afstand_km": 87,
+        "duurMinuten": 87,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 3.0974,
+          "verzekering": 1.1368,
+          "afschrijving": 5.2682,
+          "totaleKosten": 36.9627
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2025-01-29T12:21:53 -01:00",
+        "afstand_km": 93,
+        "duurMinuten": 65,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 2.106,
+          "verzekering": 2.2682,
+          "afschrijving": 4.3105,
+          "totaleKosten": 30.403
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-11-24T01:49:04 -01:00",
+        "afstand_km": 141,
+        "duurMinuten": 141,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 4.1205,
+          "verzekering": 2.1605,
+          "afschrijving": 6.4217,
+          "totaleKosten": 26.711
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2025-03-10T12:51:48 -01:00",
+        "afstand_km": 66,
+        "duurMinuten": 153,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 3.7157,
+          "verzekering": 1.7595,
+          "afschrijving": 5.7698,
+          "totaleKosten": 26.9034
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2024-11-28T01:16:24 -01:00",
+        "afstand_km": 75,
+        "duurMinuten": 172,
+        "brandstof_verbruik_l": 16,
+        "kosten": {
+          "onderhoud": 4.8638,
+          "verzekering": 1.4481,
+          "afschrijving": 2.9927,
+          "totaleKosten": 21.9274
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-10",
+    "kenteken": "JMC-9-CBG",
+    "merk": "MAN",
+    "model": "FH16",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-02-01T08:30:01 -01:00",
+        "afstand_km": 118,
+        "duurMinuten": 130,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 3.6585,
+          "verzekering": 2.4818,
+          "afschrijving": 6.02,
+          "totaleKosten": 18.1115
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2024-12-25T01:09:11 -01:00",
+        "afstand_km": 58,
+        "duurMinuten": 88,
+        "brandstof_verbruik_l": 16,
+        "kosten": {
+          "onderhoud": 2.9905,
+          "verzekering": 2.3252,
+          "afschrijving": 5.2921,
+          "totaleKosten": 34.6595
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-04-07T10:21:26 -02:00",
+        "afstand_km": 58,
+        "duurMinuten": 150,
+        "brandstof_verbruik_l": 15,
+        "kosten": {
+          "onderhoud": 3.6812,
+          "verzekering": 2.6917,
+          "afschrijving": 3.4357,
+          "totaleKosten": 11.7445
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2024-12-13T08:08:35 -01:00",
+        "afstand_km": 65,
+        "duurMinuten": 111,
+        "brandstof_verbruik_l": 19,
+        "kosten": {
+          "onderhoud": 2.3413,
+          "verzekering": 2.8809,
+          "afschrijving": 6.8686,
+          "totaleKosten": 12.7913
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2025-03-09T11:58:18 -01:00",
+        "afstand_km": 63,
+        "duurMinuten": 110,
+        "brandstof_verbruik_l": 10,
+        "kosten": {
+          "onderhoud": 1.5109,
+          "verzekering": 2.6225,
+          "afschrijving": 3.5835,
+          "totaleKosten": 20.3488
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-12-21T06:41:42 -01:00",
+        "afstand_km": 120,
+        "duurMinuten": 155,
+        "brandstof_verbruik_l": 10,
+        "kosten": {
+          "onderhoud": 4.7481,
+          "verzekering": 2.2812,
+          "afschrijving": 6.4515,
+          "totaleKosten": 10.7092
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2024-11-02T03:28:16 -01:00",
+        "afstand_km": 142,
+        "duurMinuten": 92,
+        "brandstof_verbruik_l": 14,
+        "kosten": {
+          "onderhoud": 1.1313,
+          "verzekering": 2.4102,
+          "afschrijving": 6.6992,
+          "totaleKosten": 14.3704
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2024-12-26T01:56:49 -01:00",
+        "afstand_km": 84,
+        "duurMinuten": 87,
+        "brandstof_verbruik_l": 19,
+        "kosten": {
+          "onderhoud": 1.9515,
+          "verzekering": 1.8411,
+          "afschrijving": 6.9099,
+          "totaleKosten": 21.9735
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-11",
+    "kenteken": "EGJ-3-DEK",
+    "merk": "Scania",
+    "model": "XF",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-04-08T11:48:27 -02:00",
+        "afstand_km": 55,
+        "duurMinuten": 179,
+        "brandstof_verbruik_l": 20,
+        "kosten": {
+          "onderhoud": 4.9258,
+          "verzekering": 1.9143,
+          "afschrijving": 5.0002,
+          "totaleKosten": 33.8823
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-02-27T01:03:26 -01:00",
+        "afstand_km": 88,
+        "duurMinuten": 64,
+        "brandstof_verbruik_l": 5,
+        "kosten": {
+          "onderhoud": 3.6329,
+          "verzekering": 1.3324,
+          "afschrijving": 6.4665,
+          "totaleKosten": 10.676
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-04-08T09:32:56 -02:00",
+        "afstand_km": 79,
+        "duurMinuten": 138,
+        "brandstof_verbruik_l": 14,
+        "kosten": {
+          "onderhoud": 4.4126,
+          "verzekering": 2.7952,
+          "afschrijving": 3.5461,
+          "totaleKosten": 25.6922
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2025-02-08T05:49:39 -01:00",
+        "afstand_km": 124,
+        "duurMinuten": 126,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 3.6836,
+          "verzekering": 1.2857,
+          "afschrijving": 3.9241,
+          "totaleKosten": 33.7826
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2025-01-03T10:30:00 -01:00",
+        "afstand_km": 79,
+        "duurMinuten": 163,
+        "brandstof_verbruik_l": 16,
+        "kosten": {
+          "onderhoud": 4.0716,
+          "verzekering": 2.1565,
+          "afschrijving": 5.1605,
+          "totaleKosten": 13.6172
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-12-29T03:30:51 -01:00",
+        "afstand_km": 148,
+        "duurMinuten": 135,
+        "brandstof_verbruik_l": 13,
+        "kosten": {
+          "onderhoud": 1.9647,
+          "verzekering": 2.0231,
+          "afschrijving": 3.9168,
+          "totaleKosten": 18.9662
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2025-03-07T10:44:54 -01:00",
+        "afstand_km": 138,
+        "duurMinuten": 122,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 4.0432,
+          "verzekering": 2.5797,
+          "afschrijving": 2.5499,
+          "totaleKosten": 30.1741
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2025-02-23T05:51:10 -01:00",
+        "afstand_km": 60,
+        "duurMinuten": 140,
+        "brandstof_verbruik_l": 13,
+        "kosten": {
+          "onderhoud": 4.6328,
+          "verzekering": 2.7145,
+          "afschrijving": 5.9878,
+          "totaleKosten": 23.8792
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-12",
+    "kenteken": "RPN-9-FBR",
+    "merk": "Scania",
+    "model": "XF",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-03-08T05:43:17 -01:00",
+        "afstand_km": 60,
+        "duurMinuten": 126,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 1.4419,
+          "verzekering": 2.5898,
+          "afschrijving": 5.1166,
+          "totaleKosten": 17.94
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-03-30T12:11:38 -01:00",
+        "afstand_km": 68,
+        "duurMinuten": 169,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 3.0899,
+          "verzekering": 1.0595,
+          "afschrijving": 2.6101,
+          "totaleKosten": 33.6897
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2024-11-13T11:49:22 -01:00",
+        "afstand_km": 110,
+        "duurMinuten": 119,
+        "brandstof_verbruik_l": 19,
+        "kosten": {
+          "onderhoud": 2.3697,
+          "verzekering": 1.162,
+          "afschrijving": 5.6914,
+          "totaleKosten": 20.8095
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2025-02-18T09:07:21 -01:00",
+        "afstand_km": 75,
+        "duurMinuten": 127,
+        "brandstof_verbruik_l": 10,
+        "kosten": {
+          "onderhoud": 2.4461,
+          "verzekering": 1.3711,
+          "afschrijving": 2.2386,
+          "totaleKosten": 27.454
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2025-04-20T05:05:14 -02:00",
+        "afstand_km": 76,
+        "duurMinuten": 153,
+        "brandstof_verbruik_l": 9,
+        "kosten": {
+          "onderhoud": 2.4595,
+          "verzekering": 1.2904,
+          "afschrijving": 6.34,
+          "totaleKosten": 11.9923
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2025-04-05T07:48:08 -02:00",
+        "afstand_km": 117,
+        "duurMinuten": 156,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 3.837,
+          "verzekering": 2.4155,
+          "afschrijving": 5.4221,
+          "totaleKosten": 15.0736
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2024-11-24T09:11:25 -01:00",
+        "afstand_km": 63,
+        "duurMinuten": 95,
+        "brandstof_verbruik_l": 16,
+        "kosten": {
+          "onderhoud": 1.3689,
+          "verzekering": 2.552,
+          "afschrijving": 5.0994,
+          "totaleKosten": 39.5217
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2024-12-26T08:27:39 -01:00",
+        "afstand_km": 102,
+        "duurMinuten": 178,
+        "brandstof_verbruik_l": 8,
+        "kosten": {
+          "onderhoud": 1.1193,
+          "verzekering": 2.3653,
+          "afschrijving": 2.8195,
+          "totaleKosten": 36.6191
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-13",
+    "kenteken": "DHN-2-TER",
+    "merk": "MAN",
+    "model": "XF",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-03-13T06:26:47 -01:00",
+        "afstand_km": 147,
+        "duurMinuten": 91,
+        "brandstof_verbruik_l": 8,
+        "kosten": {
+          "onderhoud": 2.0046,
+          "verzekering": 1.793,
+          "afschrijving": 5.6618,
+          "totaleKosten": 18.5419
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2025-01-28T07:09:20 -01:00",
+        "afstand_km": 79,
+        "duurMinuten": 122,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 1.101,
+          "verzekering": 1.2163,
+          "afschrijving": 2.051,
+          "totaleKosten": 15.1159
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-03-28T12:26:30 -01:00",
+        "afstand_km": 94,
+        "duurMinuten": 175,
+        "brandstof_verbruik_l": 16,
+        "kosten": {
+          "onderhoud": 1.1922,
+          "verzekering": 1.8382,
+          "afschrijving": 3.3663,
+          "totaleKosten": 21.8879
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2024-11-24T09:37:37 -01:00",
+        "afstand_km": 120,
+        "duurMinuten": 98,
+        "brandstof_verbruik_l": 14,
+        "kosten": {
+          "onderhoud": 4.9919,
+          "verzekering": 1.7944,
+          "afschrijving": 4.0342,
+          "totaleKosten": 31.237
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2024-12-03T04:10:26 -01:00",
+        "afstand_km": 82,
+        "duurMinuten": 168,
+        "brandstof_verbruik_l": 10,
+        "kosten": {
+          "onderhoud": 1.0417,
+          "verzekering": 2.2187,
+          "afschrijving": 2.7613,
+          "totaleKosten": 11.1078
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2025-02-20T04:44:18 -01:00",
+        "afstand_km": 74,
+        "duurMinuten": 152,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 1.8802,
+          "verzekering": 2.6825,
+          "afschrijving": 3.2255,
+          "totaleKosten": 39.1048
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2024-11-26T12:09:51 -01:00",
+        "afstand_km": 83,
+        "duurMinuten": 69,
+        "brandstof_verbruik_l": 18,
+        "kosten": {
+          "onderhoud": 4.9803,
+          "verzekering": 1.3783,
+          "afschrijving": 4.174,
+          "totaleKosten": 35.2934
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2025-01-30T04:07:51 -01:00",
+        "afstand_km": 88,
+        "duurMinuten": 150,
+        "brandstof_verbruik_l": 10,
+        "kosten": {
+          "onderhoud": 4.7355,
+          "verzekering": 1.604,
+          "afschrijving": 2.9109,
+          "totaleKosten": 39.7761
+        }
+      }
+    ]
+  },
+  {
+    "voertuig_id": "TRK-14",
+    "kenteken": "RCA-2-HFP",
+    "merk": "Mercedes",
+    "model": "FH16",
+    "brandstof_type": "Diesel",
+    "ritten": [
+      {
+        "rit_id": "RIT-0",
+        "datum": "2025-03-08T08:23:39 -01:00",
+        "afstand_km": 104,
+        "duurMinuten": 128,
+        "brandstof_verbruik_l": 12,
+        "kosten": {
+          "onderhoud": 1.7734,
+          "verzekering": 1.3633,
+          "afschrijving": 4.8033,
+          "totaleKosten": 21.9464
+        }
+      },
+      {
+        "rit_id": "RIT-1",
+        "datum": "2024-11-23T10:33:04 -01:00",
+        "afstand_km": 136,
+        "duurMinuten": 91,
+        "brandstof_verbruik_l": 17,
+        "kosten": {
+          "onderhoud": 2.3044,
+          "verzekering": 1.7221,
+          "afschrijving": 2.4558,
+          "totaleKosten": 17.5664
+        }
+      },
+      {
+        "rit_id": "RIT-2",
+        "datum": "2025-02-22T07:25:21 -01:00",
+        "afstand_km": 145,
+        "duurMinuten": 80,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 2.0243,
+          "verzekering": 2.2701,
+          "afschrijving": 3.7579,
+          "totaleKosten": 31.7491
+        }
+      },
+      {
+        "rit_id": "RIT-3",
+        "datum": "2025-04-23T02:35:44 -02:00",
+        "afstand_km": 78,
+        "duurMinuten": 76,
+        "brandstof_verbruik_l": 8,
+        "kosten": {
+          "onderhoud": 4.7893,
+          "verzekering": 1.2264,
+          "afschrijving": 2.3153,
+          "totaleKosten": 36.8491
+        }
+      },
+      {
+        "rit_id": "RIT-4",
+        "datum": "2024-12-19T02:14:45 -01:00",
+        "afstand_km": 55,
+        "duurMinuten": 161,
+        "brandstof_verbruik_l": 6,
+        "kosten": {
+          "onderhoud": 1.9336,
+          "verzekering": 1.6519,
+          "afschrijving": 5.8962,
+          "totaleKosten": 20.2969
+        }
+      },
+      {
+        "rit_id": "RIT-5",
+        "datum": "2024-12-03T03:03:12 -01:00",
+        "afstand_km": 134,
+        "duurMinuten": 145,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 3.7248,
+          "verzekering": 2.4715,
+          "afschrijving": 5.7368,
+          "totaleKosten": 18.713
+        }
+      },
+      {
+        "rit_id": "RIT-6",
+        "datum": "2024-11-24T04:50:41 -01:00",
+        "afstand_km": 67,
+        "duurMinuten": 85,
+        "brandstof_verbruik_l": 11,
+        "kosten": {
+          "onderhoud": 4.9543,
+          "verzekering": 2.5144,
+          "afschrijving": 6.599,
+          "totaleKosten": 39.0214
+        }
+      },
+      {
+        "rit_id": "RIT-7",
+        "datum": "2025-03-18T01:10:32 -01:00",
+        "afstand_km": 142,
+        "duurMinuten": 80,
+        "brandstof_verbruik_l": 7,
+        "kosten": {
+          "onderhoud": 2.8559,
+          "verzekering": 1.7829,
+          "afschrijving": 4.3501,
+          "totaleKosten": 16.6573
+        }
+      }
+    ]
+  }
+]
