@@ -19,56 +19,63 @@ import { Footer } from "./components/misc/Footer";
 // Import components
 import { ChartsWrapper } from "./components/ChartsWrapper";
 import { FuelChart } from "./components/charts/FuelUsageChart";
-import { TripCostChart } from './components/charts/TripCostChart';
-import { LoginForm } from 'components/Login';
-import { PrivateLayout } from 'components/PrivateLayout';
-import { AuthProvider } from 'components/Context/AuthContext';
-
+import { TripCostChart } from "./components/charts/TripCostChart";
+import { LoginForm } from "components/Login";
+import { PrivateLayout } from "components/PrivateLayout";
+import { AuthProvider } from "components/Context/AuthContext";
+import { TripOverview } from "./components/planning/TripOverview";
 
 const App: React.FC = () => {
-    return (
-        <AuthProvider>
-            <Router>
-                <Nav />
-                <SideNav />
+  return (
+    <AuthProvider>
+      <Router>
+        <Nav />
+        <SideNav />
 
-                <main className="container main-content g-0 flex-1">
-                    <Breadcrumbs />
+        <main className="container main-content g-0 flex-1">
+          <Breadcrumbs />
 
-                    <Routes>
-                        {/* Login route */}
-                        <Route path="/login" element={<LoginForm />} />
+          <Routes>
+            {/* Login route */}
+            <Route path="/login" element={<LoginForm />} />
 
-                        <Route element={<PrivateLayout />}>
-                            {/* Public routes */}
-                            <Route path="/" element={<ChartsWrapper />} />
-                            <Route path="/verbruik" element={<FuelChart />} />
-                            <Route path="/benzinekosten" element={<TripCostChart />} />
-                            
-                            {/* Planning routes */}
-                            <Route path="/planning/voeg-rit-toe" />
+            {/* Planning routes */}
+            <Route path="/planning/voeg-rit-toe" />
+            <Route
+              path="/planning/toon-rit-overzicht"
+              element={<TripOverview />}
+            />
 
-                            <Route
-                                path="/404"
-                                element={
-                                    <section>
-                                        <div className="g-0 pt-4">
-                                            <h3>
-                                                <strong>Error 404 - Pagina niet gevonden</strong>
-                                            </h3>
-                                        </div>
-                                    </section>
-                                }
-                                />
-                            <Route path="*" element={<Navigate replace to="/404" />} />
-                        </Route>
-                    </Routes>
-                </main>
+            <Route element={<PrivateLayout />}>
+              {/* Public routes */}
+              <Route path="/" element={<ChartsWrapper />} />
+              <Route path="/verbruik" element={<FuelChart />} />
+              <Route path="/benzinekosten" element={<TripCostChart />} />
 
-                <Footer />
-            </Router>
-        </AuthProvider>
-    );
+              {/* Planning routes */}
+              <Route path="/planning/voeg-rit-toe" />
+
+              <Route
+                path="/404"
+                element={
+                  <section>
+                    <div className="g-0 pt-4">
+                      <h3>
+                        <strong>Error 404 - Pagina niet gevonden</strong>
+                      </h3>
+                    </div>
+                  </section>
+                }
+              />
+              <Route path="*" element={<Navigate replace to="/404" />} />
+            </Route>
+          </Routes>
+        </main>
+
+        <Footer />
+      </Router>
+    </AuthProvider>
+  );
 };
 
 export default App;
