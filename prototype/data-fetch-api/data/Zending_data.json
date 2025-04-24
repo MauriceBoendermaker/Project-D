@@ -5,7 +5,7 @@
       "bestemming": "Eindhoven",
       "max_capaciteit": 14097,
       "huidige_capaciteit": 6530,
-      "onbenutte-kilometers": 6
+      "onbenutte_kilometers": 6
     },
     {
       "zending_id": 2,
@@ -13,7 +13,7 @@
       "bestemming": "Eindhoven",
       "max_capaciteit": 17993,
       "huidige_capaciteit": 107,
-      "onbenutte-kilometers": 5
+      "onbenutte_kilometers": 5
     },
     {
       "zending_id": 3,
@@ -21,7 +21,7 @@
       "bestemming": "Amsterdam",
       "max_capaciteit": 9258,
       "huidige_capaciteit": 2007,
-      "onbenutte-kilometers": 75
+      "onbenutte_kilometers": 75
     },
     {
       "zending_id": 4,
@@ -29,7 +29,7 @@
       "bestemming": "Den Haag",
       "max_capaciteit": 14268,
       "huidige_capaciteit": 9599,
-      "onbenutte-kilometers": 12
+      "onbenutte_kilometers": 12
     },
     {
       "zending_id": 5,
@@ -37,7 +37,7 @@
       "bestemming": "Den Haag",
       "max_capaciteit": 6540,
       "huidige_capaciteit": 8824,
-      "onbenutte-kilometers": 55
+      "onbenutte_kilometers": 55
     },
     {
       "zending_id": 6,
@@ -45,7 +45,7 @@
       "bestemming": "Utrecht",
       "max_capaciteit": 12531,
       "huidige_capaciteit": 8854,
-      "onbenutte-kilometers": 29
+      "onbenutte_kilometers": 29
     },
     {
       "zending_id": 7,
@@ -53,7 +53,7 @@
       "bestemming": "Maastricht",
       "max_capaciteit": 7238,
       "huidige_capaciteit": 5742,
-      "onbenutte-kilometers": 8
+      "onbenutte_kilometers": 8
     },
     {
       "zending_id": 8,
@@ -61,7 +61,7 @@
       "bestemming": "Breda",
       "max_capaciteit": 14150,
       "huidige_capaciteit": 2293,
-      "onbenutte-kilometers": 82
+      "onbenutte_kilometers": 82
     },
     {
       "zending_id": 9,
@@ -69,7 +69,7 @@
       "bestemming": "Groningen",
       "max_capaciteit": 14464,
       "huidige_capaciteit": 3514,
-      "onbenutte-kilometers": 38
+      "onbenutte_kilometers": 38
     },
     {
       "zending_id": 10,
@@ -77,7 +77,7 @@
       "bestemming": "Amsterdam",
       "max_capaciteit": 8673,
       "huidige_capaciteit": 6383,
-      "onbenutte-kilometers": 54
+      "onbenutte_kilometers": 54
     },
     {
       "zending_id": 11,
@@ -85,7 +85,7 @@
       "bestemming": "Venlo",
       "max_capaciteit": 18515,
       "huidige_capaciteit": 8673,
-      "onbenutte-kilometers": 27
+      "onbenutte_kilometers": 27
     },
     {
       "zending_id": 12,
@@ -93,7 +93,7 @@
       "bestemming": "Venlo",
       "max_capaciteit": 11603,
       "huidige_capaciteit": 1436,
-      "onbenutte-kilometers": 65
+      "onbenutte_kilometers": 65
     },
     {
       "zending_id": 13,
@@ -101,7 +101,7 @@
       "bestemming": "Groningen",
       "max_capaciteit": 16482,
       "huidige_capaciteit": 6259,
-      "onbenutte-kilometers": 25
+      "onbenutte_kilometers": 25
     },
     {
       "zending_id": 14,
@@ -109,7 +109,7 @@
       "bestemming": "Amsterdam",
       "max_capaciteit": 18174,
       "huidige_capaciteit": 1706,
-      "onbenutte-kilometers": 97
+      "onbenutte_kilometers": 97
     },
     {
       "zending_id": 15,
@@ -117,7 +117,7 @@
       "bestemming": "Utrecht",
       "max_capaciteit": 17509,
       "huidige_capaciteit": 9304,
-      "onbenutte-kilometers": 8
+      "onbenutte_kilometers": 8
     },
     {
       "zending_id": 16,
@@ -125,7 +125,7 @@
       "bestemming": "Amsterdam",
       "max_capaciteit": 12512,
       "huidige_capaciteit": 3327,
-      "onbenutte-kilometers": 47
+      "onbenutte_kilometers": 47
     },
     {
       "zending_id": 17,
@@ -133,7 +133,7 @@
       "bestemming": "Zwolle",
       "max_capaciteit": 15101,
       "huidige_capaciteit": 2154,
-      "onbenutte-kilometers": 76
+      "onbenutte_kilometers": 76
     },
     {
       "zending_id": 18,
@@ -141,7 +141,7 @@
       "bestemming": "Groningen",
       "max_capaciteit": 8090,
       "huidige_capaciteit": 375,
-      "onbenutte-kilometers": 31
+      "onbenutte_kilometers": 31
     },
     {
       "zending_id": 19,
@@ -149,7 +149,7 @@
       "bestemming": "Amsterdam",
       "max_capaciteit": 10872,
       "huidige_capaciteit": 1161,
-      "onbenutte-kilometers": 97
+      "onbenutte_kilometers": 97
     },
     {
       "zending_id": 20,
@@ -157,7 +157,7 @@
       "bestemming": "Maastricht",
       "max_capaciteit": 16363,
       "huidige_capaciteit": 1865,
-      "onbenutte-kilometers": 65
+      "onbenutte_kilometers": 65
     },
     {
       "zending_id": 21,
@@ -165,7 +165,7 @@
       "bestemming": "Utrecht",
       "max_capaciteit": 17978,
       "huidige_capaciteit": 7278,
-      "onbenutte-kilometers": 26
+      "onbenutte_kilometers": 26
     },
     {
       "zending_id": 22,
@@ -173,7 +173,7 @@
       "bestemming": "Breda",
       "max_capaciteit": 18047,
       "huidige_capaciteit": 5215,
-      "onbenutte-kilometers": 34
+      "onbenutte_kilometers": 34
     },
     {
       "zending_id": 23,
@@ -181,7 +181,7 @@
       "bestemming": "Den Haag",
       "max_capaciteit": 12702,
       "huidige_capaciteit": 6969,
-      "onbenutte-kilometers": 63
+      "onbenutte_kilometers": 63
     },
     {
       "zending_id": 24,
@@ -189,7 +189,7 @@
       "bestemming": "Amsterdam",
       "max_capaciteit": 10949,
       "huidige_capaciteit": 1094,
-      "onbenutte-kilometers": 29
+      "onbenutte_kilometers": 29
     },
     {
       "zending_id": 25,
@@ -197,7 +197,7 @@
       "bestemming": "Eindhoven",
       "max_capaciteit": 13530,
       "huidige_capaciteit": 7486,
-      "onbenutte-kilometers": 93
+      "onbenutte_kilometers": 93
     },
     {
       "zending_id": 26,
@@ -205,7 +205,7 @@
       "bestemming": "Eindhoven",
       "max_capaciteit": 13445,
       "huidige_capaciteit": 7882,
-      "onbenutte-kilometers": 52
+      "onbenutte_kilometers": 52
     },
     {
       "zending_id": 27,
@@ -213,7 +213,7 @@
       "bestemming": "Venlo",
       "max_capaciteit": 11427,
       "huidige_capaciteit": 5776,
-      "onbenutte-kilometers": 42
+      "onbenutte_kilometers": 42
     },
     {
       "zending_id": 28,
@@ -221,7 +221,7 @@
       "bestemming": "Groningen",
       "max_capaciteit": 8441,
       "huidige_capaciteit": 1786,
-      "onbenutte-kilometers": 58
+      "onbenutte_kilometers": 58
     },
     {
       "zending_id": 29,
@@ -229,7 +229,7 @@
       "bestemming": "Breda",
       "max_capaciteit": 11325,
       "huidige_capaciteit": 3003,
-      "onbenutte-kilometers": 16
+      "onbenutte_kilometers": 16
     },
     {
       "zending_id": 30,
@@ -237,7 +237,7 @@
       "bestemming": "Venlo",
       "max_capaciteit": 19514,
       "huidige_capaciteit": 9195,
-      "onbenutte-kilometers": 4
+      "onbenutte_kilometers": 4
     },
     {
       "zending_id": 31,
@@ -245,7 +245,7 @@
       "bestemming": "Venlo",
       "max_capaciteit": 9594,
       "huidige_capaciteit": 8639,
-      "onbenutte-kilometers": 78
+      "onbenutte_kilometers": 78
     },
     {
       "zending_id": 32,
@@ -253,7 +253,7 @@
       "bestemming": "Amsterdam",
       "max_capaciteit": 9422,
       "huidige_capaciteit": 3740,
-      "onbenutte-kilometers": 57
+      "onbenutte_kilometers": 57
     },
     {
       "zending_id": 33,
@@ -261,7 +261,7 @@
       "bestemming": "Maastricht",
       "max_capaciteit": 7957,
       "huidige_capaciteit": 4394,
-      "onbenutte-kilometers": 58
+      "onbenutte_kilometers": 58
     },
     {
       "zending_id": 34,
@@ -269,7 +269,7 @@
       "bestemming": "Venlo",
       "max_capaciteit": 7574,
       "huidige_capaciteit": 2648,
-      "onbenutte-kilometers": 6
+      "onbenutte_kilometers": 6
     },
     {
       "zending_id": 35,
@@ -277,7 +277,7 @@
       "bestemming": "Groningen",
       "max_capaciteit": 9763,
       "huidige_capaciteit": 9596,
-      "onbenutte-kilometers": 9
+      "onbenutte_kilometers": 9
     },
     {
       "zending_id": 36,
@@ -285,7 +285,7 @@
       "bestemming": "Breda",
       "max_capaciteit": 11093,
       "huidige_capaciteit": 9254,
-      "onbenutte-kilometers": 49
+      "onbenutte_kilometers": 49
     },
     {
       "zending_id": 37,
@@ -293,7 +293,7 @@
       "bestemming": "Eindhoven",
       "max_capaciteit": 8923,
       "huidige_capaciteit": 2956,
-      "onbenutte-kilometers": 91
+      "onbenutte_kilometers": 91
     },
     {
       "zending_id": 38,
@@ -301,7 +301,7 @@
       "bestemming": "Maastricht",
       "max_capaciteit": 7050,
       "huidige_capaciteit": 5737,
-      "onbenutte-kilometers": 54
+      "onbenutte_kilometers": 54
     },
     {
       "zending_id": 39,
@@ -309,7 +309,7 @@
       "bestemming": "Den Haag",
       "max_capaciteit": 19726,
       "huidige_capaciteit": 9750,
-      "onbenutte-kilometers": 39
+      "onbenutte_kilometers": 39
     },
     {
       "zending_id": 40,
@@ -317,7 +317,7 @@
       "bestemming": "Maastricht",
       "max_capaciteit": 15131,
       "huidige_capaciteit": 3226,
-      "onbenutte-kilometers": 31
+      "onbenutte_kilometers": 31
     },
     {
       "zending_id": 41,
@@ -325,7 +325,7 @@
       "bestemming": "Utrecht",
       "max_capaciteit": 15664,
       "huidige_capaciteit": 5440,
-      "onbenutte-kilometers": 70
+      "onbenutte_kilometers": 70
     },
     {
       "zending_id": 42,
@@ -333,7 +333,7 @@
       "bestemming": "Eindhoven",
       "max_capaciteit": 19616,
       "huidige_capaciteit": 3691,
-      "onbenutte-kilometers": 10
+      "onbenutte_kilometers": 10
     },
     {
       "zending_id": 43,
@@ -341,7 +341,7 @@
       "bestemming": "Amsterdam",
       "max_capaciteit": 7162,
       "huidige_capaciteit": 4267,
-      "onbenutte-kilometers": 12
+      "onbenutte_kilometers": 12
     },
     {
       "zending_id": 44,
@@ -349,7 +349,7 @@
       "bestemming": "Groningen",
       "max_capaciteit": 12681,
       "huidige_capaciteit": 707,
-      "onbenutte-kilometers": 58
+      "onbenutte_kilometers": 58
     },
     {
       "zending_id": 45,
@@ -357,7 +357,7 @@
       "bestemming": "Venlo",
       "max_capaciteit": 18635,
       "huidige_capaciteit": 9052,
-      "onbenutte-kilometers": 28
+      "onbenutte_kilometers": 28
     },
     {
       "zending_id": 46,
@@ -365,7 +365,7 @@
       "bestemming": "Venlo",
       "max_capaciteit": 13702,
       "huidige_capaciteit": 8376,
-      "onbenutte-kilometers": 43
+      "onbenutte_kilometers": 43
     },
     {
       "zending_id": 47,
@@ -373,7 +373,7 @@
       "bestemming": "Venlo",
       "max_capaciteit": 13526,
       "huidige_capaciteit": 243,
-      "onbenutte-kilometers": 34
+      "onbenutte_kilometers": 34
     },
     {
       "zending_id": 48,
@@ -381,7 +381,7 @@
       "bestemming": "Eindhoven",
       "max_capaciteit": 14169,
       "huidige_capaciteit": 1415,
-      "onbenutte-kilometers": 85
+      "onbenutte_kilometers": 85
     },
     {
       "zending_id": 49,
@@ -389,7 +389,7 @@
       "bestemming": "Den Haag",
       "max_capaciteit": 16612,
       "huidige_capaciteit": 6696,
-      "onbenutte-kilometers": 2
+      "onbenutte_kilometers": 2
     },
     {
       "zending_id": 50,
@@ -397,6 +397,6 @@
       "bestemming": "Eindhoven",
       "max_capaciteit": 16571,
       "huidige_capaciteit": 8383,
-      "onbenutte-kilometers": 32
+      "onbenutte_kilometers": 32
     }
   ]

@@ -1,0 +1,28 @@
+.login-page {
+    min-height: 400px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
+        border-radius: 0.5rem;
+        max-width: 400px;
+        gap: 25px;
+
+        input {
+            border: 1px solid $primary-color;
+            border-radius: $corner-radius;
+            padding: 5px 10px;
+            width: 100%;
+
+            &:active {
+                box-shadow: $box-shadow-soft;
+                border-color: $accent-color;
+            }
+        }
+    }
+}

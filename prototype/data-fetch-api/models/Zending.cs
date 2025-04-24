@@ -19,10 +19,18 @@ namespace Models
         [JsonPropertyName("huidige_capaciteit")]
 
         public int CurrentLoadKg { get; set; }
-        [JsonPropertyName("onbenutte-kilometers")]
+        [JsonPropertyName("onbenutte_kilometers")]
 
         public int EmptyKilometers { get; set; }
 
         public string? CreatedAt { get; set; }
+    }
+
+
+    public class loadDegree
+    {
+        public int ShipmentId { get; set; }
+        public double LoadDegree { get; set; }
+
     }
 }
