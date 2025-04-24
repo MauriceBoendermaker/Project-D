@@ -33,12 +33,12 @@ export const LoginForm: React.FC = () => {
 
   return (
     <div className="login-page">
-      <form onSubmit={handleLogin} className="login-form">
+      <h1 className="mb-3"><b>Login</b></h1>
+      <form onSubmit={handleLogin}>
         <input
           type="text"
           name="username"
           placeholder="Gebruikernaam"
-          className="login-form-input"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -47,7 +47,6 @@ export const LoginForm: React.FC = () => {
           type="password"
           name="password"
           placeholder="Wachtwoord"
-          className="login-form-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
