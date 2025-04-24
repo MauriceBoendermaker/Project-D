@@ -11,6 +11,9 @@ builder.Services.AddCors(options =>
                         .AllowCredentials());
 });
 
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=DashboardData.db"));
+
 builder.Services.AddControllers();
 builder.Services.AddScoped<IFuelService, JsonFuelService>();
 builder.Services.AddScoped<IJsonShipmentService, JsonShipmentService>();
