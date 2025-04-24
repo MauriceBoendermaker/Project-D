@@ -1,18 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 // Import stylesheets
-import './assets/scss/style.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./assets/scss/style.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Import misc components
-import { Breadcrumbs } from './components/misc/Breadcrumbs';
-import { Nav } from './components/nav/Nav';
-import { SideNav } from './components/nav/SideNav';
-import { Footer } from './components/misc/Footer';
+import { Breadcrumbs } from "./components/misc/Breadcrumbs";
+import { Nav } from "./components/nav/Nav";
+import { SideNav } from "./components/nav/SideNav";
+import { Footer } from "./components/misc/Footer";
 
 // Import components
-import { ChartsWrapper } from './components/ChartsWrapper';
+import { ChartsWrapper } from "./components/ChartsWrapper";
 import { FuelChart } from "./components/charts/FuelUsageChart";
 import { TripCostChart } from './components/charts/TripCostChart';
 import { LoginForm } from 'components/Login';

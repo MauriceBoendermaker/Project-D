@@ -37,14 +37,18 @@
 
                 .dropdown-item {
                     color: $text-color;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
 
                     &:hover {
                         color: $primary-color;
                     }
 
-                    &:active {
-                        background-color: $accent-color;
-                    }
+                    &:active, &.active {
+                        color: $primary-color;
+                        font-weight: bold;
+                        background-color: $white;
+                    }                    
                 }
             }
         }
