@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 
 public class Vehicle
 {
+    public int Id { get; set; }
     [JsonPropertyName("voertuig_id")]
     public string? VoertuigId { get; set; }
 
@@ -25,6 +26,7 @@ public class Vehicle
 
 public class Rit
 {
+    public int Id { get; set; }
     [JsonPropertyName("rit_id")]
     public string? RitId { get; set; }
 

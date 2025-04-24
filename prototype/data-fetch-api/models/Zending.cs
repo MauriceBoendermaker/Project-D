@@ -4,6 +4,7 @@ namespace Models
 {
     public class Zending
     {
+        public int Id { get; set; }
 
         [JsonPropertyName("zending_id")]
         public int ShipmentId { get; set; }
@@ -21,5 +22,7 @@ namespace Models
         [JsonPropertyName("onbenutte-kilometers")]
 
         public int EmptyKilometers { get; set; }
+
+        public string? CreatedAt { get; set; }
     }
 }
