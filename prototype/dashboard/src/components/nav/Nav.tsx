@@ -31,6 +31,7 @@ export const Nav = () => {
           </div>
 
           {/* Center nav link */}
+          {isLoggedIn &&
           <div className="nav-container position-absolute top-50 start-50 translate-middle">
             <nav>
               <a href="/" className={currentPath === "/" ? "active" : ""}>
@@ -74,7 +75,7 @@ export const Nav = () => {
                 </ul>
               </div>
             </nav>
-          </div>
+          </div>}
           {/* Profile (flush right) */}
           <div className="login-status-container d-flex align-items-center gap-2 ms-auto">
             <img src={profileImage} alt="" width={40} height={40} />
