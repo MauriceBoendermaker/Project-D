@@ -41,19 +41,17 @@ public class Rit
     public int DuurMinuten { get; set; }
 
     [JsonPropertyName("kosten")]
-    public List<Kost>? Kosten {get;set;}
-
+    public Kost? Kosten { get; set; }
 }
 
 public class Kost
 {
     [JsonPropertyName("onderhoud")]
-    public float Onderhoud {get; set;}
+    public float Onderhoud { get; set; }
 
     [JsonPropertyName("verzekering")]
-    public float Verzekering {get; set;}
+    public float Verzekering { get; set; }
 
     [JsonPropertyName("tolwegen")]
-    public float Tolwegen {get; set;}
-
+    public float Tolwegen { get; set; }
 }
