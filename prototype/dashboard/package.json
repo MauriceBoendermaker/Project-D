@@ -17,6 +17,7 @@
     "bootstrap": "^5.3.3",
     "echarts": "^5.6.0",
     "echarts-for-react": "^3.0.2",
+    "fullcalendar": "^6.1.17",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.4.1",
