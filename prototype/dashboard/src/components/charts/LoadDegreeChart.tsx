@@ -77,7 +77,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
 
   return (
     <StyledChartWrapper
-      title="beladingsgraad per zending"
+      title="Beladingsgraad per zending"
       delayIndex={delayIndex}
     >
       {chartData.length > 0 ? (
