@@ -129,6 +129,15 @@ namespace Services
             }
         }
 
+        public async Task<List<loadDegree>?> GetTotalLoadDegree()
+        {
+            IEnumerable<Zending>? Shipments = await this.GetAllShipments();
+            if (Shipments == null || Shipments.Count() == 0) return null;
+            List<loadDegree>? loadDegrees = Shipments.Select(x => new loadDegree { ShipmentId = x.ShipmentId, LoadDegree = double.Round((double)x.CurrentLoadKg / x.MaxCapacityKg, 4) }).ToList();
+
+            return loadDegrees;
+
+        }
     }
 
 }
