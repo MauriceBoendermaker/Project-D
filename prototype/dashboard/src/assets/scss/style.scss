@@ -8,11 +8,11 @@
 @import 'misc/breadcrumbs';
 
 // Component specific stylesheets
-@import 'components/Forms/login_form.scss';
 @import 'components/nav/nav';
 @import 'components/nav/sidenav';
-@import 'components/charts/charts-wrapper';
 @import 'components/charts/generic-chart';
-@import 'components/rit-overzicht';
+@import 'components/forms/login-form.scss';
+@import 'components/planning/rit-overzicht';
+@import 'components/planning/rit-toevoegen';
 
 // Page specific stylesheets
