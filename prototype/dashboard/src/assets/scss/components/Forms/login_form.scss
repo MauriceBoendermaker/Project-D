@@ -1,0 +1,22 @@
+.login-page {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .login-form {
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      height: 300px;
+      width: 200%;
+      max-width: 400px;
+    }
+  }
+  .login-form-input{
+    border: solid;
+    border-color: $white;
+    border-radius: 1%;
+    margin-top : 40px;
+    width: 100%;
+  }

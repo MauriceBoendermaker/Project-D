@@ -1,61 +1,81 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 // Import stylesheets
-import './assets/scss/style.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./assets/scss/style.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Import misc components
-import { Breadcrumbs } from './components/misc/Breadcrumbs';
-import { Nav } from './components/nav/Nav';
-import { SideNav } from './components/nav/SideNav';
-import { Footer } from './components/misc/Footer';
+import { Breadcrumbs } from "./components/misc/Breadcrumbs";
+import { Nav } from "./components/nav/Nav";
+import { SideNav } from "./components/nav/SideNav";
+import { Footer } from "./components/misc/Footer";
 
 // Import components
-import { ChartsWrapper } from './components/ChartsWrapper';
+import { ChartsWrapper } from "./components/ChartsWrapper";
 import { FuelChart } from "./components/charts/FuelUsageChart";
-import { TripCostChart } from './components/charts/TripCostChart';
-import { TripOverview } from './components/planning/TripOverview';
-
+import { TripCostChart } from "./components/charts/TripCostChart";
+import { LoginForm } from "components/Login";
+import { PrivateLayout } from "components/PrivateLayout";
+import { AuthProvider } from "components/Context/AuthContext";
+import { TripOverview } from "./components/planning/TripOverview";
 
 const App: React.FC = () => {
-    return (
-        <Router>
-            <Nav />
-            <SideNav />
+  return (
+    <AuthProvider>
+      <Router>
+        <Nav />
+        <SideNav />
 
-            <main className="container main-content g-0 flex-1">
-                <Breadcrumbs />
+        <main className="container main-content g-0 flex-1">
+          <Breadcrumbs />
 
-                <Routes>
-                    {/* Public routes */}
-                    <Route path="/" element={<ChartsWrapper />} />
-                    <Route path="/verbruik" element={<FuelChart />} />
-                    <Route path="/benzinekosten" element={<TripCostChart />} />
-                    
-                    {/* Planning routes */}
-                    <Route path="/planning/voeg-rit-toe" />
-                    <Route path="/planning/toon-rit-overzicht" element={<TripOverview />} />
+          <Routes>
+            {/* Login route */}
+            <Route path="/login" element={<LoginForm />} />
 
-                    <Route
-                        path="/404"
-                        element={
-                            <section>
-                                <div className="g-0 pt-4">
-                                    <h3>
-                                        <strong>Error 404 - Pagina niet gevonden</strong>
-                                    </h3>
-                                </div>
-                            </section>
-                        }
-                    />
-                    <Route path="*" element={<Navigate replace to="/404" />} />
-                </Routes>
-            </main>
+            {/* Planning routes */}
+            <Route path="/planning/voeg-rit-toe" />
+            <Route
+              path="/planning/toon-rit-overzicht"
+              element={<TripOverview />}
+            />
 
-            <Footer />
-        </Router>
-    );
+            <Route element={<PrivateLayout />}>
+              {/* Public routes */}
+              <Route path="/" element={<ChartsWrapper />} />
+              <Route path="/verbruik" element={<FuelChart />} />
+              <Route path="/benzinekosten" element={<TripCostChart />} />
+
+              {/* Planning routes */}
+              <Route path="/planning/voeg-rit-toe" />
+
+              <Route
+                path="/404"
+                element={
+                  <section>
+                    <div className="g-0 pt-4">
+                      <h3>
+                        <strong>Error 404 - Pagina niet gevonden</strong>
+                      </h3>
+                    </div>
+                  </section>
+                }
+              />
+              <Route path="*" element={<Navigate replace to="/404" />} />
+            </Route>
+          </Routes>
+        </main>
+
+        <Footer />
+      </Router>
+    </AuthProvider>
+  );
 };
 
 export default App;
