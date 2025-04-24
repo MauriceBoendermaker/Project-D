@@ -39,21 +39,17 @@ const App: React.FC = () => {
             {/* Login route */}
             <Route path="/login" element={<LoginForm />} />
 
-            {/* Planning routes */}
-            <Route path="/planning/voeg-rit-toe" />
-            <Route
-              path="/planning/toon-rit-overzicht"
-              element={<TripOverview />}
-            />
-
             <Route element={<PrivateLayout />}>
+              {/* Planning routes */}
+              <Route path="/planning/voeg-rit-toe" />
+              <Route
+                path="/planning/toon-rit-overzicht"
+                element={<TripOverview />}
+              />
               {/* Public routes */}
               <Route path="/" element={<ChartsWrapper />} />
               <Route path="/verbruik" element={<FuelChart />} />
               <Route path="/benzinekosten" element={<TripCostChart />} />
-
-              {/* Planning routes */}
-              <Route path="/planning/voeg-rit-toe" />
 
               <Route
                 path="/404"
