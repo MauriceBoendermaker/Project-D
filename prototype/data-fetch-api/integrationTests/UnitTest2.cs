@@ -1,3 +1,5 @@
+using Xunit;
+
 namespace integrationTests;
 
 public class UnitTest2
