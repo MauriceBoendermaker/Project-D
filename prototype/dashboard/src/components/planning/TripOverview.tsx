@@ -27,27 +27,36 @@ export const TripOverview = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await fetch("http://localhost:3000/api/ritten/overzicht");
-            const data: Trip[] = await res.json();
+            try {
+                const res = await fetch("http://localhost:3000/api/ritten/overzicht");
 
-            const calendarEvents = data.flatMap((trip) =>
-                trip.ritten.map((rit) => ({
-                    title: `${trip.voertuig_id} (${rit.afstand_km} km)`,
-                    start: new Date(rit.datum),
-                    extendedProps: {
-                        rit,
-                        voertuig: {
-                            voertuig_id: trip.voertuig_id,
-                            kenteken: trip.kenteken,
-                            merk: trip.merk,
-                            model: trip.model,
-                            brandstof_type: trip.brandstof_type,
+                if (!res.ok) {
+                    throw new Error(`HTTP error! Status: ${res.status}`);
+                }
+
+                const data: Trip[] = await res.json();
+
+                const calendarEvents = data.flatMap((trip) =>
+                    trip.ritten.map((rit) => ({
+                        title: `${trip.voertuig_id} (${rit.afstand_km} km)`,
+                        start: new Date(rit.datum),
+                        extendedProps: {
+                            rit,
+                            voertuig: {
+                                voertuig_id: trip.voertuig_id,
+                                kenteken: trip.kenteken,
+                                merk: trip.merk,
+                                model: trip.model,
+                                brandstof_type: trip.brandstof_type,
+                            },
                         },
-                    },
-                }))
-            );
+                    }))
+                );
 
-            setEvents(calendarEvents);
+                setEvents(calendarEvents);
+            } catch (error) {
+                console.error("Fout bij ophalen ritten:", error);
+            }
         };
 
         fetchData();
