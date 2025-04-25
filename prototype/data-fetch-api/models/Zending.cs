@@ -12,15 +12,22 @@ namespace Models
         [XmlElement("zending_id")]
         public int ShipmentId { get; set; }
 
+        private string _vehicleId;
+
         // JSON and XML property name mapping for VehicleId
         [JsonPropertyName("voertuig_id")]
         [XmlElement("voertuig_id")]
-        public required string VehicleId { get; set; }
+        public required string VehicleId
+        {
+            get => _vehicleId;
+            set => _vehicleId = value.Trim();
+        }
 
         // JSON and XML property name mapping for Destination
+        private string _destination;
         [JsonPropertyName("bestemming")]
         [XmlElement("bestemming")]
-        public required string Destination { get; set; }
+        public required string Destination { get => _destination; set => _destination = value.Trim(); }
 
         // JSON and XML property name mapping for MaxCapacityKg
         [JsonPropertyName("max_capaciteit")]

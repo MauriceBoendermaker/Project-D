@@ -1,6 +1,5 @@
 using Services;
 using Microsoft.EntityFrameworkCore;
-using DataFetchApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

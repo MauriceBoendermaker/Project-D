@@ -2,30 +2,27 @@ using System.Xml.Serialization;
 using System.Threading.Tasks;
 using Models;
 
-namespace DataFetchApi.Services
+namespace Services
 {
-
-
-    
-    public class XMLShipmentService : IJsonShipmentService
+    public class XMLShipmentService : JsonShipmentService, IJsonShipmentService
     {
         private string Path = "data/Zendingen.xml";
 
-        public async Task<IEnumerable<Zending>?> GetAllShipments()
+        public override async Task<IEnumerable<Zending>?> GetAllShipments()
         {
             var serializer = new XmlSerializer(typeof(List<Zending>), new XmlRootAttribute("Zendingen"));
             try
             {
-                using (var fs = new FileStream(Path, FileMode.Open))
+                using (FileStream fs = new FileStream(Path, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, true))
                 {
-
-                    var zendingen = (List<Zending>)serializer.Deserialize(fs);
-
-                    foreach (Zending z in zendingen)
+                    using (var memoryStream = new MemoryStream())
                     {
-                        Console.WriteLine($"ID: {z.Id}, Voertuig: {z.ShipmentId}, Bestemming: {z.Destination}");
+                        await fs.CopyToAsync(memoryStream);
+                        memoryStream.Position = 0;
+
+                        IEnumerable<Zending> zendingen = (List<Zending>)serializer.Deserialize(memoryStream)!;
+                        return zendingen;
                     }
-                    return zendingen;
                 }
 
             }
@@ -36,29 +33,5 @@ namespace DataFetchApi.Services
             }
         }
 
-        public Task<double> GetAverageLoadDegree()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<double> GetLoadDegree(int ZendingId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> GetMaxCapacity(int ZendingId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> GetTotalEmptyMiles()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<loadDegree>?> GetTotalLoadDegree()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
