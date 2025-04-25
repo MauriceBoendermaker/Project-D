@@ -1,12 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Polyline } from "react-leaflet";
-import type { LatLngExpression } from "leaflet";
-import L from "leaflet";
-
-// Leaflet css
+import L, { Map as LeafletMap } from "leaflet";
 import 'leaflet/dist/leaflet.css';
-
-// Custom marker icon image
 import markerIcon from '../../assets/images/marker.png';
 
 interface Kost {
@@ -34,15 +29,32 @@ interface Vehicle {
 }
 
 interface MapProps {
-    start: LatLngExpression;
-    end: LatLngExpression | null;
-    route: LatLngExpression[];
+    start: [number, number];
+    end: [number, number] | null;
+    route: [number, number][];
+    customIcon: L.Icon;
 }
+
+const suppressLeafletErrors = () => {
+    const originalConsoleError = console.error;
+
+    console.error = (...args) => {
+        const message = args[0]?.toString?.() ?? "";
+
+        if (message.includes("el is undefined") && message.includes("_onZoomTransitionEnd")) {
+            return;
+        }
+
+        originalConsoleError(...args);
+    };
+};
 
 export const AddTrip = () => {
     const [vehicles, setVehicles] = useState<Vehicle[]>([]);
     const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
-    const [location, setLocation] = useState("");
+    const [straat, setStraat] = useState("");
+    const [postcode, setPostcode] = useState("");
+    const [stad, setStad] = useState("");
     const [afstandKm, setAfstandKm] = useState<number>(0);
     const [duurMinuten, setDuurMinuten] = useState<number>(0);
     const [datum, setDatum] = useState<string>("");
@@ -57,7 +69,11 @@ export const AddTrip = () => {
         iconSize: [40, 40],
         iconAnchor: [15, 40],
         popupAnchor: [0, -40],
-    });    
+    });
+
+    useEffect(() => {
+        suppressLeafletErrors();
+    }, []);
 
     useEffect(() => {
         fetch("http://localhost:3000/api/brandstof/voertuigen")
@@ -70,26 +86,47 @@ export const AddTrip = () => {
         setSelectedVehicle(vehicle || null);
     };
 
-    const MapComponent = ({ start, end, route }: MapProps) => {
-        if (!end) return null;
-    
+    const MapComponent = ({ start, end, route, customIcon }: MapProps) => {
+        const mapRef = useRef<L.Map>(null);
+
+        useEffect(() => {
+            const map = mapRef.current;
+            if (!map || !end) return;
+
+            setTimeout(() => {
+                try {
+                    map.invalidateSize();
+                    map.fitBounds([start, end], { padding: [50, 50] });
+                } catch (error) {
+                    console.error("fitBounds failed, fallback to setView()", error);
+                    map.setView(end, 14);
+                }
+            }, 300);
+        }, [end?.[0], end?.[1]]);
+
         return (
-            <MapContainer center={start} zoom={10} style={{ height: "500px", width: "100%" }}>
+            <MapContainer
+                center={start}
+                zoom={10}
+                style={{ height: "500px", width: "100%" }}
+                ref={mapRef as any}
+                zoomAnimation={false}
+            >
                 <TileLayer
                     attribution='&copy; OpenStreetMap contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <Marker position={start} icon={customIcon} />
-                <Marker position={end} icon={customIcon} />
+                {end && <Marker position={end} icon={customIcon} />}
                 {route.length > 0 && <Polyline positions={route} color="blue" />}
             </MapContainer>
         );
-    };    
+    };
 
-    const calculateDistance = async (address: string) => {
+    const calculateDistance = async (fullAddress: string) => {
         setLoadingRoute(true);
         try {
-            const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`, {
+            const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(fullAddress)}`, {
                 headers: {
                     "User-Agent": "ELafeberTransport/1.0 (mauriceboendermaker@gmail.com)"
                 }
@@ -129,13 +166,14 @@ export const AddTrip = () => {
 
     useEffect(() => {
         const delayDebounce = setTimeout(() => {
-            if (location.trim().length > 5) {
-                calculateDistance(location.trim());
+            if (straat && postcode && stad) {
+                const address = `${straat}, ${postcode} ${stad}, Nederland`;
+                calculateDistance(address);
             }
         }, 800);
 
         return () => clearTimeout(delayDebounce);
-    }, [location]);
+    }, [straat, postcode, stad]);
 
     return (
         <div className="container mt-5">
@@ -181,8 +219,18 @@ export const AddTrip = () => {
                         </div>
 
                         <div className="mb-3">
-                            <label className="form-label">Adres (bestemming)</label>
-                            <input type="text" className="form-control" value={location} onChange={e => setLocation(e.target.value)} placeholder="Typ een adres in Nederland" required />
+                            <label className="form-label">Straat + huisnummer</label>
+                            <input type="text" className="form-control" value={straat} onChange={e => setStraat(e.target.value)} placeholder="Bijv. Dorpsstraat 1" />
+                        </div>
+
+                        <div className="mb-3">
+                            <label className="form-label">Postcode</label>
+                            <input type="text" className="form-control" value={postcode} onChange={e => setPostcode(e.target.value)} placeholder="Bijv. 1234 AB" />
+                        </div>
+
+                        <div className="mb-3">
+                            <label className="form-label">Stad</label>
+                            <input type="text" className="form-control" value={stad} onChange={e => setStad(e.target.value)} placeholder="Bijv. Rotterdam" />
                         </div>
 
                         {loadingRoute && <div className="text-muted">Afstand en duur worden berekend...</div>}
@@ -206,7 +254,7 @@ export const AddTrip = () => {
                     </form>
                 </div>
                 <div className="col-md-6">
-                    <MapComponent start={startCoords} end={endCoords} route={routeCoords} />
+                    <MapComponent start={startCoords} end={endCoords} route={routeCoords} customIcon={customIcon} />
                 </div>
             </div>
         </div>
