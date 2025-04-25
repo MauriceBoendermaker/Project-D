@@ -176,7 +176,7 @@ export const AddTrip = () => {
   }, [straat, postcode, stad]);
 
   return (
-    <div className="container mt-5">
+    <div className="add-trip-container container mt-5">
       <div className="row">
         <div className="col-md-6">
           <h2>Nieuwe rit toevoegen</h2>
@@ -253,7 +253,7 @@ export const AddTrip = () => {
             <button type="submit" className="btn-primary">Opslaan</button>
           </form>
         </div>
-        <div className="col-md-6">
+        <div className="map-container col-md-6">
           <MapComponent start={startCoords} end={endCoords} route={routeCoords} customIcon={customIcon} />
         </div>
       </div>
