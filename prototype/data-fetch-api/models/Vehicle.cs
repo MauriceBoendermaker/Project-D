@@ -23,38 +23,3 @@ public class Vehicle
     [JsonPropertyName("ritten")]
     public List<Rit>? Ritten { get; set; }
 }
-
-public class Rit
-{
-    public int Id { get; set; }
-    [JsonPropertyName("rit_id")]
-    public string? RitId { get; set; }
-
-    [JsonPropertyName("datum")]
-    public string? Datum { get; set; }
-
-    [JsonPropertyName("afstand_km")]
-    public int AfstandKm { get; set; }
-
-    [JsonPropertyName("brandstof_verbruik_l")]
-    public int BrandstofVerbruikL { get; set; }
-
-    [JsonPropertyName("duur_minuten")]
-    public int DuurMinuten { get; set; }
-
-    [JsonPropertyName("kosten")]
-    public Kost? Kosten { get; set; }
-}
-
-public class Kost
-{
-    public int Id { get; set; }
-    [JsonPropertyName("onderhoud")]
-    public float Onderhoud { get; set; }
-
-    [JsonPropertyName("verzekering")]
-    public float Verzekering { get; set; }
-
-    [JsonPropertyName("tolwegen")]
-    public float Tolwegen { get; set; }
-}
