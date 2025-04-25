@@ -48,6 +48,7 @@ public class Rit
 
 public class Kost
 {
+    public int Id { get; set; }
     [JsonPropertyName("onderhoud")]
     public float Onderhoud { get; set; }
 
