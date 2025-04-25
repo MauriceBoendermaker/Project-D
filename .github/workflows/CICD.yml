@@ -2,9 +2,12 @@ name: .NET CI
 
 on:
   push:
-    branches: [ "CICD" ]
+    branches: 
+      - 'main'
+      - 'Development' 
   pull_request:
-    branches: [ "CICD" ]
+    branches: 
+      - '*'
 
 jobs:
   build:
