@@ -32,4 +32,25 @@ jobs:
       working-directory: ./prototype/data-fetch-api
 
 
+integration-tests:
+  needs: build
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v4
 
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: ./prototype/data-fetch-api
+
+    - name: Build
+      run: dotnet build --no-restore --configuration Release
+      working-directory: ./prototype/data-fetch-api
+
+    - name: Run integration tests
+      run: dotnet test --no-build --configuration Release --logger "trx;LogFileName=TestResults.trx"
+      working-directory: ./prototype/data-fetch-api/integrationTests
