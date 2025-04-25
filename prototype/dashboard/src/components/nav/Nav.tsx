@@ -32,50 +32,47 @@ export const Nav = () => {
 
           {/* Center nav link */}
           {isLoggedIn &&
-          <div className="nav-container position-absolute top-50 start-50 translate-middle">
-            <nav>
-              <a href="/" className={currentPath === "/" ? "active" : ""}>
-                Home
-              </a>
-              <div className="nav-item dropdown">
-                <a
-                  className={`nav-link dropdown-toggle ${
-                    currentPath.startsWith("/planning") ? "active" : ""
-                  }`}
-                  href="/planning"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Planning
+            <div className="nav-container position-absolute top-50 start-50 translate-middle">
+              <nav>
+                <a href="/" className={currentPath === "/" ? "active" : ""}>
+                  Home
                 </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a
-                      className={`dropdown-item ${
-                        currentPath === "/planning/voeg-rit-toe" ? "active" : ""
+                <div className="nav-item dropdown">
+                  <a
+                    className={`nav-link dropdown-toggle ${currentPath.startsWith("/planning") ? "active" : ""
                       }`}
-                      href="/planning/voeg-rit-toe"
-                    >
-                      Voeg rit toe
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className={`dropdown-item ${
-                        currentPath === "/planning/toon-rit-overzicht"
+                    href="/planning"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Planning
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <a
+                        className={`dropdown-item ${currentPath === "/planning/voeg-rit-toe" ? "active" : ""
+                          }`}
+                        href="/planning/voeg-rit-toe"
+                      >
+                        Voeg rit toe
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className={`dropdown-item ${currentPath === "/planning/toon-rit-overzicht"
                           ? "active"
                           : ""
-                      }`}
-                      href="/planning/toon-rit-overzicht"
-                    >
-                      Toon rit overzicht
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>}
+                          }`}
+                        href="/planning/toon-rit-overzicht"
+                      >
+                        Toon rit overzicht
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>}
           {/* Profile (flush right) */}
           <div className="login-status-container d-flex align-items-center gap-2 ms-auto">
             <img src={profileImage} alt="" width={40} height={40} />
