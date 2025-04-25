@@ -51,6 +51,18 @@ export const Nav = () => {
                   <ul className="dropdown-menu">
                     <li>
                       <a
+                        className={`dropdown-item ${currentPath === "/planning/toon-rit-overzicht"
+                          ? "active"
+                          : ""
+                          }`}
+                        href="/planning/toon-rit-overzicht"
+                      >
+                        Toon rit overzicht
+                      </a>
+                    </li>
+                    <hr />
+                    <li>
+                      <a
                         className={`dropdown-item ${currentPath === "/planning/voeg-rit-toe" ? "active" : ""
                           }`}
                         href="/planning/voeg-rit-toe"
@@ -60,13 +72,11 @@ export const Nav = () => {
                     </li>
                     <li>
                       <a
-                        className={`dropdown-item ${currentPath === "/planning/toon-rit-overzicht"
-                          ? "active"
-                          : ""
+                        className={`dropdown-item ${currentPath === "/planning/voeg-voertuig-toe" ? "active" : ""
                           }`}
-                        href="/planning/toon-rit-overzicht"
+                        href="/planning/voeg-voertuig-toe"
                       >
-                        Toon rit overzicht
+                        Voeg voertuig toe
                       </a>
                     </li>
                   </ul>
