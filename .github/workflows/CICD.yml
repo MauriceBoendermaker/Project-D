@@ -54,4 +54,4 @@ jobs:
 
       - name: Run integration tests
         run: dotnet test --no-build --configuration Release
-        working-directory: ./prototype/data-fetch-api/integrationTests
+        working-directory: ./integrationTests
