@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
 public class Rit
 {
     public int Id { get; set; }
