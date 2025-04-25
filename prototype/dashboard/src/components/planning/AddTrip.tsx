@@ -10,15 +10,6 @@ interface Kost {
     tolwegen: number;
 }
 
-interface Rit {
-    rit_id: string;
-    datum: string;
-    afstand_km: number;
-    brandstof_verbruik_l: number;
-    duur_minuten: number;
-    kosten: Kost;
-}
-
 interface Vehicle {
     id: number;
     voertuig_id: string;
@@ -58,7 +49,6 @@ export const AddTrip = () => {
     const [afstandKm, setAfstandKm] = useState<number>(0);
     const [duurMinuten, setDuurMinuten] = useState<number>(0);
     const [datum, setDatum] = useState<string>("");
-    const [brandstofVerbruik, setBrandstofVerbruik] = useState<number>(0);
     const [loadingRoute, setLoadingRoute] = useState(false);
     const startCoords: [number, number] = [52.01152589199725, 4.6951698197121825];
     const [endCoords, setEndCoords] = useState<[number, number] | null>(null);
@@ -182,8 +172,8 @@ export const AddTrip = () => {
                     <h2>Nieuwe rit toevoegen</h2>
                     <form>
                         <div className="mb-3">
-                            <label className="form-label">Rit ID (automatisch gegenereerd)</label>
-                            <input type="text" className="form-control" disabled placeholder="Wordt automatisch gegenereerd" />
+                            <label className="form-label">Rit ID</label>
+                            <input type="text" className="form-control" placeholder="Automatisch gegenereerd" disabled />
                         </div>
 
                         <div className="mb-3">
@@ -208,46 +198,42 @@ export const AddTrip = () => {
                             <input type="text" className="form-control" value={selectedVehicle?.kenteken || ""} readOnly disabled />
                         </div>
 
-                        <div className="mb-3">
-                            <label className="form-label">Merk</label>
-                            <input type="text" className="form-control" value={selectedVehicle?.merk || ""} readOnly disabled />
-                        </div>
-
-                        <div className="mb-3">
-                            <label className="form-label">Model</label>
-                            <input type="text" className="form-control" value={selectedVehicle?.model || ""} readOnly disabled />
+                        <div className="row mb-3">
+                            <div className="col-md-6">
+                                <label className="form-label">Merk</label>
+                                <input type="text" className="form-control" value={selectedVehicle?.merk || ""} readOnly disabled />
+                            </div>
+                            <div className="col-md-6">
+                                <label className="form-label">Model</label>
+                                <input type="text" className="form-control" value={selectedVehicle?.model || ""} readOnly disabled />
+                            </div>
                         </div>
 
                         <div className="mb-3">
                             <label className="form-label">Straat + huisnummer</label>
-                            <input type="text" className="form-control" value={straat} onChange={e => setStraat(e.target.value)} placeholder="Bijv. Dorpsstraat 1" />
+                            <input type="text" className="form-control" value={straat} onChange={e => setStraat(e.target.value)} placeholder="Bijv. Dorpsstraat 1" required />
                         </div>
 
                         <div className="mb-3">
                             <label className="form-label">Postcode</label>
-                            <input type="text" className="form-control" value={postcode} onChange={e => setPostcode(e.target.value)} placeholder="Bijv. 1234 AB" />
+                            <input type="text" className="form-control" value={postcode} onChange={e => setPostcode(e.target.value)} placeholder="Bijv. 1234 AB" required />
                         </div>
 
                         <div className="mb-3">
                             <label className="form-label">Stad</label>
-                            <input type="text" className="form-control" value={stad} onChange={e => setStad(e.target.value)} placeholder="Bijv. Rotterdam" />
+                            <input type="text" className="form-control" value={stad} onChange={e => setStad(e.target.value)} placeholder="Bijv. Rotterdam" required />
                         </div>
 
-                        {loadingRoute && <div className="text-muted">Afstand en duur worden berekend...</div>}
+                        {loadingRoute && <div className="text-muted"><b>Afstand en duur worden berekend...</b><br /><br /></div>}
 
                         <div className="mb-3">
                             <label className="form-label">Afstand (km)</label>
-                            <input type="number" className="form-control" value={afstandKm} readOnly />
+                            <input type="number" min="0" className="form-control" value={afstandKm} readOnly disabled />
                         </div>
 
                         <div className="mb-3">
                             <label className="form-label">Duur (minuten)</label>
-                            <input type="number" className="form-control" value={duurMinuten} readOnly />
-                        </div>
-
-                        <div className="mb-3">
-                            <label className="form-label">Brandstofverbruik (liter)</label>
-                            <input type="number" className="form-control" value={brandstofVerbruik} onChange={e => setBrandstofVerbruik(parseFloat(e.target.value))} />
+                            <input type="number" min="0" className="form-control" value={duurMinuten} readOnly disabled />
                         </div>
 
                         <button type="submit" className="btn-primary">Opslaan</button>
