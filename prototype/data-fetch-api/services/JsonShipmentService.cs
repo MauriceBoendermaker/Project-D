@@ -6,7 +6,7 @@ namespace Services
     public class JsonShipmentService : IJsonShipmentService
     {
         private string Path = "data/Zending_data.json";
-        public async Task<IEnumerable<Zending>?> GetAllShipments()
+        public virtual async Task<IEnumerable<Zending>?> GetAllShipments()
         {
             // Read the JSON data
             try

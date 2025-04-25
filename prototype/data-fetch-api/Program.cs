@@ -17,7 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IFuelService, JsonFuelService>();
-builder.Services.AddScoped<IJsonShipmentService, JsonShipmentService>();
+builder.Services.AddScoped<IJsonShipmentService, XMLShipmentService>();
 builder.Services.AddScoped<ITripService, TripService>();
 
 builder.Services.AddEndpointsApiExplorer();
