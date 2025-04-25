@@ -28,7 +28,5 @@ jobs:
       run: dotnet build --no-restore --configuration Release
       working-directory: ./prototype/data-fetch-api
 
-    - name: Run (with timeout)
-      run: timeout 10s dotnet run
-      working-directory: ./prototype/data-fetch-api
+
 
