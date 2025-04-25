@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace Your.IntegrationTests.Project
+namespace integrationTests
 {
     public class BasicMathTests
     {
