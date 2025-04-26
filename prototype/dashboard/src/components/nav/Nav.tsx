@@ -50,23 +50,15 @@ export const Nav = () => {
                   </a>
                   <ul className="dropdown-menu">
                     <li>
-                      <a
-                        className={`dropdown-item ${currentPath === "/planning/toon-rit-overzicht"
-                          ? "active"
-                          : ""
-                          }`}
-                        href="/planning/toon-rit-overzicht"
-                      >
+                      <a className={`dropdown-item ${currentPath === "/planning/toon-rit-overzicht" ? "active" : ""}`} href="/planning/toon-rit-overzicht">
+                        <i className="fa-solid fa-calendar-days me-2"></i>
                         Toon rit overzicht
                       </a>
                     </li>
                     <hr />
                     <li>
-                      <a
-                        className={`dropdown-item ${currentPath === "/planning/voeg-rit-toe" ? "active" : ""
-                          }`}
-                        href="/planning/voeg-rit-toe"
-                      >
+                      <a className={`dropdown-item ${currentPath === "/planning/voeg-rit-toe" ? "active" : ""}`} href="/planning/voeg-rit-toe">
+                        <i className="fa-solid fa-plus me-2"></i>
                         Voeg rit toe
                       </a>
                     </li>
@@ -85,20 +77,14 @@ export const Nav = () => {
                   </a>
                   <ul className="dropdown-menu">
                     <li>
-                      <a
-                        className={`dropdown-item ${currentPath === "/admin/voeg-voertuig-toe" ? "active" : ""
-                          }`}
-                        href="/admin/voeg-voertuig-toe"
-                      >
+                      <a className={`dropdown-item ${currentPath === "/admin/voeg-voertuig-toe" ? "active" : ""}`} href="/admin/voeg-voertuig-toe">
+                        <i className="fas fa-truck me-2"></i>
                         Voeg voertuig toe
                       </a>
                     </li>
                     <li>
-                      <a
-                        className={`dropdown-item ${currentPath === "/admin/voeg-medewerker-toe" ? "active" : ""
-                          }`}
-                        href="/admin/voeg-medewerker-toe"
-                      >
+                      <a className={`dropdown-item ${currentPath === "/admin/voeg-medewerker-toe" ? "active" : ""}`} href="/admin/voeg-medewerker-toe">
+                        <i className="fas fa-user-plus me-2"></i>
                         Voeg medewerker toe
                       </a>
                     </li>
@@ -121,8 +107,9 @@ export const Nav = () => {
             </div>
           </div>
           {isLoggedIn && (
-            <button className="logout-button" onClick={handleLogout}>
-              Logout
+            <button className="btn logout-btn text-decoration-none d-flex align-items-center gap-2" onClick={handleLogout}>
+              <i className="fas fa-right-from-bracket"></i>
+              <span>Logout</span>
             </button>
           )}
         </nav>
