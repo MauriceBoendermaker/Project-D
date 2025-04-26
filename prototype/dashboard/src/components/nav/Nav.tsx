@@ -70,11 +70,25 @@ export const Nav = () => {
                         Voeg rit toe
                       </a>
                     </li>
+                  </ul>
+                </div>
+                <div className="nav-item dropdown">
+                  <a
+                    className={`nav-link dropdown-toggle ${currentPath.startsWith("/admin") ? "active" : ""
+                      }`}
+                    href="/admin"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Beheer
+                  </a>
+                  <ul className="dropdown-menu">
                     <li>
                       <a
-                        className={`dropdown-item ${currentPath === "/planning/voeg-voertuig-toe" ? "active" : ""
+                        className={`dropdown-item ${currentPath === "/admin/voeg-voertuig-toe" ? "active" : ""
                           }`}
-                        href="/planning/voeg-voertuig-toe"
+                        href="/admin/voeg-voertuig-toe"
                       >
                         Voeg voertuig toe
                       </a>

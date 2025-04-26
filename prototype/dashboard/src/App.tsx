@@ -26,7 +26,7 @@ import { AuthProvider } from "components/Context/AuthContext";
 import { TripOverview } from "./components/planning/TripOverview";
 
 import { AddTrip } from "./components/planning/AddTrip";
-import { AddVehicle } from "./components/planning/AddVehicle";
+import { AddVehicle } from "./components/admin/AddVehicle";
 import { AddEmployee } from "./components/admin/AddEmployee";
 
 const App: React.FC = () => {
@@ -47,7 +47,9 @@ const App: React.FC = () => {
               {/* Planning routes */}
               <Route path="/planning/toon-rit-overzicht" element={<TripOverview />} />
               <Route path="/planning/voeg-rit-toe" element={<AddTrip />} />
-              <Route path="/planning/voeg-voertuig-toe" element={<AddVehicle />} />
+
+              {/* Admin routes */}
+              <Route path="/admin/voeg-voertuig-toe" element={<AddVehicle />} />
               <Route path="/admin/voeg-medewerker-toe" element={<AddEmployee />} />
 
               {/* Public routes */}
