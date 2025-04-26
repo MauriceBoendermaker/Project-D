@@ -53,6 +53,8 @@ export const AddTrip = () => {
     const startCoords: [number, number] = [52.01152589199725, 4.6951698197121825];
     const [endCoords, setEndCoords] = useState<[number, number] | null>(null);
     const [routeCoords, setRouteCoords] = useState<[number, number][]>([]);
+    const [postcodeValid, setPostcodeValid] = useState<boolean | null>(null);
+    const postcodeRegex = /^[1-9][0-9]{3}\s?[A-Z]{2}$/i;
 
     const customIcon = new L.Icon({
         iconUrl: markerIcon,
@@ -165,6 +167,29 @@ export const AddTrip = () => {
         return () => clearTimeout(delayDebounce);
     }, [straat, postcode, stad]);
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+
+        if (name === "postcode") {
+            const formatted = value.toUpperCase();
+            setPostcode(formatted);
+
+            if (formatted.trim() === "") {
+                setPostcodeValid(null);
+            } else {
+                setPostcodeValid(postcodeRegex.test(formatted));
+            }
+        } else if (name === "straat") {
+            setStraat(value);
+        } else if (name === "stad") {
+            setStad(value);
+        } else if (name === "datum") {
+            setDatum(value);
+        } else if (name === "voertuig") {
+            handleVehicleChange(value);
+        }
+    };
+
     return (
         <div className="add-trip-container container mt-5">
             <div className="row">
@@ -216,8 +241,22 @@ export const AddTrip = () => {
 
                         <div className="mb-3">
                             <label className="form-label">Postcode</label>
-                            <input type="text" className="form-control" value={postcode} onChange={e => setPostcode(e.target.value)} placeholder="Bijv. 1234 AB" required />
+                            <input
+                                type="text"
+                                className="form-control"
+                                name="postcode"
+                                value={postcode}
+                                onChange={handleChange}
+                                placeholder="Bijv. 1234 AB"
+                                required
+                            />
+                            {postcodeValid !== null && (
+                                <div className={`small ${postcodeValid ? "text-success" : "text-danger"}`}>
+                                    {postcodeValid ? "✓ Geldige postcode" : "✗ Ongeldige postcode"}
+                                </div>
+                            )}
                         </div>
+
 
                         <div className="mb-3">
                             <label className="form-label">Stad</label>
