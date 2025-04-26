@@ -24,5 +24,10 @@ namespace Controllers
             }
             return NotFound("Geen ritten gevonden");
         }
+
+        [HttpPost()]
+        public async Task AddTrip([From Body] Rit rit){
+            await _tripServoce.AddTrip(rit);
+        }
     }
 }
