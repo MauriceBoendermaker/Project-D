@@ -88,7 +88,7 @@ export const AddTrip = () => {
                     map.invalidateSize();
                     map.fitBounds([start, end], { padding: [50, 50] });
                 } catch (error) {
-                    console.error("fitBounds failed, fallback to setView()", error);
+                    console.error("Error: fitBounds failed, fallback to setView()", error);
                     map.setView(end, 14);
                 }
             }, 300);
@@ -149,7 +149,7 @@ export const AddTrip = () => {
             const line = route.features[0].geometry.coordinates.map(([lng, lat]: number[]) => [lat, lng]);
             setRouteCoords(line);
         } catch (error) {
-            console.error("Error calculating route:", error);
+            console.error("Fout met het berekenen van de route:", error);
         }
         setLoadingRoute(false);
     };
