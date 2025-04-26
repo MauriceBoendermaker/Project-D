@@ -121,7 +121,7 @@ export const AddVehicle = () => {
                         </div>
 
                         {kentekenValid !== null && (
-                            <div className={'mb-3 small ${kentekenValid ? "text-success" : "text-danger"}'}>
+                            <div className={`mb-3 small ${kentekenValid ? "text-success" : "text-danger"}`}>
                                 {kentekenValid ? "✓ Geldig kenteken" : "✗ Ongeldig kenteken"}
                             </div>
                         )}
