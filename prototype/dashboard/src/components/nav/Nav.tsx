@@ -79,6 +79,15 @@ export const Nav = () => {
                         Voeg voertuig toe
                       </a>
                     </li>
+                    <li>
+                      <a
+                        className={`dropdown-item ${currentPath === "/admin/voeg-medewerker-toe" ? "active" : ""
+                          }`}
+                        href="/admin/voeg-medewerker-toe"
+                      >
+                        Voeg medewerker toe
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </nav>

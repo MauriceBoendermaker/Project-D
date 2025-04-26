@@ -24,8 +24,10 @@ import { LoginForm } from "components/Login";
 import { PrivateLayout } from "components/PrivateLayout";
 import { AuthProvider } from "components/Context/AuthContext";
 import { TripOverview } from "./components/planning/TripOverview";
+
 import { AddTrip } from "./components/planning/AddTrip";
 import { AddVehicle } from "./components/planning/AddVehicle";
+import { AddEmployee } from "./components/admin/AddEmployee";
 
 const App: React.FC = () => {
   return (
@@ -46,6 +48,7 @@ const App: React.FC = () => {
               <Route path="/planning/toon-rit-overzicht" element={<TripOverview />} />
               <Route path="/planning/voeg-rit-toe" element={<AddTrip />} />
               <Route path="/planning/voeg-voertuig-toe" element={<AddVehicle />} />
+              <Route path="/admin/voeg-medewerker-toe" element={<AddEmployee />} />
 
               {/* Public routes */}
               <Route path="/" element={<ChartsWrapper />} />
