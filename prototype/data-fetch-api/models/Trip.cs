@@ -8,8 +8,11 @@ namespace Models
     public class Trip
     {
         [Key]
-        [JsonPropertyName("rit_id")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RitId { get; set; } // Primary key (en auto increment)
+
+        [JsonPropertyName("rit_id")]
+        public string RitNummer { get; set; } = string.Empty;
 
         [JsonPropertyName("voertuig_id")]
         [ForeignKey("Vehicle")]

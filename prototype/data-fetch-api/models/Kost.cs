@@ -8,6 +8,7 @@ namespace Models
     {
         [Key]
         public int Id { get; set; }
+        
         [JsonPropertyName("onderhoud")]
         public float Onderhoud { get; set; }
 

@@ -7,8 +7,10 @@ namespace Models
     public class Vehicle
     {
         [Key]
+        public int VoertuigId { get; set; } // Primary key (auto increment)
+
         [JsonPropertyName("voertuig_id")]
-        public int VoertuigId { get; set; } // Primary key (en auto increment)
+        public string VoertuigNummer { get; set; } = string.Empty;
 
         [JsonPropertyName("kenteken")]
         public string? Kenteken { get; set; } = string.Empty;
