@@ -27,7 +27,7 @@ namespace Controllers
 
         [HttpPost()]
         public async Task AddTrip([From Body] Rit rit){
-            await _tripServoce.AddTrip(rit);
+            await _tripService.AddTrip(rit);
         }
     }
 }
