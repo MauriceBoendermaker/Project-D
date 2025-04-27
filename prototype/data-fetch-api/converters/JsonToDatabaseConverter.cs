@@ -57,7 +57,7 @@ namespace Services
         public async Task ImportShipmentsAsync(string shipmentDataPath)
         {
             var json = await File.ReadAllTextAsync(shipmentDataPath);
-            var shipments = JsonSerializer.Deserialize<List<Zending>>(json);
+            var shipments = JsonSerializer.Deserialize<List<Shipment>>(json);
 
             if (shipments == null)
             {
