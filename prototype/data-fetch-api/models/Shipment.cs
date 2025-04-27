@@ -1,11 +1,14 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 
 namespace Models
 {
-    public class Zending
+    public class Shipment
     {
-        public int Id { get; set; }
+        [Key]
+        public int Id { get; set; } // Primary key (auto increment)
 
         [JsonPropertyName("zending_id")]
         [XmlElement("zending_id")]
@@ -41,16 +44,5 @@ namespace Models
         [JsonPropertyName("created_at")]
         [XmlElement("created_at")]
         public string? CreatedAt { get; set; }
-    }
-
-    public class loadDegree
-    {
-        [JsonPropertyName("shipment_id")]
-        [XmlElement("shipment_id")]
-        public int ShipmentId { get; set; }
-
-        [JsonPropertyName("load_degree")]
-        [XmlElement("load_degree")]
-        public double LoadDegree { get; set; }
     }
 }
