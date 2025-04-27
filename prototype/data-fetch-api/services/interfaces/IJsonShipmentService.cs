@@ -1,11 +1,14 @@
 using Models;
 
-public interface IJsonShipmentService
+namespace Services
 {
-    Task<IEnumerable<Zending>?> GetAllShipments();
-    Task<int> GetMaxCapacity(int ZendingId);
-    Task<int> GetTotalEmptyMiles();
-    Task<double> GetAverageLoadDegree();
-    Task<double> GetLoadDegree(int ZendingId);
-    Task<List<loadDegree>?> GetTotalLoadDegree();
+    public interface IJsonShipmentService
+    {
+        Task<IEnumerable<Shipment>?> GetAllShipments();
+        Task<int> GetMaxCapacity(int shipmentId);
+        Task<int> GetTotalEmptyMiles();
+        Task<double> GetAverageLoadDegree();
+        Task<double> GetLoadDegree(int shipmentId);
+        Task<List<LoadDegree>?> GetTotalLoadDegree();
+    }
 }
