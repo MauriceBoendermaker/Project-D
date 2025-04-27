@@ -14,7 +14,7 @@ namespace Services
             _context = context;
         }
 
-        public async Task<List<Rit>> GetTripOverview()
+        public async Task<List<Trip>> GetTripOverview()
         {
             try
             {
@@ -23,11 +23,11 @@ namespace Services
             catch (Exception ex)
             {
                 Console.WriteLine("Fout met het ophalen van ritten uit de database: " + ex.Message);
-                return new List<Rit>();
+                return new List<Trip>();
             }
         }
 
-        public async Task AddTrip(Rit rit)
+        public async Task AddTrip(Trip rit)
         {
             try
             {

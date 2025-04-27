@@ -29,7 +29,7 @@ namespace Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTrip([FromBody] Rit rit)
+        public async Task<IActionResult> AddTrip([FromBody] Trip rit)
         {
             await _tripService.AddTrip(rit);
             return Ok();
