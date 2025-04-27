@@ -1,4 +1,7 @@
 using Services;
+using Microsoft.EntityFrameworkCore;
+
+DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +14,12 @@ builder.Services.AddCors(options =>
                         .AllowCredentials());
 });
 
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=DashboardData.db"));
+
 builder.Services.AddControllers();
 builder.Services.AddScoped<IFuelService, JsonFuelService>();
-builder.Services.AddScoped<IJsonShipmentService, JsonShipmentService>();
+builder.Services.AddScoped<IJsonShipmentService, XMLShipmentService>();
 builder.Services.AddScoped<ITripService, TripService>();
 
 builder.Services.AddEndpointsApiExplorer();

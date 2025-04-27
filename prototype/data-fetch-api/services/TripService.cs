@@ -1,30 +1,42 @@
-using System.Text.Json;
-using Converters;
+using Microsoft.EntityFrameworkCore;
 using Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Services
 {
     public class TripService : ITripService
     {
-        private string Path = "data/brandstof_data.json";
+        private readonly AppDbContext _context;
 
-        public async Task<List<Trip>> GetTripOverview()
+        public TripService(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<List<Rit>> GetTripOverview()
         {
             try
             {
-                var json = await File.ReadAllTextAsync(Path);
-                var trips = JsonSerializer.Deserialize<List<Trip>>(json, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true,
-                    Converters = { new FlexibleDateTimeConverter() }
-                });
-
-                return trips ?? new List<Trip>();
+                return await _context.Ritten.ToListAsync();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Fout met het uitlezen van trip overview: " + ex.Message);
-                return new List<Trip>();
+                Console.WriteLine("Fout met het ophalen van ritten uit de database: " + ex.Message);
+                return new List<Rit>();
+            }
+        }
+
+        public async Task AddTrip(Rit rit)
+        {
+            try
+            {
+                await _context.Ritten.AddAsync(rit);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Fout met het toevoegen van een rit: " + ex.Message);
             }
         }
     }

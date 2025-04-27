@@ -1,0 +1,11 @@
+.add-trip-container {
+    .map-container {
+        z-index: 0;
+
+        .leaflet-container {
+            border: 2px solid $primary-color;
+            border-radius: $corner-radius;
+            box-shadow: $box-shadow-soft;
+        }
+    }
+}

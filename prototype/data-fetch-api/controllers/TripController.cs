@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Services;
+using Models;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace Controllers
 {
@@ -23,6 +26,13 @@ namespace Controllers
                 return Ok(result);
             }
             return NotFound("Geen ritten gevonden");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddTrip([FromBody] Rit rit)
+        {
+            await _tripService.AddTrip(rit);
+            return Ok();
         }
     }
 }
