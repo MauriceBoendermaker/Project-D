@@ -21,18 +21,26 @@ namespace Controllers
         public async Task<IActionResult> GetTripOverview()
         {
             var result = await _tripService.GetTripOverview();
-            if (result != null && result.Any())
-            {
-                return Ok(result);
-            }
-            return NotFound("Geen ritten gevonden");
+            return result != null && result.Any() ? Ok(result) : NotFound(new { error = "Geen ritten gevonden." });
         }
 
         [HttpPost]
         public async Task<IActionResult> AddTrip([FromBody] Trip rit)
         {
-            await _tripService.AddTrip(rit);
-            return Ok();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await _tripService.AddTrip(rit);
+                return Ok(new { message = "Rit succesvol toegevoegd." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = $"Fout bij toevoegen rit: {ex.Message}" });
+            }
         }
     }
 }
