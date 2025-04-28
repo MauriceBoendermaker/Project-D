@@ -15,6 +15,24 @@ namespace Services
 
         public async Task ImportVehiclesAndTripsAsync(string brandstofDataPath)
         {
+            try
+            {
+                await _context.Database.ExecuteSqlRawAsync("DELETE FROM Ritten");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Tabel 'Ritten' bestaat niet, overslaan.");
+            }
+
+            try
+            {
+                await _context.Database.ExecuteSqlRawAsync("DELETE FROM Voertuigen");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Tabel 'Voertuigen' bestaat niet, overslaan.");
+            }
+
             var json = await File.ReadAllTextAsync(brandstofDataPath);
             var vehicles = JsonSerializer.Deserialize<List<Vehicle>>(json);
 
@@ -26,36 +44,42 @@ namespace Services
 
             foreach (var vehicle in vehicles)
             {
-                _context.Voertuigen.Add(vehicle);
-            }
-
-            await _context.SaveChangesAsync();
-
-            foreach (var vehicle in vehicles)
-            {
-                if (vehicle.Ritten != null && vehicle.Ritten.Count > 0)
+                var newVehicle = new Vehicle
                 {
-                    var voertuigEntity = await _context.Voertuigen
-                        .FirstOrDefaultAsync(v => v.Kenteken == vehicle.Kenteken);
+                    Kenteken = vehicle.Kenteken,
+                    Merk = vehicle.Merk,
+                    Model = vehicle.Model,
+                    BrandstofType = vehicle.BrandstofType,
+                    MaximaleCapaciteitKg = vehicle.MaximaleCapaciteitKg,
+                    CreatedAt = DateTime.UtcNow
+                };
+                _context.Voertuigen.Add(newVehicle);
+                await _context.SaveChangesAsync();
 
-                    if (voertuigEntity != null)
+                if (vehicle.Ritten != null)
+                {
+                    foreach (var rit in vehicle.Ritten)
                     {
-                        foreach (var rit in vehicle.Ritten)
+                        var newRit = new Trip
                         {
-                            rit.RitId = 0;
-                            rit.VehicleVoertuigId = voertuigEntity.VoertuigId;
-                            _context.Ritten.Add(rit);
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Voertuig met kenteken {vehicle.Kenteken} niet gevonden.");
+                            RitNummer = rit.RitNummer,
+                            Datum = rit.Datum,
+                            AfstandKm = rit.AfstandKm,
+                            DuurMinuten = rit.DuurMinuten,
+                            BrandstofVerbruikL = rit.BrandstofVerbruikL,
+                            BestemmingId = rit.BestemmingId,
+                            KlantId = rit.KlantId,
+                            ChauffeurId = rit.ChauffeurId,
+                            VehicleVoertuigId = newVehicle.VoertuigId,
+                            CreatedAt = DateTime.UtcNow
+                        };
+                        _context.Ritten.Add(newRit);
                     }
                 }
             }
 
             await _context.SaveChangesAsync();
-            Console.WriteLine("Voertuigen en ritten succesvol geïmporteerd.");
+            Console.WriteLine("Voertuigen en ritten succesvol geïmporteerd zonder dubbele entries.");
         }
 
         public async Task ImportShipmentsAsync(string shipmentDataPath)
