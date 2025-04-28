@@ -4,28 +4,26 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
 interface Rit {
-    rit_id: string;
+    ritId: number;
+    ritNummer: string;
     datum: string;
-    afstand_km: number;
-    brandstof_verbruik_l: number;
-    gemiddeld_verbruik_l_per_100km: number;
-}
-
-interface Trip {
-    voertuig_id: string;
+    afstandKm: number;
+    duurMinuten: number;
+    voertuigId: number;
     kenteken: string;
     merk: string;
     model: string;
-    brandstof_type: string;
-    ritten: Rit[];
+    brandstofType: string;
 }
 
 export const TripOverview = () => {
     const [events, setEvents] = useState<any[]>([]);
-    const [selectedRit, setSelectedRit] = useState<any | null>(null);
+    const [selectedRit, setSelectedRit] = useState<Rit | null>(null);
     const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
+        let isMounted = true;
+
         const fetchData = async () => {
             try {
                 const res = await fetch("http://localhost:3000/api/ritten/overzicht");
@@ -34,36 +32,31 @@ export const TripOverview = () => {
                     throw new Error(`HTTP error! Status: ${res.status}`);
                 }
 
-                const data: Trip[] = await res.json();
+                const data: Rit[] = await res.json();
 
-                const calendarEvents = data.flatMap((trip) =>
-                    trip.ritten.map((rit) => ({
-                        title: `${trip.voertuig_id} (${rit.afstand_km} km)`,
+                if (isMounted) {
+                    const calendarEvents = data.map((rit) => ({
+                        title: `${rit.ritNummer} (${rit.afstandKm} km)`,
                         start: new Date(rit.datum),
-                        extendedProps: {
-                            rit,
-                            voertuig: {
-                                voertuig_id: trip.voertuig_id,
-                                kenteken: trip.kenteken,
-                                merk: trip.merk,
-                                model: trip.model,
-                                brandstof_type: trip.brandstof_type,
-                            },
-                        },
-                    }))
-                );
+                        extendedProps: { rit },
+                    }));
 
-                setEvents(calendarEvents);
+                    setEvents(calendarEvents);
+                }
             } catch (error) {
                 console.error("Fout bij ophalen ritten:", error);
             }
         };
 
         fetchData();
+
+        return () => {
+            isMounted = false;
+        };
     }, []);
 
     const handleEventClick = (info: any) => {
-        setSelectedRit(info.event.extendedProps);
+        setSelectedRit(info.event.extendedProps.rit);
         setShowModal(true);
     };
 
@@ -95,14 +88,13 @@ export const TripOverview = () => {
                         <div className="modal-body">
                             {selectedRit && (
                                 <>
-                                    <p><strong>Voertuig:</strong> {selectedRit.voertuig.voertuig_id} - {selectedRit.voertuig.kenteken}</p>
-                                    <p><strong>Type:</strong> {selectedRit.voertuig.merk} {selectedRit.voertuig.model} ({selectedRit.voertuig.brandstof_type})</p>
+                                    <p><strong>Voertuig:</strong> {selectedRit.kenteken}</p>
+                                    <p><strong>Type:</strong> {selectedRit.merk} {selectedRit.model}</p>
                                     <hr />
-                                    <p><strong>Rit ID:</strong> {selectedRit.rit.rit_id}</p>
-                                    <p><strong>Datum:</strong> {new Date(selectedRit.rit.datum).toLocaleString()}</p>
-                                    <p><strong>Afstand:</strong> {selectedRit.rit.afstand_km} km</p>
-                                    <p><strong>Verbruik:</strong> {selectedRit.rit.brandstof_verbruik_l} liter</p>
-                                    <p><strong>Gem. verbruik:</strong> {selectedRit.rit.gemiddeld_verbruik_l_per_100km} L / 100km</p>
+                                    <p><strong>Rit nummer:</strong> {selectedRit.ritNummer}</p>
+                                    <p><strong>Datum:</strong> {new Date(selectedRit.datum).toLocaleString()}</p>
+                                    <p><strong>Afstand:</strong> {selectedRit.afstandKm} km</p>
+                                    <p><strong>Duur:</strong> {selectedRit.duurMinuten} minuten</p>
                                 </>
                             )}
                         </div>
