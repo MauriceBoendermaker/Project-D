@@ -33,16 +33,17 @@ using (var scope = app.Services.CreateScope())
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     var converter = new JsonToDatabaseConverter(context);
 
-    Console.WriteLine("Type 'import' om de JSON data te importeren in de database:");
-    var input = Console.ReadLine();
+    // --- Uncomment dit stukje als je JSON naar Database handmatig wilt importeren upon runtime ---
+    // Console.WriteLine("Type 'import' om de JSON data te importeren in de database:");
+    // var input = Console.ReadLine();
 
-    if (input?.ToLower() == "import")
-    {
-        await converter.ImportVehiclesAndTripsAsync("data/brandstof_data.json");
-        await converter.ImportShipmentsAsync("data/Zending_data.json");
+    // if (input?.ToLower() == "import")
+    // {
+    //     await converter.ImportVehiclesAndTripsAsync("data/brandstof_data.json");
+    //     await converter.ImportShipmentsAsync("data/Zending_data.json");
 
-        Console.WriteLine("Data geïmporteerd!");
-    }
+    //     Console.WriteLine("Data geïmporteerd!");
+    // }
 }
 
 app.UseCors("AllowSpecificOrigin");
