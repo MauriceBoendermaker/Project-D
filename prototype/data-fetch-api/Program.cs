@@ -38,3 +38,5 @@ if (app.Environment.IsDevelopment())
 app.Urls.Add("http://localhost:3000");
 app.MapControllers();
 app.Run();
+
+public partial class Program { }
