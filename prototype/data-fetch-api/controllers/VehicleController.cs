@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Services;
+using Models;
 using System.Threading.Tasks;
 
 namespace Controllers
@@ -35,6 +36,19 @@ namespace Controllers
                 return NotFound(new { error = $"Voertuig met ID {id} niet gevonden." });
             }
             return Ok(voertuig);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddVehicle([FromBody] Vehicle vehicle)
+        {
+            if (vehicle == null)
+            {
+                return BadRequest(new { error = "Ongeldige voertuig data." });
+            }
+
+            await _vehicleService.AddVehicleAsync(vehicle);
+
+            return Ok(new { message = "Voertuig succesvol toegevoegd." });
         }
     }
 }
