@@ -9,6 +9,6 @@ public class AppDbContext : DbContext
     public DbSet<Vehicle> Voertuigen => Set<Vehicle>();
     public DbSet<Shipment> Zendingen => Set<Shipment>();
     public DbSet<Employee> Medewerkers => Set<Employee>();
-    public DbSet<Customer> Klanten => Set<Customer>();
+    public DbSet<Customer> Customers => Set<Customer>();
     public DbSet<Location> Locaties => Set<Location>();
 }

@@ -54,7 +54,7 @@ namespace data_fetch_api.Migrations
 
                     b.HasKey("CustomerId");
 
-                    b.ToTable("Klanten");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Models.Employee", b =>

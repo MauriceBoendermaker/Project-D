@@ -73,7 +73,7 @@ export const AddVehicle = () => {
         }
 
         try {
-            await fetch("http://localhost:3000/api/brandstof/voertuigen", {
+            await fetch("http://localhost:3000/api/voertuigen", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -161,11 +161,11 @@ export const AddVehicle = () => {
                                 required
                             >
                                 <option value="">Selecteer brandstof</option>
-                                <option value="diesel">Diesel</option>
-                                <option value="benzine">Benzine</option>
-                                <option value="elektrisch">Elektrisch</option>
-                                <option value="hybride">Hybride</option>
-                                <option value="anders">Anders</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Benzine">Benzine</option>
+                                <option value="Elektrisch">Elektrisch</option>
+                                <option value="Hybride">Hybride</option>
+                                <option value="Anders">Anders</option>
                             </select>
                         </div>
 

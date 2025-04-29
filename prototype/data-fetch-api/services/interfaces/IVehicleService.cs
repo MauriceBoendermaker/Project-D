@@ -8,5 +8,6 @@ namespace Services
     {
         Task<List<Vehicle>> GetAllVehiclesAsync();
         Task<Vehicle?> GetVehicleByIdAsync(int voertuigId);
+        Task AddVehicleAsync(Vehicle Vehicle);
     }
 }
