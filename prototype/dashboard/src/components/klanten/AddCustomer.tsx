@@ -11,6 +11,10 @@ interface CustomerForm {
 }
 
 export const AddCustomer = () => {
+    const [postcode, setPostcode] = useState("");
+    const [postcodeValid, setPostcodeValid] = useState<boolean | null>(null);
+    const postcodeRegex = /^[1-9][0-9]{3}\s?[A-Z]{2}$/i;
+
     const [formData, setFormData] = useState<CustomerForm>({
         bedrijf: "",
         contactpersoon: "",
@@ -23,6 +27,18 @@ export const AddCustomer = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
+
+        if (name === "postcode") {
+            const formatted = value.toUpperCase();
+            setPostcode(formatted);
+
+            if (formatted.trim() === "") {
+                setPostcodeValid(null);
+            } else {
+                setPostcodeValid(postcodeRegex.test(formatted));
+            }
+        }
+
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -136,10 +152,16 @@ export const AddCustomer = () => {
                                 type="text"
                                 className="form-control"
                                 name="postcode"
-                                value={formData.postcode}
-                                placeholder="Bijv. 1234 AB"
+                                value={postcode}
                                 onChange={handleChange}
+                                placeholder="Bijv. 1234 AB"
+                                required
                             />
+                            {postcodeValid !== null && (
+                                <div className={`small ${postcodeValid ? "text-success" : "text-danger"}`}>
+                                    {postcodeValid ? "✓ Geldige postcode" : "✗ Ongeldige postcode"}
+                                </div>
+                            )}
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Plaatsnaam</label>

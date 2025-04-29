@@ -256,7 +256,6 @@ export const AddTrip = () => {
                             )}
                         </div>
 
-
                         <div className="mb-3">
                             <label className="form-label">Stad</label>
                             <input type="text" className="form-control" value={stad} onChange={e => setStad(e.target.value)} placeholder="Bijv. Rotterdam" required />
