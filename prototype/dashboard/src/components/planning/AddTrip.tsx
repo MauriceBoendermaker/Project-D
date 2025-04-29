@@ -11,12 +11,11 @@ interface Kost {
 }
 
 interface Vehicle {
-    id: number;
-    voertuig_id: string;
+    voertuigId: number;
     kenteken: string;
     merk: string;
     model: string;
-    brandstof_type: string;
+    brandstofType: string;
 }
 
 interface MapProps {
@@ -68,13 +67,13 @@ export const AddTrip = () => {
     }, []);
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/brandstof/voertuigen")
+        fetch("http://localhost:3000/api/voertuigen")
             .then(res => res.json())
             .then(data => setVehicles(data));
     }, []);
 
     const handleVehicleChange = (voertuigId: string) => {
-        const vehicle = vehicles.find(v => v.voertuig_id === voertuigId);
+        const vehicle = vehicles.find(v => v.voertuigId.toString() === voertuigId);
         setSelectedVehicle(vehicle || null);
     };
 
@@ -211,8 +210,8 @@ export const AddTrip = () => {
                             <select className="form-select" onChange={e => handleVehicleChange(e.target.value)} required>
                                 <option value="">Selecteer voertuig</option>
                                 {vehicles.map(v => (
-                                    <option key={v.voertuig_id} value={v.voertuig_id}>
-                                        {v.voertuig_id}
+                                    <option key={v.voertuigId} value={v.voertuigId}>
+                                        {v.merk} {v.model} [{v.kenteken}]
                                     </option>
                                 ))}
                             </select>
