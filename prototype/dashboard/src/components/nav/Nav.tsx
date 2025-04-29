@@ -90,6 +90,26 @@ export const Nav = () => {
                     </li>
                   </ul>
                 </div>
+                <div className="nav-item dropdown">
+                  <a
+                    className={`nav-link dropdown-toggle ${currentPath.startsWith("/klanten") ? "active" : ""
+                      }`}
+                    href="/klanten"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Klanten
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <a className={`dropdown-item ${currentPath === "/klanten/voeg-klant-toe" ? "active" : ""}`} href="/klanten/voeg-klant-toe">
+                        <i className="fas fa-user-tie me-2"></i>
+                        Voeg klant toe
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </nav>
             </div>}
           {/* Profile (flush right) */}

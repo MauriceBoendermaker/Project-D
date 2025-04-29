@@ -28,6 +28,8 @@ import { TripOverview } from "./components/planning/TripOverview";
 import { AddTrip } from "./components/planning/AddTrip";
 import { AddVehicle } from "./components/admin/AddVehicle";
 import { AddEmployee } from "./components/admin/AddEmployee";
+import { AddCustomer } from "./components/klanten/AddCustomer";
+
 
 const App: React.FC = () => {
   return (
@@ -48,9 +50,12 @@ const App: React.FC = () => {
               <Route path="/planning/toon-rit-overzicht" element={<TripOverview />} />
               <Route path="/planning/voeg-rit-toe" element={<AddTrip />} />
 
-              {/* Admin routes */}
+              {/* Beheer routes */}
               <Route path="/admin/voeg-voertuig-toe" element={<AddVehicle />} />
               <Route path="/admin/voeg-medewerker-toe" element={<AddEmployee />} />
+
+              {/* Klanten routes */}
+              <Route path="/klanten/voeg-klant-toe" element={<AddCustomer />} />
 
               {/* Public routes */}
               <Route path="/" element={<ChartsWrapper />} />
