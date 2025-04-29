@@ -1,15 +1,21 @@
+using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-public class Kost
+namespace Models
 {
-    public int Id { get; set; }
-    [JsonPropertyName("onderhoud")]
-    public float Onderhoud { get; set; }
+    public class Kost
+    {
+        [Key]
+        public int Id { get; set; }
+        
+        [JsonPropertyName("onderhoud")]
+        public float Onderhoud { get; set; }
 
-    [JsonPropertyName("verzekering")]
-    public float Verzekering { get; set; }
+        [JsonPropertyName("verzekering")]
+        public float Verzekering { get; set; }
 
-    [JsonPropertyName("tolwegen")]
-    public float Tolwegen { get; set; }
+        [JsonPropertyName("tolwegen")]
+        public float Tolwegen { get; set; }
+    }
 }

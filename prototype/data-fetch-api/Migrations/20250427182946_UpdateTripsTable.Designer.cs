@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace data_fetch_api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250427182946_UpdateTripsTable")]
+    partial class UpdateTripsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.4");
@@ -132,46 +135,6 @@ namespace data_fetch_api.Migrations
                     b.ToTable("Locaties");
                 });
 
-            modelBuilder.Entity("Models.Shipment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("CurrentLoadKg")
-                        .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "current_load_kg");
-
-                    b.Property<string>("Destination")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "destination");
-
-                    b.Property<int>("EmptyKilometers")
-                        .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "empty_kilometers");
-
-                    b.Property<int>("MaxCapacityKg")
-                        .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "max_capacity_kg");
-
-                    b.Property<int>("ShipmentId")
-                        .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "shipment_id");
-
-                    b.Property<int>("VoertuigId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("VoertuigId");
-
-                    b.ToTable("Zendingen");
-                });
-
             modelBuilder.Entity("Models.Trip", b =>
                 {
                     b.Property<int>("RitId")
@@ -268,15 +231,45 @@ namespace data_fetch_api.Migrations
                     b.ToTable("Voertuigen");
                 });
 
-            modelBuilder.Entity("Models.Shipment", b =>
+            modelBuilder.Entity("Models.Zending", b =>
                 {
-                    b.HasOne("Models.Vehicle", "Vehicle")
-                        .WithMany()
-                        .HasForeignKey("VoertuigId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Navigation("Vehicle");
+                    b.Property<string>("CreatedAt")
+                        .HasColumnType("TEXT")
+                        .HasAnnotation("Relational:JsonPropertyName", "created_at");
+
+                    b.Property<int>("CurrentLoadKg")
+                        .HasColumnType("INTEGER")
+                        .HasAnnotation("Relational:JsonPropertyName", "huidige_capaciteit");
+
+                    b.Property<string>("Destination")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasAnnotation("Relational:JsonPropertyName", "bestemming");
+
+                    b.Property<int>("EmptyKilometers")
+                        .HasColumnType("INTEGER")
+                        .HasAnnotation("Relational:JsonPropertyName", "onbenutte_kilometers");
+
+                    b.Property<int>("MaxCapacityKg")
+                        .HasColumnType("INTEGER")
+                        .HasAnnotation("Relational:JsonPropertyName", "max_capaciteit");
+
+                    b.Property<int>("ShipmentId")
+                        .HasColumnType("INTEGER")
+                        .HasAnnotation("Relational:JsonPropertyName", "zending_id");
+
+                    b.Property<string>("VehicleId")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasAnnotation("Relational:JsonPropertyName", "voertuig_id");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Zendingen");
                 });
 
             modelBuilder.Entity("Models.Trip", b =>

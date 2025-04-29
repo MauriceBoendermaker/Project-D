@@ -6,7 +6,7 @@ namespace Services
 {
     public interface ITripService
     {
-        Task<List<Rit>> GetTripOverview();
-        Task AddTrip(Rit rit);
+        Task<List<TripOverview>> GetTripOverview();
+        Task AddTrip(Trip rit);
     }
 }
