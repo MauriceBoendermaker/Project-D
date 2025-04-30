@@ -44,6 +44,21 @@ namespace integrationTests
         }
 
         [Fact]
+        public async Task GetVehicleAverage_ReturnsNotFound() {
+            // Arrange
+            var vehicleId = "TRK-999";
+            var url = $"/api/brandstof/gemiddelde/{vehicleId}";
+
+            // Act
+            var response = await _client.GetAsync(url);
+
+            // Assert
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+            var body = await response.Content.ReadAsStringAsync();
+            Assert.Contains("Voertuig bestaat niet", body);
+        }
+
+        [Fact]
         public async Task GetRitCost_ReturnsOk()
         {
             // Arrange
@@ -59,5 +74,6 @@ namespace integrationTests
             var body = await response.Content.ReadAsStringAsync();
             Assert.Contains("Benzinekosten", body);
         }
+
     }
 }
