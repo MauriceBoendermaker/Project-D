@@ -23,7 +23,7 @@ public class LoginTest : IClassFixture<WebApplicationFactory<Program>>
     public async Task Login_Successfull()
     {
         // Arange
-        var url = "/api/login"
+        var url = "/api/login";
 
         var LoginRequest = new
         {
@@ -47,7 +47,7 @@ public class LoginTest : IClassFixture<WebApplicationFactory<Program>>
     public async Task Login_Unauthorized()
     {
         // Arrange
-        var url = "/api/login"
+        var url = "/api/login";
 
         var LoginRequest = new
         {
