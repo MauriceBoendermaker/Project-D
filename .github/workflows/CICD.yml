@@ -5,6 +5,7 @@ on:
     branches: 
       - 'main'
       - 'Development'
+      - 'FuelTest'
   pull_request:
     branches: 
       - '*'
