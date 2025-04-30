@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using System.Text;
 using System.Text.Json;
 
-
-
 namespace integrationTests;
 
 public class LoginTest : IClassFixture<WebApplicationFactory<Program>>
