@@ -23,5 +23,11 @@ namespace Services
         {
             return await _context.Voertuigen.FirstOrDefaultAsync(v => v.VoertuigId == voertuigId);
         }
+
+        public async Task AddVehicleAsync(Vehicle vehicle)
+        {
+            await _context.Voertuigen.AddAsync(vehicle);
+            await _context.SaveChangesAsync();
+        }
     }
 }
