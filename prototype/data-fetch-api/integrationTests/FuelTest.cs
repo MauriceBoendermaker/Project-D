@@ -75,5 +75,22 @@ namespace integrationTests
             Assert.Contains("Benzinekosten", body);
         }
 
+        [Fact]
+        public async Task GetRitCost_ReturnsNotFound()
+        {
+            // Arrange
+            var vehicleId = "TRK-999"; 
+            var ritId = "RIT-999";     
+            var url = $"/api/brandstof/kosten/{vehicleId}/{ritId}";
+
+            // Act
+            var response = await _client.GetAsync(url);
+
+            // Assert
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+            var body = await response.Content.ReadAsStringAsync();
+            Assert.Contains("Voertuig bestaat niet", body);
+        }
+
     }
 }
