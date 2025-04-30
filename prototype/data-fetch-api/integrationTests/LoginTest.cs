@@ -16,7 +16,6 @@ public class LoginTest : IClassFixture<WebApplicationFactory<Program>>
         _client = factory.CreateClient();
     }
 
-
     [Fact]
     public async Task Login_Successfull()
     {
@@ -42,6 +41,7 @@ public class LoginTest : IClassFixture<WebApplicationFactory<Program>>
         Assert.Contains("token", responseBody);
     }
 
+    [Fact]
     public async Task Login_Unauthorized()
     {
         // Arrange
