@@ -18,7 +18,7 @@ import { Footer } from "./components/misc/Footer";
 
 // Import components
 import { ChartsWrapper } from "./components/ChartsWrapper";
-import { FuelChart } from "./components/charts/FuelUsageChart";
+import { FuelUsageInfo } from "./components/ChartInfo/FuelChartInfo";
 import { TripCostChart } from "./components/charts/TripCostChart";
 import { LoginForm } from "components/Login";
 import { PrivateLayout } from "components/PrivateLayout";
@@ -59,7 +59,7 @@ const App: React.FC = () => {
 
               {/* Public routes */}
               <Route path="/" element={<ChartsWrapper />} />
-              <Route path="/verbruik" element={<FuelChart />} />
+              <Route path="/verbruik" element={<FuelUsageInfo />} />
               <Route path="/benzinekosten" element={<TripCostChart />} />
 
               <Route
