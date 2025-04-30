@@ -38,7 +38,7 @@ public class LoginTest : IClassFixture<WebApplicationFactory<Program>>
         var response = await _client.PostAsync(url, content);
 
         // Assert
-        Assert.Equal(HttpStatusCode.Ok, response.StatusCode);
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 
         var responseBody = await response.Content.ReadAsStringAsync();
         Assert.Contains("token", responseBody);
