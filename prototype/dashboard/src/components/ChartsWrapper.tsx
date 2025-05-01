@@ -33,9 +33,8 @@ export const ChartsWrapper = () => {
           return (
             <div
               key={cfg.id}
-              className={`chart-container ${
-                isZoomed ? "col-12 zoomed" : isHidden ? "d-none" : "col-md-6"
-              }`}
+              className={`chart-container ${isZoomed ? "col-12 zoomed" : isHidden ? "d-none" : "col-md-6"
+                }`}
             >
               {cfg.type === "fuel" ? (
                 <FuelChart delayIndex={i} />

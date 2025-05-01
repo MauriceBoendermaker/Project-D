@@ -1,6 +1,6 @@
 import { color } from "echarts";
 import EChartsReact, { EChartsOption } from "echarts-for-react";
-import { data } from "react-router-dom";
+
 
 interface ChartProps {
   chartId: number;

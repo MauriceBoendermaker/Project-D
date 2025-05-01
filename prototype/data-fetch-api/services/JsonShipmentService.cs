@@ -36,7 +36,7 @@ namespace Services
             return shipment != null ? shipment.MaxCapacityKg : -1;
         }
 
-        public async Task<int> GetTotalEmptyMiles()
+        public async Task<int> GetTotalEmptyKilometers()
         {
             var shipments = await GetAllShipments();
             if (shipments == null) return -1;
