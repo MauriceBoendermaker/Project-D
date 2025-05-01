@@ -1,7 +1,18 @@
+import {
+  FUEL_CHART_TITLE,
+  LOAD_DEGREE_TITLE,
+  TRIP_COST_TITLE,
+} from "components/ChartTitles";
 import { useAuth } from "components/Context/AuthContext";
 import { useState, useEffect } from "react";
 
 export const SideNav = () => {
+  const IconClassNames: { [Key: number]: [string, string] } = {
+    1: ["fa-solid fa-gas-pump", FUEL_CHART_TITLE],
+    2: ["fa-solid fa-euro-sign", TRIP_COST_TITLE],
+    3: ["fa-solid fa-percent", LOAD_DEGREE_TITLE],
+    4: ["fa-solid fa-question", "title 4"],
+  };
   const [collapsed, setCollapsed] = useState(false);
   const { isLoggedIn, logout } = useAuth();
 
@@ -29,8 +40,9 @@ export const SideNav = () => {
                 key={i}
                 onClick={() => handleZoom(i)}
                 className="graph-button"
+                title={IconClassNames[num][1]}
               >
-                <i className="fas fa-chart-bar fa-lg"></i>
+                <i className={IconClassNames[num][0]}></i>
               </button>
             ))}
           </div>

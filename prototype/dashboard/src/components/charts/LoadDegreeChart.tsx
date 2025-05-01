@@ -4,7 +4,7 @@ import {
   error,
   TotalDegree,
 } from "api/fetchShipmentData";
-import { ChartsWrapper } from "components/ChartsWrapper";
+import { LOAD_DEGREE_TITLE } from "components/ChartTitles";
 import { StyledChartWrapper } from "components/StyledChartWrapper";
 import ReactECharts, { EChartsOption } from "echarts-for-react";
 import React, { useEffect, useState } from "react";
@@ -76,10 +76,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
   console.log("Chart data:", JSON.stringify(chartData));
 
   return (
-    <StyledChartWrapper
-      title="Beladingsgraad per zending"
-      delayIndex={delayIndex}
-    >
+    <StyledChartWrapper title={LOAD_DEGREE_TITLE} delayIndex={delayIndex}>
       {chartData.length > 0 ? (
         <ReactECharts
           option={chartOptions}
