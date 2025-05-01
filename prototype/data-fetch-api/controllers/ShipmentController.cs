@@ -61,12 +61,12 @@ namespace Controllers
         }
 
         [HttpGet("onbenutte-kilometers")]
-        public async Task<IActionResult> GetTotalEmptyMiles()
+        public async Task<IActionResult> GetTotalEmptyKilometers()
         {
-            int totalEmptyMiles = await _shipmentService.GetTotalEmptyMiles();
-            return totalEmptyMiles < 0
+            int totalEmptyKilometers = await _shipmentService.GetTotalEmptyKilometers();
+            return totalEmptyKilometers < 0
                 ? NotFound(new { error = "Het berekenen van de gegevens is niet mogelijk." })
-                : Ok(new { totalEmptyMiles = totalEmptyMiles });
+                : Ok(new { totalEmptyKilometers = totalEmptyKilometers });
         }
     }
 }
