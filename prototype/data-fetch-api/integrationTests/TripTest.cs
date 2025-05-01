@@ -1,7 +1,12 @@
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Xunit;
 using Microsoft.AspNetCore.Mvc.Testing;
+
 
 namespace integrationTests 
 {
@@ -28,17 +33,27 @@ namespace integrationTests
 
 
         [Fact]
-        public async Task AddTrip_WhenLoggedIn_ReturnsOk()
+        public async Task AddTrip_WhenLoggedInWithJwt_ReturnsOk()
         {
             // Arrange
-            var LoginRequest = new
+            var loginRequest = new
             {
-                username = "username",
-                password = "password"
+                email = "testuser@example.com",
+                password = "yourPassword123"
             };
 
-            var loginResponse = await _client.PostAsync("/api/auth/login", LoginRequest);
+            var loginJson = JsonConvert.SerializeObject(loginRequest);
+            var loginContent = new StringContent(loginJson, Encoding.UTF8, "application/json");
+
+            var loginResponse = await _client.PostAsync("/api/auth/login", loginContent);
             loginResponse.EnsureSuccessStatusCode();
+
+            
+            var loginResponseString = await loginResponse.Content.ReadAsStringAsync();
+            dynamic loginResult = JsonConvert.DeserializeObject(loginResponseString);
+            string token = loginResult.token;
+
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             var trip = new
             {
@@ -55,15 +70,16 @@ namespace integrationTests
                 brandstofType = "Petrol"
             };
 
-            var json = JsonConvert.SerializeObject(trip);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var tripJson = JsonConvert.SerializeObject(trip);
+            var tripContent = new StringContent(tripJson, Encoding.UTF8, "application/json");
 
-            // Act
-            var response = await _client.PostAsync("/api/ritten", content);
+            // Arrange
+            var response = await _client.PostAsync("/api/ritten", tripContent);
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
+
 
     }
 }
