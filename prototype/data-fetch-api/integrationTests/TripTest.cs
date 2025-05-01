@@ -45,7 +45,7 @@ namespace integrationTests
             var loginJson = JsonConvert.SerializeObject(loginRequest);
             var loginContent = new StringContent(loginJson, Encoding.UTF8, "application/json");
 
-            var loginResponse = await _client.PostAsync("/api/auth/login", loginContent);
+            var loginResponse = await _client.PostAsync("/api/login", loginContent);
             loginResponse.EnsureSuccessStatusCode();
 
             
