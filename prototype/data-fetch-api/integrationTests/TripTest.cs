@@ -42,7 +42,7 @@ namespace integrationTests
                 password = "password"
             };
 
-            var json = JsonSerializer.Serialize(LoginRequest);
+            var json = JsonConvert.SerializeObject(loginRequest);
             var loginContent = new StringContent(json, Encoding.UTF8, "application/json");
 
             var loginResponse = await _client.PostAsync("/api/login", loginContent);
