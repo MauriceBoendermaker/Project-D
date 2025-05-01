@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Logging.AddConsole(); 
 
 builder.Services.AddCors(options =>
 {

@@ -9,6 +9,9 @@ namespace Models
         [Key]
         public int Id { get; set; }
 
+        [JsonPropertyName("voertuig_id")]
+        public string voertuig_id { get; set; } = string.Empty;
+
         [JsonPropertyName("zending_id")]
         public int ShipmentId { get; set; }
 

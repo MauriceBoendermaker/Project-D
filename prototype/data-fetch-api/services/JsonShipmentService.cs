@@ -13,6 +13,7 @@ namespace Services
             {
                 var shipmentData = await File.ReadAllTextAsync(Path);
                 var shipments = JsonSerializer.Deserialize<IEnumerable<Shipment>>(shipmentData);
+                Console.WriteLine(shipments);
                 return shipments;
             }
             catch (JsonException)
