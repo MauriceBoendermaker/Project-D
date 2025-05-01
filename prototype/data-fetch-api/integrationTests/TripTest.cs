@@ -26,6 +26,13 @@ namespace integrationTests
 
             // Act
             var response = await _client.GetAsync(url);
+            console.WriteLine(response);
+            console.WriteLine(response);
+            console.WriteLine(response);
+            console.WriteLine(response);
+            console.WriteLine(response);
+            console.WriteLine(response);
+            console.WriteLine(response);
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
