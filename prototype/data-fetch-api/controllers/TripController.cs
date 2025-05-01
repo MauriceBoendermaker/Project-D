@@ -25,7 +25,7 @@ namespace Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTrip([FromBody] Trip rit)
+        public async Task<IActionResult> AddTrip([FromBody] TripCreateDto rit)
         {
             if (!ModelState.IsValid)
             {

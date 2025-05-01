@@ -50,17 +50,28 @@ namespace Services
             }
         }
 
-        public async Task AddTrip(Trip rit)
+        public async Task AddTrip(TripCreateDto rit)
         {
-            try
+            if (_context.Voertuigen.Any(v => v.VoertuigId == rit.VehicleVoertuigId))
             {
-                await _context.Ritten.AddAsync(rit);
-                await _context.SaveChangesAsync();
+                try
+                {
+                    Trip NewTrip = rit.ToTrip();
+                    {
+                        await _context.Ritten.AddAsync(NewTrip);
+                        await _context.SaveChangesAsync();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Fout met het toevoegen van een rit: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine("Fout met het toevoegen van een rit: " + ex.Message);
+                throw new Exception($"De voertuig met voertuig ID: {rit.VehicleVoertuigId} bestaat niet");
             }
         }
+
     }
 }
