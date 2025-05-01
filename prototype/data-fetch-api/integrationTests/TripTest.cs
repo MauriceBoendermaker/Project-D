@@ -38,8 +38,8 @@ namespace integrationTests
             // Arrange
             var loginRequest = new
             {
-                email = "testuser@example.com",
-                password = "yourPassword123"
+                username = "username",
+                password = "password"
             };
 
             var loginJson = JsonConvert.SerializeObject(loginRequest);
