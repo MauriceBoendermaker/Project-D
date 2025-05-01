@@ -18,10 +18,10 @@ namespace Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllEmployees()
+        public async Task<IActionResult> GetAllEmployees()
         {
-            var employees = _employeeService.GetAllEmployees();
-            return Ok(employees);
+            IEnumerable<Employee>? employees = await _employeeService.GetAllEmployees();
+            return employees != null ? Ok(employees) : NotFound("Er zijn momenteel geen medewerkers");
         }
 
         [HttpGet("{id}")]
