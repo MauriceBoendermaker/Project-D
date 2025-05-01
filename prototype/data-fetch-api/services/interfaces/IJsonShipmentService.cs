@@ -6,7 +6,7 @@ namespace Services
     {
         Task<IEnumerable<Shipment>?> GetAllShipments();
         Task<int> GetMaxCapacity(int shipmentId);
-        Task<int> GetTotalEmptyMiles();
+        Task<int> GetTotalEmptyKilometers();
         Task<double> GetAverageLoadDegree();
         Task<double> GetLoadDegree(int shipmentId);
         Task<List<LoadDegree>?> GetTotalLoadDegree();
