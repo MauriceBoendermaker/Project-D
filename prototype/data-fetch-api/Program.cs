@@ -4,7 +4,11 @@ using Microsoft.EntityFrameworkCore;
 DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Logging.AddConsole(); 
+builder.Logging.AddConsole(options =>
+{
+    options.IncludeScopes = true;
+    options.LogToStandardErrorThreshold = LogLevel.Information;
+});
 
 builder.Services.AddCors(options =>
 {
@@ -55,6 +59,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
 
 app.Urls.Add("http://localhost:3000");
 app.MapControllers();
