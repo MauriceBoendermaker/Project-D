@@ -5,7 +5,7 @@ on:
     branches: 
       - 'main'
       - 'Development'
-      - 'LoginTest'
+      - 'TripTest'
   pull_request:
     branches: 
       - '*'
