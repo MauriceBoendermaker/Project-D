@@ -70,11 +70,11 @@ namespace integrationTests
                 brandstofType = "Petrol"
             };
 
-            var tripJson = JsonConvert.SerializeObject(trip);
-            var tripContent = new StringContent(tripJson, Encoding.UTF8, "application/json");
+            var ritJson = JsonConvert.SerializeObject(rit);
+            var ritContent = new StringContent(ritJson, Encoding.UTF8, "application/json");
 
             // Arrange
-            var response = await _client.PostAsync("/api/ritten", tripContent);
+            var response = await _client.PostAsync("/api/ritten", ritContent);
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
