@@ -18,7 +18,6 @@ export type Zending = {
 export async function fetchAllShipments(): Promise<Zending[]> {
   const response = await fetch(API_URL);
   const data: Zending[] = await response.json();
-  console.log("Shipment data:", JSON.stringify(data));
 
   return data;
 }
