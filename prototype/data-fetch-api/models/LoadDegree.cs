@@ -7,11 +7,11 @@ namespace Models
 {
     public class LoadDegree
     {
-        [JsonPropertyName("shipment_id")]
+        [JsonPropertyName("shipmentId")]
         [XmlElement("shipment_id")]
         public int ShipmentId { get; set; }
 
-        [JsonPropertyName("load_degree")]
+        [JsonPropertyName("loadDegree")]
         [XmlElement("load_degree")]
         public double Degree { get; set; }
     }
