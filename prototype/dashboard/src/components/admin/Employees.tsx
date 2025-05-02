@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 interface Employee {
   medewerker_id: number;
   naam: string;
@@ -9,7 +10,9 @@ interface Employee {
   created_at: string;
 }
 
-export const DeleteEmployee = () => {
+export const Employees = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
   const [currentEmployees, setEmployees] = useState<Employee[]>();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, SetError] = useState<any>("");
@@ -53,7 +56,7 @@ export const DeleteEmployee = () => {
     <div className="container mt-5">
       <div className="row">
         <div className="col-md-6">
-          <h2>Medewerker verwijderen</h2>
+          <h2>Medewerkers lijst</h2>
           <div>
             {loading && "Aan het laden"}
             {error && error}
@@ -75,6 +78,12 @@ export const DeleteEmployee = () => {
                 </div>
               ))}
             </ul>
+          </div>
+          <div>
+            <a className="dropdown-item" href="/admin/voeg-medewerker-toe">
+              <i className="fas fa-user-plus me-2"></i>
+              Nieuwe medewerker
+            </a>
           </div>
         </div>
       </div>

@@ -112,23 +112,10 @@ export const Nav = () => {
                             ? "active"
                             : ""
                         }`}
-                        href="/admin/voeg-medewerker-toe"
+                        href="/admin/Medewerkers"
                       >
-                        <i className="fas fa-user-plus me-2"></i>
-                        Voeg medewerker toe
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className={`dropdown-item ${
-                          currentPath === "/admin/verwijder-medewerkers"
-                            ? "active"
-                            : ""
-                        }`}
-                        href="/admin/verwijder-medewerker"
-                      >
-                        <i className="fas fa-user-minus me-2"></i>
-                        Verwijder medewerker
+                        <i className="fas fa-user-tie me-2"></i>
+                        Medewerkers
                       </a>
                     </li>
                   </ul>

@@ -30,7 +30,7 @@ import { AddTrip } from "./components/planning/AddTrip";
 import { AddVehicle } from "./components/admin/AddVehicle";
 import { AddEmployee } from "./components/admin/AddEmployee";
 import { AddCustomer } from "./components/klanten/AddCustomer";
-import { DeleteEmployee } from "components/admin/DeleteEmployee";
+import { Employees } from "components/admin/Employees";
 
 const App: React.FC = () => {
   return (
@@ -60,10 +60,7 @@ const App: React.FC = () => {
                 path="/admin/voeg-medewerker-toe"
                 element={<AddEmployee />}
               />
-              <Route
-                path="/admin/verwijder-medewerker"
-                element={<DeleteEmployee />}
-              />
+              <Route path="/admin/Medewerkers" element={<Employees />} />
 
               {/* Klanten routes */}
               <Route path="/klanten/voeg-klant-toe" element={<AddCustomer />} />
