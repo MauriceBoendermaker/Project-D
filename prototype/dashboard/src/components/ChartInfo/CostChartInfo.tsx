@@ -24,7 +24,7 @@ export const CostChartInfo: React.FC = () => {
                         );
                         if (kostenResponse.ok) {
                             const tekst = await kostenResponse.text();
-                            const matches = tekst.match(/(\d+)(?=\s*Euro)/);
+                            const matches = tekst.match(/€\s*(\d+)/);
                             const kosten = matches ? parseFloat(matches[1]) : 0;
 
                             kostenData.push({

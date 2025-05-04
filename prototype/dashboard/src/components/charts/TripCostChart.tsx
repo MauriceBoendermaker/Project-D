@@ -23,18 +23,19 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({
         if (!voertuigenResponse.ok)
           throw new Error("Fout bij ophalen voertuigen");
 
-        const voertuigen = await voertuigenResponse.json();
-        const kostenData: any[] = [];
+                const voertuigen = await voertuigenResponse.json();
+                console.log("voertuigen data:", JSON.stringify(voertuigen));
+                const kostenData: any[] = [];
 
-        for (const voertuig of voertuigen) {
-          for (const rit of voertuig.ritten) {
-            const kostenResponse = await fetch(
-              `http://localhost:3000/api/brandstof/kosten/${voertuig.voertuig_id}/${rit.rit_id}`
-            );
-            if (kostenResponse.ok) {
-              const tekst = await kostenResponse.text();
-              const matches = tekst.match(/(\d+)(?=\s*Euro)/);
-              const kosten = matches ? parseFloat(matches[1]) : 0;
+                for (const voertuig of voertuigen) {
+                    for (const rit of voertuig.ritten) {
+                        const kostenResponse = await fetch(
+                            `http://localhost:3000/api/brandstof/kosten/${voertuig.voertuig_id}/${rit.rit_id}`
+                        );
+                        if (kostenResponse.ok) {
+                            const tekst = await kostenResponse.text();
+                            const matches = tekst.match(/€\s*(\d+)/);
+                            const kosten = matches ? parseFloat(matches[1]) : 0;
 
               kostenData.push({
                 label: `${voertuig.voertuig_id} - ${rit.rit_id}`,
@@ -57,31 +58,31 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({
       }
     };
 
-    fetchKostenData();
-  }, []);
-
-  const chartOptions = {
-    tooltip: {},
-    xAxis: {
-      type: "category",
-      data: chartData.map((item) => item.label),
-    },
-    yAxis: {
-      type: "value",
-      name: "Kosten (Euro)",
-    },
-    series: [
-      {
-        name: "Kosten in Euro",
-        type: "bar",
-        data: chartData.map((item) => item.kosten),
-        itemStyle: {
-          color: "#95191D",
-          barBorderRadius: [5, 5, 0, 0],
+        fetchKostenData();
+    }, []);
+    const chartOptions = {
+        tooltip: {},
+        xAxis: {
+            type: "category",
+            data: chartData.map((item) => String(item.label)),
         },
-      },
-    ],
-  };
+        yAxis: {
+            type: "value",
+            name: "Kosten (Euro)",
+            min: 0,
+        },
+        series: [
+            {
+                name: "Kosten in Euro",
+                type: "bar",
+                data: chartData.map((item) => item.kosten),
+                itemStyle: {
+                    color: "#95191D",
+                    barBorderRadius: [5, 5, 0, 0],
+                },
+            },
+        ],
+    };
 
   return (
     <StyledChartWrapper title={TRIP_COST_TITLE} delayIndex={delayIndex}>

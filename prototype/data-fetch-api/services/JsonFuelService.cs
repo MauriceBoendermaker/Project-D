@@ -42,7 +42,7 @@ namespace Services
             }
         }
 
-        public async Task<int> GetRitCostAsync(int voertuigId, int ritId)
+        public async Task<int> GetRitCostAsync(string voertuigId, string ritId)
         {
             try
             {
@@ -51,10 +51,10 @@ namespace Services
 
                 if (vehicles == null) return 0;
 
-                var vehicle = vehicles.FirstOrDefault(v => v.VoertuigId == voertuigId);
+                var vehicle = vehicles.FirstOrDefault(v => v.VoertuigNummer == voertuigId);
                 if (vehicle == null || vehicle.Ritten == null) return 0;
 
-                var rit = vehicle.Ritten.FirstOrDefault(r => r.RitId == ritId);
+                var rit = vehicle.Ritten.FirstOrDefault(r => r.RitNummer == ritId);
                 if (rit == null) return 0;
 
                 return Convert.ToInt32(rit.BrandstofVerbruikL * 1.8690); // Prijs diesel gemmideld 1,8690 incl. BTW (1,5446 excl.) ANWB.nl geraadpleegd 07.04.2025

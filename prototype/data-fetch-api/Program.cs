@@ -5,6 +5,11 @@ using Models;
 DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Logging.AddConsole(options =>
+{
+    options.IncludeScopes = true;
+    options.LogToStandardErrorThreshold = LogLevel.Information;
+});
 
 builder.Services.AddCors(options =>
 {
@@ -20,7 +25,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IFuelService, JsonFuelService>();
-builder.Services.AddScoped<IJsonShipmentService, XMLShipmentService>();
+builder.Services.AddScoped<IJsonShipmentService, JsonShipmentService>();
 builder.Services.AddScoped<ITripService, TripService>();
 builder.Services.AddScoped<IVehicleService, VehicleService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
@@ -57,6 +62,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
 
 app.Urls.Add("http://localhost:3000");
 app.MapControllers();

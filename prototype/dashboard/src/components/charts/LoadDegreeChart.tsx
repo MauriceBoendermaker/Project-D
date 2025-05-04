@@ -45,7 +45,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
       nameLocation: "middle",
       type: "category",
       nameGap: 50,
-      data: chartData.map((item: TotalDegree) => item.shipmentId),
+      data: chartData.map((item: TotalDegree) => String(item.shipmentId)),
     },
     yAxis: {
       name: "Beladingsgraad (%)",
@@ -65,6 +65,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
       },
       {
         type: "bar",
+        data: chartData.map(() => 0),
         itemStyle: {
           color: "#FFA0A3",
           barBorderRadius: [5, 5, 0, 0],

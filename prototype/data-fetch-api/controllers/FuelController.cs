@@ -37,7 +37,7 @@ namespace Controllers
         }
 
         [HttpGet("kosten/{voertuigId}/{ritId}")]
-        public async Task<IActionResult> GetRitCost([FromRoute] int voertuigId, [FromRoute] int ritId)
+        public async Task<IActionResult> GetRitCost([FromRoute] string voertuigId, [FromRoute] string ritId)
         {
             var result = await _fuelService.GetRitCostAsync(voertuigId, ritId);
             if (result != 0)
