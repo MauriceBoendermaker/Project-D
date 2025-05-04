@@ -91,16 +91,19 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
     ],
   };
 
-  return (
-    <StyledChartWrapper title={FUEL_CHART_TITLE} delayIndex={delayIndex}>
-      {data ? (
-        <ReactECharts
-          option={chartOptions}
-          style={{ height: 300, width: "100%" }}
-        />
-      ) : (
-        <div>Laden van data...</div>
-      )}
-    </StyledChartWrapper>
-  );
+    return (
+        <a href="http://localhost:5000/verbruik" style={{
+            textDecoration: "none",
+            color: "inherit",
+            display: "block",
+        }}>
+            <StyledChartWrapper title={FUEL_CHART_TITLE} delayIndex={delayIndex}>
+                {data ? (
+                    <ReactECharts option={chartOptions} style={{ height: 300, width: "100%" }} />
+                ) : (
+                    <div>Laden van data...</div>
+                )}
+            </StyledChartWrapper>
+        </a>
+    );
 };
