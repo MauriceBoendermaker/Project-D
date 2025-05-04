@@ -13,16 +13,17 @@ namespace Services
             {
                 var shipmentData = await File.ReadAllTextAsync(Path);
                 var shipments = JsonSerializer.Deserialize<IEnumerable<Shipment>>(shipmentData);
+                Console.WriteLine(shipments.ToString());
                 return shipments;
             }
             catch (JsonException)
             {
-                Console.WriteLine("JSON is ongeldig");
+                Console.WriteLine("JSON ongeldig");
                 return null;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Fout bij lezen JSON: {ex.Message}");
+                Console.WriteLine("fout bij lezen JSON");
                 return null;
             }
         }

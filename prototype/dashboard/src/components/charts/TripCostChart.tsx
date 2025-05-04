@@ -18,6 +18,7 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({ delayIndex = 0 }) 
                 if (!voertuigenResponse.ok) throw new Error("Fout bij ophalen voertuigen");
 
                 const voertuigen = await voertuigenResponse.json();
+                console.log("voertuigen data:", JSON.stringify(voertuigen));
                 const kostenData: any[] = [];
 
                 for (const voertuig of voertuigen) {
@@ -27,7 +28,7 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({ delayIndex = 0 }) 
                         );
                         if (kostenResponse.ok) {
                             const tekst = await kostenResponse.text();
-                            const matches = tekst.match(/(\d+)(?=\s*Euro)/);
+                            const matches = tekst.match(/€\s*(\d+)/);
                             const kosten = matches ? parseFloat(matches[1]) : 0;
 
                             kostenData.push({
@@ -51,16 +52,16 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({ delayIndex = 0 }) 
 
         fetchKostenData();
     }, []);
-
     const chartOptions = {
         tooltip: {},
         xAxis: {
             type: "category",
-            data: chartData.map((item) => item.label),
+            data: chartData.map((item) => String(item.label)),
         },
         yAxis: {
             type: "value",
             name: "Kosten (Euro)",
+            min: 0,
         },
         series: [
             {

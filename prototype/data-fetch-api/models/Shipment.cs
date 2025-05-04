@@ -9,19 +9,22 @@ namespace Models
         [Key]
         public int Id { get; set; }
 
-        [JsonPropertyName("shipment_id")]
+        [JsonPropertyName("voertuig_id")]
+        public string voertuig_id { get; set; } = string.Empty;
+
+        [JsonPropertyName("zending_id")]
         public int ShipmentId { get; set; }
 
-        [JsonPropertyName("destination")]
+        [JsonPropertyName("bestemming")]
         public string Destination { get; set; } = string.Empty;
 
-        [JsonPropertyName("max_capacity_kg")]
+        [JsonPropertyName("max_capaciteit")]
         public int MaxCapacityKg { get; set; }
 
-        [JsonPropertyName("current_load_kg")]
+        [JsonPropertyName("huidige_capaciteit")]
         public int CurrentLoadKg { get; set; }
 
-        [JsonPropertyName("empty_kilometers")]
+        [JsonPropertyName("onbenutte_kilometers")]
         public int EmptyKilometers { get; set; }
 
         [ForeignKey(nameof(Vehicle))]
