@@ -77,6 +77,11 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({ delayIndex = 0 }) 
     };
 
     return (
+        <a href="http://localhost:5000/benzinekosten" style={{
+            textDecoration: "none",
+            color: "inherit",
+            display: "block",
+        }}>
         <StyledChartWrapper title="Benzinekosten per rit" delayIndex={delayIndex}>
             {loading && <div>Laden van data...</div>}
             {error && <div>Fout: {error}</div>}
@@ -84,5 +89,6 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({ delayIndex = 0 }) 
                 <ReactECharts option={chartOptions} style={{ height: 300, width: "100%" }} />
             )}
         </StyledChartWrapper>
+        </a>
     );
 };
