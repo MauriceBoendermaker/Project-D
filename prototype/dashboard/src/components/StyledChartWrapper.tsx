@@ -1,5 +1,5 @@
 interface StyledChartWrapperProps {
-  title: string;
+  title: React.ReactNode;
   subtitle?: string;
   delayIndex?: number;
   children: React.ReactNode;
