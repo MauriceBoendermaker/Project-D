@@ -77,6 +77,11 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
   console.log("Chart data:", JSON.stringify(chartData));
 
   return (
+    <a href="http://localhost:5000/ladingsgraad" style={{
+      textDecoration: "none",
+      color: "inherit",
+      display: "block",
+  }}>
     <StyledChartWrapper
       title="Beladingsgraad per zending"
       delayIndex={delayIndex}
@@ -90,5 +95,6 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
         <div>Laden van data...</div>
       )}
     </StyledChartWrapper>
+    </a>
   );
 };
