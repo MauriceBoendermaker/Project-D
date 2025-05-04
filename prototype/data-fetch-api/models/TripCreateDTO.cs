@@ -5,20 +5,13 @@ using System.Text.Json.Serialization;
 
 namespace Models
 {
-    public class Trip
+    public class TripCreateDto
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int RitId { get; set; } // Primary key (en auto increment)
-
         [JsonPropertyName("rit_id")]
         public string RitNummer { get; set; } = string.Empty;
 
         [JsonPropertyName("voertuig_id")]
-        [ForeignKey("Vehicle")]
-        public int VehicleVoertuigId { get; set; } // Foreign key naar Voertuig
-
-        public Vehicle Vehicle { get; set; } = null!;
+        public int VehicleVoertuigId { get; set; }
 
         [JsonPropertyName("datum")]
         public DateTime? Datum { get; set; }
@@ -33,16 +26,31 @@ namespace Models
         public int BrandstofVerbruikL { get; set; }
 
         [JsonPropertyName("bestemming_id")]
-        public int BestemmingId { get; set; } // Foreign key naar Locatie
+        public int BestemmingId { get; set; }
 
         [JsonPropertyName("klant_id")]
-        public int KlantId { get; set; } // Foreign key naar Klant
+        public int KlantId { get; set; }
 
         [JsonPropertyName("chauffeur_id")]
-        public int ChauffeurId { get; set; } // Foreign key naar Medewerker
+        public int ChauffeurId { get; set; }
 
-        [JsonPropertyName("created_at")]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+
+
+        public Trip ToTrip()
+        {
+            return new Trip
+            {
+                RitNummer = RitNummer,
+                VehicleVoertuigId = VehicleVoertuigId,
+                Datum = Datum,
+                AfstandKm = AfstandKm,
+                DuurMinuten = DuurMinuten,
+                BrandstofVerbruikL = BrandstofVerbruikL,
+                BestemmingId = BestemmingId,
+                KlantId = KlantId,
+                ChauffeurId = ChauffeurId,
+            };
+        }
     }
-
 }

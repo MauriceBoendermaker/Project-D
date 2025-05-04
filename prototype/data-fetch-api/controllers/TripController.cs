@@ -25,7 +25,7 @@ namespace Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTrip([FromBody] Trip rit)
+        public async Task<IActionResult> AddTrip([FromBody] TripCreateDto rit)
         {
             if (!ModelState.IsValid)
             {
@@ -35,7 +35,7 @@ namespace Controllers
             try
             {
                 await _tripService.AddTrip(rit);
-                return Ok(new { message = "Rit succesvol toegevoegd." });
+                return Created("http://localhost:3000/api/ritten", new { message = "Rit succesvol toegevoegd." });
             }
             catch (Exception ex)
             {

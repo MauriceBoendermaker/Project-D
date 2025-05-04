@@ -1,5 +1,6 @@
 using Services;
 using Microsoft.EntityFrameworkCore;
+using Models;
 
 DotNetEnv.Env.Load();
 
@@ -28,6 +29,8 @@ builder.Services.AddScoped<IJsonShipmentService, JsonShipmentService>();
 builder.Services.AddScoped<ITripService, TripService>();
 builder.Services.AddScoped<IVehicleService, VehicleService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

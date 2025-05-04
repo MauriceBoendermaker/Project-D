@@ -30,7 +30,7 @@ import { AddTrip } from "./components/planning/AddTrip";
 import { AddVehicle } from "./components/admin/AddVehicle";
 import { AddEmployee } from "./components/admin/AddEmployee";
 import { AddCustomer } from "./components/klanten/AddCustomer";
-
+import { Employees } from "components/admin/Employees";
 
 const App: React.FC = () => {
   return (
@@ -48,12 +48,19 @@ const App: React.FC = () => {
 
             <Route element={<PrivateLayout />}>
               {/* Planning routes */}
-              <Route path="/planning/toon-rit-overzicht" element={<TripOverview />} />
+              <Route
+                path="/planning/toon-rit-overzicht"
+                element={<TripOverview />}
+              />
               <Route path="/planning/voeg-rit-toe" element={<AddTrip />} />
 
               {/* Beheer routes */}
               <Route path="/admin/voeg-voertuig-toe" element={<AddVehicle />} />
-              <Route path="/admin/voeg-medewerker-toe" element={<AddEmployee />} />
+              <Route
+                path="/admin/voeg-medewerker-toe"
+                element={<AddEmployee />}
+              />
+              <Route path="/admin/Medewerkers" element={<Employees />} />
 
               {/* Klanten routes */}
               <Route path="/klanten/voeg-klant-toe" element={<AddCustomer />} />
@@ -63,7 +70,6 @@ const App: React.FC = () => {
               <Route path="/verbruik" element={<FuelUsageInfo />} />
               <Route path="/benzinekosten" element={<CostChartInfo />} />
               <Route path="/ladingsgraad" element={<LoadDegreeInfo />} />
-
 
               <Route
                 path="/404"
