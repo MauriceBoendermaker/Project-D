@@ -77,12 +77,20 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
   console.log("Chart data:", JSON.stringify(chartData));
 
   return (
-    <a href="http://localhost:5000/ladingsgraad" style={{
-      textDecoration: "none",
-      color: "inherit",
-      display: "block",
-  }}>
-    <StyledChartWrapper title={LOAD_DEGREE_TITLE} delayIndex={delayIndex}>
+    
+    <StyledChartWrapper title={
+      <a 
+        href="http://localhost:5000/ladingsgraad"
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+        }}
+      >
+        {LOAD_DEGREE_TITLE}
+      </a>
+    } 
+    delayIndex={delayIndex}
+    >
       {chartData.length > 0 ? (
         <ReactECharts
           option={chartOptions}
@@ -92,6 +100,5 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
         <div>Laden van data...</div>
       )}
     </StyledChartWrapper>
-    </a>
   );
 };
