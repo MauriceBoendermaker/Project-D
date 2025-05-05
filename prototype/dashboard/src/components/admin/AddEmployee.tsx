@@ -30,20 +30,24 @@ export const AddEmployee = () => {
     e.preventDefault();
 
     try {
-      await fetch("http://localhost:3000/api/medewerkers", {
+      const response = await fetch("http://localhost:3000/api/medewerkers/toevoegen", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
-      setFormData({
-        naam: "",
-        type: "",
-        email: "",
-        beschikbaar: true,
-      });
+      if (response.status === 201){
+        setFormData({
+          naam: "",
+          type: "",
+          email: "",
+          beschikbaar: true,
+        });
+      }
+      else{
+        console.error(`foutcode bij medewerker toevoegen: ${response.status}`)
+      }
     } catch (error) {
       console.error("Fout bij opslaan:", error);
     }
