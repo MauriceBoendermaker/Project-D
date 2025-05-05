@@ -35,7 +35,7 @@ namespace Controllers
             return Ok(employee);
         }
 
-        [HttpPost]
+        [HttpPost("toevoegen")]
         public async Task<IActionResult> CreateEmployee([FromBody] EmployeeCreateDTO employeeDto)
         {
             try
