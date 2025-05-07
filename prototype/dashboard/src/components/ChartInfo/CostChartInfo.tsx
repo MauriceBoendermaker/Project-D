@@ -28,8 +28,10 @@ export const CostChartInfo: React.FC = () => {
                             const kosten = matches ? parseFloat(matches[1]) : 0;
 
                             kostenData.push({
-                                label: `${voertuig.voertuig_id} - ${rit.rit_id}`,
-                                kosten,
+                                voertuig_ID: voertuig.voertuig_id,
+                                rit_ID: rit.rit_id,
+                                datum: rit.datum,
+                                kosten: `${kosten} euro`,
                             });
                         } else {
                             console.warn(`Geen data voor ${voertuig.voertuig_id}/${rit.rit_id}`);
@@ -59,14 +61,18 @@ export const CostChartInfo: React.FC = () => {
                     <table>
                         <thead>
                             <tr>
-                                <th>Label</th>
+                                <th>Voertuig ID</th>
+                                <th>Rit ID</th>
+                                <th>Datum</th>
                                 <th>Kosten</th>
                             </tr>
                         </thead>
                         <tbody>
                             {chartData.map((item) => (
-                                <tr key={item.label}>
-                                    <td>{item.label}</td>
+                                <tr key={item.voertuig_ID}>
+                                    <td>{item.voertuig_ID}</td>
+                                    <td>{item.rit_ID}</td>
+                                    <td>{new Date(item.datum).toLocaleDateString("nl-NL")}</td>
                                     <td>{item.kosten}</td>
                                 </tr>
                             ))}
