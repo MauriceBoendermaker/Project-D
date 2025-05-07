@@ -225,6 +225,20 @@ export const AddTrip = () => {
     }
   };
 
+  const resetForm = () => {
+    setDatum("");
+    setSelectedVehicle(null);
+    setStraat("");
+    setPostcode("");
+    setPostcodeValid(null);
+    setStad("");
+    setAfstandKm(0);
+    setDuurMinuten(0);
+    setEndCoords(null);
+    setRouteCoords([]);
+  };
+
+
   const handleSubmit = async () => {
     {
       const Rit: PostRitProps = {
@@ -247,10 +261,14 @@ export const AddTrip = () => {
         });
         if (repsone.status == 201) {
           console.log("Added");
+
+          resetForm();
         }
       } catch {
         console.log("Failed");
       }
+
+
 
       /*{
   "voertuig_id": 0,
@@ -367,9 +385,8 @@ export const AddTrip = () => {
               />
               {postcodeValid !== null && (
                 <div
-                  className={`small ${
-                    postcodeValid ? "text-success" : "text-danger"
-                  }`}
+                  className={`small ${postcodeValid ? "text-success" : "text-danger"
+                    }`}
                 >
                   {postcodeValid
                     ? "✓ Geldige postcode"
