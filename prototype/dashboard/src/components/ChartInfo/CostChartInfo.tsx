@@ -72,7 +72,7 @@ export const CostChartInfo: React.FC = () => {
                                 <tr key={item.voertuig_ID}>
                                     <td>{item.voertuig_ID}</td>
                                     <td>{item.rit_ID}</td>
-                                    <td>{item.datum}</td>
+                                    <td>{new Date(item.datum).toLocaleDateString("nl-NL")}</td>
                                     <td>{item.kosten}</td>
                                 </tr>
                             ))}

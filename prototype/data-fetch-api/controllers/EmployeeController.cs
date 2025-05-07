@@ -11,10 +11,12 @@ namespace Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
+        private readonly IEmailService _emailService;
 
-        public EmployeeController(IEmployeeService employeeService)
+        public EmployeeController(IEmployeeService employeeService, IEmailService mailService)
         {
             _employeeService = employeeService;
+            _emailService = mailService;
         }
 
         [HttpGet]
@@ -47,6 +49,7 @@ namespace Controllers
                 }
 
                 await _employeeService.AddEmployee(employeeDto);
+                await _emailService.SendRandomPassword(employeeDto.Email, "hardcoded");
                 return Created("http://localhost:3000/api/medewerkers/Toevoegen", new { Message = "Medewerker succesvol toegevoegd." });
             }
             catch
