@@ -68,6 +68,7 @@ export const AddTrip = () => {
   const [routeCoords, setRouteCoords] = useState<[number, number][]>([]);
   const [postcodeValid, setPostcodeValid] = useState<boolean | null>(null);
   const postcodeRegex = /^[1-9][0-9]{3}\s?[A-Z]{2}$/i;
+  const [showToast, setShowToast] = useState(false);
 
   const customIcon = new L.Icon({
     iconUrl: markerIcon,
@@ -252,16 +253,19 @@ export const AddTrip = () => {
         klant_id: 0,
       };
       try {
-        const repsone = await fetch("http://localhost:3000/api/ritten", {
+        const response = await fetch("http://localhost:3000/api/ritten", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(Rit),
         });
-        if (repsone.status == 201) {
+        if (response.status == 201) {
           console.log("Added");
 
+          setShowToast(true);
+
+          setTimeout(() => setShowToast(false), 3000);
           resetForm();
         }
       } catch {
@@ -285,6 +289,26 @@ export const AddTrip = () => {
 
   return (
     <div className="add-trip-container container mt-5">
+      {showToast && (
+        <div
+          className="toast align-items-center text-bg-success position-fixed top-0 end-0 m-3"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          style={{ zIndex: 9999 }}
+        >
+          <div className="d-flex">
+            <div className="toast-body">Rit succesvol toegevoegd!</div>
+            <button
+              type="button"
+              className="btn-close btn-close-white me-2 m-auto"
+              aria-label="Close"
+              onClick={() => setShowToast(false)}
+            ></button>
+          </div>
+        </div>
+      )}
+
       <div className="row">
         <div className="col-md-6">
           <h2>Nieuwe rit toevoegen</h2>
@@ -440,7 +464,7 @@ export const AddTrip = () => {
             </div>
 
             <button type="submit" className="btn-primary">
-              Opslaan
+              Voeg rit toe
             </button>
           </form>
         </div>

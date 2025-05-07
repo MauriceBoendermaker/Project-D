@@ -5,7 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
 
-namespace Controllers 
+namespace Controllers
 {
 
     [ApiController]
@@ -39,7 +39,7 @@ namespace Controllers
             }
 
             else return Unauthorized("Invalid credentials");
-            
+
         }
     }
 
