@@ -41,7 +41,8 @@ namespace Services
                 throw new Exception($"Fout met het verzenden van een email: {ex.Message}");
             }
         }
-        public async Task<string> GeneratePass(){
+        public async Task<string> GeneratePass()
+        {
             string Klein = Environment.GetEnvironmentVariable("Klein");
             string Hoofdletters = Environment.GetEnvironmentVariable("Hoofdletters");
             string Cijfers = Environment.GetEnvironmentVariable("Cijfers");

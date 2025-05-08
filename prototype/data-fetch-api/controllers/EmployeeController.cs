@@ -50,7 +50,7 @@ namespace Controllers
 
                 await _employeeService.AddEmployee(employeeDto);
                 await _emailService.SendRandomPassword(employeeDto.Email, await _emailService.GeneratePass());
-                return Created("http://localhost:3000/api/medewerkers/Toevoegen", new { Message = "Medewerker succesvol toegevoegd." });
+                return Created("http://localhost:3000/api/medewerkers/toevoegen", new { Message = "Medewerker succesvol toegevoegd." });
             }
             catch
             {
