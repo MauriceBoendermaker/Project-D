@@ -35,7 +35,7 @@ export const LoadDegreeInfo: React.FC = () => {
                     <table>
                         <thead>
                             <tr>
-                                <th>Zending ID</th>
+                            <th>Zending ID</th>
                                 <th>Beladingsgraad (%)</th>
                             </tr>
                         </thead>
