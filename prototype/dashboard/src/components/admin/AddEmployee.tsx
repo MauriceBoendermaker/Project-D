@@ -123,7 +123,7 @@ export const AddEmployee = () => {
             </div>
 
             <button type="submit" className="btn-primary">
-              Opslaan
+              Toevoegen
             </button>
           </form>
         </div>
