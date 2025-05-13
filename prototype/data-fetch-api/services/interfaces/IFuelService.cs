@@ -1,9 +1,13 @@
+using Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace Services
 {
     public interface IFuelService
     {
-        Task<IEnumerable<Vehicle>?> GetAllVehicles();
-        Task<int> GetVehicleAverage(string VehicleId);
-        Task<int> GetRitCost(string VehicleId, string RitId);
+        Task<IEnumerable<Vehicle>?> GetAllVehiclesAsync();
+        Task<int> GetVehicleAverageAsync(int voertuigId);
+        Task<int> GetRitCostAsync(string voertuigId, string ritId);
     }
 }

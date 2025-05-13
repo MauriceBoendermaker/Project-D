@@ -1,4 +1,7 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using Services;
 
 namespace Controllers
@@ -7,54 +10,63 @@ namespace Controllers
     [Route("api/zending")]
     public class ShipmentController : ControllerBase
     {
-        private IJsonShipmentService _ShipmentService;
+        private readonly IJsonShipmentService _shipmentService;
 
-        public ShipmentController(IJsonShipmentService service)
+        public ShipmentController(IJsonShipmentService shipmentService)
         {
-            _ShipmentService = service;
-
+            _shipmentService = shipmentService;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetAllShipments()
         {
-            var Shipments = await _ShipmentService.GetAllShipments();
-
-            return Shipments is null ? NotFound("Geen zendingen gevonden..") : Ok(Shipments);
+            var shipments = await _shipmentService.GetAllShipments();
+            return shipments == null ? NotFound(new { error = "Geen zendingen gevonden.." }) : Ok(shipments);
         }
 
-        // Per zending de max capaciteit
         [HttpGet("maxcapaciteit")]
-        public async Task<IActionResult> GetMaxCapacity([FromQuery] int ZendingId)
+        public async Task<IActionResult> GetMaxCapacity([FromQuery] int shipmentId)
         {
-            int MaxCapacityKg = await _ShipmentService.GetMaxCapacity(ZendingId);
-            return MaxCapacityKg < 0 ? NotFound($"De zending met Id: {ZendingId} bestaat niet of het berekenen van de gegevens is niet mogelijk ") : Ok($"De Maximale capaciteit van Zending: {ZendingId}: {MaxCapacityKg}Kg");
-
+            int maxCapacityKg = await _shipmentService.GetMaxCapacity(shipmentId);
+            return maxCapacityKg < 0
+                ? NotFound(new { error = $"De zending met Id: {shipmentId} bestaat niet of het berekenen van de gegevens is niet mogelijk." })
+                : Ok(new { maxCapacity = maxCapacityKg });
         }
 
-
-        // Per zending de beladingsgraad in %
         [HttpGet("beladingsgraad")]
-        public async Task<IActionResult> GetLoadDegree([FromQuery] int ZendingId)
+        public async Task<IActionResult> GetLoadDegree([FromQuery] int shipmentId)
         {
-            double LoadDegree = await _ShipmentService.GetLoadDegree(ZendingId);
-            return LoadDegree < 0 ? NotFound($"De zending met Id: {ZendingId} bestaat niet of het berekenen van de gegevens is niet mogelijk ") :
-                                    Ok($"De beladingsgraad van zending {ZendingId}: {LoadDegree * 100}%");
+            double degree = await _shipmentService.GetLoadDegree(shipmentId);
+            return degree < 0
+                ? NotFound(new { error = $"De zending met Id: {shipmentId} bestaat niet of het berekenen van de gegevens is niet mogelijk." })
+                : Ok(new { degree = degree });
         }
 
-        // Voor alle zendingen de gemiddelde beladingsgraad %
+        [HttpGet("beladingsgraad/totaal")]
+        public async Task<IActionResult> GetTotalLoadDegree()
+        {
+            List<LoadDegree>? degrees = await _shipmentService.GetTotalLoadDegree();
+            return degrees == null
+                ? NotFound(new { error = "Geen zendingen beschikbaar." })
+                : Ok(degrees);
+        }
+
         [HttpGet("beladingsgraad/gemiddeld")]
         public async Task<IActionResult> GetAverageLoadDegree()
         {
-            double AverageLoadDegree = await _ShipmentService.GetAverageLoadDegree();
-            return AverageLoadDegree < 0 ? NotFound("Het berekenen van de gegevens is niet mogelijk") : Ok($"De gemiddelde beladingsgraad: {AverageLoadDegree * 100}%");
+            double averageDegree = await _shipmentService.GetAverageLoadDegree();
+            return averageDegree < 0
+                ? NotFound(new { error = "Het berekenen van de gegevens is niet mogelijk." })
+                : Ok(new { averageDegree = averageDegree });
         }
 
-        // De totale onbenutte kilometers
         [HttpGet("onbenutte-kilometers")]
-        public async Task<IActionResult> GetTotalEmptyMiles()
+        public async Task<IActionResult> GetTotalEmptyKilometers()
         {
-            int TotalEmptyMiles = await _ShipmentService.GetTotalEmptyMiles();
-            return TotalEmptyMiles < 0 ? NotFound("Het berekenen van de gegevens is niet mogelijk") : Ok($"De totale onbenutte kilometers: {TotalEmptyMiles}km");
+            int totalEmptyKilometers = await _shipmentService.GetTotalEmptyKilometers();
+            return totalEmptyKilometers < 0
+                ? NotFound(new { error = "Het berekenen van de gegevens is niet mogelijk." })
+                : Ok(new { totalEmptyKilometers = totalEmptyKilometers });
         }
     }
 }

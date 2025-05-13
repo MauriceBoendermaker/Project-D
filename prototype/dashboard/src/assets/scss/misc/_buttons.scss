@@ -109,3 +109,13 @@ a.btn-link {
         color: $primary-light;
     }
 }
+
+.logout-btn {
+    color: $white !important;
+    font-weight: 600 !important;
+    margin-right: 25px;
+
+    &:hover {
+        color: $primary-light !important;
+    }
+}

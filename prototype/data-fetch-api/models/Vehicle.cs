@@ -1,42 +1,36 @@
-using System;
+using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-public class Vehicle
+namespace Models
 {
-    [JsonPropertyName("voertuig_id")]
-    public string? VoertuigId { get; set; }
+    public class Vehicle
+    {
+        [Key]
+        public int VoertuigId { get; set; } // Primary key (auto increment)
 
-    [JsonPropertyName("kenteken")]
-    public string? Kenteken { get; set; }
+        [JsonPropertyName("voertuig_id")]
+        public string VoertuigNummer { get; set; } = string.Empty;
 
-    [JsonPropertyName("merk")]
-    public string? Merk { get; set; }
+        [JsonPropertyName("kenteken")]
+        public string? Kenteken { get; set; } = string.Empty;
 
-    [JsonPropertyName("model")]
-    public string? Model { get; set; }
+        [JsonPropertyName("merk")]
+        public string? Merk { get; set; } = string.Empty;
 
-    [JsonPropertyName("brandstof_type")]
-    public string? BrandstofType { get; set; }
+        [JsonPropertyName("model")]
+        public string? Model { get; set; } = string.Empty;
 
-    [JsonPropertyName("ritten")]
-    public List<Rit>? Ritten { get; set; }
-}
+        [JsonPropertyName("brandstof_type")]
+        public string? BrandstofType { get; set; } = string.Empty;
 
-public class Rit
-{
-    [JsonPropertyName("rit_id")]
-    public string? RitId { get; set; }
+        [JsonPropertyName("ritten")]
+        public List<Trip>? Ritten { get; set; }
 
-    [JsonPropertyName("datum")]
-    public string? Datum { get; set; }
+        [JsonPropertyName("maximale_capaciteit_kg")]
+        public int MaximaleCapaciteitKg { get; set; }
 
-    [JsonPropertyName("afstand_km")]
-    public int AfstandKm { get; set; }
-
-    [JsonPropertyName("brandstof_verbruik_l")]
-    public int BrandstofVerbruikL { get; set; }
-
-    [JsonPropertyName("gemiddeld_verbruik_l_per_100km")]
-    public int GemiddeldVerbruikPer100Km { get; set; }
+        [JsonPropertyName("created_at")]
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    }
 }

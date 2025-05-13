@@ -37,14 +37,18 @@
 
                 .dropdown-item {
                     color: $text-color;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
 
                     &:hover {
                         color: $primary-color;
                     }
 
-                    &:active {
-                        background-color: $accent-color;
-                    }
+                    &:active, &.active {
+                        color: $primary-color;
+                        font-weight: bold;
+                        background-color: $white;
+                    }                    
                 }
             }
         }
@@ -52,5 +56,17 @@
 
     .login-status-container {
         margin-right: 100px;
+    }
+
+    .logout-button {
+        color: white;
+        padding: 10px 5px;
+        background-color: $primary-25;
+        border-radius: $corner-radius;
+        box-shadow: $box-shadow;
+
+        &:hover {
+            background-color: $primary-light;
+        }
     }
 }

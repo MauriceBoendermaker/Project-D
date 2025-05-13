@@ -17,7 +17,7 @@ namespace Controllers
         [HttpGet("voertuigen")]
         public async Task<IActionResult> GetVehicles()
         {
-            var result = await _fuelService.GetAllVehicles();
+            var result = await _fuelService.GetAllVehiclesAsync();
             if (result != null)
             {
                 return Ok(result);
@@ -25,26 +25,26 @@ namespace Controllers
             return NotFound("Geen voertuigen gevonden");
         }
 
-        [HttpGet("gemiddelde/{VehicleId}")]
-        public async Task<IActionResult> GetVehicleAverage([FromRoute] string VehicleId)
+        [HttpGet("gemiddelde/{voertuigId}")]
+        public async Task<IActionResult> GetVehicleAverage([FromRoute] int voertuigId)
         {
-            var result = await _fuelService.GetVehicleAverage(VehicleId);
+            var result = await _fuelService.GetVehicleAverageAsync(voertuigId);
             if (result != 0)
             {
-                return Ok($"gemiddelde brandstof per rit voor {VehicleId}: {result} Liter");
+                return Ok($"Gemiddeld brandstofverbruik per rit voor voertuig {voertuigId}: {result} liter");
             }
             return NotFound("Voertuig bestaat niet of geen ritten");
         }
 
-        [HttpGet("kosten/{VehicleId}/{RitId}")]
-        public async Task<IActionResult> GetRitCost([FromRoute] string VehicleId, [FromRoute] string RitId)
+        [HttpGet("kosten/{voertuigId}/{ritId}")]
+        public async Task<IActionResult> GetRitCost([FromRoute] string voertuigId, [FromRoute] string ritId)
         {
-            var result = await _fuelService.GetRitCost(VehicleId, RitId);
+            var result = await _fuelService.GetRitCostAsync(voertuigId, ritId);
             if (result != 0)
             {
-                return Ok($"De Benzinekosten voor {RitId} van {VehicleId} zijn : {result} Euro");
+                return Ok($"De brandstofkosten voor rit {ritId} van voertuig {voertuigId} zijn: €{result}");
             }
-            return NotFound("Voertuig bestaat niet of geen ritten");
+            return NotFound("Voertuig of rit niet gevonden");
         }
     }
 }

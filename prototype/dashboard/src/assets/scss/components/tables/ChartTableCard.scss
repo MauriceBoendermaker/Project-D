@@ -1,0 +1,87 @@
+.chart-table-card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 72rem; // ~max-w-6xl
+    overflow: hidden;
+
+    .chart-section {
+        padding: 1.5rem; // ~p-6
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .table-section {
+        padding: 1.5rem;
+        border-top: 1px solid #e5e7eb; // ~border-gray-200
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937; // ~text-gray-800
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .overflow-x-auto {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            font-size: 0.875rem;
+            color: #374151; // ~text-gray-700
+            border-collapse: collapse;
+
+            thead {
+                tr {
+                    text-align: left;
+                    border-bottom: 2px solid #e5e7eb;
+
+                    th {
+                        padding: 0.75rem;
+                        font-weight: 600;
+                        color: #800000;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    transition: background-color 0.2s;
+
+                    &:nth-child(even) {
+                        background-color: #fdf5f5;
+                    }
+
+                    &:nth-child(odd) {
+                        background-color: #fffafa;
+                    }
+
+                    &:hover {
+                        background-color: #fdecec;
+                    }
+
+                    td {
+                        padding: 0.75rem;
+
+                        &:first-child {
+                            font-weight: 500;
+                            color: #800000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.employees-table{
+    @extend .chart-table-card;
+
+    h2{
+        padding-bottom: 10px;
+    }
+}

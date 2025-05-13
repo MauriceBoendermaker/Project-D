@@ -1,23 +1,30 @@
 import React, { useEffect, useState } from "react";
 import ReactECharts from "echarts-for-react";
 import { StyledChartWrapper } from "../StyledChartWrapper";
+import { TRIP_COST_TITLE } from "components/ChartTitles";
 
 interface TripCostChartProps {
-    delayIndex?: number;
+  delayIndex?: number;
 }
 
-export const TripCostChart: React.FC<TripCostChartProps> = ({ delayIndex = 0 }) => {
-    const [chartData, setChartData] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+export const TripCostChart: React.FC<TripCostChartProps> = ({
+  delayIndex = 0,
+}) => {
+  const [chartData, setChartData] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        const fetchKostenData = async () => {
-            try {
-                const voertuigenResponse = await fetch("http://localhost:3000/api/brandstof/voertuigen");
-                if (!voertuigenResponse.ok) throw new Error("Fout bij ophalen voertuigen");
+  useEffect(() => {
+    const fetchKostenData = async () => {
+      try {
+        const voertuigenResponse = await fetch(
+          "http://localhost:3000/api/brandstof/voertuigen"
+        );
+        if (!voertuigenResponse.ok)
+          throw new Error("Fout bij ophalen voertuigen");
 
                 const voertuigen = await voertuigenResponse.json();
+                console.log("voertuigen data:", JSON.stringify(voertuigen));
                 const kostenData: any[] = [];
 
                 for (const voertuig of voertuigen) {
@@ -27,40 +34,42 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({ delayIndex = 0 }) 
                         );
                         if (kostenResponse.ok) {
                             const tekst = await kostenResponse.text();
-                            const matches = tekst.match(/(\d+)(?=\s*Euro)/);
+                            const matches = tekst.match(/€\s*(\d+)/);
                             const kosten = matches ? parseFloat(matches[1]) : 0;
 
-                            kostenData.push({
-                                label: `${voertuig.voertuig_id} - ${rit.rit_id}`,
-                                kosten,
-                            });
-                        } else {
-                            console.warn(`Geen data voor ${voertuig.voertuig_id}/${rit.rit_id}`);
-                        }
-                    }
-                }
-
-                setChartData(kostenData);
-                setLoading(false);
-            } catch (err: any) {
-                console.error("Fout bij ophalen:", err);
-                setError(err.message);
-                setLoading(false);
+              kostenData.push({
+                label: `${voertuig.voertuig_id} - ${rit.rit_id}`,
+                kosten,
+              });
+            } else {
+              console.warn(
+                `Geen data voor ${voertuig.voertuig_id}/${rit.rit_id}`
+              );
             }
-        };
+          }
+        }
+
+        setChartData(kostenData);
+        setLoading(false);
+      } catch (err: any) {
+        console.error("Fout bij ophalen:", err);
+        setError(err.message);
+        setLoading(false);
+      }
+    };
 
         fetchKostenData();
     }, []);
-
     const chartOptions = {
         tooltip: {},
         xAxis: {
             type: "category",
-            data: chartData.map((item) => item.label),
+            data: chartData.map((item) => String(item.label)),
         },
         yAxis: {
             type: "value",
             name: "Kosten (Euro)",
+            min: 0,
         },
         series: [
             {
@@ -76,7 +85,18 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({ delayIndex = 0 }) 
     };
 
     return (
-        <StyledChartWrapper title="Benzinekosten per rit" delayIndex={delayIndex}>
+        <StyledChartWrapper title={
+          <a href="http://localhost:5000/benzinekosten"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            {TRIP_COST_TITLE}
+          </a>
+        } 
+        delayIndex={delayIndex}
+        >
             {loading && <div>Laden van data...</div>}
             {error && <div>Fout: {error}</div>}
             {!loading && !error && chartData.length > 0 && (

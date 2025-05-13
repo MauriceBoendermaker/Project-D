@@ -1,0 +1,83 @@
+// FullCalendar component
+.fc {
+    // Adjust default calendar styling
+    .fc-toolbar-title {
+        text-transform: capitalize;
+    }
+
+    .fc-day-today {
+        background-color: $primary-25 !important;
+
+        .fc-daygrid-day-number {
+            font-weight: bold;
+        }
+    }
+
+    .fc-daygrid-day-number {
+        color: $primary-color;
+        text-decoration: none;
+    }
+
+    .fc-today-button {
+        text-transform: capitalize;
+
+        &:disabled {
+            cursor: not-allowed !important;
+        }
+    }
+
+    .fc-scrollgrid-section-header thead tr {
+        th:first-child {
+            border-top-left-radius: 10px;
+
+            .fc-scrollgrid-sync-inner {
+                border-top-left-radius: 10px;
+            }
+        }
+
+        th:last-child {
+            border-top-right-radius: 10px;
+
+            .fc-scrollgrid-sync-inner {
+                border-top-right-radius: 10px;
+            }
+        }
+    }
+
+    .fc-col-header-cell {
+        background-color: $primary-color;
+
+        a {
+            color: $white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    }
+
+    // Event specific styling
+    .fc-event {
+        color: $primary-color;
+        cursor: pointer;
+
+        .fc-daygrid-event-dot {
+            border-color: $primary-light;
+        }
+
+        &.fc-h-event {
+            background-color: $primary-color;
+            border-color: $primary-color;
+
+            .fc-event-time {
+                font-weight: normal;
+            }
+
+            .fc-event-title {
+                font-weight: 700;
+            }
+
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+    }
+}
