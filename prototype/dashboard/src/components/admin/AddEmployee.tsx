@@ -28,25 +28,27 @@ export const AddEmployee = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     try {
-      const response = await fetch("http://localhost:3000/api/medewerkers/toevoegen", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.status === 201){
+      const response = await fetch(
+        "http://localhost:3000/api/medewerkers/toevoegen",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      if (response.status === 201) {
         setFormData({
           naam: "",
           type: "",
           email: "",
           beschikbaar: true,
         });
-      }
-      else{
-        console.error(`foutcode bij medewerker toevoegen: ${response.status}`)
+        alert("Medewerker toegevoegd");
+      } else {
+        console.error(`foutcode bij medewerker toevoegen: ${response.status}`);
       }
     } catch (error) {
       console.error("Fout bij opslaan:", error);
@@ -55,6 +57,10 @@ export const AddEmployee = () => {
 
   return (
     <div className="container mt-5">
+      <a className="btn d-flex align-items-center" href="/admin/Medewerkers">
+      <i className="fa-solid fa-arrow-left"></i>
+      <span className="ms-2">Terug naar overzicht</span>
+      </a>
       <div className="row">
         <div className="col-md-6">
           <h2>Nieuwe medewerker toevoegen</h2>
