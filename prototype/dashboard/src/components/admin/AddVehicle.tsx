@@ -1,3 +1,4 @@
+import { Popup } from "components/misc/Popup";
 import { useState } from "react";
 
 interface VehicleForm {
@@ -17,6 +18,8 @@ export const AddVehicle = () => {
     max_capaciteit: 0,
   });
 
+  const [added, setAdded] = useState<boolean>(false);
+  const [error, setError] = useState<any>("");
   const [kentekenValid, setKentekenValid] = useState<boolean | null>(null);
 
   const kentekenRegex =
@@ -91,7 +94,7 @@ export const AddVehicle = () => {
     }
 
     try {
-      await fetch("http://localhost:3000/api/voertuigen", {
+      const response = await fetch("http://localhost:3000/api/voertuigen", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -99,17 +102,27 @@ export const AddVehicle = () => {
         body: JSON.stringify(formData),
       });
 
-      setFormData({
-        kenteken: "",
-        merk: "",
-        model: "",
-        brandstof_type: "",
-        max_capaciteit: 0,
-      });
+      if (response.status == 201) {
+        setFormData({
+          kenteken: "",
+          merk: "",
+          model: "",
+          brandstof_type: "",
+          max_capaciteit: 0,
+        });
 
-      setKentekenValid(null);
+        setKentekenValid(null);
+
+        setAdded(true);
+      } else {
+        setError(
+          "message" in response
+            ? error
+            : "Fout opgetreden bij het toevoegen van het voertuig"
+        );
+      }
     } catch (error) {
-      console.error("Fout bij opslaan:", error);
+      setError("Fout opgetreden bij het toevoegen van het voertuig");
     }
   };
 
@@ -214,6 +227,16 @@ export const AddVehicle = () => {
           </form>
         </div>
       </div>
+      <Popup
+        title={error.length > 0 ? "Toevoegen mislukt" : "Voertuig toegevoegd!"}
+        body={error.length > 0 ? error : "Voertuig was succesvol toegevoegd"}
+        firstButton="Sluiten"
+        isVisible={error.length > 0 || added}
+        onFirstBtnClick={() => {
+          setError("");
+          setAdded(false);
+        }}
+      />
     </div>
   );
 };
