@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Popup } from "../misc/Popup";
 
 interface EmployeeForm {
   naam: string;
@@ -8,6 +9,8 @@ interface EmployeeForm {
 }
 
 export const AddEmployee = () => {
+  const [error, setError] = useState<string>("");
+  const [added, setAdded] = useState<boolean>(false);
   const [formData, setFormData] = useState<EmployeeForm>({
     naam: "",
     type: "",
@@ -46,9 +49,10 @@ export const AddEmployee = () => {
           email: "",
           beschikbaar: true,
         });
-        alert("Medewerker toegevoegd");
+        setAdded(true);
       } else {
         console.error(`foutcode bij medewerker toevoegen: ${response.status}`);
+        setError(`foutcode bij medewerker toevoegen: ${response.status}`);
       }
     } catch (error) {
       console.error("Fout bij opslaan:", error);
@@ -58,12 +62,13 @@ export const AddEmployee = () => {
   return (
     <div className="container mt-5">
       <a className="btn d-flex align-items-center" href="/admin/Medewerkers">
-      <i className="fa-solid fa-arrow-left"></i>
-      <span className="ms-2">Terug naar overzicht</span>
+        <i className="fa-solid fa-arrow-left"></i>
+        <span className="ms-2">Terug naar overzicht</span>
       </a>
       <div className="row">
         <div className="col-md-6">
           <h2>Nieuwe medewerker toevoegen</h2>
+
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label">Medewerker ID</label>
@@ -133,6 +138,12 @@ export const AddEmployee = () => {
             </button>
           </form>
         </div>
+        <Popup
+          title="Medewerker toegevoegd!"
+          body="De medewerker is succesvol toegevoegd."
+          isVisible={added}
+          onClose={() => setAdded(false)}
+        />
       </div>
     </div>
   );
