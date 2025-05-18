@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Popup } from "../misc/Popup";
+import { useNavigate } from "react-router-dom";
 
 interface EmployeeForm {
   naam: string;
@@ -18,6 +19,9 @@ export const AddEmployee = () => {
     beschikbaar: true,
   });
 
+  const navigate = useNavigate();
+
+  const handleNavigate = () => navigate("/admin/Medewerkers");
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -55,7 +59,7 @@ export const AddEmployee = () => {
         setError(`foutcode bij medewerker toevoegen: ${response.status}`);
       }
     } catch (error) {
-      console.error("Fout bij opslaan:", error);
+      setError("Fout opgetreden bij het toevoegen bij de medewerker");
     }
   };
 
@@ -139,10 +143,22 @@ export const AddEmployee = () => {
           </form>
         </div>
         <Popup
-          title="Medewerker toegevoegd!"
-          body="De medewerker is succesvol toegevoegd."
-          isVisible={added}
-          onClose={() => setAdded(false)}
+          title={
+            error.length > 0
+              ? "Medewerker toevoegen mislukt"
+              : "Medewerker toegevoegd!"
+          }
+          body={
+            error.length > 0 ? error : "De medewerker is succesvol toegevoegd."
+          }
+          isVisible={error.length > 0 || added}
+          onFirstBtnClick={() => {
+            setAdded(false);
+            setError("");
+          }}
+          onSecondBtnClick={handleNavigate}
+          firstButton="Sluiten"
+          secondButton="Terug naar het overzicht"
         />
       </div>
     </div>

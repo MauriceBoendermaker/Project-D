@@ -48,7 +48,7 @@ namespace Controllers
 
             await _customerService.AddCustomerAsync(customer);
 
-            return Ok(new { message = "Klant succesvol toegevoegd." });
+            return Created("http://localhost:3000/api/klanten", new { message = "Klant succesvol toegevoegd." });
         }
     }
 }

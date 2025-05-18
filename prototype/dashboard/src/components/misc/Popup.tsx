@@ -3,16 +3,22 @@ import React from "react";
 interface PopupProps {
   title: string;
   body: string;
-  onClose?: () => void;
+  onFirstBtnClick: () => void;
+  onSecondBtnClick?: () => void;
   onSave?: () => void;
   isVisible: boolean;
+  firstButton: string;
+  secondButton?: string;
 }
 
 export const Popup: React.FC<PopupProps> = ({
   title,
   body,
-  onClose,
+  onFirstBtnClick,
+  onSecondBtnClick,
   isVisible,
+  firstButton,
+  secondButton,
 }) => {
   if (!isVisible) return null;
 
@@ -25,15 +31,28 @@ export const Popup: React.FC<PopupProps> = ({
             <button
               type="button"
               className="btn-close"
-              onClick={onClose}
+              onClick={onFirstBtnClick}
               aria-label="Close"
             ></button>
           </div>
           <div className="modal-body">{body}</div>
           <div className="modal-footer">
-            <button type="button" className="btn-primary" onClick={onClose}>
-              Close
+            <button
+              type="button"
+              className="btn-primary"
+              onClick={onFirstBtnClick}
+            >
+              {firstButton}
             </button>
+            {secondButton && (
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={onSecondBtnClick}
+              >
+                {secondButton}
+              </button>
+            )}
           </div>
         </div>
       </div>

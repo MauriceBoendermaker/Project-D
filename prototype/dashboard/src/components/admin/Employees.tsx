@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Popup } from "../misc/Popup";
 import { useLocation } from "react-router-dom";
 interface Employee {
   medewerker_id: number;
@@ -12,17 +13,30 @@ interface Employee {
 
 export const Employees = () => {
   const [currentEmployees, setEmployees] = useState<Employee[]>();
-  const [loading, setLoading] = useState<boolean>(false);
   const [error, SetError] = useState<any>("");
+  const [deleted, setDeleted] = useState<boolean>(false);
 
   const HandleDelete = async (medewerker_id: number) => {
     try {
-      await fetch(`http://localhost:3000/api/medewerkers/${medewerker_id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `http://localhost:3000/api/medewerkers/${medewerker_id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (!response.ok) {
+        SetError(
+          "message" in response
+            ? response.message
+            : "Fout opgetreden tijdens het verwijderen."
+        );
+      } else {
+        setDeleted(true);
+      }
+
       setEmployees((prev) =>
         prev?.filter((employee) => employee.medewerker_id !== medewerker_id)
       );
@@ -34,7 +48,6 @@ export const Employees = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        setLoading(true);
         const response = await fetch("http://localhost:3000/api/medewerkers");
         if (response.ok) {
           const employees: Employee[] = await response.json();
@@ -43,12 +56,10 @@ export const Employees = () => {
           SetError("message" in response && response.message);
         }
       } catch {
-        SetError("Fout opgetreden tijdenst het ophalen van de data.");
-      } finally {
-        setLoading(false);
+        SetError("Fout opgetreden tijdens het ophalen van de data.");
       }
+      fetchEmployees();
     };
-    fetchEmployees();
   }, []);
   return (
     <div className="container mt-5">
@@ -97,6 +108,18 @@ export const Employees = () => {
           </div>
         </div>
       </div>
+      <Popup
+        title={
+          error.length > 0 ? "Verwijderen mislukt" : "Medewerker verwijderd!"
+        }
+        body={error.length > 0 ? error : "Medewerker was succesvol verwijderd"}
+        firstButton="Sluiten"
+        isVisible={error.length > 0 || deleted}
+        onFirstBtnClick={() => {
+          setDeleted(false);
+          SetError("");
+        }}
+      />
     </div>
   );
 };
