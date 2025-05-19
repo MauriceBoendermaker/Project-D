@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Popup } from "../misc/Popup";
-import { useLocation } from "react-router-dom";
 interface Employee {
   medewerker_id: number;
   naam: string;
@@ -58,8 +57,8 @@ export const Employees = () => {
       } catch {
         SetError("Fout opgetreden tijdens het ophalen van de data.");
       }
-      fetchEmployees();
     };
+    fetchEmployees();
   }, []);
   return (
     <div className="container mt-5">
