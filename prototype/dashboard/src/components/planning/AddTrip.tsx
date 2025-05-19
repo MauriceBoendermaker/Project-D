@@ -5,6 +5,8 @@ import "leaflet/dist/leaflet.css";
 import markerIcon from "../../assets/images/marker.png";
 import { METHODS } from "http";
 
+const ORS_API_KEY = process.env.REACT_APP_ORS_API_KEY as string;
+
 interface PostRitProps {
   voertuig_id: number;
   datum: string; // ISO-datumstring
@@ -160,7 +162,7 @@ export const AddTrip = () => {
           method: "POST",
           headers: {
             Authorization:
-              "5b3ce3597851110001cf6248688b603bcdbb41979b53ceaa34961203",
+              `${ORS_API_KEY}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
