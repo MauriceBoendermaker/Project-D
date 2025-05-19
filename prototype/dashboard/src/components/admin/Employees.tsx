@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { Popup } from "../misc/Popup";
-import { EmployeeFormModal } from "components/misc/EmployeeFormModal";
+import {
+  EditedEmployee,
+  EmployeeFormModal,
+} from "components/misc/EmployeeFormModal";
 interface Employee {
-  medewerker_id: number;
-  naam: string;
-  type: string;
+  empId: number;
+  name: string;
+  role: string;
   email: string;
-  beschikbaar: boolean;
-  voertuig_id?: number | null;
+  available: boolean;
+  vehicleId?: number;
   created_at: string;
 }
 
@@ -16,8 +19,22 @@ export const Employees = () => {
   const [error, SetError] = useState<any>("");
   const [deleted, setDeleted] = useState<boolean>(false);
   const [showEmployeesForm, setShowEmployeesForm] = useState<boolean>(false);
+  const [empId, setEmpId] = useState<number>(-1);
+  const [formData, setFormData] = useState<EditedEmployee>({
+    name: "",
+    role: "",
+    email: "",
+    vehicleId: -1,
+  });
 
-  const HandleEdit = () => {
+  const HandleEdit = (employee: Employee) => {
+    setEmpId(employee.empId);
+    setFormData({
+      name: employee.name,
+      role: employee.role,
+      email: employee.email,
+      vehicleId: employee.vehicleId,
+    });
     setShowEmployeesForm(true);
   };
 
@@ -43,7 +60,7 @@ export const Employees = () => {
       }
 
       setEmployees((prev) =>
-        prev?.filter((employee) => employee.medewerker_id !== medewerker_id)
+        prev?.filter((employee) => employee.empId !== medewerker_id)
       );
     } catch (error) {
       SetError("Fout opgetreden tijdens het verwijderen.");
@@ -93,12 +110,12 @@ export const Employees = () => {
                   </thead>
                   <tbody>
                     {currentEmployees?.map((e) => (
-                      <tr key={e.medewerker_id}>
-                        <td>{e.naam}</td>
-                        <td>{e.type}</td>
+                      <tr key={e.empId}>
+                        <td>{e.name}</td>
+                        <td>{e.role}</td>
                         <td>{e.email}</td>
                         <td>
-                          <button onClick={() => HandleDelete(e.medewerker_id)}>
+                          <button onClick={() => HandleDelete(e.empId)}>
                             <i className="fas fa-user-minus me-2">
                               <span className="ms-2">verwijderen</span>
                             </i>
@@ -108,7 +125,7 @@ export const Employees = () => {
                           <button>
                             <i
                               className="fa-solid fa-user-pen"
-                              onClick={() => HandleEdit()}
+                              onClick={() => HandleEdit(e)}
                             >
                               <span className="ms-2">Bewerken</span>
                             </i>
@@ -135,7 +152,12 @@ export const Employees = () => {
           SetError("");
         }}
       />
-      <EmployeeFormModal isVisible={showEmployeesForm} />
+      <EmployeeFormModal
+        isVisible={showEmployeesForm}
+        employeeId={empId}
+        initialFormData={formData}
+        onClose={() => setShowEmployeesForm(false)}
+      />
     </div>
   );
 };

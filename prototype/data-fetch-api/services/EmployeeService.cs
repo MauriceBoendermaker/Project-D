@@ -24,7 +24,33 @@ public class EmployeeService : IEmployeeService
             Console.WriteLine(e.Message);
         }
     }
+    public async Task<bool> UpdateEmployee(int id, EmployeeCreateDTO empDto)
+    {
+        try
+        {
+            Employee? existingEmployee = await appContext.Medewerkers.FindAsync(id);
+            if (existingEmployee == null)
+            {
+                return false;
+            }
 
+            // Update properties
+            var updatedEmployee = empDto.ToEmployee();
+            existingEmployee.Naam = updatedEmployee.Naam;
+            existingEmployee.Email = updatedEmployee.Email;
+            existingEmployee.Type = updatedEmployee.Type;
+            // Add other properties as needed
+
+            appContext.Medewerkers.Update(existingEmployee);
+            await appContext.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            return false;
+        }
+    }
     public async Task<bool> DeleteEmployee(int id)
     {
         try

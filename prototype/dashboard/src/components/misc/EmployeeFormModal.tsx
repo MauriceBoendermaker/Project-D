@@ -1,71 +1,118 @@
-interface EditedEmployee {
-  naam: string;
-  type: string;
+import { useState } from "react";
+
+export interface EditedEmployee {
+  name: string;
+  role: string;
   email: string;
-  available: boolean;
-  voertuig_id?: number | null;
+  vehicleId?: number;
 }
 
 interface EditEmployeePopupProps {
   isVisible: boolean;
-  //   employeeId: number;
-  //   formData: EditedEmployee;
-  //   onChange: (updated: EditedEmployee) => void;
-  //   onClose: () => void;
-  //   onSubmit: (empId: number, data: EditedEmployee) => void;
+  employeeId: number;
+  initialFormData: EditedEmployee;
+  onClose: () => void;
 }
 
 export const EmployeeFormModal: React.FC<EditEmployeePopupProps> = ({
   isVisible,
-  //   employeeId,
-  //   formData,
-  //   onChange,
-  //   onClose,
-  //   onSubmit,
+  employeeId,
+  initialFormData,
+  onClose,
 }) => {
+  const [formData, setFormData] = useState<EditedEmployee>(initialFormData);
   if (!isVisible) return null;
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  const HandleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/medewerkers/${employeeId}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+      }
+    } catch (err) {
+      // handle error
+    } finally {
+      onClose();
+    }
+  };
 
   return (
     <>
-      <form>
-        <div className="mb-3">
-          <label className="form-label">Naam</label>
-          <input
-            type="text"
-            className="form-control"
-            name="naam"
-            value={"name"}
-            required
-          />
-        </div>
+      <div className="modal-background" />
+      <div
+        className="modal show d-block modal-wrapper"
+        tabIndex={-1}
+        role="dialog"
+      >
+        <div className="modal-dialog modal-dialog-centered ">
+          <div className="modal-content custom-modal-content bg-opacity-30 backdrop-blur-sm">
+            <div className="d-flex justify-content-center align-items-center flex-column mt-5">
+              <h1 className="text-center mb-4">Medewerker bewerken</h1>
+              <form onSubmit={(e) => HandleSubmit(e)} className="w-50">
+                <div className="mb-3">
+                  <label className="form-label">Naam</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="name"
+                    value={formData.name}
+                    required
+                    onChange={handleChange}
+                  />
+                </div>
 
-        <div className="mb-3">
-          <label className="form-label">Type</label>
-          <select className="form-select" name="type" required>
-            <option value="">Selecteer type</option>
-            <option value="chauffeur">Chauffeur</option>
-            <option value="planner">Planner</option>
-            <option value="administratief medewerker">
-              Administratief medewerker
-            </option>
-            <option value="overig">Overig</option>
-          </select>
-        </div>
+                <div className="mb-3">
+                  <label className="form-label">Type</label>
+                  <select className="form-select" name="type" required>
+                    <option value="">Selecteer type</option>
+                    <option value="chauffeur">Chauffeur</option>
+                    <option value="planner">Planner</option>
+                    <option value="administratief medewerker">
+                      Administratief medewerker
+                    </option>
+                    <option value="overig">Overig</option>
+                  </select>
+                </div>
 
-        <div className="mb-3">
-          <label className="form-label">Email</label>
-          <input type="email" className="form-control" name="email" required />
-        </div>
+                <div className="mb-3">
+                  <label className="form-label">Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    name="email"
+                    value={formData.email}
+                    required
+                    onChange={handleChange}
+                  />
+                </div>
 
-        <div className="mb-3">
-          <label className="form-label">Beschikbaar</label>
-          <input type="text" className="form-control" disabled />
+                <button type="submit" className="btn-primary">
+                  Opslaan
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-
-        <button type="submit" className="btn-primary">
-          Toevoegen
-        </button>
-      </form>
+      </div>
     </>
   );
 };

@@ -57,6 +57,14 @@ namespace Controllers
                 return BadRequest("Er is een fout opgetreden");
             }
         }
+        [HttpPut]
+        public async Task<IActionResult> UpdateEmployee(int id, EmployeeCreateDTO emp)
+        {
+            bool result = await _employeeService.UpdateEmployee(id, emp);
+
+            return result ? Ok("Medewerker succesvol bijgewerkt.") : NotFound("Medewerker niet gevonden.");
+
+        }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(int id)
