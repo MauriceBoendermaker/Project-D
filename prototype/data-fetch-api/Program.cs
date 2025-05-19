@@ -64,10 +64,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var logger = app.Services.GetRequiredService<ILogger<Program>>();
-
 app.Urls.Add("http://localhost:3000");
 app.MapControllers();
 app.Run();
-
-public partial class Program { }
