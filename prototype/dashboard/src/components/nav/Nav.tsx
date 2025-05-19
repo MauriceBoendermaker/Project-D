@@ -6,17 +6,30 @@ import logoImage from "../../assets/images/lafeber logo transparant 1@2x.png";
 
 import { useAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { CustomAlert } from "components/misc/CustomAlert";
 
 export const Nav = () => {
   const { isLoggedIn, logout } = useAuth();
+  const [showLogoutAlert, setShowLogoutAlert] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
-    alert("U bent uitgelogd.");
+    setShowLogoutAlert(true);
     navigate("/login");
   };
 
+  useEffect(() => {
+    if (showLogoutAlert) {
+      const timeout = setTimeout(() => {
+        setShowLogoutAlert(false);
+      }, 3000);
+      return () => clearTimeout(timeout);
+    }
+  }, [showLogoutAlert]);
+
+  
   const location = useLocation();
   const currentPath = location.pathname;
   return (
@@ -175,6 +188,9 @@ export const Nav = () => {
             </button>
           )}
         </nav>
+        {showLogoutAlert && (
+          <CustomAlert type="alert alert-warning" message="U bent uitgelogd!" />
+        )}
       </div>
     </>
   );

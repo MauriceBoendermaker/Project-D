@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Popup } from "../misc/Popup";
 
 interface CustomerForm {
   bedrijf: string;
@@ -13,6 +14,9 @@ interface CustomerForm {
 export const AddCustomer = () => {
   const [postcode, setPostcode] = useState("");
   const [postcodeValid, setPostcodeValid] = useState<boolean | null>(null);
+  const [error, setError] = useState<any>("");
+  const [added, setAdded] = useState<boolean>(false);
+
   const postcodeRegex = /^[1-9][0-9]{3}\s?[A-Z]{2}$/i;
 
   const [formData, setFormData] = useState<CustomerForm>({
@@ -51,7 +55,7 @@ export const AddCustomer = () => {
     const adres = `${formData.adres}, ${formData.postcode} ${formData.plaatsnaam}`;
 
     try {
-      await fetch("http://localhost:3000/api/klanten", {
+      const response = await fetch("http://localhost:3000/api/klanten", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,17 +69,26 @@ export const AddCustomer = () => {
         }),
       });
 
-      setFormData({
-        bedrijf: "",
-        contactpersoon: "",
-        email: "",
-        telefoonnummer: "",
-        adres: "",
-        postcode: "",
-        plaatsnaam: "",
-      });
+      if (response.status == 201) {
+        setAdded(true);
+        setFormData({
+          bedrijf: "",
+          contactpersoon: "",
+          email: "",
+          telefoonnummer: "",
+          adres: "",
+          postcode: "",
+          plaatsnaam: "",
+        });
+      } else {
+        setError(
+          "message" in response
+            ? response.message
+            : "Fout opgetreden bij het toevoegen van de medewerker"
+        );
+      }
     } catch (error) {
-      console.error("Fout bij opslaan:", error);
+      setError("Fout opgetreden bij het toevoegen van de medewerker");
     }
   };
 
@@ -186,6 +199,16 @@ export const AddCustomer = () => {
           </form>
         </div>
       </div>
+      <Popup
+        title={error.length > 0 ? "Toevoegen mislukt" : "Klant toegevoegd!"}
+        body={error.length > 0 ? error : "Klant was succesvol toegevoegd"}
+        firstButton="Sluiten"
+        isVisible={error.length > 0 || added}
+        onFirstBtnClick={() => {
+          setError("");
+          setAdded(false);
+        }}
+      />
     </div>
   );
 };

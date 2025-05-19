@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Popup } from "../misc/Popup";
+import { useNavigate } from "react-router-dom";
 
 interface EmployeeForm {
   naam: string;
@@ -8,6 +10,8 @@ interface EmployeeForm {
 }
 
 export const AddEmployee = () => {
+  const [error, setError] = useState<string>("");
+  const [added, setAdded] = useState<boolean>(false);
   const [formData, setFormData] = useState<EmployeeForm>({
     naam: "",
     type: "",
@@ -15,6 +19,9 @@ export const AddEmployee = () => {
     beschikbaar: true,
   });
 
+  const navigate = useNavigate();
+
+  const handleNavigate = () => navigate("/admin/Medewerkers");
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -46,24 +53,26 @@ export const AddEmployee = () => {
           email: "",
           beschikbaar: true,
         });
-        alert("Medewerker toegevoegd");
+        setAdded(true);
       } else {
         console.error(`foutcode bij medewerker toevoegen: ${response.status}`);
+        setError(`foutcode bij medewerker toevoegen: ${response.status}`);
       }
     } catch (error) {
-      console.error("Fout bij opslaan:", error);
+      setError("Fout opgetreden bij het toevoegen bij de medewerker");
     }
   };
 
   return (
     <div className="container mt-5">
       <a className="btn d-flex align-items-center" href="/admin/Medewerkers">
-      <i className="fa-solid fa-arrow-left"></i>
-      <span className="ms-2">Terug naar overzicht</span>
+        <i className="fa-solid fa-arrow-left"></i>
+        <span className="ms-2">Terug naar overzicht</span>
       </a>
       <div className="row">
         <div className="col-md-6">
           <h2>Nieuwe medewerker toevoegen</h2>
+
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label">Medewerker ID</label>
@@ -133,6 +142,24 @@ export const AddEmployee = () => {
             </button>
           </form>
         </div>
+        <Popup
+          title={
+            error.length > 0
+              ? "Medewerker toevoegen mislukt"
+              : "Medewerker toegevoegd!"
+          }
+          body={
+            error.length > 0 ? error : "De medewerker is succesvol toegevoegd."
+          }
+          isVisible={error.length > 0 || added}
+          onFirstBtnClick={() => {
+            setAdded(false);
+            setError("");
+          }}
+          onSecondBtnClick={handleNavigate}
+          firstButton="Sluiten"
+          secondButton="Terug naar het overzicht"
+        />
       </div>
     </div>
   );

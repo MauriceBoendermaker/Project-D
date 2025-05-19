@@ -48,7 +48,7 @@ namespace Controllers
 
             await _vehicleService.AddVehicleAsync(vehicle);
 
-            return Ok(new { message = "Voertuig succesvol toegevoegd." });
+            return Created("http://localhost:5000/api/voertuigen", new { message = "Voertuig succesvol toegevoegd." });
         }
     }
 }
