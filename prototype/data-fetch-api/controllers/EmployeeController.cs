@@ -11,10 +11,12 @@ namespace Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
+        private readonly IEmailService _emailService;
 
-        public EmployeeController(IEmployeeService employeeService)
+        public EmployeeController(IEmployeeService employeeService, IEmailService mailService)
         {
             _employeeService = employeeService;
+            _emailService = mailService;
         }
 
         [HttpGet]
@@ -35,7 +37,7 @@ namespace Controllers
             return Ok(employee);
         }
 
-        [HttpPost]
+        [HttpPost("toevoegen")]
         public async Task<IActionResult> CreateEmployee([FromBody] EmployeeCreateDTO employeeDto)
         {
             try
@@ -47,7 +49,8 @@ namespace Controllers
                 }
 
                 await _employeeService.AddEmployee(employeeDto);
-                return Created("http://localhost:3000/api/medewerkers/Toevoegen", new { Message = "Medewerker succesvol toegevoegd." });
+                await _emailService.SendRandomPassword(employeeDto.Email, await _emailService.GeneratePass());
+                return Created("http://localhost:3000/api/medewerkers/toevoegen", new { Message = "Medewerker succesvol toegevoegd." });
             }
             catch
             {

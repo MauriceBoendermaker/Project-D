@@ -3,6 +3,7 @@ using MimeKit.Text;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace Services
 {
@@ -39,6 +40,32 @@ namespace Services
             {
                 throw new Exception($"Fout met het verzenden van een email: {ex.Message}");
             }
+        }
+        public async Task<string> GeneratePass()
+        {
+            string Klein = Environment.GetEnvironmentVariable("Klein");
+            string Hoofdletters = Environment.GetEnvironmentVariable("Hoofdletters");
+            string Cijfers = Environment.GetEnvironmentVariable("Cijfers");
+            string Symbolen = Environment.GetEnvironmentVariable("Symbolen");
+
+            char[] password = new char[12];
+            RandomNumberGenerator rng = RandomNumberGenerator.Create();
+
+            password[0] = Klein[GetRandomIndex(Klein.Length, rng)];
+            password[1] = Hoofdletters[GetRandomIndex(Hoofdletters.Length, rng)];
+            password[2] = Cijfers[GetRandomIndex(Cijfers.Length, rng)];
+            password[3] = Symbolen[GetRandomIndex(Symbolen.Length, rng)];
+
+            string AlleSymbolen = Klein + Hoofdletters + Cijfers + Symbolen;
+
+            for (int i = 4; i < 12; i++)
+            {
+                password[i] = AlleSymbolen[GetRandomIndex(AlleSymbolen.Length, rng)];
+            }
+
+            ShuffleArray(password, rng);
+
+            return new string(password);
         }
 
         public async Task<bool> SendRandomPassword(string to, string wachtwoord)
@@ -91,6 +118,29 @@ namespace Services
             </body>
             </html>";
             return await SendEmail(to, htmlBody);
+        }
+
+        private int GetRandomIndex(int max, RandomNumberGenerator rng)
+        {
+            byte[] data = new byte[4];
+            int value;
+
+            do
+            {
+                rng.GetBytes(data);
+                value = BitConverter.ToInt32(data, 0) & int.MaxValue;
+            } while (value >= max * (int.MaxValue / max));
+
+            return value % max;
+        }
+
+        private void ShuffleArray(char[] array, RandomNumberGenerator rng)
+        {
+            for (int i = array.Length - 1; i > 0; i--)
+            {
+                int j = GetRandomIndex(i + 1, rng);
+                (array[i], array[j]) = (array[j], array[i]);
+            }
         }
     }
 }

@@ -5,16 +5,18 @@ import {
 } from "components/ChartTitles";
 import { useAuth } from "components/Context/AuthContext";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const SideNav = () => {
-  const IconClassNames: { [Key: number]: [string, string] } = {
-    1: ["fa-solid fa-gas-pump", FUEL_CHART_TITLE],
-    2: ["fa-solid fa-euro-sign", TRIP_COST_TITLE],
-    3: ["fa-solid fa-percent", LOAD_DEGREE_TITLE],
-    4: ["fa-solid fa-question", "title 4"],
+  const navigate = useNavigate();
+  const IconClassNames: { [Key: number]: [string, string, string] } = {
+    1: ["fa-solid fa-gas-pump", FUEL_CHART_TITLE, "/verbruik"],
+    2: ["fa-solid fa-euro-sign", TRIP_COST_TITLE, "/benzinekosten"],
+    3: ["fa-solid fa-percent", LOAD_DEGREE_TITLE, "/ladingsgraad"],
+    4: ["fa-solid fa-question", "title 4", "/help"],
   };
   const [collapsed, setCollapsed] = useState(false);
-  const { isLoggedIn, logout } = useAuth();
+  const { isLoggedIn } = useAuth();
 
   useEffect(() => {
     if (!isLoggedIn) setCollapsed(true);
@@ -25,7 +27,8 @@ export const SideNav = () => {
     }
   }, [collapsed]);
 
-  const handleZoom = (index: number) => {
+  const handleZoom = (link: string, index: number) => {
+    navigate(link);
     const event = new CustomEvent("zoomChart", { detail: index });
     window.dispatchEvent(event);
   };
@@ -38,7 +41,7 @@ export const SideNav = () => {
             {[1, 2, 3, 4].map((num, i) => (
               <button
                 key={i}
-                onClick={() => handleZoom(i)}
+                onClick={() => handleZoom(IconClassNames[num][2], i)}
                 className="graph-button"
                 title={IconClassNames[num][1]}
               >

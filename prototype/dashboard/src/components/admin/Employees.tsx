@@ -11,8 +11,6 @@ interface Employee {
 }
 
 export const Employees = () => {
-  const location = useLocation();
-  const currentPath = location.pathname;
   const [currentEmployees, setEmployees] = useState<Employee[]>();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, SetError] = useState<any>("");
@@ -55,35 +53,47 @@ export const Employees = () => {
   return (
     <div className="container mt-5">
       <div className="row">
-        <div className="col-md-6">
-          <h2>Medewerkers lijst</h2>
-          <div>
-            {loading && "Aan het laden"}
-            {error && error}
-          </div>
-          <div>
-            Naam, Rol, Email
-            <ul>
-              {currentEmployees?.map((employee) => (
-                <div>
-                  <li key={employee.medewerker_id}>
-                    {employee.naam} {employee.type} {employee.email}
-                    <button
-                      className="btn-primary"
-                      onClick={() => HandleDelete(employee.medewerker_id)}
-                    >
-                      Verwijderen
-                    </button>
-                  </li>
-                </div>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <a className="dropdown-item" href="/admin/voeg-medewerker-toe">
+        <div className="col-md-12">
+          <div className="d-flex justify-content-between align-items-center flex-wrap mb-3">
+            <h2 className="mb-0">Medewerkerslijst</h2>
+            <a
+              className="btn d-flex align-items-center"
+              href="/admin/voeg-medewerker-toe"
+            >
               <i className="fas fa-user-plus me-2"></i>
               Nieuwe medewerker
             </a>
+          </div>
+          <div className="employees-table">
+            <div className="table-section">
+              <div className="overflow-x-auto">
+                <table style={{ width: "100%" }}>
+                  <thead>
+                    <tr>
+                      <th>Naam</th>
+                      <th>Rol</th>
+                      <th>Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {currentEmployees?.map((e) => (
+                      <tr key={e.medewerker_id}>
+                        <td>{e.naam}</td>
+                        <td>{e.type}</td>
+                        <td>{e.email}</td>
+                        <td>
+                          <button onClick={() => HandleDelete(e.medewerker_id)}>
+                            <i className="fas fa-user-minus me-2">
+                              <span className="ms-2">verwijderen</span>
+                            </i>
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
