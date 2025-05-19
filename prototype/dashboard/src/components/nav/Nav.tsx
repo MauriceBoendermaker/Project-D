@@ -28,6 +28,8 @@ export const Nav = () => {
       return () => clearTimeout(timeout);
     }
   }, [showLogoutAlert]);
+
+  
   const location = useLocation();
   const currentPath = location.pathname;
   return (
