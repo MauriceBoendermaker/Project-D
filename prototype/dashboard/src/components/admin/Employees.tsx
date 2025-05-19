@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Popup } from "../misc/Popup";
+import { EmployeeFormModal } from "components/misc/EmployeeFormModal";
 interface Employee {
   medewerker_id: number;
   naam: string;
@@ -14,6 +15,11 @@ export const Employees = () => {
   const [currentEmployees, setEmployees] = useState<Employee[]>();
   const [error, SetError] = useState<any>("");
   const [deleted, setDeleted] = useState<boolean>(false);
+  const [showEmployeesForm, setShowEmployeesForm] = useState<boolean>(false);
+
+  const HandleEdit = () => {
+    setShowEmployeesForm(true);
+  };
 
   const HandleDelete = async (medewerker_id: number) => {
     try {
@@ -100,7 +106,10 @@ export const Employees = () => {
                         </td>
                         <td>
                           <button>
-                            <i className="fa-solid fa-user-pen">
+                            <i
+                              className="fa-solid fa-user-pen"
+                              onClick={() => HandleEdit()}
+                            >
                               <span className="ms-2">Bewerken</span>
                             </i>
                           </button>
@@ -126,6 +135,7 @@ export const Employees = () => {
           SetError("");
         }}
       />
+      <EmployeeFormModal isVisible={showEmployeesForm} />
     </div>
   );
 };
