@@ -24,7 +24,7 @@ export const Popup: React.FC<PopupProps> = ({
 
   return (
     <div className="modal show d-block" tabIndex={-1} role="dialog">
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content custom-modal-content">
           <div className="modal-header">
             <h5 className="modal-title">{title}</h5>
