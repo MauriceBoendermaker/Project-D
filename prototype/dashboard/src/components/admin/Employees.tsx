@@ -98,6 +98,13 @@ export const Employees = () => {
                             </i>
                           </button>
                         </td>
+                        <td>
+                          <button>
+                            <i className="fa-solid fa-user-pen">
+                              <span className="ms-2">Bewerken</span>
+                            </i>
+                          </button>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
