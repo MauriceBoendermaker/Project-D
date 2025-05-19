@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Models;
 
 DotNetEnv.Env.Load();
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.AddConsole(options =>
 {
@@ -21,7 +20,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=DashboardData.db"));
+options.UseSqlite("Data Source=DashboardData.db"));
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IFuelService, JsonFuelService>();
@@ -67,3 +66,4 @@ if (app.Environment.IsDevelopment())
 app.Urls.Add("http://localhost:3000");
 app.MapControllers();
 app.Run();
+public partial class Program { }
