@@ -8,6 +8,6 @@ namespace Services
     {
         Task<IEnumerable<Vehicle>?> GetAllVehiclesAsync();
         Task<int> GetVehicleAverageAsync(int voertuigId);
-        Task<int> GetRitCostAsync(string voertuigId, string ritId);
+        Task<int> GetRitCostAsync(int voertuigId, int ritId);
     }
 }
