@@ -15,7 +15,7 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/api/brandstof/voertuigen"
+          "http://localhost:3000/api/brandstof/ritten"
         );
         if (!response.ok) throw new Error("Network response was not ok");
         const result = await response.json();
@@ -29,33 +29,31 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
   }, []);
 
   const processedData = data
-    ? data.map((voertuig: any) => {
-        const gemiddeldeAfstand =
-          Math.round(
-            (voertuig.ritten.reduce(
-              (sum: number, rit: any) => sum + rit.afstand_km,
-              0
-            ) /
-              voertuig.ritten.length) *
-              10
-          ) / 10;
-        const gemiddeldeBrandstof =
-          Math.round(
-            (voertuig.ritten.reduce(
-              (sum: number, rit: any) => sum + rit.brandstof_verbruik_l,
-              0
-            ) /
-              voertuig.ritten.length) *
-              10
-          ) / 10;
+    ? Object.values(
+      data.reduce((acc: any, rit: any) => {
+        const { voertuig_id, afstand_km, brandstof_verbruik_l } = rit;
 
-        return {
-          voertuig_id: voertuig.voertuig_id,
-          gemiddeldeAfstand,
-          gemiddeldeBrandstof,
-        };
-      })
-    : [];
+        if (!acc[voertuig_id]) {
+          acc[voertuig_id] = {
+            voertuig_id,
+            totalAfstand: 0,
+            totalBrandstof: 0,
+            count: 0,
+          };
+        }
+
+        acc[voertuig_id].totalAfstand += afstand_km;
+        acc[voertuig_id].totalBrandstof += brandstof_verbruik_l;
+        acc[voertuig_id].count++;
+
+        return acc;
+      }, {})
+    ).map((item: any) => ({
+      voertuig_id: item.voertuig_id,
+      gemiddeldeAfstand: Math.round((item.totalAfstand / item.count) * 10) / 10,
+      gemiddeldeBrandstof: Math.round((item.totalBrandstof / item.count) * 10) / 10,
+    }))
+  : [];
 
   const chartOptions = {
     tooltip: {},

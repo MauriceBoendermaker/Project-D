@@ -369,9 +369,8 @@ export const AddTrip = () => {
               />
               {postcodeValid !== null && (
                 <div
-                  className={`small ${
-                    postcodeValid ? "text-success" : "text-danger"
-                  }`}
+                  className={`small ${postcodeValid ? "text-success" : "text-danger"
+                    }`}
                 >
                   {postcodeValid
                     ? "✓ Geldige postcode"

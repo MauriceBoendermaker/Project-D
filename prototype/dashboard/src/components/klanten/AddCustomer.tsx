@@ -94,6 +94,10 @@ export const AddCustomer = () => {
 
   return (
     <div className="container mt-5">
+      <a className="btn d-flex align-items-center" href="/klanten/overzicht">
+        <i className="fa-solid fa-arrow-left"></i>
+        <span className="ms-2">Terug naar overzicht</span>
+      </a>
       <div className="row">
         <div className="col-md-6">
           <h2>Nieuwe klant toevoegen</h2>
@@ -172,9 +176,8 @@ export const AddCustomer = () => {
               />
               {postcodeValid !== null && (
                 <div
-                  className={`small ${
-                    postcodeValid ? "text-success" : "text-danger"
-                  }`}
+                  className={`small ${postcodeValid ? "text-success" : "text-danger"
+                    }`}
                 >
                   {postcodeValid
                     ? "✓ Geldige postcode"
