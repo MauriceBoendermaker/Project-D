@@ -21,7 +21,7 @@ namespace Controllers
         public async Task<IActionResult> GetTripOverview()
         {
             var result = await _tripService.GetTripOverview();
-            return result != null && result.Any() ? Ok(result) : NotFound(new { error = "Geen ritten gevonden." });
+            return result != null && result.Any() ? Ok(new Message { Data = result }) : NotFound(new { error = "Geen ritten gevonden." });
         }
 
         [HttpPost]

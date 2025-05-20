@@ -1,4 +1,6 @@
-public class Error
+public class Message
 {
-    public string Message { get; set; } = "";
+    public Object Data { get; set; }
+
+    
 }

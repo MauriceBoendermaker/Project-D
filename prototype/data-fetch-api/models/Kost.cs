@@ -4,18 +4,15 @@ using System.Text.Json.Serialization;
 
 namespace Models
 {
-    public class Kost
+    public class Cost
     {
         [Key]
         public int Id { get; set; }
-        
-        [JsonPropertyName("onderhoud")]
-        public float Onderhoud { get; set; }
 
-        [JsonPropertyName("verzekering")]
-        public float Verzekering { get; set; }
+        public float Maintenance { get; set; }
 
-        [JsonPropertyName("tolwegen")]
-        public float Tolwegen { get; set; }
+        public float Insurance { get; set; }
+
+        public float TollRoads { get; set; }
     }
 }

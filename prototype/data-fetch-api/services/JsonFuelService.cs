@@ -20,7 +20,7 @@ namespace Services
             }
         }
 
-        public async Task<int> GetVehicleAverageAsync(int voertuigId)
+        public async Task<int> GetVehicleAverageAsync(int VehicleId)
         {
             try
             {
@@ -29,11 +29,11 @@ namespace Services
 
                 if (vehicles == null) return 0;
 
-                var vehicle = vehicles.FirstOrDefault(v => v.VoertuigId == voertuigId);
-                if (vehicle == null || vehicle.Ritten == null || vehicle.Ritten.Count == 0) return 0;
+                var vehicle = vehicles.FirstOrDefault(v => v.VehicleId == VehicleId);
+                if (vehicle == null || vehicle.Trips == null || vehicle.Trips.Count == 0) return 0;
 
-                int totaalVerbruik = vehicle.Ritten.Sum(rit => rit.BrandstofVerbruikL);
-                return totaalVerbruik / vehicle.Ritten.Count;
+                int totaalVerbruik = vehicle.Trips.Sum(rit => rit.FuelUsage);
+                return totaalVerbruik / vehicle.Trips.Count;
             }
             catch (Exception ex)
             {
@@ -42,7 +42,7 @@ namespace Services
             }
         }
 
-        public async Task<int> GetRitCostAsync(string voertuigId, string ritId)
+        public async Task<int> GetRitCostAsync(string VehicleId, string ritId)
         {
             try
             {
@@ -51,13 +51,13 @@ namespace Services
 
                 if (vehicles == null) return 0;
 
-                var vehicle = vehicles.FirstOrDefault(v => v.VoertuigNummer == voertuigId);
-                if (vehicle == null || vehicle.Ritten == null) return 0;
+                var vehicle = vehicles.FirstOrDefault(v => v.VehicleNumber == VehicleId);
+                if (vehicle == null || vehicle.Trips == null) return 0;
 
-                var rit = vehicle.Ritten.FirstOrDefault(r => r.RitNummer == ritId);
+                var rit = vehicle.Trips.FirstOrDefault(r => r.TripNumber == ritId);
                 if (rit == null) return 0;
 
-                return Convert.ToInt32(rit.BrandstofVerbruikL * 1.8690); // Prijs diesel gemmideld 1,8690 incl. BTW (1,5446 excl.) ANWB.nl geraadpleegd 07.04.2025
+                return Convert.ToInt32(rit.FuelUsage * 1.8690); // Prijs diesel gemmideld 1,8690 incl. BTW (1,5446 excl.) ANWB.nl geraadpleegd 07.04.2025
             }
             catch (Exception ex)
             {

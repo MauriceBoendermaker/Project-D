@@ -7,22 +7,16 @@ namespace Models
     public class Location
     {
         [Key]
-        [JsonPropertyName("locatie_id")]
-        public int LocatieId { get; set; }
+        public int Id { get; set; }
 
-        [JsonPropertyName("adres")]
-        public string Adres { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
 
-        [JsonPropertyName("stad")]
-        public string Stad { get; set; } = string.Empty;
+        public string City { get; set; } = string.Empty;
 
-        [JsonPropertyName("postcode")]
         public string Postcode { get; set; } = string.Empty;
 
-        [JsonPropertyName("land")]
-        public string Land { get; set; } = string.Empty;
+        public string Country { get; set; } = string.Empty;
 
-        [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

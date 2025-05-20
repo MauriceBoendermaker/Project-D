@@ -46,34 +46,34 @@ namespace Services
             {
                 var newVehicle = new Vehicle
                 {
-                    Kenteken = vehicle.Kenteken,
-                    Merk = vehicle.Merk,
+                    LicensePlate = vehicle.LicensePlate,
+                    Brand = vehicle.Brand,
                     Model = vehicle.Model,
-                    BrandstofType = vehicle.BrandstofType,
-                    MaximaleCapaciteitKg = vehicle.MaximaleCapaciteitKg,
+                    FuelType = vehicle.FuelType,
+                    MaximumCapacity = vehicle.MaximumCapacity,
                     CreatedAt = DateTime.UtcNow
                 };
-                _context.Voertuigen.Add(newVehicle);
+                _context.Vehicles.Add(newVehicle);
                 await _context.SaveChangesAsync();
 
-                if (vehicle.Ritten != null)
+                if (vehicle.Trips != null)
                 {
-                    foreach (var rit in vehicle.Ritten)
+                    foreach (var rit in vehicle.Trips)
                     {
                         var newRit = new Trip
                         {
-                            RitNummer = rit.RitNummer,
-                            Datum = rit.Datum,
-                            AfstandKm = rit.AfstandKm,
-                            DuurMinuten = rit.DuurMinuten,
-                            BrandstofVerbruikL = rit.BrandstofVerbruikL,
-                            BestemmingId = rit.BestemmingId,
-                            KlantId = rit.KlantId,
-                            ChauffeurId = rit.ChauffeurId,
-                            VehicleVoertuigId = newVehicle.VoertuigId,
+                            TripNumber = rit.TripNumber,
+                            Date = rit.Date,
+                            DistanceKm = rit.DistanceKm,
+                            Time = rit.Time,
+                            FuelUsage = rit.FuelUsage,
+                            DestinationId = rit.DestinationId,
+                            CustomerId = rit.CustomerId,
+                            DriverId = rit.DriverId,
+                            VehicleId = newVehicle.VehicleId,
                             CreatedAt = DateTime.UtcNow
                         };
-                        _context.Ritten.Add(newRit);
+                    _context.Trips.Add(newRit);
                     }
                 }
             }
@@ -95,8 +95,8 @@ namespace Services
 
             foreach (var shipmentImport in shipmentImports)
             {
-                var voertuigEntity = await _context.Voertuigen
-                    .FirstOrDefaultAsync(v => v.Kenteken == shipmentImport.VehicleId);
+                var voertuigEntity = await _context.Vehicles
+                    .FirstOrDefaultAsync(v => v.LicensePlate == shipmentImport.VehicleId);
 
                 if (voertuigEntity == null)
                 {
@@ -107,7 +107,7 @@ namespace Services
                 var shipment = new Shipment
                 {
                     ShipmentId = shipmentImport.ShipmentId,
-                    VoertuigId = voertuigEntity.VoertuigId,
+                    VehicleId = voertuigEntity.VehicleId,
                     Destination = shipmentImport.Destination,
                     MaxCapacityKg = shipmentImport.MaxCapacityKg,
                     CurrentLoadKg = shipmentImport.CurrentLoadKg,
@@ -115,7 +115,7 @@ namespace Services
                     CreatedAt = DateTime.UtcNow
                 };
 
-                _context.Zendingen.Add(shipment);
+                _context.Shipments.Add(shipment);
             }
 
             await _context.SaveChangesAsync();

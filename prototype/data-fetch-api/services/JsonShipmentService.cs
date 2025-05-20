@@ -3,7 +3,7 @@ using Models;
 
 namespace Services
 {
-    public class JsonShipmentService : IJsonShipmentService
+    public class JsonShipmentService : IShipmentService
     {
         private readonly string Path = "data/Zending_data.json";
 

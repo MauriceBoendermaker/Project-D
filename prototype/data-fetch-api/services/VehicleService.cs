@@ -16,17 +16,17 @@ namespace Services
 
         public async Task<List<Vehicle>> GetAllVehiclesAsync()
         {
-            return await _context.Voertuigen.ToListAsync();
+            return await _context.Vehicles.ToListAsync();
         }
 
         public async Task<Vehicle?> GetVehicleByIdAsync(int voertuigId)
         {
-            return await _context.Voertuigen.FirstOrDefaultAsync(v => v.VoertuigId == voertuigId);
+            return await _context.Vehicles.FirstOrDefaultAsync(v => v.VehicleId == voertuigId);
         }
 
         public async Task AddVehicleAsync(Vehicle vehicle)
         {
-            await _context.Voertuigen.AddAsync(vehicle);
+            await _context.Vehicles.AddAsync(vehicle);
             await _context.SaveChangesAsync();
         }
     }

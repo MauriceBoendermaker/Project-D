@@ -9,39 +9,29 @@ namespace Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int RitId { get; set; } // Primary key (en auto increment)
+        public int Id { get; set; } // Primary key (en auto increment)
 
-        [JsonPropertyName("rit_id")]
-        public string RitNummer { get; set; } = string.Empty;
+        public string TripNumber { get; set; } = string.Empty;
 
-        [JsonPropertyName("voertuig_id")]
         [ForeignKey("Vehicle")]
-        public int VehicleVoertuigId { get; set; } // Foreign key naar Voertuig
+        public int VehicleId { get; set; } // Foreign key naar Voertuig
 
         public Vehicle Vehicle { get; set; } = null!;
 
-        [JsonPropertyName("datum")]
-        public DateTime? Datum { get; set; }
+        public DateTime? Date { get; set; }
 
-        [JsonPropertyName("afstand_km")]
-        public int AfstandKm { get; set; }
+        public int DistanceKm { get; set; }
 
-        [JsonPropertyName("duur_minuten")]
-        public int DuurMinuten { get; set; }
+        public int Time { get; set; }
 
-        [JsonPropertyName("brandstof_verbruik_l")]
-        public int BrandstofVerbruikL { get; set; }
+        public int FuelUsage { get; set; }
 
-        [JsonPropertyName("bestemming_id")]
-        public int BestemmingId { get; set; } // Foreign key naar Locatie
+        public int DestinationId { get; set; } // Foreign key naar Locatie
 
-        [JsonPropertyName("klant_id")]
-        public int KlantId { get; set; } // Foreign key naar Klant
+        public int CustomerId { get; set; } // Foreign key naar Klant
 
-        [JsonPropertyName("chauffeur_id")]
-        public int ChauffeurId { get; set; } // Foreign key naar Medewerker
+        public int DriverId { get; set; } // Foreign key naar Medewerker
 
-        [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 
