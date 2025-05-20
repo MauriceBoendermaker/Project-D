@@ -25,6 +25,18 @@ namespace Controllers
             return NotFound("Geen voertuigen gevonden");
         }
 
+        [HttpGet("ritten")]
+        public async Task<IActionResult> GetTrips()
+        {
+            var result = await _fuelService.GetAllTripsAsync();
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            return NotFound("Geen ritten gevonden");
+        }
+
+
         [HttpGet("gemiddelde/{voertuigId}")]
         public async Task<IActionResult> GetVehicleAverage([FromRoute] int voertuigId)
         {

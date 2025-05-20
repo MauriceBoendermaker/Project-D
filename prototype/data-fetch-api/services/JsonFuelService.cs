@@ -23,7 +23,19 @@ namespace Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error reading JSON: {ex.Message}");
+                Console.WriteLine($"Error reading Database: {ex.Message}");
+                return null;
+            }
+        }
+
+        public async Task<IEnumerable<Trip>?> GetAllTripsAsync()
+        {
+            try
+            {
+                return _context.Ritten;
+            }catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading Database: {ex.Message}");
                 return null;
             }
         }
@@ -56,12 +68,13 @@ namespace Services
             {
                 Vehicle vehicle =  _context.Voertuigen.FirstOrDefault(v => v.VoertuigNummer == voertuigId);
 
-                var rit = _context.Ritten.Where(r => r.RitNummer == ritId).FirstOrDefault(r=> r.Vehicle == vehicle);
+                var rit = _context.Ritten.Where(r => r.RitNummer == ritId).FirstOrDefault(r=> r.VehicleVoertuigId == vehicle.VoertuigId);
                 if (vehicle == null || rit == null) return 0;
 
                 double cost = 0.0;
                 double kmNaarL = 0.31; // Gemiddeld 31 liter per 100km voor vrachtwagens scania.com geraadpleegd 19.05.2025
-                switch (vehicle.BrandstofType){
+                switch (vehicle.BrandstofType)
+                {
                     case "Diesel":
                         cost = rit.AfstandKm * kmNaarL * 1.718; // Prijs diesel gemiddeld 1,718 incl. BTW  ANWB.nl geraadpleegd 19.05.2025
                         break;
@@ -72,10 +85,10 @@ namespace Services
                         cost = rit.AfstandKm * kmNaarL * 1.887; // Prijs benzine gemiddeld 1,887 incl. BTW ANWB.nl geraadpleegd 19.05.2025
                         break;
                     case "Hybride":
-                        cost = rit.AfstandKm * (kmNaarL * 1.718 + 0.4)/2; // gemiddelde van diesel en elektrisch
+                        cost = rit.AfstandKm * (kmNaarL * 1.718 + 0.4) / 2; // gemiddelde van diesel en elektrisch
                         break;
                     case "Anders":
-                        cost = rit.BrandstofVerbruikL * 1.718; // diesel
+                        cost = rit.AfstandKm * kmNaarL * 1.718; // diesel
                         break;
                     default:
                         break;
