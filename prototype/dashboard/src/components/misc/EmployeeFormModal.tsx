@@ -21,6 +21,7 @@ export const EmployeeFormModal: React.FC<EditEmployeePopupProps> = ({
   onClose,
 }) => {
   const [formData, setFormData] = useState<EditedEmployee>(initialFormData);
+
   if (!isVisible) return null;
 
   const handleChange = (
@@ -37,8 +38,9 @@ export const EmployeeFormModal: React.FC<EditEmployeePopupProps> = ({
     e.preventDefault();
 
     try {
+      console.log(employeeId);
       const response = await fetch(
-        `http://localhost:3000/api/medewerkers/${employeeId}`,
+        `http://localhost:3000/api/medewerkers?Id=${employeeId}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -47,8 +49,10 @@ export const EmployeeFormModal: React.FC<EditEmployeePopupProps> = ({
       );
 
       if (!response.ok) {
+        onClose();
       }
     } catch (err) {
+      onClose();
       // handle error
     } finally {
       onClose();

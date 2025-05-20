@@ -19,23 +19,23 @@ namespace Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllCustomers()
         {
-            var klanten = await _customerService.GetAllCustomersAsync();
-            if (klanten == null || klanten.Count == 0)
+            var Customers = await _customerService.GetAllCustomersAsync();
+            if (Customers == null || Customers.Count == 0)
             {
                 return NotFound(new { error = "Geen klanten gevonden." });
             }
-            return Ok(klanten);
+            return Ok(Customers);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCustomerById([FromRoute] int id)
         {
-            var klant = await _customerService.GetCustomerByIdAsync(id);
-            if (klant == null)
+            Customer customer = await _customerService.GetCustomerByIdAsync(id);
+            if (customer == null)
             {
                 return NotFound(new { error = $"Klant met ID {id} niet gevonden." });
             }
-            return Ok(klant);
+            return Ok(customer);
         }
 
         [HttpPost]

@@ -5,13 +5,13 @@ import {
   EmployeeFormModal,
 } from "components/misc/EmployeeFormModal";
 interface Employee {
-  empId: number;
-  name: string;
-  role: string;
-  email: string;
-  available: boolean;
-  vehicleId?: number;
-  created_at: string;
+  Id: number;
+  Name: string;
+  Role: string;
+  Email: string;
+  Available: boolean;
+  VehicleId?: number;
+  CreatedAt: string;
 }
 
 export const Employees = () => {
@@ -19,7 +19,7 @@ export const Employees = () => {
   const [error, SetError] = useState<any>("");
   const [deleted, setDeleted] = useState<boolean>(false);
   const [showEmployeesForm, setShowEmployeesForm] = useState<boolean>(false);
-  const [empId, setEmpId] = useState<number>(-1);
+  const [Id, setId] = useState<number>(-1);
   const [formData, setFormData] = useState<EditedEmployee>({
     name: "",
     role: "",
@@ -28,20 +28,21 @@ export const Employees = () => {
   });
 
   const HandleEdit = (employee: Employee) => {
-    setEmpId(employee.empId);
+    console.log(employee.Id);
+    setId(employee.Id);
     setFormData({
-      name: employee.name,
-      role: employee.role,
-      email: employee.email,
-      vehicleId: employee.vehicleId,
+      name: employee.Name,
+      role: employee.Role,
+      email: employee.Email,
+      vehicleId: employee.VehicleId,
     });
     setShowEmployeesForm(true);
   };
 
-  const HandleDelete = async (medewerker_id: number) => {
+  const HandleDelete = async (Id: number) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/medewerkers/${medewerker_id}`,
+        `http://localhost:3000/api/medewerkers/${Id}`,
         {
           method: "DELETE",
           headers: {
@@ -59,9 +60,7 @@ export const Employees = () => {
         setDeleted(true);
       }
 
-      setEmployees((prev) =>
-        prev?.filter((employee) => employee.empId !== medewerker_id)
-      );
+      setEmployees((prev) => prev?.filter((employee) => employee.Id !== Id));
     } catch (error) {
       SetError("Fout opgetreden tijdens het verwijderen.");
     }
@@ -83,6 +82,7 @@ export const Employees = () => {
     };
     fetchEmployees();
   }, []);
+
   return (
     <div className="container mt-5">
       <div className="row">
@@ -109,13 +109,13 @@ export const Employees = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {currentEmployees?.map((e) => (
-                      <tr key={e.empId}>
-                        <td>{e.name}</td>
-                        <td>{e.role}</td>
-                        <td>{e.email}</td>
+                    {currentEmployees?.map((e: Employee) => (
+                      <tr key={e.Id}>
+                        <td>{e.Name}</td>
+                        <td>{e.Role}</td>
+                        <td>{e.Email}</td>
                         <td>
-                          <button onClick={() => HandleDelete(e.empId)}>
+                          <button onClick={() => HandleDelete(e.Id)}>
                             <i className="fas fa-user-minus me-2">
                               <span className="ms-2">verwijderen</span>
                             </i>
@@ -125,7 +125,12 @@ export const Employees = () => {
                           <button>
                             <i
                               className="fa-solid fa-user-pen"
-                              onClick={() => HandleEdit(e)}
+                              onClick={() => {
+                                console.log("Employee in list: ");
+                                console.log(e as Employee);
+
+                                HandleEdit(e);
+                              }}
                             >
                               <span className="ms-2">Bewerken</span>
                             </i>
@@ -154,7 +159,7 @@ export const Employees = () => {
       />
       <EmployeeFormModal
         isVisible={showEmployeesForm}
-        employeeId={empId}
+        employeeId={Id}
         initialFormData={formData}
         onClose={() => setShowEmployeesForm(false)}
       />

@@ -3,31 +3,26 @@ using Models;
 
 public class EmployeeCreateDTO
 {
-    [JsonPropertyName("naam")]
-    public string Naam { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
 
-    [JsonPropertyName("type")]
     public string Type { get; set; } = string.Empty;
 
-    [JsonPropertyName("email")]
     public string Email { get; set; } = string.Empty;
 
-    [JsonPropertyName("beschikbaar")]
-    public bool Beschikbaar { get; set; }
+    public bool Available { get; set; }
 
-    [JsonPropertyName("voertuig_id")]
-    public int? VoertuigId { get; set; } // Nullable omdat niet elke medewerker een chauffeur is
+    public int? VehicleId { get; set; } // Nullable omdat niet elke medewerker een chauffeur is
 
 
     public Employee ToEmployee()
     {
         return new Employee
         {
-            Naam = this.Naam,
+            Name = this.Name,
             Type = this.Type,
             Email = this.Email,
-            Beschikbaar = this.Beschikbaar,
-            VoertuigId = this.VoertuigId,
+            Available = this.Available,
+            VehicleId = this.VehicleId,
 
         };
     }

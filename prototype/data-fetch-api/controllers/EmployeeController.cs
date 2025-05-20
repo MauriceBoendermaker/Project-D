@@ -58,7 +58,7 @@ namespace Controllers
             }
         }
         [HttpPut]
-        public async Task<IActionResult> UpdateEmployee(int id, EmployeeCreateDTO emp)
+        public async Task<IActionResult> UpdateEmployee([FromQuery] int id, EmployeeCreateDTO emp)
         {
             bool result = await _employeeService.UpdateEmployee(id, emp);
 

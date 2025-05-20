@@ -28,7 +28,7 @@ public class EmployeeService : IEmployeeService
     {
         try
         {
-            Employee? existingEmployee = await appContext.Medewerkers.FindAsync(id);
+            Employee? existingEmployee = await appContext.Employees.FindAsync(id);
             if (existingEmployee == null)
             {
                 return false;
@@ -36,12 +36,12 @@ public class EmployeeService : IEmployeeService
 
             // Update properties
             var updatedEmployee = empDto.ToEmployee();
-            existingEmployee.Naam = updatedEmployee.Naam;
+            existingEmployee.Name = updatedEmployee.Name;
             existingEmployee.Email = updatedEmployee.Email;
             existingEmployee.Type = updatedEmployee.Type;
             // Add other properties as needed
 
-            appContext.Medewerkers.Update(existingEmployee);
+            appContext.Employees.Update(existingEmployee);
             await appContext.SaveChangesAsync();
             return true;
         }
@@ -55,7 +55,7 @@ public class EmployeeService : IEmployeeService
     {
         try
         {
-            Employee? FoundEmployee = await appContext.Medewerkers.FindAsync(id);
+            Employee? FoundEmployee = await appContext.Employees.FindAsync(id);
             if (FoundEmployee != null)
             {
                 appContext.Remove(FoundEmployee);
@@ -76,7 +76,7 @@ public class EmployeeService : IEmployeeService
     {
         try
         {
-            IEnumerable<Employee> employees = await appContext.Medewerkers.ToListAsync();
+            IEnumerable<Employee> employees = await appContext.Employees.ToListAsync();
             return employees;
         }
         catch (Exception e)
@@ -90,8 +90,9 @@ public class EmployeeService : IEmployeeService
     {
         try
         {
-            IEnumerable<Employee> employees = await GetAllEmployees();
-            return employees.FirstOrDefault(e => e.MedewerkerId == EmpId);
+            IEnumerable<Employee>? employees = await GetAllEmployees();
+
+            return employees is null ? null : employees.FirstOrDefault(e => e.Id == EmpId);
         }
         catch (Exception e)
         {

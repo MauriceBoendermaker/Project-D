@@ -19,23 +19,23 @@ namespace Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllVehicles()
         {
-            var voertuigen = await _vehicleService.GetAllVehiclesAsync();
-            if (voertuigen == null || voertuigen.Count == 0)
+            var vehicles = await _vehicleService.GetAllVehiclesAsync();
+            if (vehicles == null || vehicles.Count == 0)
             {
                 return NotFound(new { error = "Geen voertuigen gevonden." });
             }
-            return Ok(voertuigen);
+            return Ok(vehicles);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetVehicleById([FromRoute] int id)
         {
-            var voertuig = await _vehicleService.GetVehicleByIdAsync(id);
-            if (voertuig == null)
+            var vehicle = await _vehicleService.GetVehicleByIdAsync(id);
+            if (vehicle == null)
             {
-                return NotFound(new { error = $"Voertuig met ID {id} niet gevonden." });
+                return NotFound(new { error = $"voertuig met ID {id} niet gevonden." });
             }
-            return Ok(voertuig);
+            return Ok(vehicle);
         }
 
         [HttpPost]

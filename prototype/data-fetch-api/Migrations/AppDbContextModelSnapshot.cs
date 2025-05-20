@@ -59,41 +59,34 @@ namespace data_fetch_api.Migrations
 
             modelBuilder.Entity("Models.Employee", b =>
                 {
-                    b.Property<int>("MedewerkerId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "medewerker_id");
+                        .HasColumnType("INTEGER");
 
-                    b.Property<bool>("Beschikbaar")
-                        .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "beschikbaar");
+                    b.Property<bool>("Available")
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "created_at");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "email");
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Naam")
+                    b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "naam");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Type")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "type");
+                        .HasColumnType("TEXT");
 
-                    b.Property<int?>("VoertuigId")
-                        .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "voertuig_id");
+                    b.Property<int?>("VehicleId")
+                        .HasColumnType("INTEGER");
 
-                    b.HasKey("MedewerkerId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Medewerkers");
+                    b.ToTable("Employees");
                 });
 
             modelBuilder.Entity("Models.Location", b =>
@@ -129,7 +122,7 @@ namespace data_fetch_api.Migrations
 
                     b.HasKey("LocatieId");
 
-                    b.ToTable("Locaties");
+                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("Models.Shipment", b =>
@@ -143,27 +136,32 @@ namespace data_fetch_api.Migrations
 
                     b.Property<int>("CurrentLoadKg")
                         .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "current_load_kg");
+                        .HasAnnotation("Relational:JsonPropertyName", "huidige_capaciteit");
 
                     b.Property<string>("Destination")
                         .IsRequired()
                         .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "destination");
+                        .HasAnnotation("Relational:JsonPropertyName", "bestemming");
 
                     b.Property<int>("EmptyKilometers")
                         .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "empty_kilometers");
+                        .HasAnnotation("Relational:JsonPropertyName", "onbenutte_kilometers");
 
                     b.Property<int>("MaxCapacityKg")
                         .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "max_capacity_kg");
+                        .HasAnnotation("Relational:JsonPropertyName", "max_capaciteit");
 
                     b.Property<int>("ShipmentId")
                         .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "shipment_id");
+                        .HasAnnotation("Relational:JsonPropertyName", "zending_id");
 
                     b.Property<int>("VoertuigId")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("voertuig_id")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasAnnotation("Relational:JsonPropertyName", "voertuig_id");
 
                     b.HasKey("Id");
 
