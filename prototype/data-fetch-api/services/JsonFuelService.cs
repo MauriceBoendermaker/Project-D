@@ -19,7 +19,6 @@ namespace Services
         {
             try
             {
-                //var vehicles = await _context.Vehicles;
                 return _context.Voertuigen;
             }
             catch (Exception ex)
@@ -31,24 +30,23 @@ namespace Services
 
         public async Task<int> GetVehicleAverageAsync(int voertuigId)
         {
-            // try
-            // {
-            //     string jsonVehicles = await File.ReadAllTextAsync("data/brandstof_data.json");
-            //     var vehicles = JsonSerializer.Deserialize<IEnumerable<Vehicle>>(jsonVehicles);
+            try
+            {
+                var vehicles = _context.Voertuigen;
 
-            //     if (vehicles == null) return 0;
+                if (vehicles == null) return 0;
 
-            //     var vehicle = vehicles.FirstOrDefault(v => v.VoertuigId == voertuigId);
-            //     if (vehicle == null || vehicle.Ritten == null || vehicle.Ritten.Count == 0) return 0;
+                var vehicle = vehicles.FirstOrDefault(v => v.VoertuigId == voertuigId);
+                if (vehicle == null || vehicle.Ritten == null || vehicle.Ritten.Count == 0) return 0;
 
-            //     int totaalVerbruik = vehicle.Ritten.Sum(rit => rit.BrandstofVerbruikL);
-            //     return totaalVerbruik / vehicle.Ritten.Count;
-            // }
-            // catch (Exception ex)
-            // {
-            //     Console.WriteLine($"Error calculating average: {ex.Message}");
-            //     return 0;
-            // }
+                int totaalVerbruik = vehicle.Ritten.Sum(rit => rit.BrandstofVerbruikL);
+                return totaalVerbruik / vehicle.Ritten.Count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error calculating average: {ex.Message}");
+                return 0;
+            }
             return 0;
         }
 
