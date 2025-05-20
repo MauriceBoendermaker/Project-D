@@ -19,7 +19,7 @@ namespace Services
         {
             try
             {
-                return _context.Voertuigen;
+                return _context.Vehicles;
             }
             catch (Exception ex)
             {
@@ -32,7 +32,7 @@ namespace Services
         {
             try
             {
-                return _context.Ritten;
+                return _context.Trips;
             }catch (Exception ex)
             {
                 Console.WriteLine($"Error reading Database: {ex.Message}");
@@ -44,15 +44,15 @@ namespace Services
         {
             try
             {
-                var vehicles = _context.Voertuigen;
+                var vehicles = _context.Vehicles;
 
                 if (vehicles == null) return 0;
 
-                var vehicle = vehicles.FirstOrDefault(v => v.VoertuigId == voertuigId);
-                if (vehicle == null || vehicle.Ritten == null || vehicle.Ritten.Count == 0) return 0;
+                var vehicle = vehicles.FirstOrDefault(v => v.VehicleId == voertuigId);
+                if (vehicle == null || vehicle.Trips == null || vehicle.Trips.Count == 0) return 0;
 
-                int totaalVerbruik = vehicle.Ritten.Sum(rit => rit.BrandstofVerbruikL);
-                return totaalVerbruik / vehicle.Ritten.Count;
+                int totaalVerbruik = vehicle.Trips.Sum(rit => rit.FuelUsage);
+                return totaalVerbruik / vehicle.Trips.Count;
             }
             catch (Exception ex)
             {
@@ -66,29 +66,29 @@ namespace Services
         {
             try
             {
-                Vehicle vehicle =  _context.Voertuigen.FirstOrDefault(v => v.VoertuigNummer == voertuigId);
+                Vehicle vehicle =  _context.Vehicles.FirstOrDefault(v => v.VehicleNumber == voertuigId);
 
-                var rit = _context.Ritten.Where(r => r.RitNummer == ritId).FirstOrDefault(r=> r.VehicleVoertuigId == vehicle.VoertuigId);
+                var rit = _context.Trips.Where(r => r.TripNumber == ritId).FirstOrDefault(r=> r.VehicleId == vehicle.VehicleId);
                 if (vehicle == null || rit == null) return 0;
 
                 double cost = 0.0;
                 double kmNaarL = 0.31; // Gemiddeld 31 liter per 100km voor vrachtwagens scania.com geraadpleegd 19.05.2025
-                switch (vehicle.BrandstofType)
+                switch (vehicle.FuelType)
                 {
                     case "Diesel":
-                        cost = rit.AfstandKm * kmNaarL * 1.718; // Prijs diesel gemiddeld 1,718 incl. BTW  ANWB.nl geraadpleegd 19.05.2025
+                        cost = rit.DistanceKm * kmNaarL * 1.718; // Prijs diesel gemiddeld 1,718 incl. BTW  ANWB.nl geraadpleegd 19.05.2025
                         break;
                     case "Elektrisch":
-                        cost = rit.AfstandKm * 0.4; //"Op dit moment is de actuele stroomprijs gemiddeld € 0,25 per kWh (mei 2025)" ANWB.nl // km naar kwh 160 per 100km etruckacademy.nl geraadpleegd 19.05.2025
+                        cost = rit.DistanceKm * 0.4; //"Op dit moment is de actuele stroomprijs gemiddeld € 0,25 per kWh (mei 2025)" ANWB.nl // km naar kwh 160 per 100km etruckacademy.nl geraadpleegd 19.05.2025
                         break;
                     case "Benzine":
-                        cost = rit.AfstandKm * kmNaarL * 1.887; // Prijs benzine gemiddeld 1,887 incl. BTW ANWB.nl geraadpleegd 19.05.2025
+                        cost = rit.DistanceKm * kmNaarL * 1.887; // Prijs benzine gemiddeld 1,887 incl. BTW ANWB.nl geraadpleegd 19.05.2025
                         break;
                     case "Hybride":
-                        cost = rit.AfstandKm * (kmNaarL * 1.718 + 0.4) / 2; // gemiddelde van diesel en elektrisch
+                        cost = rit.DistanceKm * (kmNaarL * 1.718 + 0.4) / 2; // gemiddelde van diesel en elektrisch
                         break;
                     case "Anders":
-                        cost = rit.AfstandKm * kmNaarL * 1.718; // diesel
+                        cost = rit.DistanceKm * kmNaarL * 1.718; // diesel
                         break;
                     default:
                         break;
