@@ -14,7 +14,7 @@ export const LoadDegreeInfo: React.FC = () => {
                 if ("message" in totalLoadDegree) {
                     setError(totalLoadDegree.message);
                 } else {
-                    setChartData(totalLoadDegree.response);
+                    setChartData(totalLoadDegree.Data);
                 }
             } catch (err: any) {
                 setError(err.message);

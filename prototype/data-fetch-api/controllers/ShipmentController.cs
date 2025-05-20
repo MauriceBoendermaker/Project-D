@@ -10,9 +10,9 @@ namespace Controllers
     [Route("api/zending")]
     public class ShipmentController : ControllerBase
     {
-        private readonly JsonShipmentService _shipmentService;
+        private readonly IShipmentService _shipmentService;
 
-        public ShipmentController(JsonShipmentService shipmentService)
+        public ShipmentController(IShipmentService shipmentService)
         {
             _shipmentService = shipmentService;
         }
