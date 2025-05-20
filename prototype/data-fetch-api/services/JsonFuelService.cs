@@ -58,7 +58,8 @@ namespace Services
             {
                 Vehicle vehicle =  _context.Voertuigen.FirstOrDefault(v => v.VoertuigNummer == voertuigId);
 
-                var rit = _context.Ritten.Where(r => r.RitNummer == ritId).FirstOrDefault(r=> "TRK"+r.VehicleVoertuigId == voertuigId);
+                var rit = _context.Ritten.Where(r => r.RitNummer == ritId).FirstOrDefault(r=> r.Vehicle == vehicle);
+                Console.WriteLine("Vehicle: "+vehicle + "\n Rit: "+rit);
                 if (vehicle == null || rit == null) return 0;
 
                 double cost = 0.0;
