@@ -24,7 +24,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
           await fetchTotalLoadDegree();
         if ("message" in totalLoadDegree) setError(totalLoadDegree.message);
         else {
-          setChartData(totalLoadDegree.response);
+          setChartData(totalLoadDegree.Data);
         }
         setLoading(false);
       } catch (err: any) {
