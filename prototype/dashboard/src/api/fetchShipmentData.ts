@@ -115,14 +115,15 @@ export type TotalDegree = {
 
 export type TotalDegreeResponse =
   | {
-      response: TotalDegree[];
+      Message: string,
+      Data: TotalDegree[]
     }
   | error;
 export async function fetchTotalLoadDegree(): Promise<TotalDegreeResponse> {
   const response = await fetch(API_URL + "/beladingsgraad/totaal");
   if (response.ok) {
     const data = await response.json();
-    const output: TotalDegreeResponse = { response: data };
+    const output: TotalDegreeResponse = { Message: data.Message, Data: data.Data };
 
     return output;
   } else {
