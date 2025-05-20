@@ -10,11 +10,9 @@ namespace Services
     {
 
         private readonly AppDbContext _context;
-        private readonly IFuelService _fuelService;
 
-        public JsonFuelService(AppDbContext context, IFuelService fuelService){
+        public JsonFuelService(AppDbContext context){
             _context = context;
-            _fuelService = fuelService;
 
         }
         public async Task<IEnumerable<Vehicle>?> GetAllVehiclesAsync()
@@ -54,18 +52,18 @@ namespace Services
             return 0;
         }
 
-        public async Task<int> GetRitCostAsync(int voertuigId, int ritId)
+        public async Task<int> GetRitCostAsync(string voertuigId, string ritId)
         {
             try
             {
-                Vehicle vehicle = _context.Voertuigen.FirstOrDefault(v => Convert.ToInt32(v.VoertuigNummer) == voertuigId);
+                Vehicle vehicle =  _context.Voertuigen.FirstOrDefault(v => v.VoertuigNummer == voertuigId);
 
-                var rit = _context.Ritten.Where(r => Convert.ToInt32(r.RitNummer) == ritId).FirstOrDefault(r=> Convert.ToInt32(r.VehicleVoertuigId) == voertuigId);
+                var rit = _context.Ritten.Where(r => r.RitNummer == ritId).FirstOrDefault(r=> "TRK"+r.VehicleVoertuigId == voertuigId);
                 if (vehicle == null || rit == null) return 0;
 
                 double cost = 0.0;
                 double kmNaarL = 0.31; // Gemiddeld 31 liter per 100km voor vrachtwagens scania.com geraadpleegd 19.05.2025
-                switch (vehicle.brandstof_type){
+                switch (vehicle.BrandstofType){
                     case "Diesel":
                         cost = rit.AfstandKm * kmNaarL * 1.718; // Prijs diesel gemiddeld 1,718 incl. BTW  ANWB.nl geraadpleegd 19.05.2025
                         break;
