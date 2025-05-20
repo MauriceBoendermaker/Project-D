@@ -29,7 +29,7 @@ export const Nav = () => {
     }
   }, [showLogoutAlert]);
 
-  
+
   const location = useLocation();
   const currentPath = location.pathname;
   return (
@@ -52,9 +52,8 @@ export const Nav = () => {
                 </a>
                 <div className="nav-item dropdown">
                   <a
-                    className={`nav-link dropdown-toggle ${
-                      currentPath.startsWith("/planning") ? "active" : ""
-                    }`}
+                    className={`nav-link dropdown-toggle ${currentPath.startsWith("/planning") ? "active" : ""
+                      }`}
                     href="/planning"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -65,11 +64,10 @@ export const Nav = () => {
                   <ul className="dropdown-menu">
                     <li>
                       <a
-                        className={`dropdown-item ${
-                          currentPath === "/planning/toon-rit-overzicht"
-                            ? "active"
-                            : ""
-                        }`}
+                        className={`dropdown-item ${currentPath === "/planning/toon-rit-overzicht"
+                          ? "active"
+                          : ""
+                          }`}
                         href="/planning/toon-rit-overzicht"
                       >
                         <i className="fa-solid fa-calendar-days me-2"></i>
@@ -79,11 +77,10 @@ export const Nav = () => {
                     <hr />
                     <li>
                       <a
-                        className={`dropdown-item ${
-                          currentPath === "/planning/voeg-rit-toe"
-                            ? "active"
-                            : ""
-                        }`}
+                        className={`dropdown-item ${currentPath === "/planning/voeg-rit-toe"
+                          ? "active"
+                          : ""
+                          }`}
                         href="/planning/voeg-rit-toe"
                       >
                         <i className="fa-solid fa-plus me-2"></i>
@@ -94,9 +91,8 @@ export const Nav = () => {
                 </div>
                 <div className="nav-item dropdown">
                   <a
-                    className={`nav-link dropdown-toggle ${
-                      currentPath.startsWith("/admin") ? "active" : ""
-                    }`}
+                    className={`nav-link dropdown-toggle ${currentPath.startsWith("/admin") ? "active" : ""
+                      }`}
                     href="/admin"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -107,11 +103,10 @@ export const Nav = () => {
                   <ul className="dropdown-menu">
                     <li>
                       <a
-                        className={`dropdown-item ${
-                          currentPath === "/admin/voeg-voertuig-toe"
-                            ? "active"
-                            : ""
-                        }`}
+                        className={`dropdown-item ${currentPath === "/admin/voeg-voertuig-toe"
+                          ? "active"
+                          : ""
+                          }`}
                         href="/admin/voeg-voertuig-toe"
                       >
                         <i className="fas fa-truck me-2"></i>
@@ -120,11 +115,10 @@ export const Nav = () => {
                     </li>
                     <li>
                       <a
-                        className={`dropdown-item ${
-                          currentPath === "/admin/voeg-medewerker-toe"
-                            ? "active"
-                            : ""
-                        }`}
+                        className={`dropdown-item ${currentPath === "/admin/voeg-medewerker-toe"
+                          ? "active"
+                          : ""
+                          }`}
                         href="/admin/Medewerkers"
                       >
                         <i className="fas fa-user-tie me-2"></i>
@@ -133,34 +127,10 @@ export const Nav = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="nav-item dropdown">
-                  <a
-                    className={`nav-link dropdown-toggle ${
-                      currentPath.startsWith("/klanten") ? "active" : ""
-                    }`}
-                    href="/klanten"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Klanten
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a
-                        className={`dropdown-item ${
-                          currentPath === "/klanten/voeg-klant-toe"
-                            ? "active"
-                            : ""
-                        }`}
-                        href="/klanten/voeg-klant-toe"
-                      >
-                        <i className="fas fa-user-tie me-2"></i>
-                        Voeg klant toe
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <a href="/klanten/overzicht" className={currentPath === "/klanten/overzicht" ? "active" : ""}>
+                  Klanten
+                </a>
+
               </nav>
             </div>
           )}
@@ -187,11 +157,12 @@ export const Nav = () => {
               <span>Logout</span>
             </button>
           )}
-        </nav>
+        </nav >
         {showLogoutAlert && (
           <CustomAlert type="alert alert-warning" message="U bent uitgelogd!" />
-        )}
-      </div>
+        )
+        }
+      </div >
     </>
   );
 };

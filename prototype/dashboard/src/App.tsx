@@ -30,6 +30,7 @@ import { AddTrip } from "./components/planning/AddTrip";
 import { AddVehicle } from "./components/admin/AddVehicle";
 import { AddEmployee } from "./components/admin/AddEmployee";
 import { AddCustomer } from "./components/klanten/AddCustomer";
+import { CustomerOverview } from "components/klanten/CustumerOverview";
 import { Employees } from "components/admin/Employees";
 
 const App: React.FC = () => {
@@ -64,7 +65,7 @@ const App: React.FC = () => {
 
               {/* Klanten routes */}
               <Route path="/klanten/voeg-klant-toe" element={<AddCustomer />} />
-
+              <Route path="/klanten/overzicht" element={<CustomerOverview />} />
               {/* Public routes */}
               <Route path="/" element={<ChartsWrapper />} />
               <Route path="/verbruik" element={<FuelUsageInfo />} />
@@ -90,7 +91,7 @@ const App: React.FC = () => {
 
         <Footer />
       </Router>
-    </AuthProvider>
+    </AuthProvider >
   );
 };
 
