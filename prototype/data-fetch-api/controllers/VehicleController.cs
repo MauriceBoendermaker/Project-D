@@ -22,9 +22,9 @@ namespace Controllers
             var vehicles = await _vehicleService.GetAllVehiclesAsync();
             if (vehicles == null || vehicles.Count == 0)
             {
-                return NotFound(new { error = "Geen voertuigen gevonden." });
+                return NotFound(new Response { Message = "Geen voertuigen gevonden." });
             }
-            return Ok(vehicles);
+            return Ok(new Response { Data = vehicles });
         }
 
         [HttpGet("{id}")]
@@ -33,9 +33,9 @@ namespace Controllers
             var vehicle = await _vehicleService.GetVehicleByIdAsync(id);
             if (vehicle == null)
             {
-                return NotFound(new { error = $"voertuig met ID {id} niet gevonden." });
+                return NotFound(new Response { Message = $"voertuig met ID {id} niet gevonden." });
             }
-            return Ok(vehicle);
+            return Ok(new Response { Data = vehicle });
         }
 
         [HttpPost]
@@ -43,12 +43,12 @@ namespace Controllers
         {
             if (vehicle == null)
             {
-                return BadRequest(new { error = "Ongeldige voertuig data." });
+                return BadRequest(new Response { Message = "Ongeldige voertuig data." });
             }
 
             await _vehicleService.AddVehicleAsync(vehicle);
 
-            return Created("http://localhost:5000/api/voertuigen", new { message = "Voertuig succesvol toegevoegd." });
+            return Created("http://localhost:5000/api/voertuigen", new Response { Message = "Voertuig succesvol toegevoegd." });
         }
     }
 }

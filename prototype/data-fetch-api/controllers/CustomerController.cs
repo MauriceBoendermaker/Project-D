@@ -22,9 +22,9 @@ namespace Controllers
             var Customers = await _customerService.GetAllCustomersAsync();
             if (Customers == null || Customers.Count == 0)
             {
-                return NotFound(new { error = "Geen klanten gevonden." });
+                return NotFound(new Response { Message = "Geen klanten gevonden." });
             }
-            return Ok(Customers);
+            return Ok(new Response { Data = Customers });
         }
 
         [HttpGet("{id}")]
@@ -33,9 +33,9 @@ namespace Controllers
             Customer customer = await _customerService.GetCustomerByIdAsync(id);
             if (customer == null)
             {
-                return NotFound(new { error = $"Klant met ID {id} niet gevonden." });
+                return NotFound(new Response { Message = $"Klant met ID {id} niet gevonden." });
             }
-            return Ok(customer);
+            return Ok(new Response { Data = customer });
         }
 
         [HttpPost]
@@ -43,12 +43,12 @@ namespace Controllers
         {
             if (customer == null)
             {
-                return BadRequest(new { error = "Ongeldige klant data." });
+                return BadRequest(new Response { Message = "Ongeldige klant data." });
             }
 
             await _customerService.AddCustomerAsync(customer);
 
-            return Created("http://localhost:3000/api/klanten", new { message = "Klant succesvol toegevoegd." });
+            return Created("http://localhost:3000/api/klanten", new Response { Message = "Klant succesvol toegevoegd." });
         }
     }
 }

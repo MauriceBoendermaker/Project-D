@@ -21,7 +21,7 @@ namespace Controllers
         public async Task<IActionResult> GetAllShipments()
         {
             var shipments = await _shipmentService.GetAllShipments();
-            return shipments == null ? NotFound(new { error = "Geen zendingen gevonden.." }) : Ok(shipments);
+            return shipments == null ? NotFound(new Response { Message = "Geen zendingen gevonden.." }) : Ok(new Response { Data = shipments });
         }
 
         [HttpGet("maxcapaciteit")]
@@ -29,8 +29,8 @@ namespace Controllers
         {
             int maxCapacityKg = await _shipmentService.GetMaxCapacity(shipmentId);
             return maxCapacityKg < 0
-                ? NotFound(new { error = $"De zending met Id: {shipmentId} bestaat niet of het berekenen van de gegevens is niet mogelijk." })
-                : Ok(new { maxCapacity = maxCapacityKg });
+                ? NotFound(new Response { Message = $"De zending met Id: {shipmentId} bestaat niet of het berekenen van de gegevens is niet mogelijk." })
+                : Ok(new Response { Data = maxCapacityKg });
         }
 
         [HttpGet("beladingsgraad")]
@@ -38,8 +38,8 @@ namespace Controllers
         {
             double degree = await _shipmentService.GetLoadDegree(shipmentId);
             return degree < 0
-                ? NotFound(new { error = $"De zending met Id: {shipmentId} bestaat niet of het berekenen van de gegevens is niet mogelijk." })
-                : Ok(new { degree = degree });
+                ? NotFound(new Response { Message = $"De zending met Id: {shipmentId} bestaat niet of het berekenen van de gegevens is niet mogelijk." })
+                : Ok(new Response { Data = degree });
         }
 
         [HttpGet("beladingsgraad/totaal")]
@@ -47,8 +47,8 @@ namespace Controllers
         {
             List<LoadDegree>? degrees = await _shipmentService.GetTotalLoadDegree();
             return degrees == null
-                ? NotFound(new { error = "Geen zendingen beschikbaar." })
-                : Ok(degrees);
+                ? NotFound(new Response { Message = "Geen zendingen beschikbaar." })
+                : Ok(new Response { Data = degrees });
         }
 
         [HttpGet("beladingsgraad/gemiddeld")]
@@ -56,8 +56,8 @@ namespace Controllers
         {
             double averageDegree = await _shipmentService.GetAverageLoadDegree();
             return averageDegree < 0
-                ? NotFound(new { error = "Het berekenen van de gegevens is niet mogelijk." })
-                : Ok(new { averageDegree = averageDegree });
+                ? NotFound(new Response { Message = "Het berekenen van de gegevens is niet mogelijk." })
+                : Ok(new Response { Data = averageDegree });
         }
 
         [HttpGet("onbenutte-kilometers")]
@@ -65,8 +65,8 @@ namespace Controllers
         {
             int totalEmptyKilometers = await _shipmentService.GetTotalEmptyKilometers();
             return totalEmptyKilometers < 0
-                ? NotFound(new { error = "Het berekenen van de gegevens is niet mogelijk." })
-                : Ok(new { totalEmptyKilometers = totalEmptyKilometers });
+                ? NotFound(new Response { Message = "Het berekenen van de gegevens is niet mogelijk." })
+                : Ok(new Response { Data = totalEmptyKilometers });
         }
     }
 }

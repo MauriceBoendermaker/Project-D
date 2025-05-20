@@ -23,7 +23,7 @@ namespace Controllers
         public async Task<IActionResult> GetAllEmployees()
         {
             IEnumerable<Employee>? employees = await _employeeService.GetAllEmployees();
-            return employees != null ? Ok(employees) : NotFound("Er zijn momenteel geen medewerkers");
+            return employees != null ? Ok(new Response { Data = employees }) : NotFound(new Response { Message = "Er zijn momenteel geen medewerkers" });
         }
 
         [HttpGet("{id}")]
@@ -32,9 +32,9 @@ namespace Controllers
             Employee? employee = await _employeeService.GetEmployee(id);
             if (employee == null)
             {
-                return NotFound($"Medewerker met id: {id} niet gevonden.");
+                return NotFound(new Response { Message = $"Medewerker met id: {id} niet gevonden." });
             }
-            return Ok(employee);
+            return Ok(new Response { Data = Response });
         }
 
         [HttpPost("toevoegen")]
@@ -50,11 +50,11 @@ namespace Controllers
 
                 await _employeeService.AddEmployee(employeeDto);
                 await _emailService.SendRandomPassword(employeeDto.Email, await _emailService.GeneratePass());
-                return Created("http://localhost:3000/api/medewerkers/toevoegen", new { Message = "Medewerker succesvol toegevoegd." });
+                return Created("http://localhost:3000/api/medewerkers/toevoegen", new Response { Message = "Medewerker succesvol toegevoegd." });
             }
             catch
             {
-                return BadRequest("Er is een fout opgetreden");
+                return BadRequest(new Response { Message = "Er is een fout opgetreden" });
             }
         }
         [HttpPut]
@@ -62,7 +62,7 @@ namespace Controllers
         {
             bool result = await _employeeService.UpdateEmployee(id, emp);
 
-            return result ? Ok("Medewerker succesvol bijgewerkt.") : NotFound("Medewerker niet gevonden.");
+            return result ? Ok(new Response { Message = "Medewerker succesvol bijgewerkt." }) : NotFound(new Response { Message = "Medewerker niet gevonden." });
 
         }
 
@@ -72,10 +72,10 @@ namespace Controllers
             bool result = await _employeeService.DeleteEmployee(id);
             if (!result)
             {
-                return NotFound("Mederwerker niet gevonden");
+                return NotFound(new Response { Message = "Mederwerker niet gevonden" });
             }
 
-            return Ok("Medewerker succesvol verwijderd.");
+            return Ok(new Response { Message = "Medewerker succesvol verwijderd." });
         }
     }
 }
