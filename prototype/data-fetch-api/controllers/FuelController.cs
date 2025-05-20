@@ -20,9 +20,9 @@ namespace Controllers
             var result = await _fuelService.GetAllVehiclesAsync();
             if (result != null)
             {
-                return Ok(result);
+                return Ok(new Response { Data = result });
             }
-            return NotFound("Geen voertuigen gevonden");
+            return NotFound(new Response { Message = "Geen voertuigen gevonden" });
         }
 
         [HttpGet("gemiddelde/{voertuigId}")]
@@ -31,9 +31,9 @@ namespace Controllers
             var result = await _fuelService.GetVehicleAverageAsync(voertuigId);
             if (result != 0)
             {
-                return Ok($"Gemiddeld brandstofverbruik per rit voor voertuig {voertuigId}: {result} liter");
+                return Ok(new Response { Message = $"Gemiddeld brandstofverbruik per rit voor voertuig {voertuigId}: {result} liter" });
             }
-            return NotFound("Voertuig bestaat niet of geen ritten");
+            return NotFound(new Response { Message = "Voertuig bestaat niet of geen ritten" });
         }
 
         [HttpGet("kosten/{voertuigId}/{ritId}")]
@@ -42,9 +42,9 @@ namespace Controllers
             var result = await _fuelService.GetRitCostAsync(voertuigId, ritId);
             if (result != 0)
             {
-                return Ok($"De brandstofkosten voor rit {ritId} van voertuig {voertuigId} zijn: €{result}");
+                return Ok(new Response { Message = $"De brandstofkosten voor rit {ritId} van voertuig {voertuigId} zijn: €{result}" });
             }
-            return NotFound("Voertuig of rit niet gevonden");
+            return NotFound(new Response { Message = "Voertuig of rit niet gevonden" });
         }
     }
 }
