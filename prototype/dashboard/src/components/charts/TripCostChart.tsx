@@ -17,35 +17,31 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({
   useEffect(() => {
     const fetchKostenData = async () => {
       try {
-        const voertuigenResponse = await fetch(
-          "http://localhost:3000/api/brandstof/voertuigen"
+        const rittenResponse = await fetch(
+          "http://localhost:3000/api/brandstof/ritten"
         );
-        if (!voertuigenResponse.ok)
+        if (!rittenResponse.ok)
           throw new Error("Fout bij ophalen voertuigen");
 
-                const voertuigen = await voertuigenResponse.json();
-                console.log("voertuigen data:", JSON.stringify(voertuigen));
-                const kostenData: any[] = [];
+        const ritten = await rittenResponse.json();
+        console.log("ritten data:", JSON.stringify(ritten));
+        const kostenData: any[] = [];
 
-                for (const voertuig of voertuigen) {
-                    for (const rit of voertuig.ritten) {
-                        const kostenResponse = await fetch(
-                            `http://localhost:3000/api/brandstof/kosten/${voertuig.voertuig_id}/${rit.rit_id}`
-                        );
-                        if (kostenResponse.ok) {
-                            const tekst = await kostenResponse.text();
-                            const matches = tekst.match(/€\s*(\d+)/);
-                            const kosten = matches ? parseFloat(matches[1]) : 0;
-
-              kostenData.push({
-                label: `${voertuig.voertuig_id} - ${rit.rit_id}`,
-                kosten,
-              });
-            } else {
-              console.warn(
-                `Geen data voor ${voertuig.voertuig_id}/${rit.rit_id}`
-              );
-            }
+        for (const rit of ritten) {
+          const voertuigId = "TRK-"+(rit.voertuig_id - 1);
+          const kostenResponse = await fetch(`http://localhost:3000/api/brandstof/kosten/${voertuigId}/${rit.rit_id}`);
+          if (kostenResponse.ok) {
+            const tekst = await kostenResponse.text();
+            const matches = tekst.match(/€\s*(\d+)/);
+            const kosten = matches ? parseFloat(matches[1]) : 0;
+            kostenData.push({
+            label: `${voertuigId} - ${rit.rit_id}`,
+            kosten,
+            });
+          } else {
+            console.warn(
+              `Geen data voor ${voertuigId}/${rit.rit_id}`
+            );
           }
         }
 

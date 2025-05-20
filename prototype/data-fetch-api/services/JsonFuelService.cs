@@ -1,21 +1,41 @@
-using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 using Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Services
 {
     public class JsonFuelService : IFuelService
     {
+
+        private readonly AppDbContext _context;
+
+        public JsonFuelService(AppDbContext context){
+            _context = context;
+
+        }
         public async Task<IEnumerable<Vehicle>?> GetAllVehiclesAsync()
         {
             try
             {
-                string jsonVehicles = await File.ReadAllTextAsync("data/brandstof_data.json");
-                var vehicles = JsonSerializer.Deserialize<IEnumerable<Vehicle>>(jsonVehicles);
-                return vehicles;
+                return _context.Voertuigen;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error reading JSON: {ex.Message}");
+                Console.WriteLine($"Error reading Database: {ex.Message}");
+                return null;
+            }
+        }
+
+        public async Task<IEnumerable<Trip>?> GetAllTripsAsync()
+        {
+            try
+            {
+                return _context.Ritten;
+            }catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading Database: {ex.Message}");
                 return null;
             }
         }
@@ -24,8 +44,7 @@ namespace Services
         {
             try
             {
-                string jsonVehicles = await File.ReadAllTextAsync("data/brandstof_data.json");
-                var vehicles = JsonSerializer.Deserialize<IEnumerable<Vehicle>>(jsonVehicles);
+                var vehicles = _context.Voertuigen;
 
                 if (vehicles == null) return 0;
 
@@ -40,24 +59,43 @@ namespace Services
                 Console.WriteLine($"Error calculating average: {ex.Message}");
                 return 0;
             }
+            return 0;
         }
 
         public async Task<int> GetRitCostAsync(string voertuigId, string ritId)
         {
             try
             {
-                string jsonVehicles = await File.ReadAllTextAsync("data/brandstof_data.json");
-                var vehicles = JsonSerializer.Deserialize<IEnumerable<Vehicle>>(jsonVehicles);
+                Vehicle vehicle =  _context.Voertuigen.FirstOrDefault(v => v.VoertuigNummer == voertuigId);
 
-                if (vehicles == null) return 0;
+                var rit = _context.Ritten.Where(r => r.RitNummer == ritId).FirstOrDefault(r=> r.VehicleVoertuigId == vehicle.VoertuigId);
+                if (vehicle == null || rit == null) return 0;
 
-                var vehicle = vehicles.FirstOrDefault(v => v.VoertuigNummer == voertuigId);
-                if (vehicle == null || vehicle.Ritten == null) return 0;
+                double cost = 0.0;
+                double kmNaarL = 0.31; // Gemiddeld 31 liter per 100km voor vrachtwagens scania.com geraadpleegd 19.05.2025
+                switch (vehicle.BrandstofType)
+                {
+                    case "Diesel":
+                        cost = rit.AfstandKm * kmNaarL * 1.718; // Prijs diesel gemiddeld 1,718 incl. BTW  ANWB.nl geraadpleegd 19.05.2025
+                        break;
+                    case "Elektrisch":
+                        cost = rit.AfstandKm * 0.4; //"Op dit moment is de actuele stroomprijs gemiddeld € 0,25 per kWh (mei 2025)" ANWB.nl // km naar kwh 160 per 100km etruckacademy.nl geraadpleegd 19.05.2025
+                        break;
+                    case "Benzine":
+                        cost = rit.AfstandKm * kmNaarL * 1.887; // Prijs benzine gemiddeld 1,887 incl. BTW ANWB.nl geraadpleegd 19.05.2025
+                        break;
+                    case "Hybride":
+                        cost = rit.AfstandKm * (kmNaarL * 1.718 + 0.4) / 2; // gemiddelde van diesel en elektrisch
+                        break;
+                    case "Anders":
+                        cost = rit.AfstandKm * kmNaarL * 1.718; // diesel
+                        break;
+                    default:
+                        break;
+                }
+                return Convert.ToInt32(cost);
 
-                var rit = vehicle.Ritten.FirstOrDefault(r => r.RitNummer == ritId);
-                if (rit == null) return 0;
 
-                return Convert.ToInt32(rit.BrandstofVerbruikL * 1.8690); // Prijs diesel gemmideld 1,8690 incl. BTW (1,5446 excl.) ANWB.nl geraadpleegd 07.04.2025
             }
             catch (Exception ex)
             {
