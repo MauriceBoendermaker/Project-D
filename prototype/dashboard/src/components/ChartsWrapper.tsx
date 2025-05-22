@@ -10,7 +10,7 @@ export const ChartsWrapper = () => {
 
   const chartConfigs = [
     // { type: "fuel", id: "fuelChart" },
-    // { type: "tripCost", id: "tripChart" },
+    { type: "tripCost", id: "tripChart" },
     { type: "Beladingsgraad", id: "beladingsgraadChart" },
   ];
 

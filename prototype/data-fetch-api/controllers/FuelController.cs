@@ -31,7 +31,7 @@ namespace Controllers
             var result = await _fuelService.GetAllTripsAsync();
             if (result != null)
             {
-                return Ok(result);
+                return Ok(new Response { Data = result });
             }
             return NotFound("Geen ritten gevonden");
         }
