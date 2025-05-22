@@ -10,5 +10,6 @@ namespace Services
         Task<IEnumerable<Trip>?> GetAllTripsAsync();
         Task<int> GetVehicleAverageAsync(int voertuigId);
         Task<int> GetRitCostAsync(string voertuigId, string ritId);
+        Task<IEnumerable<TripCost>?> GetAllTripCostsAsync();
     }
 }

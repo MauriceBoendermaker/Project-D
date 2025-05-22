@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Services
         {
             try
             {
-                return await _context.Vehicles.ToListAsync();
+                return await _context.Vehicles.Include(v => v.Trips).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -63,7 +64,7 @@ namespace Services
             }
         }
 
-        public async Task<int> GetRitCostAsync(string voertuigId, string ritId)
+        public async Task<int> GetRitCostAsync(string vehicleNumber, string ritId)
         {
             try
             {
@@ -71,7 +72,7 @@ namespace Services
 
                 if (vehicles == null) return 0;
 
-                Vehicle? vehicle = vehicles.FirstOrDefault(v => v.VehicleNumber == voertuigId);
+                Vehicle? vehicle = vehicles.FirstOrDefault(v => v.VehicleNumber == vehicleNumber);
 
                 var rit = _context.Trips.Where(r => r.TripNumber == ritId).FirstOrDefault(r => r.VehicleId == vehicle.VehicleId);
                 if (vehicle == null || rit == null) return 0;
@@ -110,9 +111,26 @@ namespace Services
         }
 
         //TODO:
-        // public async GetAllTripCostsAsync()
-        // {
+        public async Task<IEnumerable<TripCost>?> GetAllTripCostsAsync()
+        {
+            List<TripCost> costs = new List<TripCost>();
+            IEnumerable<Vehicle>? Vehicles = await GetAllVehiclesAsync();
+            if (Vehicles == null || Vehicles.Count() == 0) return null;
+            foreach (Vehicle v in Vehicles)
+            {
+                if (v.Trips == null) continue;
+                foreach (Trip t in v.Trips)
+                {
+                    double cost = await GetRitCostAsync(v.VehicleNumber, t.TripNumber);
+                    TripCost tripCost = new TripCost(t.TripNumber, v.VehicleNumber, t.Date, cost);
 
-        // }
+
+                    costs.Add(tripCost);
+
+                }
+            }
+
+            return costs;
+        }
     }
 }

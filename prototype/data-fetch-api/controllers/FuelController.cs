@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Services;
@@ -58,6 +59,21 @@ namespace Controllers
                 return Ok(new Response { Message = $"De brandstofkosten voor rit {ritId} van voertuig {voertuigId} zijn: €{result}" });
             }
             return NotFound(new Response { Message = "Voertuig of rit niet gevonden" });
+        }
+
+        [HttpGet("totalekosten")]
+        public async Task<IActionResult> GetTotalFuelCost()
+        {
+            Stopwatch sp = new();
+            sp.Start();
+            IEnumerable<TripCost>? result = await _fuelService.GetAllTripCostsAsync();
+            sp.Stop();
+            Console.WriteLine(sp.Elapsed);
+            if (result != null)
+            {
+                return Ok(new Response { Data = result });
+            }
+            return NotFound(new Response { Message = "Er is een fout opgetreden tijdens het bereken van de kosten." });
         }
     }
 }
