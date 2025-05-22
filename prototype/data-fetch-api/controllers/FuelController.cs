@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using Services;
 
 namespace Controllers
@@ -28,7 +29,7 @@ namespace Controllers
         [HttpGet("ritten")]
         public async Task<IActionResult> GetTrips()
         {
-            var result = await _fuelService.GetAllTripsAsync();
+            IEnumerable<Trip>? result = await _fuelService.GetAllTripsAsync();
             if (result != null)
             {
                 return Ok(new Response { Data = result });

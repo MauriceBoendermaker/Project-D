@@ -8,6 +8,7 @@ interface TripCostChartProps {
 }
 
 export interface Trip {
+  id: number;
   tripNumber: string;
   date: string; // ISO date string, can also be Date if parsed
   distanceKm: number;
@@ -39,24 +40,23 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({
         if (!rittenResponse.ok) throw new Error("Fout bij ophalen voertuigen");
 
         const ritten: TripResponse = await rittenResponse.json();
-        console.log("ritten data:", JSON.stringify(ritten));
         const kostenData: any[] = [];
 
         for (const rit of ritten.data) {
-          const voertuigId = "TRK-" + (rit.tripNumber - 1);
+          const voertuigId = "TRK-" + (rit.id - 1);
           const kostenResponse = await fetch(
-            `http://localhost:3000/api/brandstof/kosten/${voertuigId}/${rit.rit_id}`
+            `http://localhost:3000/api/brandstof/kosten/${voertuigId}/${rit.id}`
           );
           if (kostenResponse.ok) {
             const tekst = await kostenResponse.text();
             const matches = tekst.match(/€\s*(\d+)/);
             const kosten = matches ? parseFloat(matches[1]) : 0;
             kostenData.push({
-              label: `${voertuigId} - ${rit.rit_id}`,
+              label: `${voertuigId} - ${rit.id}`,
               kosten,
             });
           } else {
-            console.warn(`Geen data voor ${voertuigId}/${rit.rit_id}`);
+            console.warn(`Geen data voor ${voertuigId}/${rit.id}`);
           }
         }
 

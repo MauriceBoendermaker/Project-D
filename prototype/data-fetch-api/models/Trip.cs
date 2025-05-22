@@ -9,7 +9,6 @@ namespace Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [JsonIgnore]
         public int Id { get; set; } // Primary key (en auto increment)
 
         public string TripNumber { get; set; } = string.Empty;

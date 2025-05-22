@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class JsonFuelService : IFuelService
+    public class FuelService : IFuelService
     {
 
         private readonly AppDbContext _context;
 
-        public JsonFuelService(AppDbContext context){
+        public FuelService(AppDbContext context)
+        {
             _context = context;
 
         }
@@ -19,7 +20,7 @@ namespace Services
         {
             try
             {
-                return _context.Vehicles;
+                return await _context.Vehicles.ToListAsync();
             }
             catch (Exception ex)
             {
@@ -32,8 +33,9 @@ namespace Services
         {
             try
             {
-                return _context.Trips;
-            }catch (Exception ex)
+                return await _context.Trips.ToListAsync();
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine($"Error reading Database: {ex.Message}");
                 return null;
@@ -44,7 +46,7 @@ namespace Services
         {
             try
             {
-                var vehicles = _context.Vehicles;
+                var vehicles = await GetAllVehiclesAsync();
 
                 if (vehicles == null) return 0;
 
@@ -59,16 +61,19 @@ namespace Services
                 Console.WriteLine($"Error calculating average: {ex.Message}");
                 return 0;
             }
-            return 0;
         }
 
         public async Task<int> GetRitCostAsync(string voertuigId, string ritId)
         {
             try
             {
-                Vehicle vehicle =  _context.Vehicles.FirstOrDefault(v => v.VehicleNumber == voertuigId);
+                IEnumerable<Vehicle>? vehicles = await GetAllVehiclesAsync();
 
-                var rit = _context.Trips.Where(r => r.TripNumber == ritId).FirstOrDefault(r=> r.VehicleId == vehicle.VehicleId);
+                if (vehicles == null) return 0;
+
+                Vehicle? vehicle = vehicles.FirstOrDefault(v => v.VehicleNumber == voertuigId);
+
+                var rit = _context.Trips.Where(r => r.TripNumber == ritId).FirstOrDefault(r => r.VehicleId == vehicle.VehicleId);
                 if (vehicle == null || rit == null) return 0;
 
                 double cost = 0.0;
@@ -103,5 +108,11 @@ namespace Services
                 return 0;
             }
         }
+
+        //TODO:
+        // public async GetAllTripCostsAsync()
+        // {
+
+        // }
     }
 }
