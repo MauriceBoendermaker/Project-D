@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { TripCostChart } from "components/charts/TripCostChart";
 import "assets/scss/components/tables/ChartTableCard.scss";
 
-interface TripCost {
+export interface TripCost {
   tripNumber: string;
   vehicleNumber: string;
   date: string;

@@ -2,81 +2,60 @@ import React, { useEffect, useState } from "react";
 import ReactECharts from "echarts-for-react";
 import { StyledChartWrapper } from "../StyledChartWrapper";
 import { TRIP_COST_TITLE } from "components/ChartTitles";
+import {
+  TotalCostResponse,
+  TripCost,
+} from "components/ChartInfo/CostChartInfo";
 
 interface TripCostChartProps {
   delayIndex?: number;
 }
 
-export interface Trip {
-  id: number;
-  tripNumber: string;
-  date: string;
-  distanceKm: number;
-  time: number;
-  destinationId: number;
-  customerId: number;
-  driverId: number;
-  createdAt: string;
-}
-
 export type TripResponse = {
   message: string;
-  data: Trip[];
+  data: TripCost[];
 };
 
 export const TripCostChart: React.FC<TripCostChartProps> = ({
   delayIndex = 0,
 }) => {
-  const [chartData, setChartData] = useState<any[]>([]);
+  const [chartData, setChartData] = useState<TripCost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchKostenData = async () => {
       try {
-        const rittenResponse = await fetch(
-          "http://localhost:3000/api/brandstof/ritten"
+        const ApiResponse = await fetch(
+          "http://localhost:3000/api/brandstof/totalekosten"
         );
-        if (!rittenResponse.ok) throw new Error("Fout bij ophalen voertuigen");
 
-        const ritten: TripResponse = await rittenResponse.json();
-        const kostenData: any[] = [];
-
-        for (const rit of ritten.data) {
-          const voertuigId = "TRK-" + (rit.id - 1);
-          const kostenResponse = await fetch(
-            `http://localhost:3000/api/brandstof/kosten/${voertuigId}/${rit.id}`
-          );
-          if (kostenResponse.ok) {
-            const json = await kostenResponse.json();
-            
-            const matches = json.match(/€\s*(\d+)/);
-            const kosten = matches ? parseFloat(matches[1]) : 0;
-            kostenData.push({
-              label: `${voertuigId} - ${rit.id}`,
-              kosten,
-            });
+        if (ApiResponse.ok) {
+          const json: TotalCostResponse = await ApiResponse.json();
+          console.log(json);
+          if (json.message == null) {
+            setChartData(json.data);
+            setLoading(false);
           } else {
-            console.warn(`Geen data voor ${voertuigId}/${rit.id}`);
+            setError(json.message);
+            setLoading(false);
           }
+        } else {
+          setError("API response was not ok.");
+          setLoading(false);
         }
-
-        setChartData(kostenData);
-        setLoading(false);
-      } catch (err: any) {
-        console.error("Fout bij ophalen:", err);
-        setError(err.message);
+      } catch (e) {
+        console.error(e);
+        setError("Er is een fout opgetreden bij het ophalen van de data.");
         setLoading(false);
       }
     };
-
     fetchKostenData();
   }, []);
   const chartOptions = {
     tooltip: {},
     xAxis: {
       type: "category",
-      data: chartData.map((item) => String(item.label)),
     },
     yAxis: {
       type: "value",
@@ -87,7 +66,7 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({
       {
         name: "Kosten in Euro",
         type: "bar",
-        data: chartData.map((item) => item.kosten),
+        data: chartData.map((item) => item.cost),
         itemStyle: {
           color: "#95191D",
           barBorderRadius: [5, 5, 0, 0],
