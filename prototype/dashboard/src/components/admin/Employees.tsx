@@ -5,13 +5,18 @@ import {
   EmployeeFormModal,
 } from "components/misc/EmployeeFormModal";
 interface Employee {
-  Id: number;
-  Name: string;
-  Role: string;
-  Email: string;
-  Available: boolean;
+  id: number;
+  name: string;
+  type: string;
+  email: string;
+  available: boolean;
   VehicleId?: number;
   CreatedAt: string;
+}
+
+interface EmployeeApiResponse {
+  data: Employee[];
+  message: string;
 }
 
 export const Employees = () => {
@@ -28,12 +33,12 @@ export const Employees = () => {
   });
 
   const HandleEdit = (employee: Employee) => {
-    console.log(employee.Id);
-    setId(employee.Id);
+    console.log(employee.id);
+    setId(employee.id);
     setFormData({
-      name: employee.Name,
-      role: employee.Role,
-      email: employee.Email,
+      name: employee.name,
+      role: employee.type,
+      email: employee.email,
       vehicleId: employee.VehicleId,
     });
     setShowEmployeesForm(true);
@@ -60,7 +65,7 @@ export const Employees = () => {
         setDeleted(true);
       }
 
-      setEmployees((prev) => prev?.filter((employee) => employee.Id !== Id));
+      setEmployees((prev) => prev?.filter((employee) => employee.id !== Id));
     } catch (error) {
       SetError("Fout opgetreden tijdens het verwijderen.");
     }
@@ -71,8 +76,9 @@ export const Employees = () => {
       try {
         const response = await fetch("http://localhost:3000/api/medewerkers");
         if (response.ok) {
-          const employees: Employee[] = await response.json();
-          setEmployees(employees);
+          const employees: EmployeeApiResponse = await response.json();
+          console.log(employees);
+          setEmployees(employees.data);
         } else {
           SetError("message" in response && response.message);
         }
@@ -110,12 +116,12 @@ export const Employees = () => {
                   </thead>
                   <tbody>
                     {currentEmployees?.map((e: Employee) => (
-                      <tr key={e.Id}>
-                        <td>{e.Name}</td>
-                        <td>{e.Role}</td>
-                        <td>{e.Email}</td>
+                      <tr key={e.id}>
+                        <td>{e.name}</td>
+                        <td>{e.type}</td>
+                        <td>{e.email}</td>
                         <td>
-                          <button onClick={() => HandleDelete(e.Id)}>
+                          <button onClick={() => HandleDelete(e.id)}>
                             <i className="fas fa-user-minus me-2">
                               <span className="ms-2">verwijderen</span>
                             </i>

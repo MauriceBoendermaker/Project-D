@@ -28,7 +28,6 @@ export const CostChartInfo: React.FC = () => {
 
         if (ApiResponse.ok) {
           const json: TotalCostResponse = await ApiResponse.json();
-          console.log(json);
           if (json.message == null) {
             setChartData(json.data);
           } else {
