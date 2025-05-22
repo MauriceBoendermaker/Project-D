@@ -9,8 +9,8 @@ export const ChartsWrapper = () => {
   const [zoomedChart, setZoomedChart] = useState<number | null>(null);
 
   const chartConfigs = [
-    { type: "fuel", id: "fuelChart" },
-    { type: "tripCost", id: "tripChart" },
+    // { type: "fuel", id: "fuelChart" },
+    // { type: "tripCost", id: "tripChart" },
     { type: "Beladingsgraad", id: "beladingsgraadChart" },
   ];
 
@@ -33,8 +33,9 @@ export const ChartsWrapper = () => {
           return (
             <div
               key={cfg.id}
-              className={`chart-container ${isZoomed ? "col-12 zoomed" : isHidden ? "d-none" : "col-md-6"
-                }`}
+              className={`chart-container ${
+                isZoomed ? "col-12 zoomed" : isHidden ? "d-none" : "col-md-6"
+              }`}
             >
               {cfg.type === "fuel" ? (
                 <FuelChart delayIndex={i} />

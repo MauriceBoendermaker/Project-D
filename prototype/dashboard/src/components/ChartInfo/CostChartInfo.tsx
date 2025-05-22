@@ -13,6 +13,7 @@ export const CostChartInfo: React.FC = () => {
         const voertuigenResponse = await fetch(
           "http://localhost:3000/api/brandstof/voertuigen"
         );
+        console.log("API RESPONSE:" + voertuigenResponse);
         if (!voertuigenResponse.ok)
           throw new Error("Fout bij ophalen voertuigen");
 

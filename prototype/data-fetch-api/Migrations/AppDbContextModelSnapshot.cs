@@ -134,15 +134,11 @@ namespace data_fetch_api.Migrations
                     b.Property<int>("MaxCapacityKg")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ShipmentId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("VehicleId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("VehicleNumber")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("VehicleId");
 
                     b.ToTable("Shipments");
                 });
@@ -222,17 +218,6 @@ namespace data_fetch_api.Migrations
                     b.HasKey("VehicleId");
 
                     b.ToTable("Vehicles");
-                });
-
-            modelBuilder.Entity("Models.Shipment", b =>
-                {
-                    b.HasOne("Models.Vehicle", "Vehicle")
-                        .WithMany()
-                        .HasForeignKey("VehicleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Vehicle");
                 });
 
             modelBuilder.Entity("Models.Trip", b =>

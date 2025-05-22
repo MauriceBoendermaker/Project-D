@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace data_fetch_api.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialSetup : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -65,6 +65,24 @@ namespace data_fetch_api.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Shipments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    VehicleNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    Destination = table.Column<string>(type: "TEXT", nullable: false),
+                    MaxCapacityKg = table.Column<int>(type: "INTEGER", nullable: false),
+                    CurrentLoadKg = table.Column<int>(type: "INTEGER", nullable: false),
+                    EmptyKilometers = table.Column<int>(type: "INTEGER", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Shipments", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Vehicles",
                 columns: table => new
                 {
@@ -81,31 +99,6 @@ namespace data_fetch_api.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Vehicles", x => x.VehicleId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Shipments",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    VehicleId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ShipmentId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Destination = table.Column<string>(type: "TEXT", nullable: false),
-                    MaxCapacityKg = table.Column<int>(type: "INTEGER", nullable: false),
-                    CurrentLoadKg = table.Column<int>(type: "INTEGER", nullable: false),
-                    EmptyKilometers = table.Column<int>(type: "INTEGER", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Shipments", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Shipments_Vehicles_VehicleId",
-                        column: x => x.VehicleId,
-                        principalTable: "Vehicles",
-                        principalColumn: "VehicleId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -135,11 +128,6 @@ namespace data_fetch_api.Migrations
                         principalColumn: "VehicleId",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Shipments_VehicleId",
-                table: "Shipments",
-                column: "VehicleId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Trips_VehicleId",

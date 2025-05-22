@@ -17,20 +17,20 @@ namespace Services
         {
             try
             {
-                await _context.Database.ExecuteSqlRawAsync("DELETE FROM Ritten");
+                await _context.Database.ExecuteSqlRawAsync("DELETE FROM Trips");
             }
             catch (Exception)
             {
-                Console.WriteLine("Tabel 'Ritten' bestaat niet, overslaan.");
+                Console.WriteLine("Tabel 'Trips' bestaat niet, overslaan.");
             }
 
             try
             {
-                await _context.Database.ExecuteSqlRawAsync("DELETE FROM Voertuigen");
+                await _context.Database.ExecuteSqlRawAsync("DELETE FROM Vehicles");
             }
             catch (Exception)
             {
-                Console.WriteLine("Tabel 'Voertuigen' bestaat niet, overslaan.");
+                Console.WriteLine("Tabel 'Vehicles' bestaat niet, overslaan.");
             }
 
             var json = await File.ReadAllTextAsync(brandstofDataPath);
@@ -42,50 +42,15 @@ namespace Services
                 return;
             }
 
-            foreach (var vehicle in vehicles)
-            {
-                var newVehicle = new Vehicle
-                {
-                    LicensePlate = vehicle.LicensePlate,
-                    Brand = vehicle.Brand,
-                    Model = vehicle.Model,
-                    FuelType = vehicle.FuelType,
-                    MaximumCapacity = vehicle.MaximumCapacity,
-                    CreatedAt = DateTime.UtcNow
-                };
-                _context.Vehicles.Add(newVehicle);
-                await _context.SaveChangesAsync();
-
-                if (vehicle.Trips != null)
-                {
-                    foreach (var rit in vehicle.Trips)
-                    {
-                        var newRit = new Trip
-                        {
-                            TripNumber = rit.TripNumber,
-                            Date = rit.Date,
-                            DistanceKm = rit.DistanceKm,
-                            Time = rit.Time,
-                            FuelUsage = rit.FuelUsage,
-                            DestinationId = rit.DestinationId,
-                            CustomerId = rit.CustomerId,
-                            DriverId = rit.DriverId,
-                            VehicleId = newVehicle.VehicleId,
-                            CreatedAt = DateTime.UtcNow
-                        };
-                    _context.Trips.Add(newRit);
-                    }
-                }
-            }
-
-            await _context.SaveChangesAsync();
-            Console.WriteLine("Voertuigen en ritten succesvol geïmporteerd zonder dubbele entries.");
+            await _context.Vehicles.AddRangeAsync(vehicles);
+            int AffectedRows = await _context.SaveChangesAsync();
+            Console.WriteLine(" Voertuigen en ritten succesvol geïmporteerd zonder dubbele entries.");
         }
 
         public async Task ImportShipmentsAsync(string shipmentDataPath)
         {
             var json = await File.ReadAllTextAsync(shipmentDataPath);
-            var shipmentImports = JsonSerializer.Deserialize<List<ShipmentImport>>(json);
+            var shipmentImports = JsonSerializer.Deserialize<List<Shipment>>(json);
 
             if (shipmentImports == null)
             {
@@ -93,43 +58,37 @@ namespace Services
                 return;
             }
 
-            foreach (var shipmentImport in shipmentImports)
-            {
-                var voertuigEntity = await _context.Vehicles
-                    .FirstOrDefaultAsync(v => v.LicensePlate == shipmentImport.VehicleId);
+            // foreach (var shipmentImport in shipmentImports)
+            // {
+            //     var voertuigEntity = await _context.Vehicles
+            //         .FirstOrDefaultAsync(v => v.LicensePlate == shipmentImport.VehicleId);
 
-                if (voertuigEntity == null)
-                {
-                    Console.WriteLine($"Voertuig niet gevonden voor zending met shipment_id {shipmentImport.ShipmentId}");
-                    continue;
-                }
+            //     if (voertuigEntity == null)
+            //     {
+            //         Console.WriteLine($"Voertuig niet gevonden voor zending met shipment_id {shipmentImport.ShipmentId}");
+            //         continue;
+            //     }
 
-                var shipment = new Shipment
-                {
-                    ShipmentId = shipmentImport.ShipmentId,
-                    VehicleId = voertuigEntity.VehicleId,
-                    Destination = shipmentImport.Destination,
-                    MaxCapacityKg = shipmentImport.MaxCapacityKg,
-                    CurrentLoadKg = shipmentImport.CurrentLoadKg,
-                    EmptyKilometers = shipmentImport.EmptyKilometers,
-                    CreatedAt = DateTime.UtcNow
-                };
+            //     var shipment = new Shipment
+            //     {
+            //         ShipmentId = shipmentImport.ShipmentId,
+            //         VehicleId = voertuigEntity.VehicleId,
+            //         Destination = shipmentImport.Destination,
+            //         MaxCapacityKg = shipmentImport.MaxCapacityKg,
+            //         CurrentLoadKg = shipmentImport.CurrentLoadKg,
+            //         EmptyKilometers = shipmentImport.EmptyKilometers,
+            //         CreatedAt = DateTime.UtcNow
+            //     };
 
-                _context.Shipments.Add(shipment);
-            }
+            //     _context.Shipments.Add(shipment);
+            // }
 
+
+            await _context.AddRangeAsync(shipmentImports);
             await _context.SaveChangesAsync();
             Console.WriteLine("Zendingen succesvol geïmporteerd.");
         }
     }
 
-    public class ShipmentImport
-    {
-        public int ShipmentId { get; set; }
-        public string VehicleId { get; set; } = string.Empty;
-        public string Destination { get; set; } = string.Empty;
-        public int MaxCapacityKg { get; set; }
-        public int CurrentLoadKg { get; set; }
-        public int EmptyKilometers { get; set; }
-    }
+
 }

@@ -9,20 +9,26 @@ namespace Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [JsonIgnore]
         public int Id { get; set; } // Primary key (en auto increment)
 
         public string TripNumber { get; set; } = string.Empty;
 
         [ForeignKey("Vehicle")]
+        [JsonIgnore]
         public int VehicleId { get; set; } // Foreign key naar Voertuig
+        [JsonIgnore]
+
 
         public Vehicle Vehicle { get; set; } = null!;
+
 
         public DateTime? Date { get; set; }
 
         public int DistanceKm { get; set; }
 
         public int Time { get; set; }
+        [JsonIgnore]
 
         public int FuelUsage { get; set; }
 

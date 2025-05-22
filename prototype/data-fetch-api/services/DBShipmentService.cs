@@ -58,7 +58,7 @@ namespace Services
                 var Shipments = await GetAllShipments();
                 if (Shipments == null) return -1;
 
-                var shipment = Shipments.FirstOrDefault(x => x.ShipmentId == shipmentId);
+                var shipment = Shipments.FirstOrDefault(x => x.Id == shipmentId);
                 if (shipment == null) return -1;
 
                 return Math.Round((double)shipment.CurrentLoadKg / shipment.MaxCapacityKg, 4);
@@ -83,7 +83,7 @@ namespace Services
                 var Shipments = await GetAllShipments();
                 if (Shipments == null) return -1;
 
-                var shipment = Shipments.FirstOrDefault(x => x.ShipmentId == shipmentId);
+                var shipment = Shipments.FirstOrDefault(x => x.Id == shipmentId);
                 return shipment != null ? shipment.MaxCapacityKg : -1;
             }
             catch (Exception e)
@@ -126,7 +126,7 @@ namespace Services
 
                 var loadDegrees = Shipments.Select(x => new LoadDegree
                 {
-                    ShipmentId = x.ShipmentId,
+                    ShipmentId = x.Id,
                     Degree = Math.Round((double)x.CurrentLoadKg / x.MaxCapacityKg, 4)
                 }).ToList();
 

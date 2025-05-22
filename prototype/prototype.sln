@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data-fetch-api", "data-fetch-api\data-fetch-api.csproj", "{C47FF53C-F767-4C28-F23B-FA4FDE4BCB4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data-fetch-api (1)", "data-fetch-api (1)", "{C8924A77-0C30-470E-4AF2-A29403E7F8F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "integrationTests", "data-fetch-api\integrationTests\integrationTests.csproj", "{BDB9924B-C783-C369-3D33-F54379E79F9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C47FF53C-F767-4C28-F23B-FA4FDE4BCB4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47FF53C-F767-4C28-F23B-FA4FDE4BCB4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47FF53C-F767-4C28-F23B-FA4FDE4BCB4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47FF53C-F767-4C28-F23B-FA4FDE4BCB4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB9924B-C783-C369-3D33-F54379E79F9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB9924B-C783-C369-3D33-F54379E79F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB9924B-C783-C369-3D33-F54379E79F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB9924B-C783-C369-3D33-F54379E79F9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BDB9924B-C783-C369-3D33-F54379E79F9F} = {C8924A77-0C30-470E-4AF2-A29403E7F8F1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65C41DBC-310F-4DB3-BE64-4871F02F79F6}
+	EndGlobalSection
+EndGlobal
