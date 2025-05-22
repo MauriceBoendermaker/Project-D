@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { TripCostChart } from "components/charts/TripCostChart";
 import "assets/scss/components/tables/ChartTableCard.scss";
 
-export interface TripCost {
+interface TripCost {
   tripNumber: string;
   vehicleNumber: string;
   date: string;
   cost: number;
 }
 
-type TotalCostResponse = {
+export type TotalCostResponse = {
   message: string;
   data: TripCost[];
 };
@@ -60,7 +60,7 @@ export const CostChartInfo: React.FC = () => {
             </thead>
             <tbody>
               {chartData.map((item) => (
-                <tr>
+                <tr key={crypto.randomUUID()}>
                   <td>{item.vehicleNumber}</td>
                   <td>{item.tripNumber}</td>
                   <td>{new Date(item.date).toLocaleDateString("nl-NL")}</td>

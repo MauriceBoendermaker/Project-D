@@ -10,13 +10,13 @@ interface TripCostChartProps {
 export interface Trip {
   id: number;
   tripNumber: string;
-  date: string; // ISO date string, can also be Date if parsed
+  date: string;
   distanceKm: number;
-  time: number; // Assuming this is duration in minutes
+  time: number;
   destinationId: number;
   customerId: number;
   driverId: number;
-  createdAt: string; // ISO date string
+  createdAt: string;
 }
 
 export type TripResponse = {
@@ -48,8 +48,9 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({
             `http://localhost:3000/api/brandstof/kosten/${voertuigId}/${rit.id}`
           );
           if (kostenResponse.ok) {
-            const tekst = await kostenResponse.text();
-            const matches = tekst.match(/€\s*(\d+)/);
+            const json = await kostenResponse.json();
+            
+            const matches = json.match(/€\s*(\d+)/);
             const kosten = matches ? parseFloat(matches[1]) : 0;
             kostenData.push({
               label: `${voertuigId} - ${rit.id}`,
