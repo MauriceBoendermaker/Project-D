@@ -39,7 +39,7 @@ namespace Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new Response { Message = $"Fout bij toevoegen rit: {ex.Message}" });
+                return BadRequest(new Response { Message = $"Fout bij toevoegen rit: {ex.Message}" });
             }
         }
     }

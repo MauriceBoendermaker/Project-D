@@ -45,6 +45,8 @@ export const TripOverview = () => {
             extendedProps: { rit },
           }));
 
+          console.warn(calendarEvents);
+
           setEvents(calendarEvents);
         }
       } catch (error) {
