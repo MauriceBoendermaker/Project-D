@@ -30,7 +30,11 @@ import { AddTrip } from "./components/planning/AddTrip";
 import { AddVehicle } from "./components/admin/AddVehicle";
 import { AddEmployee } from "./components/admin/AddEmployee";
 import { AddCustomer } from "./components/klanten/AddCustomer";
+<<<<<<< Updated upstream
 
+=======
+import { CustomerOverview } from "components/klanten/CustomerOverview";
+>>>>>>> Stashed changes
 import { Employees } from "components/admin/Employees";
 import { CustomerOverview } from "components/klanten/CustomerOverview";
 
