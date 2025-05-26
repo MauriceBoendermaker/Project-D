@@ -19,7 +19,7 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
         );
         if (!response.ok) throw new Error("Network response was not ok");
         const result = await response.json();
-        setData(result);
+        setData(result.Data);
       } catch (error: any) {
         setError(error.message);
       }
