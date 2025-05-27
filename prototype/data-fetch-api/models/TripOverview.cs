@@ -5,7 +5,6 @@ namespace Models
     public class TripOverview
     {
         public int TripId { get; set; }
-        public string TripNumber { get; set; } = string.Empty;
         public DateTime? Date { get; set; }
         public int DistanceKm { get; set; }
         public int FuelUsage { get; set; }

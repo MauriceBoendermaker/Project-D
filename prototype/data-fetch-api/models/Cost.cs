@@ -18,15 +18,16 @@ namespace Models
 
     public class TripCost
     {
-        public string TripNumber { get; set; } = string.Empty;
-        public string VehicleNumber { get; set; } = string.Empty;
+        public int TripId { get; set; }
+        public int VehicleId { get; set; }
+
         public DateTime? Date { get; set; }
         public double Cost { get; set; }
 
-        public TripCost(string Tnumber, string Vnumber, DateTime? date, double cost)
+        public TripCost(int TId, int VId, DateTime? date, double cost)
         {
-            TripNumber = Tnumber;
-            VehicleNumber = Vnumber;
+            TripId = TId;
+            VehicleId = VId;
             Date = date;
             Cost = cost;
         }

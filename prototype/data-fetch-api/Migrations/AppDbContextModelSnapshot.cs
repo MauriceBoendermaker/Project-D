@@ -173,10 +173,6 @@ namespace data_fetch_api.Migrations
                     b.Property<int>("Time")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("TripNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("VehicleId")
                         .HasColumnType("INTEGER");
 

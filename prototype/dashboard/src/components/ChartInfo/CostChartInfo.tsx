@@ -3,8 +3,8 @@ import { TripCostChart } from "components/charts/TripCostChart";
 import "assets/scss/components/tables/ChartTableCard.scss";
 
 export interface TripCost {
-  tripNumber: string;
-  vehicleNumber: string;
+  tripId: number;
+  vehicleId: number;
   date: string;
   cost: number;
 }
@@ -58,12 +58,18 @@ export const CostChartInfo: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {chartData.map((item) => (
+              {chartData.map((tripcost) => (
                 <tr key={crypto.randomUUID()}>
-                  <td>{item.vehicleNumber}</td>
-                  <td>{item.tripNumber}</td>
-                  <td>{new Date(item.date).toLocaleDateString("nl-NL")}</td>
-                  <td>€ {item.cost}</td>
+                  <td>TRK-{tripcost.vehicleId}</td>
+                  <td>RIT-{tripcost.tripId}</td>
+                  <td>
+                    {new Date("2024-06-01").toLocaleDateString("nl-NL", {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
+                    })}
+                  </td>
+                  <td>€ {tripcost.cost}</td>
                 </tr>
               ))}
             </tbody>

@@ -11,7 +11,7 @@ namespace Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; } // Primary key (en auto increment)
 
-        public string TripNumber { get; set; } = string.Empty;
+
 
         [ForeignKey("Vehicle")]
         [JsonIgnore]

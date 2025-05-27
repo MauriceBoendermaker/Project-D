@@ -51,12 +51,12 @@ namespace Controllers
         }
 
         [HttpGet("kosten/{voertuigId}/{ritId}")]
-        public async Task<IActionResult> GetRitCost([FromRoute] string voertuigId, [FromRoute] string ritId)
+        public async Task<IActionResult> GetRitCost([FromRoute] int vehicleId, [FromRoute] int TripId)
         {
-            var result = await _fuelService.GetRitCostAsync(voertuigId, ritId);
+            var result = await _fuelService.GetRitCostAsync(vehicleId, TripId);
             if (result != 0)
             {
-                return Ok(new Response { Message = $"De brandstofkosten voor rit {ritId} van voertuig {voertuigId} zijn: €{result}" });
+                return Ok(new Response { Message = $"De brandstofkosten voor rit {TripId} van voertuig {vehicleId} zijn: €{result}" });
             }
             return NotFound(new Response { Message = "Voertuig of rit niet gevonden" });
         }
@@ -64,11 +64,8 @@ namespace Controllers
         [HttpGet("totalekosten")]
         public async Task<IActionResult> GetTotalFuelCost()
         {
-            Stopwatch sp = new();
-            sp.Start();
             IEnumerable<TripCost>? result = await _fuelService.GetAllTripCostsAsync();
-            sp.Stop();
-            Console.WriteLine(sp.Elapsed);
+
             if (result != null)
             {
                 return Ok(new Response { Data = result });

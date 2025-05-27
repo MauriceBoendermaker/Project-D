@@ -28,7 +28,6 @@ namespace Services
                     .Select(r => new TripOverview
                     {
                         TripId = r.Id,
-                        TripNumber = r.TripNumber,
                         Date = r.Date,
                         DistanceKm = r.DistanceKm,
                         FuelUsage = r.FuelUsage,

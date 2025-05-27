@@ -17,7 +17,7 @@ namespace Services
             _context = context;
 
         }
-        public async Task<IEnumerable<Vehicle>?> GetAllVehiclesAsync()
+        public async Task<List<Vehicle>?> GetAllVehiclesAsync()
         {
             try
             {
@@ -64,17 +64,26 @@ namespace Services
             }
         }
 
-        public async Task<int> GetRitCostAsync(string vehicleNumber, string ritId)
+        public async Task<int> GetRitCostAsync(int vehicleId, int ritId)
+        {
+            List<Vehicle>? vehicles = await GetAllVehiclesAsync();
+            if (vehicles == null || vehicles.Count() < 0)
+            {
+                return 0;
+            }
+            return await GetRitCostAsync(vehicleId, ritId, vehicles);
+        }
+
+        public async Task<int> GetRitCostAsync(int vehicleId, int ritId, List<Vehicle> vehicles)
         {
             try
             {
-                IEnumerable<Vehicle>? vehicles = await GetAllVehiclesAsync();
 
                 if (vehicles == null) return 0;
 
-                Vehicle? vehicle = vehicles.FirstOrDefault(v => v.VehicleNumber == vehicleNumber);
+                Vehicle? vehicle = vehicles.FirstOrDefault(v => v.VehicleId == vehicleId);
 
-                var rit = _context.Trips.Where(r => r.TripNumber == ritId).FirstOrDefault(r => r.VehicleId == vehicle.VehicleId);
+                var rit = _context.Trips.Where(r => r.Id == ritId).FirstOrDefault(r => r.VehicleId == vehicle.VehicleId);
                 if (vehicle == null || rit == null) return 0;
 
                 double cost = 0.0;
@@ -114,15 +123,15 @@ namespace Services
         public async Task<IEnumerable<TripCost>?> GetAllTripCostsAsync()
         {
             List<TripCost> costs = new List<TripCost>();
-            IEnumerable<Vehicle>? Vehicles = await GetAllVehiclesAsync();
+            List<Vehicle>? Vehicles = await GetAllVehiclesAsync();
             if (Vehicles == null || Vehicles.Count() == 0) return null;
             foreach (Vehicle v in Vehicles)
             {
                 if (v.Trips == null) continue;
                 foreach (Trip t in v.Trips)
                 {
-                    double cost = await GetRitCostAsync(v.VehicleNumber, t.TripNumber);
-                    TripCost tripCost = new TripCost(t.TripNumber, v.VehicleNumber, t.Date, cost);
+                    double cost = await GetRitCostAsync(v.VehicleId, t.Id, Vehicles);
+                    TripCost tripCost = new TripCost(t.Id, v.VehicleId, t.Date, cost);
 
 
                     costs.Add(tripCost);

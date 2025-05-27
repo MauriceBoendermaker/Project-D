@@ -107,7 +107,6 @@ namespace data_fetch_api.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    TripNumber = table.Column<string>(type: "TEXT", nullable: false),
                     VehicleId = table.Column<int>(type: "INTEGER", nullable: false),
                     Date = table.Column<DateTime>(type: "TEXT", nullable: true),
                     DistanceKm = table.Column<int>(type: "INTEGER", nullable: false),
