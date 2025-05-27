@@ -7,7 +7,7 @@ namespace Models
 {
     public class TripCreateDto
     {
-        public string TripNumber { get; set; } = string.Empty;
+        public int TripId { get; set; }
 
         public int VehicleId { get; set; }
 
@@ -32,7 +32,7 @@ namespace Models
         {
             return new Trip
             {
-                TripNumber = TripNumber,
+                Id = TripId,
                 VehicleId = VehicleId,
                 Date = Date,
                 DistanceKm = DistanceKm,

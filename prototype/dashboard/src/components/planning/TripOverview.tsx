@@ -3,9 +3,8 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
-interface Rit {
+interface Trip {
   tripId: number;
-  tripNumber: string;
   date: string;
   distanceKm: number;
   time: number;
@@ -18,12 +17,12 @@ interface Rit {
 
 interface RitApiResponse {
   message: string;
-  data: Rit[];
+  data: Trip[];
 }
 
 export const TripOverview = () => {
   const [events, setEvents] = useState<any[]>([]);
-  const [selectedRit, setSelectedRit] = useState<Rit | null>(null);
+  const [selectedRit, setSelectedRit] = useState<Trip | null>(null);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -40,7 +39,7 @@ export const TripOverview = () => {
         const Trips: RitApiResponse = await res.json();
         if (isMounted) {
           const calendarEvents = Trips.data.map((rit) => ({
-            title: `${rit.tripNumber} (${rit.distanceKm} km)`,
+            title: `RIT-${rit.tripId} (${rit.distanceKm} km)`,
             start: new Date(rit.date),
             extendedProps: { rit },
           }));
@@ -110,7 +109,7 @@ export const TripOverview = () => {
                   </p>
                   <hr />
                   <p>
-                    <strong>Rit nummer:</strong> {selectedRit.tripNumber}
+                    <strong>Rit nummer:</strong> RIT-{selectedRit.tripId}
                   </p>
                   <p>
                     <strong>Datum:</strong>{" "}

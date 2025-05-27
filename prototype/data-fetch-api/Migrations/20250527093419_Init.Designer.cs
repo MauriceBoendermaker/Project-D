@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace data_fetch_api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250522072758_Init")]
+    [Migration("20250527093419_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -175,10 +175,6 @@ namespace data_fetch_api.Migrations
 
                     b.Property<int>("Time")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("TripNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<int>("VehicleId")
                         .HasColumnType("INTEGER");

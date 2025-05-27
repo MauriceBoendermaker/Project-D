@@ -11,7 +11,6 @@ import { Popup } from "components/misc/Popup";
 const ORS_API_KEY = process.env.REACT_APP_ORS_API_KEY as string;
 
 export interface PostTripRequest {
-  tripNumber: string;
   vehicleId: number;
   date: Date;
   distanceKm: number;
@@ -31,16 +30,8 @@ interface GetVehiclesResponse {
   data: Vehicle[];
 }
 
-interface Kost {
-  onderhoud: number;
-  verzekering: number;
-  tolwegen: number;
-}
-
 export interface Vehicle {
   vehicleId: number;
-
-  vehicleNumber: string;
 
   licensePlate?: string;
 
@@ -58,7 +49,6 @@ export interface Vehicle {
 }
 export interface Trip {
   id: number;
-  tripNumber: string;
   vehicleId: number;
   date?: string;
   distanceKm: number;
@@ -286,7 +276,6 @@ export const AddTrip = () => {
         destinationId: 0,
         driverId: 0,
         customerId: 0,
-        tripNumber: "",
       };
       try {
         const response = await fetch("http://localhost:3000/api/ritten", {
