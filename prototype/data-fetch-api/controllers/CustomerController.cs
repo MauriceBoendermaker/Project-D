@@ -50,5 +50,16 @@ namespace Controllers
 
             return Created("http://localhost:3000/api/klanten", new { message = "Klant succesvol toegevoegd." });
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCustomer(int id)
+        {
+            bool result = await _customerService.DeleteCustomerAsync(id);
+            if (!result)
+            {
+                return NotFound("Klant niet gevonden");
+            }
+            return Ok("Klant succesvol verwijderd");
+        }
     }
 }
