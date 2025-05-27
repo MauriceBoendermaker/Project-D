@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 interface Customer {
+    klant_id: number;
     bedrijf: string;
     contactpersoon: string;
     email: string;
@@ -13,7 +14,38 @@ interface Customer {
 export const CustomerOverview = () => {
     const [customers, setCustomers] = useState<Customer[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const [error, setError] = useState<any>("");
+
+    const [deleted, setDeleted] = useState<boolean>(false);
+
+    const HandleDelete = async (klant_id: number) => {
+        try {
+            const response = await fetch(
+                `http://localhost:3000/api/klanten/${klant_id}`,
+                {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+            if (!response.ok) {
+                setError(
+                    "message" in response
+                        ? response.message
+                        : "Fout opgetreden tijdens het verwijderen."
+                );
+            } else {
+                setDeleted(true);
+            }
+
+            setCustomers((prev) =>
+                prev?.filter((customer) => customer.klant_id !== klant_id)
+            );
+        } catch (error) {
+            setError("Fout opgetreden tijdens het verwijderen.");
+        }
+    };
 
     useEffect(() => {
         let isMounted = true;
@@ -82,15 +114,22 @@ export const CustomerOverview = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {customers.map((customer, index) => (
-                                            <tr key={index} className="hover:bg-gray-50">
-                                                <td>{customer.bedrijf}</td>
-                                                <td>{customer.contactpersoon}</td>
-                                                <td>{customer.email}</td>
-                                                <td>{customer.telefoonnummer}</td>
-                                                <td>{customer.adres}</td>
-                                                <td>{customer.plaatsnaam}</td>
-                                                <td>{customer.postcode}</td>
+                                        {customers.map((e) => (
+                                            <tr key={e.klant_id} className="hover:bg-gray-50">
+                                                <td>{e.bedrijf}</td>
+                                                <td>{e.contactpersoon}</td>
+                                                <td>{e.email}</td>
+                                                <td>{e.telefoonnummer}</td>
+                                                <td>{e.adres}</td>
+                                                <td>{e.plaatsnaam}</td>
+                                                <td>{e.postcode}</td>
+                                                <td>
+                                                    <button onClick={() => HandleDelete(e.klant_id)}>
+                                                        <i className="fas fa-user-minus me-2">
+                                                            <span className="ms-2">verwijderen</span>
+                                                        </i>
+                                                    </button>
+                                                </td>
                                             </tr>
                                         ))}
                                     </tbody>

@@ -9,5 +9,6 @@ namespace Services
         Task<List<Customer>> GetAllCustomersAsync();
         Task<Customer?> GetCustomerByIdAsync(int customerId);
         Task AddCustomerAsync(Customer customer);
+        Task<bool> DeleteCustomerAsync(int customerId);
     }
 }

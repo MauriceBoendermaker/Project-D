@@ -29,5 +29,24 @@ namespace Services
             await _context.Customers.AddAsync(customer);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<bool> DeleteCustomerAsync(int customerId)
+        {
+            try
+            {
+                Customer? FoundCostumer = await _context.Customers.FindAsync(customerId);
+                if (FoundCostumer != null)
+                {
+                    _context.Remove(FoundCostumer);
+                    await _context.SaveChangesAsync();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
     }
 }
