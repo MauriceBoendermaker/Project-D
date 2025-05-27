@@ -30,7 +30,7 @@ import { AddTrip } from "./components/planning/AddTrip";
 import { AddVehicle } from "./components/admin/AddVehicle";
 import { AddEmployee } from "./components/admin/AddEmployee";
 import { AddCustomer } from "./components/klanten/AddCustomer";
-import { CustomerOverview } from "components/klanten/CustumerOverview";
+import { CustomerOverview } from "components/klanten/CustomerOverview";
 import { Employees } from "components/admin/Employees";
 
 const App: React.FC = () => {
