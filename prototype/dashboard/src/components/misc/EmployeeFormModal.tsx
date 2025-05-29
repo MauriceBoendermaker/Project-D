@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export interface EditedEmployee {
   name: string;
-  role: string;
+  type: string;
   email: string;
   vehicleId?: number;
 }
@@ -69,9 +69,18 @@ export const EmployeeFormModal: React.FC<EditEmployeePopupProps> = ({
       >
         <div className="modal-dialog modal-dialog-centered ">
           <div className="modal-content custom-modal-content bg-opacity-30 backdrop-blur-sm">
-            <div className="d-flex justify-content-center align-items-center flex-column mt-5">
-              <h1 className="text-center mb-4">Medewerker bewerken</h1>
-              <form onSubmit={(e) => HandleSubmit(e)} className="w-50">
+            <div className="modal-header">
+              <h5 className="modal-title mb-0">Medewerker bewerken</h5>
+              <button
+                type="button"
+                className="btn-close"
+                onClick={onClose}
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div className="modal-body d-flex justify-content-center align-items-center">
+              <form onSubmit={HandleSubmit} className="w-75">
                 <div className="mb-3">
                   <label className="form-label">Naam</label>
                   <input
@@ -86,7 +95,13 @@ export const EmployeeFormModal: React.FC<EditEmployeePopupProps> = ({
 
                 <div className="mb-3">
                   <label className="form-label">Type</label>
-                  <select className="form-select" name="type" required>
+                  <select
+                    className="form-select"
+                    name="type"
+                    required
+                    value={formData.type}
+                    onChange={handleChange}
+                  >
                     <option value="">Selecteer type</option>
                     <option value="chauffeur">Chauffeur</option>
                     <option value="planner">Planner</option>

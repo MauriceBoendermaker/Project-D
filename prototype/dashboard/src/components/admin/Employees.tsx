@@ -20,6 +20,7 @@ interface EmployeeApiResponse {
 }
 
 export const Employees = () => {
+  const [reloadKey, setReloadKey] = useState(0);
   const [currentEmployees, setEmployees] = useState<Employee[]>();
   const [error, SetError] = useState<any>("");
   const [deleted, setDeleted] = useState<boolean>(false);
@@ -27,17 +28,22 @@ export const Employees = () => {
   const [Id, setId] = useState<number>(-1);
   const [formData, setFormData] = useState<EditedEmployee>({
     name: "",
-    role: "",
+    type: "",
     email: "",
     vehicleId: -1,
   });
+
+  const handleClose = () => {
+    setReloadKey((prev) => prev + 1);
+    setShowEmployeesForm(false);
+  };
 
   const HandleEdit = (employee: Employee) => {
     console.log(employee.id);
     setId(employee.id);
     setFormData({
       name: employee.name,
-      role: employee.type,
+      type: employee.type,
       email: employee.email,
       vehicleId: employee.VehicleId,
     });
@@ -77,7 +83,6 @@ export const Employees = () => {
         const response = await fetch("http://localhost:3000/api/medewerkers");
         if (response.ok) {
           const employees: EmployeeApiResponse = await response.json();
-          console.log(employees);
           setEmployees(employees.data);
         } else {
           SetError("message" in response && response.message);
@@ -87,7 +92,7 @@ export const Employees = () => {
       }
     };
     fetchEmployees();
-  }, []);
+  }, [reloadKey]);
 
   return (
     <div className="container mt-5">
@@ -167,7 +172,7 @@ export const Employees = () => {
         isVisible={showEmployeesForm}
         employeeId={Id}
         initialFormData={formData}
-        onClose={() => setShowEmployeesForm(false)}
+        onClose={handleClose}
       />
     </div>
   );
