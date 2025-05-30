@@ -14,7 +14,6 @@ namespace Models
 
 
         [ForeignKey("Vehicle")]
-        [JsonIgnore]
         public int VehicleId { get; set; } // Foreign key naar Voertuig
         [JsonIgnore]
 
