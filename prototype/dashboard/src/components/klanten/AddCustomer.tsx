@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Popup } from "../misc/Popup";
 
 interface CustomerForm {
-  bedrijf: string;
-  contactpersoon: string;
+  company: string;
+  contactperson: string;
   email: string;
-  telefoonnummer: string;
-  adres: string;
-  postcode: string;
-  plaatsnaam: string;
+  telephoneNumber: string;
+  address: string;
+  zipCode: string;
+  location: string;
 }
 
 export const AddCustomer = () => {
@@ -20,13 +20,13 @@ export const AddCustomer = () => {
   const postcodeRegex = /^[1-9][0-9]{3}\s?[A-Z]{2}$/i;
 
   const [formData, setFormData] = useState<CustomerForm>({
-    bedrijf: "",
-    contactpersoon: "",
+    company: "",
+    contactperson: "",
     email: "",
-    telefoonnummer: "",
-    adres: "",
-    postcode: "",
-    plaatsnaam: "",
+    telephoneNumber: "",
+    address: "",
+    zipCode: "",
+    location: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,7 +52,7 @@ export const AddCustomer = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const adres = `${formData.adres}, ${formData.postcode} ${formData.plaatsnaam}`;
+    const adres = `${formData.address}, ${formData.zipCode} ${formData.location}`;
 
     try {
       const response = await fetch("http://localhost:3000/api/klanten", {
@@ -61,24 +61,24 @@ export const AddCustomer = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          bedrijf: formData.bedrijf,
-          contactpersoon: formData.contactpersoon,
+          company: formData.company,
+          contactperson: formData.contactperson,
           email: formData.email,
-          telefoonnummer: formData.telefoonnummer,
-          adres: adres,
+          telephoneNumber: formData.address,
+          address: adres,
         }),
       });
 
       if (response.status == 201) {
         setAdded(true);
         setFormData({
-          bedrijf: "",
-          contactpersoon: "",
+          company: "",
+          contactperson: "",
           email: "",
-          telefoonnummer: "",
-          adres: "",
-          postcode: "",
-          plaatsnaam: "",
+          telephoneNumber: "",
+          address: "",
+          zipCode: "",
+          location: "",
         });
       } else {
         setError(
@@ -116,8 +116,8 @@ export const AddCustomer = () => {
               <input
                 type="company"
                 className="form-control"
-                name="bedrijf"
-                value={formData.bedrijf}
+                name="company"
+                value={formData.company}
                 onChange={handleChange}
                 required
               />
@@ -127,8 +127,8 @@ export const AddCustomer = () => {
               <input
                 type="name"
                 className="form-control"
-                name="contactpersoon"
-                value={formData.contactpersoon}
+                name="contactperson"
+                value={formData.contactperson}
                 onChange={handleChange}
               />
             </div>
@@ -147,8 +147,8 @@ export const AddCustomer = () => {
               <input
                 type="tel"
                 className="form-control"
-                name="telefoonnummer"
-                value={formData.telefoonnummer}
+                name="telephoneNumber"
+                value={formData.telephoneNumber}
                 onChange={handleChange}
               />
             </div>
@@ -157,8 +157,8 @@ export const AddCustomer = () => {
               <input
                 type="text"
                 className="form-control"
-                name="adres"
-                value={formData.adres}
+                name="address"
+                value={formData.address}
                 placeholder="Bijv. Dorpsstraat 1"
                 onChange={handleChange}
               />
@@ -190,8 +190,8 @@ export const AddCustomer = () => {
               <input
                 type="text"
                 className="form-control"
-                name="plaatsnaam"
-                value={formData.plaatsnaam}
+                name="location"
+                value={formData.location}
                 placeholder="Bijv. Rotterdam"
                 onChange={handleChange}
               />

@@ -1,19 +1,84 @@
 import { useEffect, useState } from "react";
+import { Popup } from "../misc/Popup";
+import { EditedCustomer, CustomerFormModal } from "components/misc/CustomerUpdateModal";
 
 interface Customer {
-    bedrijf: string;
-    contactpersoon: string;
+    customerId: number;
+    company: string;
+    contactperson: string;
     email: string;
-    telefoonnummer: string;
-    adres: string;
-    postcode: string;
-    plaatsnaam: string;
+    telephoneNumber: string;
+    address: string;
+    zipcode: string;
+    location: string;
 }
 
+
 export const CustomerOverview = () => {
+    const [reloadKey, setReloadKey] = useState(0);
     const [customers, setCustomers] = useState<Customer[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const [error, setError] = useState<any>("");
+
+    const [deleted, setDeleted] = useState<boolean>(false);
+
+
+    const [showCustomerForm, setShowCustomerForm] = useState<boolean>(false);
+    const [Id, setId] = useState<number>(-1);
+    const [formData, setFormData] = useState<EditedCustomer>({
+        company: "",
+        contactPerson: "",
+        email: "",
+        telephoneNumber: "",
+        address: ""
+    });
+
+    const handleClose = () => {
+        setReloadKey((prev) => prev + 1);
+        setShowCustomerForm(false);
+    };
+
+    const HandleEdit = (customer: Customer) => {
+        console.log(customer.customerId);
+        setId(customer.customerId);
+        setFormData({
+            company: customer.company,
+            contactPerson: customer.contactperson,
+            email: customer.email,
+            telephoneNumber: customer.telephoneNumber,
+            address: customer.address
+        });
+        setShowCustomerForm(true);
+    };
+
+    const HandleDelete = async (customerId: number) => {
+        try {
+            const response = await fetch(
+                `http://localhost:3000/api/klanten/${customerId}`,
+                {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+            if (!response.ok) {
+                setError(
+                    "message" in response
+                        ? response.message
+                        : "Fout opgetreden tijdens het verwijderen."
+                );
+            } else {
+                setDeleted(true);
+            }
+
+            setCustomers((prev) =>
+                prev?.filter((customer) => customer.customerId !== customerId)
+            );
+        } catch (error) {
+            setError("Fout opgetreden tijdens het verwijderen.");
+        }
+    };
 
     useEffect(() => {
         let isMounted = true;
@@ -26,7 +91,9 @@ export const CustomerOverview = () => {
                     throw new Error(`HTTP error! Status: ${res.status}`);
                 }
 
-                const data: Customer[] = await res.json();
+                const response = await res.json();
+                const data: Customer[] = response.data;
+                setCustomers(data);
                 if (isMounted) {
                     setCustomers(data);
                     setLoading(false);
@@ -44,7 +111,7 @@ export const CustomerOverview = () => {
         return () => {
             isMounted = false;
         };
-    }, []);
+    }, [reloadKey]);
 
     if (loading) return <p>Loading customers...</p>;
     if (error) return <p>Error loading customers: {error}</p>;
@@ -82,15 +149,37 @@ export const CustomerOverview = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {customers.map((customer, index) => (
-                                            <tr key={index} className="hover:bg-gray-50">
-                                                <td>{customer.bedrijf}</td>
-                                                <td>{customer.contactpersoon}</td>
-                                                <td>{customer.email}</td>
-                                                <td>{customer.telefoonnummer}</td>
-                                                <td>{customer.adres}</td>
-                                                <td>{customer.plaatsnaam}</td>
-                                                <td>{customer.postcode}</td>
+                                        {customers.map((e) => (
+                                            <tr key={e.customerId} className="hover:bg-gray-50">
+                                                <td>{e.company}</td>
+                                                <td>{e.contactperson}</td>
+                                                <td>{e.email}</td>
+                                                <td>{e.telephoneNumber}</td>
+                                                <td>{e.address}</td>
+                                                <td>{e.location}</td>
+                                                <td>{e.zipcode}</td>
+                                                <td>
+                                                    <button onClick={() => HandleDelete(e.customerId)}>
+                                                        <i className="fas fa-user-minus me-2">
+                                                            <span className="ms-2">verwijderen</span>
+                                                        </i>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button>
+                                                        <i
+                                                            className="fa-solid fa-user-pen"
+                                                            onClick={() => {
+                                                                console.log("Customer in list: ");
+                                                                console.log(e as Customer);
+
+                                                                HandleEdit(e);
+                                                            }}
+                                                        >
+                                                            <span className="ms-2">Bewerken</span>
+                                                        </i>
+                                                    </button>
+                                                </td>
                                             </tr>
                                         ))}
                                     </tbody>
@@ -100,6 +189,24 @@ export const CustomerOverview = () => {
                     </div>
                 </div>
             </div>
+            <Popup
+                title={
+                    error.length > 0 ? "Verwijderen mislukt" : "Klant verwijderd!"
+                }
+                body={error.length > 0 ? error : "Klant was succesvol verwijderd"}
+                firstButton="Sluiten"
+                isVisible={error.length > 0 || deleted}
+                onFirstBtnClick={() => {
+                    setDeleted(false);
+                    setError("");
+                }}
+            />
+            <CustomerFormModal
+                isVisible={showCustomerForm}
+                customerId={Id}
+                initialFormData={formData}
+                onClose={handleClose}
+            />
         </div>
     );
 };
