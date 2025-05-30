@@ -51,6 +51,15 @@ namespace Controllers
             return Created("http://localhost:3000/api/klanten", new Response { Message = "Klant succesvol toegevoegd." });
         }
 
+        [HttpPut]
+        public async Task<IActionResult> UpdateCustomer([FromQuery] int id, Customer customer)
+        {
+            bool result = await _customerService.UpdateCustomerAsync(id, customer);
+
+            return result ? Ok(new Response { Message = "Klant succesvol bijgewerkt." }) : NotFound(new Response { Message = "Klant niet gevonden" });
+        }
+
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCustomer(int id)
         {

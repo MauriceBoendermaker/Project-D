@@ -30,6 +30,35 @@ namespace Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task<bool> UpdateCustomerAsync(int id, Customer customer)
+        {
+            try
+            {
+                Customer? existingCustomer = await _context.Customers.FindAsync(id);
+
+                if (existingCustomer == null)
+                {
+                    return false;
+                }
+
+                existingCustomer.Company = customer.Company;
+                existingCustomer.Contactperson = customer.Contactperson;
+                existingCustomer.Email = customer.Email;
+                existingCustomer.TelephoneNumber = customer.TelephoneNumber;
+                existingCustomer.Address = customer.Address;
+
+                _context.Customers.Update(existingCustomer);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+
+        }
+
         public async Task<bool> DeleteCustomerAsync(int customerId)
         {
             try
