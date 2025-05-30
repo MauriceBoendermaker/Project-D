@@ -79,7 +79,7 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
     },
     xAxis: {
       type: "category",
-      data: processedData.map((item: any) => item.voertuig_id),
+      data: processedData.map((item: any) => `TRK-${item.voertuig_id}`),
     },
     yAxis: {
       type: "value",
