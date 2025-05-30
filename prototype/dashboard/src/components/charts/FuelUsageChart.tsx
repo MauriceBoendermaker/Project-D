@@ -2,13 +2,27 @@ import React, { useEffect, useState } from "react";
 import ReactECharts from "echarts-for-react";
 import { StyledChartWrapper } from "../StyledChartWrapper";
 import { FUEL_CHART_TITLE } from "components/ChartTitles";
+import { stringify } from "querystring";
 
 interface FuelChartProps {
   delayIndex?: number;
 }
 
+export interface Trip {
+  id: number;
+  vehicleId: number;
+  date: string;
+  distanceKm: number;
+  time: number;
+  fuelUsage: number;
+  destinationId: number;
+  customerId: number;
+  driverId: number;
+  createdAt: string;
+}
+
 export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<Trip[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -19,21 +33,24 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
         );
         if (!response.ok) throw new Error("Network response was not ok");
         const result = await response.json();
-        setData(result);
+        setData(result.data);
       } catch (error: any) {
         setError(error.message);
       }
     };
 
     fetchData();
+    console.log(JSON.stringify(data))
   }, []);
 
   const processedData = data
     ? Object.values(
-      data.reduce((acc: any, rit: any) => {
-        const { voertuig_id, afstand_km, brandstof_verbruik_l } = rit;
+      data.reduce((acc: any, rit: Trip) => {
+        const voertuig_id = rit.vehicleId;
+        const afstand_km = rit.distanceKm;
+        const brandstof_verbruik_l = rit.fuelUsage;
 
-        if (!acc[voertuig_id]) {
+        if (!acc[rit.vehicleId]) {
           acc[voertuig_id] = {
             voertuig_id,
             totalAfstand: 0,
@@ -62,7 +79,7 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
     },
     xAxis: {
       type: "category",
-      data: processedData.map((item: any) => item.voertuig_id),
+      data: processedData.map((item: any) => `TRK-${item.voertuig_id}`),
     },
     yAxis: {
       type: "value",
