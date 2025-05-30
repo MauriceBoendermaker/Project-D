@@ -10,5 +10,6 @@ namespace Services
         Task<Customer?> GetCustomerByIdAsync(int customerId);
         Task AddCustomerAsync(Customer customer);
         Task<bool> DeleteCustomerAsync(int customerId);
+        Task<bool> UpdateCustomerAsync(int id, Customer customer);
     }
 }

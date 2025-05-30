@@ -22,9 +22,11 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
       try {
         const totalLoadDegree: TotalDegreeResponse =
           await fetchTotalLoadDegree();
-        if ("message" in totalLoadDegree) setError(totalLoadDegree.message);
-        else {
-          setChartData(totalLoadDegree.response);
+
+        if (totalLoadDegree.message != null) {
+          setError(totalLoadDegree.message);
+        } else {
+          setChartData(totalLoadDegree.data);
         }
         setLoading(false);
       } catch (err: any) {
@@ -56,7 +58,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
         name: "Zending",
         type: "bar",
         data: chartData.map((item: TotalDegree) =>
-          (item.loadDegree * 100).toFixed(2)
+          (item.degree * 100).toFixed(2)
         ),
         itemStyle: {
           color: "#95191D",
@@ -77,19 +79,19 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
   console.log("Chart data:", JSON.stringify(chartData));
 
   return (
-    
-    <StyledChartWrapper title={
-      <a 
-        href="http://localhost:5000/ladingsgraad"
-        style={{
-          textDecoration: "none",
-          color: "inherit",
-        }}
-      >
-        {LOAD_DEGREE_TITLE}
-      </a>
-    } 
-    delayIndex={delayIndex}
+    <StyledChartWrapper
+      title={
+        <a
+          href="http://localhost:5000/ladingsgraad"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          {LOAD_DEGREE_TITLE}
+        </a>
+      }
+      delayIndex={delayIndex}
     >
       {chartData.length > 0 ? (
         <ReactECharts

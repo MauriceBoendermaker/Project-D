@@ -30,8 +30,8 @@ import { AddTrip } from "./components/planning/AddTrip";
 import { AddVehicle } from "./components/admin/AddVehicle";
 import { AddEmployee } from "./components/admin/AddEmployee";
 import { AddCustomer } from "./components/klanten/AddCustomer";
-import { CustomerOverview } from "components/klanten/CustomerOverview";
 import { Employees } from "components/admin/Employees";
+import { CustomerOverview } from "components/klanten/CustomerOverview";
 
 const App: React.FC = () => {
   return (
@@ -91,7 +91,7 @@ const App: React.FC = () => {
 
         <Footer />
       </Router>
-    </AuthProvider >
+    </AuthProvider>
   );
 };
 

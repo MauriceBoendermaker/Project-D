@@ -1,1695 +1,1695 @@
 [
   {
-    "voertuig_id": "TRK-0",
-    "kenteken": "WSS-9-FVA",
-    "merk": "Mercedes",
-    "model": "R580",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-0",
+    "LicensePlate": "WSS-9-FVA",
+    "Brand": "Mercedes",
+    "Model": "R580",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-10-18T08:15:37",
-        "afstand_km": 99,
-        "duur_minuten": 85,
+        "TripNumber": "RIT-0",
+        "Date": "2024-10-18T08:15:37",
+        "DistanceKm": 99,
+        "Time": 85,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 14,
-        "kosten": {
-          "onderhoud": 1.2619,
-          "verzekering": 2.1096,
-          "tolwegen": 2.2793
+        "FuelUsage": 14,
+        "Costs": {
+          "Maintenance": 1.2619,
+          "Insurance": 2.1096,
+          "TollRoads": 2.2793
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2025-03-26T01:44:02",
-        "afstand_km": 145,
-        "duur_minuten": 166,
+        "TripNumber": "RIT-1",
+        "Date": "2025-03-26T01:44:02",
+        "DistanceKm": 145,
+        "Time": 166,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 4.7326,
-          "verzekering": 2.9947,
-          "tolwegen": 5.7729
+        "FuelUsage": 5,
+        "Costs": {
+          "Maintenance": 4.7326,
+          "Insurance": 2.9947,
+          "TollRoads": 5.7729
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2024-07-31T02:32:26",
-        "afstand_km": 103,
-        "duur_minuten": 135,
+        "TripNumber": "RIT-2",
+        "Date": "2024-07-31T02:32:26",
+        "DistanceKm": 103,
+        "Time": 135,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 3.3319,
-          "verzekering": 1.1661,
-          "tolwegen": 6.7445
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 3.3319,
+          "Insurance": 1.1661,
+          "TollRoads": 6.7445
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-12-13T12:08:05",
-        "afstand_km": 74,
-        "duur_minuten": 76,
+        "TripNumber": "RIT-3",
+        "Date": "2024-12-13T12:08:05",
+        "DistanceKm": 74,
+        "Time": 76,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 3.9581,
-          "verzekering": 1.0504,
-          "tolwegen": 6.1749
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 3.9581,
+          "Insurance": 1.0504,
+          "TollRoads": 6.1749
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-06-01T02:31:51",
-        "afstand_km": 131,
-        "duur_minuten": 63,
+        "TripNumber": "RIT-4",
+        "Date": "2024-06-01T02:31:51",
+        "DistanceKm": 131,
+        "Time": 63,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 1.5914,
-          "verzekering": 2.8998,
-          "tolwegen": 5.8655
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 1.5914,
+          "Insurance": 2.8998,
+          "TollRoads": 5.8655
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2025-04-01T11:39:47",
-        "afstand_km": 60,
-        "duur_minuten": 122,
+        "TripNumber": "RIT-5",
+        "Date": "2025-04-01T11:39:47",
+        "DistanceKm": 60,
+        "Time": 122,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 10,
-        "kosten": {
-          "onderhoud": 4.5289,
-          "verzekering": 1.4734,
-          "tolwegen": 6.7036
+        "FuelUsage": 10,
+        "Costs": {
+          "Maintenance": 4.5289,
+          "Insurance": 1.4734,
+          "TollRoads": 6.7036
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-10-28T04:51:29",
-        "afstand_km": 145,
-        "duur_minuten": 139,
+        "TripNumber": "RIT-6",
+        "Date": "2024-10-28T04:51:29",
+        "DistanceKm": 145,
+        "Time": 139,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 2.6597,
-          "verzekering": 2.3395,
-          "tolwegen": 4.4466
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 2.6597,
+          "Insurance": 2.3395,
+          "TollRoads": 4.4466
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2025-02-02T03:54:46",
-        "afstand_km": 130,
-        "duur_minuten": 151,
+        "TripNumber": "RIT-7",
+        "Date": "2025-02-02T03:54:46",
+        "DistanceKm": 130,
+        "Time": 151,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 3.8655,
-          "verzekering": 1.3131,
-          "tolwegen": 5.0371
+        "FuelUsage": 11,
+        "Costs": {
+          "Maintenance": 3.8655,
+          "Insurance": 1.3131,
+          "TollRoads": 5.0371
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-1",
-    "kenteken": "LJR-2-ASA",
-    "merk": "MAN",
-    "model": "Actros",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-1",
+    "LicensePlate": "LJR-2-ASA",
+    "Brand": "MAN",
+    "Model": "Actros",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-09-13T11:21:21",
-        "afstand_km": 102,
-        "duur_minuten": 70,
+        "TripNumber": "RIT-0",
+        "Date": "2024-09-13T11:21:21",
+        "DistanceKm": 102,
+        "Time": 70,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 4.249,
-          "verzekering": 1.1785,
-          "tolwegen": 4.5078
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 4.249,
+          "Insurance": 1.1785,
+          "TollRoads": 4.5078
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-05-30T10:13:27",
-        "afstand_km": 105,
-        "duur_minuten": 87,
+        "TripNumber": "RIT-1",
+        "Date": "2024-05-30T10:13:27",
+        "DistanceKm": 105,
+        "Time": 87,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 3.3619,
-          "verzekering": 1.1851,
-          "tolwegen": 6.8792
+        "FuelUsage": 5,
+        "Costs": {
+          "Maintenance": 3.3619,
+          "Insurance": 1.1851,
+          "TollRoads": 6.8792
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2024-05-03T07:36:28",
-        "afstand_km": 142,
-        "duur_minuten": 139,
+        "TripNumber": "RIT-2",
+        "Date": "2024-05-03T07:36:28",
+        "DistanceKm": 142,
+        "Time": 139,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 4.9567,
-          "verzekering": 1.3929,
-          "tolwegen": 2.8034
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 4.9567,
+          "Insurance": 1.3929,
+          "TollRoads": 2.8034
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-07-03T11:20:38",
-        "afstand_km": 66,
-        "duur_minuten": 103,
+        "TripNumber": "RIT-3",
+        "Date": "2024-07-03T11:20:38",
+        "DistanceKm": 66,
+        "Time": 103,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 1.0303,
-          "verzekering": 2.8403,
-          "tolwegen": 3.2108
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 1.0303,
+          "Insurance": 2.8403,
+          "TollRoads": 3.2108
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2023-11-12T09:36:50",
-        "afstand_km": 105,
-        "duur_minuten": 82,
+        "TripNumber": "RIT-4",
+        "Date": "2023-11-12T09:36:50",
+        "DistanceKm": 105,
+        "Time": 82,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 1.0234,
-          "verzekering": 2.0514,
-          "tolwegen": 4.174
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 1.0234,
+          "Insurance": 2.0514,
+          "TollRoads": 4.174
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2025-02-14T06:46:21",
-        "afstand_km": 86,
-        "duur_minuten": 93,
+        "TripNumber": "RIT-5",
+        "Date": "2025-02-14T06:46:21",
+        "DistanceKm": 86,
+        "Time": 93,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 2.8452,
-          "verzekering": 1.7572,
-          "tolwegen": 4.0554
+        "FuelUsage": 11,
+        "Costs": {
+          "Maintenance": 2.8452,
+          "Insurance": 1.7572,
+          "TollRoads": 4.0554
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-12-21T04:30:58",
-        "afstand_km": 142,
-        "duur_minuten": 145,
+        "TripNumber": "RIT-6",
+        "Date": "2024-12-21T04:30:58",
+        "DistanceKm": 142,
+        "Time": 145,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 3.7435,
-          "verzekering": 1.5084,
-          "tolwegen": 5.6712
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 3.7435,
+          "Insurance": 1.5084,
+          "TollRoads": 5.6712
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2024-04-30T12:06:29",
-        "afstand_km": 110,
-        "duur_minuten": 130,
+        "TripNumber": "RIT-7",
+        "Date": "2024-04-30T12:06:29",
+        "DistanceKm": 110,
+        "Time": 130,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 3.4973,
-          "verzekering": 1.438,
-          "tolwegen": 4.8181
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 3.4973,
+          "Insurance": 1.438,
+          "TollRoads": 4.8181
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-2",
-    "kenteken": "BHC-5-DCM",
-    "merk": "MAN",
-    "model": "R580",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-2",
+    "LicensePlate": "BHC-5-DCM",
+    "Brand": "MAN",
+    "Model": "R580",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-04-08T11:42:14",
-        "afstand_km": 145,
-        "duur_minuten": 105,
+        "TripNumber": "RIT-0",
+        "Date": "2024-04-08T11:42:14",
+        "DistanceKm": 145,
+        "Time": 105,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 2.1611,
-          "verzekering": 1.3453,
-          "tolwegen": 2.6727
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 2.1611,
+          "Insurance": 1.3453,
+          "TollRoads": 2.6727
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-01-27T04:30:54",
-        "afstand_km": 138,
-        "duur_minuten": 91,
+        "TripNumber": "RIT-1",
+        "Date": "2024-01-27T04:30:54",
+        "DistanceKm": 138,
+        "Time": 91,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 3.4798,
-          "verzekering": 1.4163,
-          "tolwegen": 5.8202
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 3.4798,
+          "Insurance": 1.4163,
+          "TollRoads": 5.8202
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2024-04-20T11:58:12",
-        "afstand_km": 150,
-        "duur_minuten": 78,
+        "TripNumber": "RIT-2",
+        "Date": "2024-04-20T11:58:12",
+        "DistanceKm": 150,
+        "Time": 78,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 1.7681,
-          "verzekering": 2.3975,
-          "tolwegen": 2.2714
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 1.7681,
+          "Insurance": 2.3975,
+          "TollRoads": 2.2714
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2023-12-15T08:57:50",
-        "afstand_km": 55,
-        "duur_minuten": 99,
+        "TripNumber": "RIT-3",
+        "Date": "2023-12-15T08:57:50",
+        "DistanceKm": 55,
+        "Time": 99,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 1.5492,
-          "verzekering": 2.9785,
-          "tolwegen": 6.2296
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 1.5492,
+          "Insurance": 2.9785,
+          "TollRoads": 6.2296
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-11-03T06:16:43",
-        "afstand_km": 62,
-        "duur_minuten": 105,
+        "TripNumber": "RIT-4",
+        "Date": "2024-11-03T06:16:43",
+        "DistanceKm": 62,
+        "Time": 105,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 2.0839,
-          "verzekering": 1.7245,
-          "tolwegen": 2.7881
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 2.0839,
+          "Insurance": 1.7245,
+          "TollRoads": 2.7881
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2025-01-06T02:38:54",
-        "afstand_km": 54,
-        "duur_minuten": 157,
+        "TripNumber": "RIT-5",
+        "Date": "2025-01-06T02:38:54",
+        "DistanceKm": 54,
+        "Time": 157,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 4.9553,
-          "verzekering": 1.1199,
-          "tolwegen": 2.9432
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 4.9553,
+          "Insurance": 1.1199,
+          "TollRoads": 2.9432
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-01-20T09:56:20",
-        "afstand_km": 58,
-        "duur_minuten": 131,
+        "TripNumber": "RIT-6",
+        "Date": "2024-01-20T09:56:20",
+        "DistanceKm": 58,
+        "Time": 131,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 4.0131,
-          "verzekering": 1.7272,
-          "tolwegen": 4.5929
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 4.0131,
+          "Insurance": 1.7272,
+          "TollRoads": 4.5929
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2023-11-20T04:31:16",
-        "afstand_km": 75,
-        "duur_minuten": 156,
+        "TripNumber": "RIT-7",
+        "Date": "2023-11-20T04:31:16",
+        "DistanceKm": 75,
+        "Time": 156,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 4.1631,
-          "verzekering": 1.496,
-          "tolwegen": 4.0792
+        "FuelUsage": 11,
+        "Costs": {
+          "Maintenance": 4.1631,
+          "Insurance": 1.496,
+          "TollRoads": 4.0792
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-3",
-    "kenteken": "REA-9-BJM",
-    "merk": "Volvo",
-    "model": "XF",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-3",
+    "LicensePlate": "REA-9-BJM",
+    "Brand": "Volvo",
+    "Model": "XF",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-08-19T08:58:15",
-        "afstand_km": 61,
-        "duur_minuten": 85,
+        "TripNumber": "RIT-0",
+        "Date": "2024-08-19T08:58:15",
+        "DistanceKm": 61,
+        "Time": 85,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 1.6635,
-          "verzekering": 2.8389,
-          "tolwegen": 2.8856
+        "FuelUsage": 5,
+        "Costs": {
+          "Maintenance": 1.6635,
+          "Insurance": 2.8389,
+          "TollRoads": 2.8856
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-09-03T03:57:34",
-        "afstand_km": 121,
-        "duur_minuten": 91,
+        "TripNumber": "RIT-1",
+        "Date": "2024-09-03T03:57:34",
+        "DistanceKm": 121,
+        "Time": 91,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 14,
-        "kosten": {
-          "onderhoud": 4.7141,
-          "verzekering": 2.5369,
-          "tolwegen": 6.9286
+        "FuelUsage": 14,
+        "Costs": {
+          "Maintenance": 4.7141,
+          "Insurance": 2.5369,
+          "TollRoads": 6.9286
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2024-03-25T03:13:21",
-        "afstand_km": 97,
-        "duur_minuten": 83,
+        "TripNumber": "RIT-2",
+        "Date": "2024-03-25T03:13:21",
+        "DistanceKm": 97,
+        "Time": 83,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 2.9336,
-          "verzekering": 1.0638,
-          "tolwegen": 3.17
+        "FuelUsage": 12,
+        "Costs": {
+          "Maintenance": 2.9336,
+          "Insurance": 1.0638,
+          "TollRoads": 3.17
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2025-02-28T09:08:05",
-        "afstand_km": 65,
-        "duur_minuten": 154,
+        "TripNumber": "RIT-3",
+        "Date": "2025-02-28T09:08:05",
+        "DistanceKm": 65,
+        "Time": 154,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 4.9283,
-          "verzekering": 2.3718,
-          "tolwegen": 6.6996
+        "FuelUsage": 11,
+        "Costs": {
+          "Maintenance": 4.9283,
+          "Insurance": 2.3718,
+          "TollRoads": 6.6996
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2025-03-07T05:35:54",
-        "afstand_km": 105,
-        "duur_minuten": 155,
+        "TripNumber": "RIT-4",
+        "Date": "2025-03-07T05:35:54",
+        "DistanceKm": 105,
+        "Time": 155,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 3.6244,
-          "verzekering": 1.5804,
-          "tolwegen": 3.9235
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 3.6244,
+          "Insurance": 1.5804,
+          "TollRoads": 3.9235
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2023-11-07T12:51:18",
-        "afstand_km": 72,
-        "duur_minuten": 134,
+        "TripNumber": "RIT-5",
+        "Date": "2023-11-07T12:51:18",
+        "DistanceKm": 72,
+        "Time": 134,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 2.4027,
-          "verzekering": 1.5704,
-          "tolwegen": 2.1408
+        "FuelUsage": 12,
+        "Costs": {
+          "Maintenance": 2.4027,
+          "Insurance": 1.5704,
+          "TollRoads": 2.1408
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-09-18T06:01:28",
-        "afstand_km": 128,
-        "duur_minuten": 77,
+        "TripNumber": "RIT-6",
+        "Date": "2024-09-18T06:01:28",
+        "DistanceKm": 128,
+        "Time": 77,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 3.6093,
-          "verzekering": 2.9385,
-          "tolwegen": 6.3965
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 3.6093,
+          "Insurance": 2.9385,
+          "TollRoads": 6.3965
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2024-12-31T09:03:26",
-        "afstand_km": 132,
-        "duur_minuten": 108,
+        "TripNumber": "RIT-7",
+        "Date": "2024-12-31T09:03:26",
+        "DistanceKm": 132,
+        "Time": 108,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 2.7855,
-          "verzekering": 1.5601,
-          "tolwegen": 4.802
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 2.7855,
+          "Insurance": 1.5601,
+          "TollRoads": 4.802
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-4",
-    "kenteken": "RHA-5-PKM",
-    "merk": "Scania",
-    "model": "TGX",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-4",
+    "LicensePlate": "RHA-5-PKM",
+    "Brand": "Scania",
+    "Model": "TGX",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2023-12-15T02:02:23",
-        "afstand_km": 149,
-        "duur_minuten": 133,
+        "TripNumber": "RIT-0",
+        "Date": "2023-12-15T02:02:23",
+        "DistanceKm": 149,
+        "Time": 133,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 3.2926,
-          "verzekering": 2.7021,
-          "tolwegen": 6.7215
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 3.2926,
+          "Insurance": 2.7021,
+          "TollRoads": 6.7215
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-05-10T03:54:48",
-        "afstand_km": 51,
-        "duur_minuten": 131,
+        "TripNumber": "RIT-1",
+        "Date": "2024-05-10T03:54:48",
+        "DistanceKm": 51,
+        "Time": 131,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 3.5163,
-          "verzekering": 2.9419,
-          "tolwegen": 3.6209
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 3.5163,
+          "Insurance": 2.9419,
+          "TollRoads": 3.6209
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2025-02-22T01:15:09",
-        "afstand_km": 120,
-        "duur_minuten": 112,
+        "TripNumber": "RIT-2",
+        "Date": "2025-02-22T01:15:09",
+        "DistanceKm": 120,
+        "Time": 112,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 4.0057,
-          "verzekering": 2.1734,
-          "tolwegen": 6.879
+        "FuelUsage": 6,
+        "Costs": {
+          "Maintenance": 4.0057,
+          "Insurance": 2.1734,
+          "TollRoads": 6.879
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-05-01T02:32:26",
-        "afstand_km": 143,
-        "duur_minuten": 122,
+        "TripNumber": "RIT-3",
+        "Date": "2024-05-01T02:32:26",
+        "DistanceKm": 143,
+        "Time": 122,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 3.9813,
-          "verzekering": 1.7604,
-          "tolwegen": 6.8475
+        "FuelUsage": 11,
+        "Costs": {
+          "Maintenance": 3.9813,
+          "Insurance": 1.7604,
+          "TollRoads": 6.8475
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-05-20T02:58:07",
-        "afstand_km": 88,
-        "duur_minuten": 119,
+        "TripNumber": "RIT-4",
+        "Date": "2024-05-20T02:58:07",
+        "DistanceKm": 88,
+        "Time": 119,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 3.9361,
-          "verzekering": 2.7914,
-          "tolwegen": 4.8016
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 3.9361,
+          "Insurance": 2.7914,
+          "TollRoads": 4.8016
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2023-12-04T08:18:44",
-        "afstand_km": 86,
-        "duur_minuten": 88,
+        "TripNumber": "RIT-5",
+        "Date": "2023-12-04T08:18:44",
+        "DistanceKm": 86,
+        "Time": 88,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 4.9258,
-          "verzekering": 1.7626,
-          "tolwegen": 4.1523
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 4.9258,
+          "Insurance": 1.7626,
+          "TollRoads": 4.1523
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2025-01-14T12:33:03",
-        "afstand_km": 115,
-        "duur_minuten": 118,
+        "TripNumber": "RIT-6",
+        "Date": "2025-01-14T12:33:03",
+        "DistanceKm": 115,
+        "Time": 118,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 2.1245,
-          "verzekering": 2.3563,
-          "tolwegen": 6.8249
+        "FuelUsage": 12,
+        "Costs": {
+          "Maintenance": 2.1245,
+          "Insurance": 2.3563,
+          "TollRoads": 6.8249
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2024-03-18T03:58:41",
-        "afstand_km": 131,
-        "duur_minuten": 77,
+        "TripNumber": "RIT-7",
+        "Date": "2024-03-18T03:58:41",
+        "DistanceKm": 131,
+        "Time": 77,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 1.4812,
-          "verzekering": 2.4314,
-          "tolwegen": 4.1645
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 1.4812,
+          "Insurance": 2.4314,
+          "TollRoads": 4.1645
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-5",
-    "kenteken": "LWE-0-MLS",
-    "merk": "Volvo",
-    "model": "Actros",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-5",
+    "LicensePlate": "LWE-0-MLS",
+    "Brand": "Volvo",
+    "Model": "Actros",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-09-27T07:26:22",
-        "afstand_km": 83,
-        "duur_minuten": 65,
+        "TripNumber": "RIT-0",
+        "Date": "2024-09-27T07:26:22",
+        "DistanceKm": 83,
+        "Time": 65,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 3.7855,
-          "verzekering": 2.6823,
-          "tolwegen": 3.5656
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 3.7855,
+          "Insurance": 2.6823,
+          "TollRoads": 3.5656
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2023-11-03T10:52:01",
-        "afstand_km": 89,
-        "duur_minuten": 78,
+        "TripNumber": "RIT-1",
+        "Date": "2023-11-03T10:52:01",
+        "DistanceKm": 89,
+        "Time": 78,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 4.8407,
-          "verzekering": 1.8255,
-          "tolwegen": 3.8958
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 4.8407,
+          "Insurance": 1.8255,
+          "TollRoads": 3.8958
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2024-01-10T06:38:36",
-        "afstand_km": 58,
-        "duur_minuten": 130,
+        "TripNumber": "RIT-2",
+        "Date": "2024-01-10T06:38:36",
+        "DistanceKm": 58,
+        "Time": 130,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 2.4891,
-          "verzekering": 2.071,
-          "tolwegen": 5.6869
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 2.4891,
+          "Insurance": 2.071,
+          "TollRoads": 5.6869
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-11-01T04:58:55",
-        "afstand_km": 78,
-        "duur_minuten": 127,
+        "TripNumber": "RIT-3",
+        "Date": "2024-11-01T04:58:55",
+        "DistanceKm": 78,
+        "Time": 127,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 1.3709,
-          "verzekering": 2.0482,
-          "tolwegen": 2.9221
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 1.3709,
+          "Insurance": 2.0482,
+          "TollRoads": 2.9221
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-08-20T09:03:59",
-        "afstand_km": 115,
-        "duur_minuten": 109,
+        "TripNumber": "RIT-4",
+        "Date": "2024-08-20T09:03:59",
+        "DistanceKm": 115,
+        "Time": 109,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 3.1182,
-          "verzekering": 1.1052,
-          "tolwegen": 2.854
+        "FuelUsage": 6,
+        "Costs": {
+          "Maintenance": 3.1182,
+          "Insurance": 1.1052,
+          "TollRoads": 2.854
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2024-02-06T03:43:04",
-        "afstand_km": 120,
-        "duur_minuten": 79,
+        "TripNumber": "RIT-5",
+        "Date": "2024-02-06T03:43:04",
+        "DistanceKm": 120,
+        "Time": 79,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 14,
-        "kosten": {
-          "onderhoud": 3.725,
-          "verzekering": 2.7109,
-          "tolwegen": 5.4403
+        "FuelUsage": 14,
+        "Costs": {
+          "Maintenance": 3.725,
+          "Insurance": 2.7109,
+          "TollRoads": 5.4403
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-06-30T07:06:23",
-        "afstand_km": 53,
-        "duur_minuten": 83,
+        "TripNumber": "RIT-6",
+        "Date": "2024-06-30T07:06:23",
+        "DistanceKm": 53,
+        "Time": 83,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 4.7198,
-          "verzekering": 2.7332,
-          "tolwegen": 6.3281
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 4.7198,
+          "Insurance": 2.7332,
+          "TollRoads": 6.3281
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2024-05-11T09:23:47",
-        "afstand_km": 84,
-        "duur_minuten": 149,
+        "TripNumber": "RIT-7",
+        "Date": "2024-05-11T09:23:47",
+        "DistanceKm": 84,
+        "Time": 149,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 3.1849,
-          "verzekering": 2.583,
-          "tolwegen": 4.11
+        "FuelUsage": 12,
+        "Costs": {
+          "Maintenance": 3.1849,
+          "Insurance": 2.583,
+          "TollRoads": 4.11
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-6",
-    "kenteken": "SIN-9-FGG",
-    "merk": "DAF",
-    "model": "TGX",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-6",
+    "LicensePlate": "SIN-9-FGG",
+    "Brand": "DAF",
+    "Model": "TGX",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-07-06T12:51:00",
-        "afstand_km": 138,
-        "duur_minuten": 73,
+        "TripNumber": "RIT-0",
+        "Date": "2024-07-06T12:51:00",
+        "DistanceKm": 138,
+        "Time": 73,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 3.6527,
-          "verzekering": 2.7997,
-          "tolwegen": 5.5756
+        "FuelUsage": 5,
+        "Costs": {
+          "Maintenance": 3.6527,
+          "Insurance": 2.7997,
+          "TollRoads": 5.5756
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-12-28T12:21:20",
-        "afstand_km": 93,
-        "duur_minuten": 84,
+        "TripNumber": "RIT-1",
+        "Date": "2024-12-28T12:21:20",
+        "DistanceKm": 93,
+        "Time": 84,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 14,
-        "kosten": {
-          "onderhoud": 1.882,
-          "verzekering": 2.6449,
-          "tolwegen": 2.0267
+        "FuelUsage": 14,
+        "Costs": {
+          "Maintenance": 1.882,
+          "Insurance": 2.6449,
+          "TollRoads": 2.0267
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2024-06-25T03:25:05",
-        "afstand_km": 137,
-        "duur_minuten": 97,
+        "TripNumber": "RIT-2",
+        "Date": "2024-06-25T03:25:05",
+        "DistanceKm": 137,
+        "Time": 97,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 10,
-        "kosten": {
-          "onderhoud": 1.1824,
-          "verzekering": 2.6353,
-          "tolwegen": 2.9352
+        "FuelUsage": 10,
+        "Costs": {
+          "Maintenance": 1.1824,
+          "Insurance": 2.6353,
+          "TollRoads": 2.9352
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-10-20T04:50:04",
-        "afstand_km": 146,
-        "duur_minuten": 72,
+        "TripNumber": "RIT-3",
+        "Date": "2024-10-20T04:50:04",
+        "DistanceKm": 146,
+        "Time": 72,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 3.8801,
-          "verzekering": 1.6493,
-          "tolwegen": 4.2135
+        "FuelUsage": 6,
+        "Costs": {
+          "Maintenance": 3.8801,
+          "Insurance": 1.6493,
+          "TollRoads": 4.2135
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-05-08T05:24:12",
-        "afstand_km": 112,
-        "duur_minuten": 104,
+        "TripNumber": "RIT-4",
+        "Date": "2024-05-08T05:24:12",
+        "DistanceKm": 112,
+        "Time": 104,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 1.7831,
-          "verzekering": 2.4826,
-          "tolwegen": 5.5209
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 1.7831,
+          "Insurance": 2.4826,
+          "TollRoads": 5.5209
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2024-07-12T05:48:17",
-        "afstand_km": 140,
-        "duur_minuten": 140,
+        "TripNumber": "RIT-5",
+        "Date": "2024-07-12T05:48:17",
+        "DistanceKm": 140,
+        "Time": 140,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 4.2644,
-          "verzekering": 2.5836,
-          "tolwegen": 2.8057
+        "FuelUsage": 11,
+        "Costs": {
+          "Maintenance": 4.2644,
+          "Insurance": 2.5836,
+          "TollRoads": 2.8057
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-05-16T09:01:51",
-        "afstand_km": 102,
-        "duur_minuten": 139,
+        "TripNumber": "RIT-6",
+        "Date": "2024-05-16T09:01:51",
+        "DistanceKm": 102,
+        "Time": 139,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 3.2315,
-          "verzekering": 2.5838,
-          "tolwegen": 5.1345
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 3.2315,
+          "Insurance": 2.5838,
+          "TollRoads": 5.1345
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2024-09-03T04:24:09",
-        "afstand_km": 70,
-        "duur_minuten": 153,
+        "TripNumber": "RIT-7",
+        "Date": "2024-09-03T04:24:09",
+        "DistanceKm": 70,
+        "Time": 153,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 3.2902,
-          "verzekering": 1.7933,
-          "tolwegen": 3.6001
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 3.2902,
+          "Insurance": 1.7933,
+          "TollRoads": 3.6001
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-7",
-    "kenteken": "GPH-6-WRM",
-    "merk": "MAN",
-    "model": "TGX",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-7",
+    "LicensePlate": "GPH-6-WRM",
+    "Brand": "MAN",
+    "Model": "TGX",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-03-01T08:29:47",
-        "afstand_km": 123,
-        "duur_minuten": 146,
+        "TripNumber": "RIT-0",
+        "Date": "2024-03-01T08:29:47",
+        "DistanceKm": 123,
+        "Time": 146,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 3.573,
-          "verzekering": 1.7159,
-          "tolwegen": 2.906
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 3.573,
+          "Insurance": 1.7159,
+          "TollRoads": 2.906
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-04-25T06:17:24",
-        "afstand_km": 133,
-        "duur_minuten": 92,
+        "TripNumber": "RIT-1",
+        "Date": "2024-04-25T06:17:24",
+        "DistanceKm": 133,
+        "Time": 92,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 2.8948,
-          "verzekering": 2.5125,
-          "tolwegen": 3.3154
+        "FuelUsage": 6,
+        "Costs": {
+          "Maintenance": 2.8948,
+          "Insurance": 2.5125,
+          "TollRoads": 3.3154
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2024-04-10T09:07:06",
-        "afstand_km": 115,
-        "duur_minuten": 67,
+        "TripNumber": "RIT-2",
+        "Date": "2024-04-10T09:07:06",
+        "DistanceKm": 115,
+        "Time": 67,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 4.1727,
-          "verzekering": 1.7595,
-          "tolwegen": 2.2234
+        "FuelUsage": 5,
+        "Costs": {
+          "Maintenance": 4.1727,
+          "Insurance": 1.7595,
+          "TollRoads": 2.2234
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-10-21T02:21:38",
-        "afstand_km": 116,
-        "duur_minuten": 149,
+        "TripNumber": "RIT-3",
+        "Date": "2024-10-21T02:21:38",
+        "DistanceKm": 116,
+        "Time": 149,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 1.5337,
-          "verzekering": 2.5465,
-          "tolwegen": 2.1029
+        "FuelUsage": 12,
+        "Costs": {
+          "Maintenance": 1.5337,
+          "Insurance": 2.5465,
+          "TollRoads": 2.1029
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2023-12-03T01:01:29",
-        "afstand_km": 111,
-        "duur_minuten": 61,
+        "TripNumber": "RIT-4",
+        "Date": "2023-12-03T01:01:29",
+        "DistanceKm": 111,
+        "Time": 61,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 1.5431,
-          "verzekering": 1.5894,
-          "tolwegen": 6.9955
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 1.5431,
+          "Insurance": 1.5894,
+          "TollRoads": 6.9955
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2025-01-05T05:29:31",
-        "afstand_km": 66,
-        "duur_minuten": 141,
+        "TripNumber": "RIT-5",
+        "Date": "2025-01-05T05:29:31",
+        "DistanceKm": 66,
+        "Time": 141,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 1.3893,
-          "verzekering": 2.31,
-          "tolwegen": 4.2113
+        "FuelUsage": 5,
+        "Costs": {
+          "Maintenance": 1.3893,
+          "Insurance": 2.31,
+          "TollRoads": 4.2113
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-11-30T06:33:42",
-        "afstand_km": 138,
-        "duur_minuten": 89,
+        "TripNumber": "RIT-6",
+        "Date": "2024-11-30T06:33:42",
+        "DistanceKm": 138,
+        "Time": 89,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 10,
-        "kosten": {
-          "onderhoud": 1.4473,
-          "verzekering": 2.6136,
-          "tolwegen": 5.3174
+        "FuelUsage": 10,
+        "Costs": {
+          "Maintenance": 1.4473,
+          "Insurance": 2.6136,
+          "TollRoads": 5.3174
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2023-12-26T02:43:57",
-        "afstand_km": 55,
-        "duur_minuten": 77,
+        "TripNumber": "RIT-7",
+        "Date": "2023-12-26T02:43:57",
+        "DistanceKm": 55,
+        "Time": 77,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 4.2136,
-          "verzekering": 1.4074,
-          "tolwegen": 3.5037
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 4.2136,
+          "Insurance": 1.4074,
+          "TollRoads": 3.5037
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-8",
-    "kenteken": "MJA-7-DHJ",
-    "merk": "Scania",
-    "model": "FH16",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-8",
+    "LicensePlate": "MJA-7-DHJ",
+    "Brand": "Scania",
+    "Model": "FH16",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-04-16T11:22:01",
-        "afstand_km": 84,
-        "duur_minuten": 148,
+        "TripNumber": "RIT-0",
+        "Date": "2024-04-16T11:22:01",
+        "DistanceKm": 84,
+        "Time": 148,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 1.8275,
-          "verzekering": 1.9083,
-          "tolwegen": 4.4232
+        "FuelUsage": 6,
+        "Costs": {
+          "Maintenance": 1.8275,
+          "Insurance": 1.9083,
+          "TollRoads": 4.4232
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-07-29T08:40:23",
-        "afstand_km": 111,
-        "duur_minuten": 173,
+        "TripNumber": "RIT-1",
+        "Date": "2024-07-29T08:40:23",
+        "DistanceKm": 111,
+        "Time": 173,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 4.5807,
-          "verzekering": 2.9355,
-          "tolwegen": 6.5686
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 4.5807,
+          "Insurance": 2.9355,
+          "TollRoads": 6.5686
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2024-09-22T12:00:38",
-        "afstand_km": 121,
-        "duur_minuten": 100,
+        "TripNumber": "RIT-2",
+        "Date": "2024-09-22T12:00:38",
+        "DistanceKm": 121,
+        "Time": 100,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 14,
-        "kosten": {
-          "onderhoud": 3.8472,
-          "verzekering": 1.03,
-          "tolwegen": 2.5585
+        "FuelUsage": 14,
+        "Costs": {
+          "Maintenance": 3.8472,
+          "Insurance": 1.03,
+          "TollRoads": 2.5585
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-11-14T05:16:19",
-        "afstand_km": 60,
-        "duur_minuten": 93,
+        "TripNumber": "RIT-3",
+        "Date": "2024-11-14T05:16:19",
+        "DistanceKm": 60,
+        "Time": 93,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 3.6185,
-          "verzekering": 2.1686,
-          "tolwegen": 4.9652
+        "FuelUsage": 5,
+        "Costs": {
+          "Maintenance": 3.6185,
+          "Insurance": 2.1686,
+          "TollRoads": 4.9652
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-07-20T02:01:12",
-        "afstand_km": 129,
-        "duur_minuten": 134,
+        "TripNumber": "RIT-4",
+        "Date": "2024-07-20T02:01:12",
+        "DistanceKm": 129,
+        "Time": 134,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 2.2115,
-          "verzekering": 1.5214,
-          "tolwegen": 2.3628
+        "FuelUsage": 11,
+        "Costs": {
+          "Maintenance": 2.2115,
+          "Insurance": 1.5214,
+          "TollRoads": 2.3628
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2024-05-01T08:22:10",
-        "afstand_km": 52,
-        "duur_minuten": 146,
+        "TripNumber": "RIT-5",
+        "Date": "2024-05-01T08:22:10",
+        "DistanceKm": 52,
+        "Time": 146,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 4.6129,
-          "verzekering": 2.8195,
-          "tolwegen": 5.4884
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 4.6129,
+          "Insurance": 2.8195,
+          "TollRoads": 5.4884
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-06-19T07:03:58",
-        "afstand_km": 52,
-        "duur_minuten": 165,
+        "TripNumber": "RIT-6",
+        "Date": "2024-06-19T07:03:58",
+        "DistanceKm": 52,
+        "Time": 165,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 3.0334,
-          "verzekering": 1.3441,
-          "tolwegen": 6.7394
+        "FuelUsage": 11,
+        "Costs": {
+          "Maintenance": 3.0334,
+          "Insurance": 1.3441,
+          "TollRoads": 6.7394
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2024-05-22T05:10:37",
-        "afstand_km": 83,
-        "duur_minuten": 174,
+        "TripNumber": "RIT-7",
+        "Date": "2024-05-22T05:10:37",
+        "DistanceKm": 83,
+        "Time": 174,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 3.051,
-          "verzekering": 1.9018,
-          "tolwegen": 5.1816
+        "FuelUsage": 6,
+        "Costs": {
+          "Maintenance": 3.051,
+          "Insurance": 1.9018,
+          "TollRoads": 5.1816
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-9",
-    "kenteken": "TBM-6-BNT",
-    "merk": "Scania",
-    "model": "Actros",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-9",
+    "LicensePlate": "TBM-6-BNT",
+    "Brand": "Scania",
+    "Model": "Actros",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-08-03T04:36:22",
-        "afstand_km": 122,
-        "duur_minuten": 99,
+        "TripNumber": "RIT-0",
+        "Date": "2024-08-03T04:36:22",
+        "DistanceKm": 122,
+        "Time": 99,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 10,
-        "kosten": {
-          "onderhoud": 3.9304,
-          "verzekering": 1.5277,
-          "tolwegen": 6.4436
+        "FuelUsage": 10,
+        "Costs": {
+          "Maintenance": 3.9304,
+          "Insurance": 1.5277,
+          "TollRoads": 6.4436
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-03-20T01:15:59",
-        "afstand_km": 140,
-        "duur_minuten": 108,
+        "TripNumber": "RIT-1",
+        "Date": "2024-03-20T01:15:59",
+        "DistanceKm": 140,
+        "Time": 108,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 5,
-        "kosten": {
-          "onderhoud": 1.2406,
-          "verzekering": 1.4615,
-          "tolwegen": 6.925
+        "FuelUsage": 5,
+        "Costs": {
+          "Maintenance": 1.2406,
+          "Insurance": 1.4615,
+          "TollRoads": 6.925
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2023-12-27T04:06:12",
-        "afstand_km": 82,
-        "duur_minuten": 113,
+        "TripNumber": "RIT-2",
+        "Date": "2023-12-27T04:06:12",
+        "DistanceKm": 82,
+        "Time": 113,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 1.9387,
-          "verzekering": 1.8372,
-          "tolwegen": 6.7141
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 1.9387,
+          "Insurance": 1.8372,
+          "TollRoads": 6.7141
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-07-17T02:26:40",
-        "afstand_km": 51,
-        "duur_minuten": 168,
+        "TripNumber": "RIT-3",
+        "Date": "2024-07-17T02:26:40",
+        "DistanceKm": 51,
+        "Time": 168,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 3.0163,
-          "verzekering": 1.8713,
-          "tolwegen": 5.725
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 3.0163,
+          "Insurance": 1.8713,
+          "TollRoads": 5.725
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-01-09T04:41:36",
-        "afstand_km": 146,
-        "duur_minuten": 156,
+        "TripNumber": "RIT-4",
+        "Date": "2024-01-09T04:41:36",
+        "DistanceKm": 146,
+        "Time": 156,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 3.7708,
-          "verzekering": 2.5614,
-          "tolwegen": 5.4155
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 3.7708,
+          "Insurance": 2.5614,
+          "TollRoads": 5.4155
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2024-07-31T07:48:22",
-        "afstand_km": 137,
-        "duur_minuten": 157,
+        "TripNumber": "RIT-5",
+        "Date": "2024-07-31T07:48:22",
+        "DistanceKm": 137,
+        "Time": 157,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 10,
-        "kosten": {
-          "onderhoud": 2.0611,
-          "verzekering": 1.2837,
-          "tolwegen": 2.8261
+        "FuelUsage": 10,
+        "Costs": {
+          "Maintenance": 2.0611,
+          "Insurance": 1.2837,
+          "TollRoads": 2.8261
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-04-27T07:51:57",
-        "afstand_km": 121,
-        "duur_minuten": 92,
+        "TripNumber": "RIT-6",
+        "Date": "2024-04-27T07:51:57",
+        "DistanceKm": 121,
+        "Time": 92,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 3.6637,
-          "verzekering": 1.3754,
-          "tolwegen": 3.112
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 3.6637,
+          "Insurance": 1.3754,
+          "TollRoads": 3.112
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2025-01-14T03:58:45",
-        "afstand_km": 87,
-        "duur_minuten": 63,
+        "TripNumber": "RIT-7",
+        "Date": "2025-01-14T03:58:45",
+        "DistanceKm": 87,
+        "Time": 63,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 3.6684,
-          "verzekering": 2.2784,
-          "tolwegen": 4.0101
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 3.6684,
+          "Insurance": 2.2784,
+          "TollRoads": 4.0101
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-10",
-    "kenteken": "DML-0-NWH",
-    "merk": "DAF",
-    "model": "TGX",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-10",
+    "LicensePlate": "DML-0-NWH",
+    "Brand": "DAF",
+    "Model": "TGX",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-09-06T08:16:08",
-        "afstand_km": 69,
-        "duur_minuten": 142,
+        "TripNumber": "RIT-0",
+        "Date": "2024-09-06T08:16:08",
+        "DistanceKm": 69,
+        "Time": 142,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 14,
-        "kosten": {
-          "onderhoud": 3.0632,
-          "verzekering": 1.4386,
-          "tolwegen": 5.9297
+        "FuelUsage": 14,
+        "Costs": {
+          "Maintenance": 3.0632,
+          "Insurance": 1.4386,
+          "TollRoads": 5.9297
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-06-26T02:30:00",
-        "afstand_km": 97,
-        "duur_minuten": 103,
+        "TripNumber": "RIT-1",
+        "Date": "2024-06-26T02:30:00",
+        "DistanceKm": 97,
+        "Time": 103,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 14,
-        "kosten": {
-          "onderhoud": 1.6238,
-          "verzekering": 1.933,
-          "tolwegen": 4.0838
+        "FuelUsage": 14,
+        "Costs": {
+          "Maintenance": 1.6238,
+          "Insurance": 1.933,
+          "TollRoads": 4.0838
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2025-01-24T08:11:27",
-        "afstand_km": 128,
-        "duur_minuten": 147,
+        "TripNumber": "RIT-2",
+        "Date": "2025-01-24T08:11:27",
+        "DistanceKm": 128,
+        "Time": 147,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 3.9964,
-          "verzekering": 1.3224,
-          "tolwegen": 3.3166
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 3.9964,
+          "Insurance": 1.3224,
+          "TollRoads": 3.3166
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-08-09T10:10:57",
-        "afstand_km": 87,
-        "duur_minuten": 68,
+        "TripNumber": "RIT-3",
+        "Date": "2024-08-09T10:10:57",
+        "DistanceKm": 87,
+        "Time": 68,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 2.8476,
-          "verzekering": 2.4099,
-          "tolwegen": 5.8992
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 2.8476,
+          "Insurance": 2.4099,
+          "TollRoads": 5.8992
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-02-08T03:48:02",
-        "afstand_km": 70,
-        "duur_minuten": 146,
+        "TripNumber": "RIT-4",
+        "Date": "2024-02-08T03:48:02",
+        "DistanceKm": 70,
+        "Time": 146,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 1.9079,
-          "verzekering": 1.935,
-          "tolwegen": 3.3346
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 1.9079,
+          "Insurance": 1.935,
+          "TollRoads": 3.3346
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2024-12-26T12:23:29",
-        "afstand_km": 55,
-        "duur_minuten": 156,
+        "TripNumber": "RIT-5",
+        "Date": "2024-12-26T12:23:29",
+        "DistanceKm": 55,
+        "Time": 156,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 3.841,
-          "verzekering": 1.6395,
-          "tolwegen": 4.3482
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 3.841,
+          "Insurance": 1.6395,
+          "TollRoads": 4.3482
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-06-02T11:43:23",
-        "afstand_km": 89,
-        "duur_minuten": 69,
+        "TripNumber": "RIT-6",
+        "Date": "2024-06-02T11:43:23",
+        "DistanceKm": 89,
+        "Time": 69,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 4.037,
-          "verzekering": 1.2018,
-          "tolwegen": 5.2371
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 4.037,
+          "Insurance": 1.2018,
+          "TollRoads": 5.2371
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2024-11-20T03:38:53",
-        "afstand_km": 107,
-        "duur_minuten": 109,
+        "TripNumber": "RIT-7",
+        "Date": "2024-11-20T03:38:53",
+        "DistanceKm": 107,
+        "Time": 109,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 1.6954,
-          "verzekering": 2.1838,
-          "tolwegen": 4.5297
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 1.6954,
+          "Insurance": 2.1838,
+          "TollRoads": 4.5297
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-11",
-    "kenteken": "EMM-3-MMW",
-    "merk": "MAN",
-    "model": "XF",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-11",
+    "LicensePlate": "EMM-3-MMW",
+    "Brand": "MAN",
+    "Model": "XF",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-06-10T02:06:19",
-        "afstand_km": 100,
-        "duur_minuten": 152,
+        "TripNumber": "RIT-0",
+        "Date": "2024-06-10T02:06:19",
+        "DistanceKm": 100,
+        "Time": 152,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 4.4711,
-          "verzekering": 2.3391,
-          "tolwegen": 5.8697
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 4.4711,
+          "Insurance": 2.3391,
+          "TollRoads": 5.8697
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-11-15T11:48:34",
-        "afstand_km": 108,
-        "duur_minuten": 110,
+        "TripNumber": "RIT-1",
+        "Date": "2024-11-15T11:48:34",
+        "DistanceKm": 108,
+        "Time": 110,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 4.4762,
-          "verzekering": 2.6166,
-          "tolwegen": 4.3361
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 4.4762,
+          "Insurance": 2.6166,
+          "TollRoads": 4.3361
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2024-02-17T03:51:14",
-        "afstand_km": 85,
-        "duur_minuten": 175,
+        "TripNumber": "RIT-2",
+        "Date": "2024-02-17T03:51:14",
+        "DistanceKm": 85,
+        "Time": 175,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 1.8681,
-          "verzekering": 2.5221,
-          "tolwegen": 3.1495
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 1.8681,
+          "Insurance": 2.5221,
+          "TollRoads": 3.1495
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2023-11-03T02:53:00",
-        "afstand_km": 147,
-        "duur_minuten": 147,
+        "TripNumber": "RIT-3",
+        "Date": "2023-11-03T02:53:00",
+        "DistanceKm": 147,
+        "Time": 147,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 2.4773,
-          "verzekering": 1.3543,
-          "tolwegen": 2.2414
+        "FuelUsage": 12,
+        "Costs": {
+          "Maintenance": 2.4773,
+          "Insurance": 1.3543,
+          "TollRoads": 2.2414
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-01-22T12:24:25",
-        "afstand_km": 81,
-        "duur_minuten": 164,
+        "TripNumber": "RIT-4",
+        "Date": "2024-01-22T12:24:25",
+        "DistanceKm": 81,
+        "Time": 164,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 1.7976,
-          "verzekering": 1.1616,
-          "tolwegen": 2.6521
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 1.7976,
+          "Insurance": 1.1616,
+          "TollRoads": 2.6521
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2025-01-10T08:08:04",
-        "afstand_km": 67,
-        "duur_minuten": 90,
+        "TripNumber": "RIT-5",
+        "Date": "2025-01-10T08:08:04",
+        "DistanceKm": 67,
+        "Time": 90,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 4.0475,
-          "verzekering": 1.3559,
-          "tolwegen": 5.1617
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 4.0475,
+          "Insurance": 1.3559,
+          "TollRoads": 5.1617
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-03-25T08:33:49",
-        "afstand_km": 136,
-        "duur_minuten": 160,
+        "TripNumber": "RIT-6",
+        "Date": "2024-03-25T08:33:49",
+        "DistanceKm": 136,
+        "Time": 160,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 4.7098,
-          "verzekering": 2.4279,
-          "tolwegen": 2.4952
+        "FuelUsage": 12,
+        "Costs": {
+          "Maintenance": 4.7098,
+          "Insurance": 2.4279,
+          "TollRoads": 2.4952
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2024-10-23T03:19:11",
-        "afstand_km": 108,
-        "duur_minuten": 72,
+        "TripNumber": "RIT-7",
+        "Date": "2024-10-23T03:19:11",
+        "DistanceKm": 108,
+        "Time": 72,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 1.5556,
-          "verzekering": 1.1705,
-          "tolwegen": 2.1323
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 1.5556,
+          "Insurance": 1.1705,
+          "TollRoads": 2.1323
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-12",
-    "kenteken": "EEE-4-SCJ",
-    "merk": "DAF",
-    "model": "FH16",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-12",
+    "LicensePlate": "EEE-4-SCJ",
+    "Brand": "DAF",
+    "Model": "FH16",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-01-13T12:30:34",
-        "afstand_km": 63,
-        "duur_minuten": 139,
+        "TripNumber": "RIT-0",
+        "Date": "2024-01-13T12:30:34",
+        "DistanceKm": 63,
+        "Time": 139,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 10,
-        "kosten": {
-          "onderhoud": 4.7522,
-          "verzekering": 1.8566,
-          "tolwegen": 5.5591
+        "FuelUsage": 10,
+        "Costs": {
+          "Maintenance": 4.7522,
+          "Insurance": 1.8566,
+          "TollRoads": 5.5591
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2025-04-20T08:43:32",
-        "afstand_km": 92,
-        "duur_minuten": 124,
+        "TripNumber": "RIT-1",
+        "Date": "2025-04-20T08:43:32",
+        "DistanceKm": 92,
+        "Time": 124,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 8,
-        "kosten": {
-          "onderhoud": 1.817,
-          "verzekering": 1.6731,
-          "tolwegen": 2.7416
+        "FuelUsage": 8,
+        "Costs": {
+          "Maintenance": 1.817,
+          "Insurance": 1.6731,
+          "TollRoads": 2.7416
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2024-05-25T06:26:34",
-        "afstand_km": 68,
-        "duur_minuten": 134,
+        "TripNumber": "RIT-2",
+        "Date": "2024-05-25T06:26:34",
+        "DistanceKm": 68,
+        "Time": 134,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 1.992,
-          "verzekering": 2.843,
-          "tolwegen": 4.5953
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 1.992,
+          "Insurance": 2.843,
+          "TollRoads": 4.5953
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-08-28T05:55:43",
-        "afstand_km": 60,
-        "duur_minuten": 144,
+        "TripNumber": "RIT-3",
+        "Date": "2024-08-28T05:55:43",
+        "DistanceKm": 60,
+        "Time": 144,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 1.5392,
-          "verzekering": 1.9,
-          "tolwegen": 2.8516
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 1.5392,
+          "Insurance": 1.9,
+          "TollRoads": 2.8516
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-05-25T06:29:25",
-        "afstand_km": 137,
-        "duur_minuten": 64,
+        "TripNumber": "RIT-4",
+        "Date": "2024-05-25T06:29:25",
+        "DistanceKm": 137,
+        "Time": 64,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 3.8133,
-          "verzekering": 2.501,
-          "tolwegen": 5.6545
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 3.8133,
+          "Insurance": 2.501,
+          "TollRoads": 5.6545
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2024-09-11T11:19:03",
-        "afstand_km": 145,
-        "duur_minuten": 172,
+        "TripNumber": "RIT-5",
+        "Date": "2024-09-11T11:19:03",
+        "DistanceKm": 145,
+        "Time": 172,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 15,
-        "kosten": {
-          "onderhoud": 1.2525,
-          "verzekering": 1.2616,
-          "tolwegen": 6.0198
+        "FuelUsage": 15,
+        "Costs": {
+          "Maintenance": 1.2525,
+          "Insurance": 1.2616,
+          "TollRoads": 6.0198
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2025-01-01T11:48:02",
-        "afstand_km": 150,
-        "duur_minuten": 150,
+        "TripNumber": "RIT-6",
+        "Date": "2025-01-01T11:48:02",
+        "DistanceKm": 150,
+        "Time": 150,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 3.6914,
-          "verzekering": 1.247,
-          "tolwegen": 4.8664
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 3.6914,
+          "Insurance": 1.247,
+          "TollRoads": 4.8664
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2024-03-25T04:12:38",
-        "afstand_km": 147,
-        "duur_minuten": 179,
+        "TripNumber": "RIT-7",
+        "Date": "2024-03-25T04:12:38",
+        "DistanceKm": 147,
+        "Time": 179,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 2.5093,
-          "verzekering": 2.5988,
-          "tolwegen": 3.4729
+        "FuelUsage": 12,
+        "Costs": {
+          "Maintenance": 2.5093,
+          "Insurance": 2.5988,
+          "TollRoads": 3.4729
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-13",
-    "kenteken": "MDM-5-PKJ",
-    "merk": "Mercedes",
-    "model": "XF",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-13",
+    "LicensePlate": "MDM-5-PKJ",
+    "Brand": "Mercedes",
+    "Model": "XF",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2024-12-31T12:54:36",
-        "afstand_km": 108,
-        "duur_minuten": 78,
+        "TripNumber": "RIT-0",
+        "Date": "2024-12-31T12:54:36",
+        "DistanceKm": 108,
+        "Time": 78,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 1.6461,
-          "verzekering": 2.258,
-          "tolwegen": 4.0208
+        "FuelUsage": 6,
+        "Costs": {
+          "Maintenance": 1.6461,
+          "Insurance": 2.258,
+          "TollRoads": 4.0208
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2024-10-16T02:13:34",
-        "afstand_km": 147,
-        "duur_minuten": 126,
+        "TripNumber": "RIT-1",
+        "Date": "2024-10-16T02:13:34",
+        "DistanceKm": 147,
+        "Time": 126,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 3.3635,
-          "verzekering": 1.9088,
-          "tolwegen": 2.5057
+        "FuelUsage": 12,
+        "Costs": {
+          "Maintenance": 3.3635,
+          "Insurance": 1.9088,
+          "TollRoads": 2.5057
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2025-04-07T06:07:39",
-        "afstand_km": 96,
-        "duur_minuten": 126,
+        "TripNumber": "RIT-2",
+        "Date": "2025-04-07T06:07:39",
+        "DistanceKm": 96,
+        "Time": 126,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 1.787,
-          "verzekering": 1.1617,
-          "tolwegen": 3.0193
+        "FuelUsage": 11,
+        "Costs": {
+          "Maintenance": 1.787,
+          "Insurance": 1.1617,
+          "TollRoads": 3.0193
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-06-27T03:53:25",
-        "afstand_km": 124,
-        "duur_minuten": 65,
+        "TripNumber": "RIT-3",
+        "Date": "2024-06-27T03:53:25",
+        "DistanceKm": 124,
+        "Time": 65,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 4.3809,
-          "verzekering": 2.6912,
-          "tolwegen": 5.8303
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 4.3809,
+          "Insurance": 2.6912,
+          "TollRoads": 5.8303
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-11-15T11:28:21",
-        "afstand_km": 117,
-        "duur_minuten": 136,
+        "TripNumber": "RIT-4",
+        "Date": "2024-11-15T11:28:21",
+        "DistanceKm": 117,
+        "Time": 136,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 1.7542,
-          "verzekering": 1.4259,
-          "tolwegen": 6.3507
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 1.7542,
+          "Insurance": 1.4259,
+          "TollRoads": 6.3507
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2024-12-10T10:47:21",
-        "afstand_km": 69,
-        "duur_minuten": 115,
+        "TripNumber": "RIT-5",
+        "Date": "2024-12-10T10:47:21",
+        "DistanceKm": 69,
+        "Time": 115,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 1.6985,
-          "verzekering": 2.1252,
-          "tolwegen": 6.119
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 1.6985,
+          "Insurance": 2.1252,
+          "TollRoads": 6.119
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-04-12T07:32:39",
-        "afstand_km": 139,
-        "duur_minuten": 154,
+        "TripNumber": "RIT-6",
+        "Date": "2024-04-12T07:32:39",
+        "DistanceKm": 139,
+        "Time": 154,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 12,
-        "kosten": {
-          "onderhoud": 3.127,
-          "verzekering": 2.8715,
-          "tolwegen": 3.2362
+        "FuelUsage": 12,
+        "Costs": {
+          "Maintenance": 3.127,
+          "Insurance": 2.8715,
+          "TollRoads": 3.2362
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2023-11-24T05:13:17",
-        "afstand_km": 129,
-        "duur_minuten": 149,
+        "TripNumber": "RIT-7",
+        "Date": "2023-11-24T05:13:17",
+        "DistanceKm": 129,
+        "Time": 149,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 3.4612,
-          "verzekering": 2.5084,
-          "tolwegen": 5.296
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 3.4612,
+          "Insurance": 2.5084,
+          "TollRoads": 5.296
         }
       }
     ]
   },
   {
-    "voertuig_id": "TRK-14",
-    "kenteken": "CKW-8-TGL",
-    "merk": "Mercedes",
-    "model": "TGX",
-    "brandstof_type": "Diesel",
-    "ritten": [
+    "VehicleNumber": "TRK-14",
+    "LicensePlate": "CKW-8-TGL",
+    "Brand": "Mercedes",
+    "Model": "TGX",
+    "FuelType": "Diesel",
+    "Trips": [
       {
-        "rit_id": "RIT-0",
-        "datum": "2025-01-15T10:56:11",
-        "afstand_km": 68,
-        "duur_minuten": 125,
+        "TripNumber": "RIT-0",
+        "Date": "2025-01-15T10:56:11",
+        "DistanceKm": 68,
+        "Time": 125,
         "uurtarief": 10,
-        "brandstof_verbruik_l": 9,
-        "kosten": {
-          "onderhoud": 3.7626,
-          "verzekering": 1.8164,
-          "tolwegen": 5.0965
+        "FuelUsage": 9,
+        "Costs": {
+          "Maintenance": 3.7626,
+          "Insurance": 1.8164,
+          "TollRoads": 5.0965
         }
       },
       {
-        "rit_id": "RIT-1",
-        "datum": "2025-04-03T03:46:00",
-        "afstand_km": 112,
-        "duur_minuten": 81,
+        "TripNumber": "RIT-1",
+        "Date": "2025-04-03T03:46:00",
+        "DistanceKm": 112,
+        "Time": 81,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 4.4147,
-          "verzekering": 2.461,
-          "tolwegen": 6.7649
+        "FuelUsage": 6,
+        "Costs": {
+          "Maintenance": 4.4147,
+          "Insurance": 2.461,
+          "TollRoads": 6.7649
         }
       },
       {
-        "rit_id": "RIT-2",
-        "datum": "2025-04-01T07:55:16",
-        "afstand_km": 79,
-        "duur_minuten": 81,
+        "TripNumber": "RIT-2",
+        "Date": "2025-04-01T07:55:16",
+        "DistanceKm": 79,
+        "Time": 81,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 7,
-        "kosten": {
-          "onderhoud": 2.5145,
-          "verzekering": 2.9293,
-          "tolwegen": 3.1678
+        "FuelUsage": 7,
+        "Costs": {
+          "Maintenance": 2.5145,
+          "Insurance": 2.9293,
+          "TollRoads": 3.1678
         }
       },
       {
-        "rit_id": "RIT-3",
-        "datum": "2024-09-28T09:02:39",
-        "afstand_km": 68,
-        "duur_minuten": 171,
+        "TripNumber": "RIT-3",
+        "Date": "2024-09-28T09:02:39",
+        "DistanceKm": 68,
+        "Time": 171,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 6,
-        "kosten": {
-          "onderhoud": 4.6843,
-          "verzekering": 2.6725,
-          "tolwegen": 5.6132
+        "FuelUsage": 6,
+        "Costs": {
+          "Maintenance": 4.6843,
+          "Insurance": 2.6725,
+          "TollRoads": 5.6132
         }
       },
       {
-        "rit_id": "RIT-4",
-        "datum": "2024-10-31T07:42:49",
-        "afstand_km": 146,
-        "duur_minuten": 146,
+        "TripNumber": "RIT-4",
+        "Date": "2024-10-31T07:42:49",
+        "DistanceKm": 146,
+        "Time": 146,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 14,
-        "kosten": {
-          "onderhoud": 3.7886,
-          "verzekering": 1.1361,
-          "tolwegen": 4.474
+        "FuelUsage": 14,
+        "Costs": {
+          "Maintenance": 3.7886,
+          "Insurance": 1.1361,
+          "TollRoads": 4.474
         }
       },
       {
-        "rit_id": "RIT-5",
-        "datum": "2025-02-07T11:04:09",
-        "afstand_km": 112,
-        "duur_minuten": 114,
+        "TripNumber": "RIT-5",
+        "Date": "2025-02-07T11:04:09",
+        "DistanceKm": 112,
+        "Time": 114,
         "uurtarief": 11,
-        "brandstof_verbruik_l": 10,
-        "kosten": {
-          "onderhoud": 2.0882,
-          "verzekering": 2.5176,
-          "tolwegen": 2.8274
+        "FuelUsage": 10,
+        "Costs": {
+          "Maintenance": 2.0882,
+          "Insurance": 2.5176,
+          "TollRoads": 2.8274
         }
       },
       {
-        "rit_id": "RIT-6",
-        "datum": "2024-09-04T10:18:10",
-        "afstand_km": 78,
-        "duur_minuten": 146,
+        "TripNumber": "RIT-6",
+        "Date": "2024-09-04T10:18:10",
+        "DistanceKm": 78,
+        "Time": 146,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 11,
-        "kosten": {
-          "onderhoud": 3.0865,
-          "verzekering": 1.2786,
-          "tolwegen": 6.7423
+        "FuelUsage": 11,
+        "Costs": {
+          "Maintenance": 3.0865,
+          "Insurance": 1.2786,
+          "TollRoads": 6.7423
         }
       },
       {
-        "rit_id": "RIT-7",
-        "datum": "2025-03-05T07:53:06",
-        "afstand_km": 78,
-        "duur_minuten": 177,
+        "TripNumber": "RIT-7",
+        "Date": "2025-03-05T07:53:06",
+        "DistanceKm": 78,
+        "Time": 177,
         "uurtarief": 12,
-        "brandstof_verbruik_l": 13,
-        "kosten": {
-          "onderhoud": 3.1442,
-          "verzekering": 1.0767,
-          "tolwegen": 3.138
+        "FuelUsage": 13,
+        "Costs": {
+          "Maintenance": 3.1442,
+          "Insurance": 1.0767,
+          "TollRoads": 3.138
         }
       }
     ]

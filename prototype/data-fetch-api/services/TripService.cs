@@ -21,23 +21,22 @@ namespace Services
         {
             try
             {
-                var ritten = await _context.Ritten
+                var ritten = await _context.Trips
                     .Include(r => r.Vehicle)
                     .Distinct()
                     .Where(r => r.Vehicle != null)
                     .Select(r => new TripOverview
                     {
-                        RitId = r.RitId,
-                        RitNummer = r.RitNummer,
-                        Datum = r.Datum,
-                        AfstandKm = r.AfstandKm,
-                        BrandstofVerbruikL = r.BrandstofVerbruikL,
-                        DuurMinuten = r.DuurMinuten,
-                        VoertuigId = r.Vehicle.VoertuigId.ToString(),
-                        Kenteken = r.Vehicle.Kenteken,
-                        Merk = r.Vehicle.Merk,
+                        TripId = r.Id,
+                        Date = r.Date,
+                        DistanceKm = r.DistanceKm,
+                        FuelUsage = r.FuelUsage,
+                        Time = r.Time,
+                        VehicleId = r.Vehicle.VehicleId.ToString(),
+                        LicensePlate = r.Vehicle.LicensePlate,
+                        Brand = r.Vehicle.Brand,
                         Model = r.Vehicle.Model,
-                        BrandstofType = r.Vehicle.BrandstofType
+                        FuelType = r.Vehicle.FuelType
                     })
                     .ToListAsync();
 
@@ -52,13 +51,13 @@ namespace Services
 
         public async Task AddTrip(TripCreateDto rit)
         {
-            if (_context.Voertuigen.Any(v => v.VoertuigId == rit.VehicleVoertuigId))
+            if (_context.Vehicles.Any(v => v.VehicleId == rit.VehicleId))
             {
                 try
                 {
                     Trip NewTrip = rit.ToTrip();
                     {
-                        await _context.Ritten.AddAsync(NewTrip);
+                        await _context.Trips.AddAsync(NewTrip);
                         await _context.SaveChangesAsync();
                     }
                 }
@@ -69,7 +68,7 @@ namespace Services
             }
             else
             {
-                throw new Exception($"De voertuig met voertuig ID: {rit.VehicleVoertuigId} bestaat niet");
+                throw new Exception($"De voertuig met voertuig ID: {rit.VehicleId} bestaat niet");
             }
         }
 

@@ -19,23 +19,23 @@ namespace Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllVehicles()
         {
-            var voertuigen = await _vehicleService.GetAllVehiclesAsync();
-            if (voertuigen == null || voertuigen.Count == 0)
+            var vehicles = await _vehicleService.GetAllVehiclesAsync();
+            if (vehicles == null || vehicles.Count == 0)
             {
-                return NotFound(new { error = "Geen voertuigen gevonden." });
+                return NotFound(new Response { Message = "Geen voertuigen gevonden." });
             }
-            return Ok(voertuigen);
+            return Ok(new Response { Data = vehicles });
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetVehicleById([FromRoute] int id)
         {
-            var voertuig = await _vehicleService.GetVehicleByIdAsync(id);
-            if (voertuig == null)
+            var vehicle = await _vehicleService.GetVehicleByIdAsync(id);
+            if (vehicle == null)
             {
-                return NotFound(new { error = $"Voertuig met ID {id} niet gevonden." });
+                return NotFound(new Response { Message = $"voertuig met ID {id} niet gevonden." });
             }
-            return Ok(voertuig);
+            return Ok(new Response { Data = vehicle });
         }
 
         [HttpPost]
@@ -43,12 +43,12 @@ namespace Controllers
         {
             if (vehicle == null)
             {
-                return BadRequest(new { error = "Ongeldige voertuig data." });
+                return BadRequest(new Response { Message = "Ongeldige voertuig data." });
             }
 
             await _vehicleService.AddVehicleAsync(vehicle);
 
-            return Created("http://localhost:5000/api/voertuigen", new { message = "Voertuig succesvol toegevoegd." });
+            return Created("http://localhost:5000/api/voertuigen", new Response { Message = "Voertuig succesvol toegevoegd." });
         }
     }
 }
