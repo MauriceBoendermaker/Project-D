@@ -27,7 +27,6 @@ namespace Models
         public int DistanceKm { get; set; }
 
         public int Time { get; set; }
-        [JsonIgnore]
 
         public int FuelUsage { get; set; }
 
