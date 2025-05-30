@@ -50,13 +50,13 @@ namespace Controllers
             return NotFound(new Response { Message = "Voertuig bestaat niet of geen ritten" });
         }
 
-        [HttpGet("kosten/{voertuigId}/{ritId}")]
-        public async Task<IActionResult> GetRitCost([FromRoute] int vehicleId, [FromRoute] int TripId)
+        [HttpGet("kosten/{VehicleId}/{TripId}")]
+        public async Task<IActionResult> GetRitCost([FromRoute] int VehicleId, [FromRoute] int TripId)
         {
-            var result = await _fuelService.GetRitCostAsync(vehicleId, TripId);
+            var result = await _fuelService.GetRitCostAsync(VehicleId, TripId);
             if (result != 0)
             {
-                return Ok(new Response { Message = $"De brandstofkosten voor rit {TripId} van voertuig {vehicleId} zijn: €{result}" });
+                return Ok(new Response { Message = $"De brandstofkosten voor rit {TripId} van voertuig {VehicleId} zijn: €{result}" });
             }
             return NotFound(new Response { Message = "Voertuig of rit niet gevonden" });
         }
