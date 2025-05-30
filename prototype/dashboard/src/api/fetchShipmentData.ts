@@ -5,14 +5,15 @@ const API_URL = "http://localhost:3000/api/zending";
 export type error = {
   message: string;
 };
+
 // Fetch all shipments
 export type Zending = {
-  zending_id: number;
-  voertuig_id: string;
-  bestemming: string;
-  max_capaciteit: number;
-  huidige_capaciteit: number;
-  onbenutte_kilometers: number;
+  Id: number;
+  VehicleNumber: string;
+  Destination: string;
+  MaxCapacityKg: number;
+  CurrentLoadKg: number;
+  EmptyKilometers: number;
 };
 
 export async function fetchAllShipments(): Promise<Zending[]> {
@@ -110,22 +111,20 @@ export async function fetchTotalEmptyMiles(): Promise<number> {
 // Fetch Total Load Degree
 export type TotalDegree = {
   shipmentId: number;
-  loadDegree: number;
+  degree: number;
 };
 
-export type TotalDegreeResponse =
-  | {
-      response: TotalDegree[];
-    }
-  | error;
+export type TotalDegreeResponse = {
+  message: string;
+  data: TotalDegree[];
+};
 export async function fetchTotalLoadDegree(): Promise<TotalDegreeResponse> {
   const response = await fetch(API_URL + "/beladingsgraad/totaal");
   if (response.ok) {
-    const data = await response.json();
-    const output: TotalDegreeResponse = { response: data };
-
-    return output;
+    const data: TotalDegreeResponse = await response.json();
+    console.log(data);
+    return data;
   } else {
-    return { message: "Failed to fetch data" };
+    return { message: "Failed to fetch data", data: [] };
   }
 }

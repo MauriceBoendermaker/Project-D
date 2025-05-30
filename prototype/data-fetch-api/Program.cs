@@ -23,8 +23,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlite("Data Source=DashboardData.db"));
 
 builder.Services.AddControllers();
-builder.Services.AddScoped<IFuelService, JsonFuelService>();
-builder.Services.AddScoped<IJsonShipmentService, JsonShipmentService>();
+builder.Services.AddScoped<IFuelService, FuelService>();
+builder.Services.AddScoped<IShipmentService, DBShipmentService>();
 builder.Services.AddScoped<ITripService, TripService>();
 builder.Services.AddScoped<IVehicleService, VehicleService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();

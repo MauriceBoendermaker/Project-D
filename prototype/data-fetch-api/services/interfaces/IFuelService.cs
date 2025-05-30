@@ -6,8 +6,11 @@ namespace Services
 {
     public interface IFuelService
     {
-        Task<IEnumerable<Vehicle>?> GetAllVehiclesAsync();
+        Task<List<Vehicle>?> GetAllVehiclesAsync();
+        Task<IEnumerable<Trip>?> GetAllTripsAsync();
         Task<int> GetVehicleAverageAsync(int voertuigId);
-        Task<int> GetRitCostAsync(string voertuigId, string ritId);
+        Task<int> GetRitCostAsync(int vehicleId, int ritId);
+        Task<int> GetRitCostAsync(int vehicleId, int TripId, List<Vehicle> vehicles);
+        Task<IEnumerable<TripCost>?> GetAllTripCostsAsync();
     }
 }

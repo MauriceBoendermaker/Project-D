@@ -4,7 +4,7 @@ using Models;
 
 namespace Services
 {
-    public class XMLShipmentService : JsonShipmentService, IJsonShipmentService
+    public class XMLShipmentService : JsonShipmentService, IShipmentService
     {
         private string Path = "data/Zendingen.xml";
 

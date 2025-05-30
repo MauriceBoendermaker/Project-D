@@ -4,16 +4,15 @@ namespace Models
 {
     public class TripOverview
     {
-        public int RitId { get; set; }
-        public string RitNummer { get; set; } = string.Empty;
-        public DateTime? Datum { get; set; }
-        public int AfstandKm { get; set; }
-        public int BrandstofVerbruikL { get; set; }
-        public int DuurMinuten { get; set; }
-        public string VoertuigId { get; set; } = string.Empty;
-        public string Kenteken { get; set; } = string.Empty;
-        public string Merk { get; set; } = string.Empty;
+        public int TripId { get; set; }
+        public DateTime? Date { get; set; }
+        public int DistanceKm { get; set; }
+        public int FuelUsage { get; set; }
+        public int Time { get; set; }
+        public string VehicleId { get; set; } = string.Empty;
+        public string LicensePlate { get; set; } = string.Empty;
+        public string Brand { get; set; } = string.Empty;
         public string Model { get; set; } = string.Empty;
-        public string BrandstofType { get; set; } = string.Empty;
+        public string FuelType { get; set; } = string.Empty;
     }
 }

@@ -4,31 +4,59 @@ import L, { Map as LeafletMap } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import markerIcon from "../../assets/images/marker.png";
 import { METHODS } from "http";
+import { json } from "stream/consumers";
+import { error } from "console";
+import { Popup } from "components/misc/Popup";
 
 const ORS_API_KEY = process.env.REACT_APP_ORS_API_KEY as string;
 
-interface PostRitProps {
-  voertuig_id: number;
-  datum: string; // ISO-datumstring
-  afstand_km: number;
-  duur_minuten: number;
-  brandstof_verbruik_l: number;
-  bestemming_id: number;
-  klant_id: number;
-  chauffeur_id: number;
-}
-interface Kost {
-  onderhoud: number;
-  verzekering: number;
-  tolwegen: number;
+export interface PostTripRequest {
+  vehicleId: number;
+  date: Date;
+  distanceKm: number;
+  time: number;
+  fuelUsage: number;
+  destinationId: number;
+  customerId: number;
+  driverId: number;
 }
 
-interface Vehicle {
-  voertuigId: number;
-  kenteken: string;
-  merk: string;
-  model: string;
-  brandstofType: string;
+interface PostTripResponse {
+  message: string;
+  data: null;
+}
+interface GetVehiclesResponse {
+  message: string;
+  data: Vehicle[];
+}
+
+export interface Vehicle {
+  vehicleId: number;
+
+  licensePlate?: string;
+
+  brand?: string;
+
+  model?: string;
+
+  fuelType?: string;
+
+  trips?: Trip[];
+
+  maximumCapacity: number;
+
+  createdAt: string; // ISO 8601 date string
+}
+export interface Trip {
+  id: number;
+  vehicleId: number;
+  date?: string;
+  distanceKm: number;
+  time: number;
+  destinationId: number;
+  customerId: number;
+  driverId: number;
+  createdAt: string;
 }
 
 interface MapProps {
@@ -69,6 +97,11 @@ export const AddTrip = () => {
   const [endCoords, setEndCoords] = useState<[number, number] | null>(null);
   const [routeCoords, setRouteCoords] = useState<[number, number][]>([]);
   const [postcodeValid, setPostcodeValid] = useState<boolean | null>(null);
+  const [showPopup, setShowPopup] = useState<boolean>(false);
+  const [popupTitle, setPopupTitle] = useState<string>("");
+  const [PopupBody, setPopupBody] = useState<string>("");
+  const [time, setTime] = useState<string>("");
+
   const postcodeRegex = /^[1-9][0-9]{3}\s?[A-Z]{2}$/i;
 
   const customIcon = new L.Icon({
@@ -83,15 +116,21 @@ export const AddTrip = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/voertuigen")
-      .then((res) => res.json())
-      .then((data) => setVehicles(data));
+    const fetchVehicles = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/voertuigen");
+
+        const data: GetVehiclesResponse = await response.json();
+        setVehicles(data.data);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    fetchVehicles();
   }, []);
 
-  const handleVehicleChange = (voertuigId: string) => {
-    const vehicle = vehicles.find(
-      (v) => v.voertuigId.toString() === voertuigId
-    );
+  const handleVehicleChange = (vehicleId: string) => {
+    const vehicle = vehicles.find((v) => v.vehicleId.toString() === vehicleId);
     setSelectedVehicle(vehicle || null);
   };
 
@@ -161,8 +200,7 @@ export const AddTrip = () => {
         {
           method: "POST",
           headers: {
-            Authorization:
-              `${ORS_API_KEY}`,
+            Authorization: `${ORS_API_KEY}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -229,29 +267,37 @@ export const AddTrip = () => {
 
   const handleSubmit = async () => {
     {
-      const Rit: PostRitProps = {
-        voertuig_id: selectedVehicle?.voertuigId ?? 0,
-        datum: datum,
-        afstand_km: afstandKm,
-        duur_minuten: duurMinuten,
-        brandstof_verbruik_l: 0,
-        bestemming_id: 0,
-        chauffeur_id: 0,
-        klant_id: 0,
+      const Rit: PostTripRequest = {
+        vehicleId: selectedVehicle?.vehicleId ?? 0,
+        date: new Date(`${datum}T${time}Z`),
+        distanceKm: afstandKm,
+        time: duurMinuten,
+        fuelUsage: 0,
+        destinationId: 0,
+        driverId: 0,
+        customerId: 0,
       };
       try {
-        const repsone = await fetch("http://localhost:3000/api/ritten", {
+        const response = await fetch("http://localhost:3000/api/ritten", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(Rit),
         });
-        if (repsone.status == 201) {
-          console.log("Added");
+        const json: PostTripResponse = await response.json();
+        if (response.status == 201) {
+          setPopupTitle("Toegevoegd!");
+          setPopupBody(json.message);
+        } else {
+          setPopupTitle("Toevoegen mislukt");
+          setPopupBody(json.message);
         }
       } catch {
-        console.log("Failed");
+        setPopupTitle("Toevoegen mislukt");
+        setPopupBody("Fout opgetreden bij het toevoegen van de rit.");
+      } finally {
+        setShowPopup(true);
       }
 
       /*{
@@ -272,17 +318,12 @@ export const AddTrip = () => {
       <div className="row">
         <div className="col-md-6">
           <h2>Nieuwe rit toevoegen</h2>
-          <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
-            <div className="mb-3">
-              <label className="form-label">Rit ID</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Automatisch gegenereerd"
-                disabled
-              />
-            </div>
-
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSubmit();
+            }}
+          >
             <div className="mb-3">
               <label className="form-label">Datum</label>
               <input
@@ -295,6 +336,17 @@ export const AddTrip = () => {
             </div>
 
             <div className="mb-3">
+              <label className="form-label">Tijd</label>
+              <input
+                type="time"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                className="form-control"
+                placeholder="Automatisch gegenereerd"
+              />
+            </div>
+
+            <div className="mb-3">
               <label className="form-label">Voertuig</label>
               <select
                 className="form-select"
@@ -303,8 +355,8 @@ export const AddTrip = () => {
               >
                 <option value="">Selecteer voertuig</option>
                 {vehicles.map((v) => (
-                  <option key={v.voertuigId} value={v.voertuigId}>
-                    {v.merk} {v.model} [{v.kenteken}]
+                  <option key={v.vehicleId} value={v.vehicleId}>
+                    {v.brand} {v.model} [{v.licensePlate}]
                   </option>
                 ))}
               </select>
@@ -315,7 +367,7 @@ export const AddTrip = () => {
               <input
                 type="text"
                 className="form-control"
-                value={selectedVehicle?.kenteken || ""}
+                value={selectedVehicle?.licensePlate || ""}
                 readOnly
                 disabled
               />
@@ -327,7 +379,7 @@ export const AddTrip = () => {
                 <input
                   type="text"
                   className="form-control"
-                  value={selectedVehicle?.merk || ""}
+                  value={selectedVehicle?.brand || ""}
                   readOnly
                   disabled
                 />
@@ -369,8 +421,9 @@ export const AddTrip = () => {
               />
               {postcodeValid !== null && (
                 <div
-                  className={`small ${postcodeValid ? "text-success" : "text-danger"
-                    }`}
+                  className={`small ${
+                    postcodeValid ? "text-success" : "text-danger"
+                  }`}
                 >
                   {postcodeValid
                     ? "✓ Geldige postcode"
@@ -424,7 +477,7 @@ export const AddTrip = () => {
             </div>
 
             <button type="submit" className="btn-primary">
-              Opslaan
+              Toevoegen
             </button>
           </form>
         </div>
@@ -436,6 +489,13 @@ export const AddTrip = () => {
             customIcon={customIcon}
           />
         </div>
+        <Popup
+          title={popupTitle}
+          body={PopupBody}
+          onFirstBtnClick={() => setShowPopup(false)}
+          isVisible={showPopup}
+          firstButton={"Sluiten"}
+        />
       </div>
     </div>
   );

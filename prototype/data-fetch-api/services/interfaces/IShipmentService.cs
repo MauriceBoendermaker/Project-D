@@ -2,7 +2,7 @@ using Models;
 
 namespace Services
 {
-    public interface IJsonShipmentService
+    public interface IShipmentService
     {
         Task<IEnumerable<Shipment>?> GetAllShipments();
         Task<int> GetMaxCapacity(int shipmentId);

@@ -3,7 +3,7 @@ import { Popup } from "../misc/Popup";
 import { useNavigate } from "react-router-dom";
 
 interface EmployeeForm {
-  naam: string;
+  name: string;
   type: string;
   email: string;
   beschikbaar: boolean;
@@ -13,7 +13,7 @@ export const AddEmployee = () => {
   const [error, setError] = useState<string>("");
   const [added, setAdded] = useState<boolean>(false);
   const [formData, setFormData] = useState<EmployeeForm>({
-    naam: "",
+    name: "",
     type: "",
     email: "",
     beschikbaar: true,
@@ -48,7 +48,7 @@ export const AddEmployee = () => {
       );
       if (response.status === 201) {
         setFormData({
-          naam: "",
+          name: "",
           type: "",
           email: "",
           beschikbaar: true,
@@ -89,8 +89,8 @@ export const AddEmployee = () => {
               <input
                 type="text"
                 className="form-control"
-                name="naam"
-                value={formData.naam}
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
                 required
               />
