@@ -70,5 +70,16 @@ namespace Controllers
             }
             return Ok("Klant succesvol verwijderd");
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCustomer(int id)
+        {
+            bool result = await _customerService.DeleteCustomerAsync(id);
+            if (!result)
+            {
+                return NotFound("Klant niet gevonden");
+            }
+            return Ok("Klant succesvol verwijderd");
+        }
     }
 }
