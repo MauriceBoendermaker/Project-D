@@ -2,23 +2,10 @@ import React, { useEffect, useState } from "react";
 import ReactECharts from "echarts-for-react";
 import { StyledChartWrapper } from "../StyledChartWrapper";
 import { FUEL_CHART_TITLE } from "components/ChartTitles";
-import { stringify } from "querystring";
+import { Trip, fetchTripData } from "api/fetchTripData"
 
 interface FuelChartProps {
   delayIndex?: number;
-}
-
-export interface Trip {
-  id: number;
-  vehicleId: number;
-  date: string;
-  distanceKm: number;
-  time: number;
-  fuelUsage: number;
-  destinationId: number;
-  customerId: number;
-  driverId: number;
-  createdAt: string;
 }
 
 export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
@@ -26,20 +13,15 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getTripData = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/brandstof/ritten"
-        );
-        if (!response.ok) throw new Error("Network response was not ok");
-        const result = await response.json();
-        setData(result.data);
-      } catch (error: any) {
-        setError(error.message);
+        const data = await fetchTripData();
+        setData(data);
+      } catch (err: any) {
+        setError(err.message);
       }
     };
-
-    fetchData();
+    getTripData();
     console.log(JSON.stringify(data))
   }, []);
 
@@ -70,7 +52,7 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
       gemiddeldeAfstand: Math.round((item.totalAfstand / item.count) * 10) / 10,
       gemiddeldeBrandstof: Math.round((item.totalBrandstof / item.count) * 10) / 10,
     }))
-  : [];
+    : [];
 
   const chartOptions = {
     tooltip: {},
@@ -106,26 +88,26 @@ export const FuelChart: React.FC<FuelChartProps> = ({ delayIndex = 0 }) => {
     ],
   };
 
-    return (
-        <StyledChartWrapper
-            title={
-          <a
-              href="http://localhost:5000/verbruik"
-              style={{
+  return (
+    <StyledChartWrapper
+      title={
+        <a
+          href="http://localhost:5000/verbruik"
+          style={{
             textDecoration: "none",
             color: "inherit",
-              }}
-          >
-              {FUEL_CHART_TITLE}
-          </a>
-            }
-            delayIndex={delayIndex}
+          }}
         >
-            {data ? (
-          <ReactECharts option={chartOptions} style={{ height: 300, width: "100%" }} />
-            ) : (
-          <div>Laden van data...</div>
-            )}
-        </StyledChartWrapper>
-    );
+          {FUEL_CHART_TITLE}
+        </a>
+      }
+      delayIndex={delayIndex}
+    >
+      {data ? (
+        <ReactECharts option={chartOptions} style={{ height: 300, width: "100%" }} />
+      ) : (
+        <div>Laden van data...</div>
+      )}
+    </StyledChartWrapper>
+  );
 };
