@@ -5,7 +5,7 @@ interface VehicleForm {
   licensePlate: string;
   brand: string;
   model: string;
-  brandstof_type: string;
+  fuelType: string;
   max_capaciteit: number;
 }
 
@@ -14,7 +14,7 @@ export const AddVehicle = () => {
     licensePlate: "",
     brand: "",
     model: "",
-    brandstof_type: "",
+    fuelType: "",
     max_capaciteit: 0,
   });
 
@@ -108,7 +108,7 @@ export const AddVehicle = () => {
           licensePlate: "",
           brand: "",
           model: "",
-          brandstof_type: "",
+          fuelType: "",
           max_capaciteit: 0,
         });
 
@@ -195,8 +195,8 @@ export const AddVehicle = () => {
               <label className="form-label">Brandstoftype</label>
               <select
                 className="form-select"
-                name="brandstof_type"
-                value={formData.brandstof_type}
+                name="fuelType"
+                value={formData.fuelType}
                 onChange={handleChange}
                 required
               >
