@@ -149,7 +149,7 @@ export const AddEmployee = () => {
               : "Medewerker toegevoegd!"
           }
           body={
-            error.length > 0 ? error : "De medewerker is succesvol toegevoegd."
+            error.length > 0 ? error : "De medewerker is succesvol toegevoegd. Bekijk uw mail inbox voor een wachtwoord."
           }
           isVisible={error.length > 0 || added}
           onFirstBtnClick={() => {
