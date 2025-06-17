@@ -2,7 +2,7 @@ import { Popup } from "components/misc/Popup";
 import { useState } from "react";
 
 interface VehicleForm {
-  license_plate: string;
+  licensePlate: string;
   brand: string;
   model: string;
   brandstof_type: string;
@@ -11,7 +11,7 @@ interface VehicleForm {
 
 export const AddVehicle = () => {
   const [formData, setFormData] = useState<VehicleForm>({
-    license_plate: "",
+    licensePlate: "",
     brand: "",
     model: "",
     brandstof_type: "",
@@ -69,7 +69,7 @@ export const AddVehicle = () => {
     const updatedValue =
       name === "max_capaciteit"
         ? parseInt(value)
-        : name === "license_plate"
+        : name === "licensePlate"
         ? formatKenteken(value)
         : value;
 
@@ -78,7 +78,7 @@ export const AddVehicle = () => {
       [name]: updatedValue,
     }));
 
-    if (name === "license_plate") {
+    if (name === "licensePlate") {
       const formatted = formatKenteken(value);
       setKentekenValid(
         formatted.trim() !== "" && kentekenRegex.test(formatted)
@@ -89,8 +89,8 @@ export const AddVehicle = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!kentekenRegex.test(formData.license_plate)) {
-      console.log(formData.license_plate);
+    if (!kentekenRegex.test(formData.licensePlate)) {
+      console.log(formData.licensePlate);
       return;
     }
 
@@ -105,7 +105,7 @@ export const AddVehicle = () => {
 
       if (response.status == 201) {
         setFormData({
-          license_plate: "",
+          licensePlate: "",
           brand: "",
           model: "",
           brandstof_type: "",
@@ -148,8 +148,8 @@ export const AddVehicle = () => {
               <input
                 type="text"
                 className="form-control"
-                name="license_plate"
-                value={formData.license_plate}
+                name="licensePlate"
+                value={formData.licensePlate}
                 onChange={handleChange}
                 placeholder="Bijv. 9-XXX-99"
                 required
