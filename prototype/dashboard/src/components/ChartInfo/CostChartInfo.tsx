@@ -18,6 +18,20 @@ export const CostChartInfo: React.FC = () => {
   const [chartData, setChartData] = useState<TripCost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+  const handleSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    const row: TripCost | undefined = chartData.find(
+      (d) => d.vehicleId == parseInt(searchTerm)
+    );
+
+    if (row === undefined) {
+      setError("Geen data gevonden voor ID: " + searchTerm);
+    } else {
+      setChartData([row]);
+    }
+  };
 
   useEffect(() => {
     const fetchKostenData = async () => {
@@ -47,6 +61,17 @@ export const CostChartInfo: React.FC = () => {
       </div>
       <div className="table-section">
         <h2>Kosten per rit</h2>
+        <div className="input-group">
+          <input
+            className="form-control"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder=""
+          ></input>
+          <button className="btn-primary" onClick={(e) => handleSearch(e)}>
+            Zoeken
+          </button>
+        </div>
         <div className="overflow-x-auto">
           <table>
             <thead>

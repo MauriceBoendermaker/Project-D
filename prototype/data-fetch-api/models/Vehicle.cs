@@ -9,8 +9,6 @@ namespace Models
         [Key]
         public int VehicleId { get; set; } // Primary key (auto increment)
 
-        public string VehicleNumber { get; set; } = string.Empty;
-
         public string? LicensePlate { get; set; } = string.Empty;
 
         public string? Brand { get; set; } = string.Empty;
