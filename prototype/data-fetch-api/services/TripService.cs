@@ -63,7 +63,7 @@ namespace Services
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Fout met het toevoegen van een rit: " + ex.Message);
+                    throw new Exception(ex.Message);
                 }
             }
             else

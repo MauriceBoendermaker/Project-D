@@ -2,8 +2,8 @@ import { Popup } from "components/misc/Popup";
 import { useState } from "react";
 
 interface VehicleForm {
-  kenteken: string;
-  merk: string;
+  license_plate: string;
+  brand: string;
   model: string;
   brandstof_type: string;
   max_capaciteit: number;
@@ -11,8 +11,8 @@ interface VehicleForm {
 
 export const AddVehicle = () => {
   const [formData, setFormData] = useState<VehicleForm>({
-    kenteken: "",
-    merk: "",
+    license_plate: "",
+    brand: "",
     model: "",
     brandstof_type: "",
     max_capaciteit: 0,
@@ -69,7 +69,7 @@ export const AddVehicle = () => {
     const updatedValue =
       name === "max_capaciteit"
         ? parseInt(value)
-        : name === "kenteken"
+        : name === "license_plate"
         ? formatKenteken(value)
         : value;
 
@@ -78,7 +78,7 @@ export const AddVehicle = () => {
       [name]: updatedValue,
     }));
 
-    if (name === "kenteken") {
+    if (name === "license_plate") {
       const formatted = formatKenteken(value);
       setKentekenValid(
         formatted.trim() !== "" && kentekenRegex.test(formatted)
@@ -89,7 +89,8 @@ export const AddVehicle = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!kentekenRegex.test(formData.kenteken)) {
+    if (!kentekenRegex.test(formData.license_plate)) {
+      console.log(formData.license_plate);
       return;
     }
 
@@ -104,8 +105,8 @@ export const AddVehicle = () => {
 
       if (response.status == 201) {
         setFormData({
-          kenteken: "",
-          merk: "",
+          license_plate: "",
+          brand: "",
           model: "",
           brandstof_type: "",
           max_capaciteit: 0,
@@ -147,8 +148,8 @@ export const AddVehicle = () => {
               <input
                 type="text"
                 className="form-control"
-                name="kenteken"
-                value={formData.kenteken}
+                name="license_plate"
+                value={formData.license_plate}
                 onChange={handleChange}
                 placeholder="Bijv. 9-XXX-99"
                 required
@@ -171,8 +172,8 @@ export const AddVehicle = () => {
                 <input
                   type="text"
                   className="form-control"
-                  name="merk"
-                  value={formData.merk}
+                  name="brand"
+                  value={formData.brand}
                   onChange={handleChange}
                   required
                 />

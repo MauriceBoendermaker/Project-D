@@ -9,7 +9,7 @@ export const ChartsWrapper = () => {
   const [zoomedChart, setZoomedChart] = useState<number | null>(null);
 
   const chartConfigs = [
-    // { type: "fuel", id: "fuelChart" },
+    { type: "fuel", id: "fuelChart" },
     { type: "tripCost", id: "tripChart" },
     { type: "Beladingsgraad", id: "beladingsgraadChart" },
   ];
