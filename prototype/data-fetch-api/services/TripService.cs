@@ -61,9 +61,9 @@ namespace Services
                         await _context.SaveChangesAsync();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    throw new Exception(ex.Message);
+                    throw new Exception("Een onverwachte fout is opgetreden");
                 }
             }
             else
