@@ -34,6 +34,7 @@ button {
     font-weight: 600;
     letter-spacing: 1.6px;
     text-transform: uppercase;
+    text-decoration: none;
     background-color: $primary-color;
     border-radius: $corner-radius;
     border: 1px solid $primary-color;
@@ -118,4 +119,8 @@ a.btn-link {
     &:hover {
         color: $primary-light !important;
     }
+}
+
+.chart-button {
+    justify-content: end;
 }
