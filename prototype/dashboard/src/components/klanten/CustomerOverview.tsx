@@ -86,6 +86,13 @@ export const CustomerOverview = () => {
         const fetchData = async () => {
             try {
                 const res = await fetch("http://localhost:3000/api/klanten");
+                if (res.status === 404) {
+                    if (isMounted) {
+                        setCustomers([]);
+                        setLoading(false);
+                    }
+                    return;
+                }
 
                 if (!res.ok) {
                     throw new Error(`HTTP error! Status: ${res.status}`);
@@ -93,7 +100,6 @@ export const CustomerOverview = () => {
 
                 const response = await res.json();
                 const data: Customer[] = response.data;
-                setCustomers(data);
                 if (isMounted) {
                     setCustomers(data);
                     setLoading(false);
@@ -182,6 +188,13 @@ export const CustomerOverview = () => {
                                                 </td>
                                             </tr>
                                         ))}
+                                        {customers.length === 0 && (
+                                            <tr>
+                                                <td colSpan={9} style={{ textAlign: "center", color: "#888" }}>
+                                                    Er zijn nog geen klanten toegevoegd.
+                                                </td>
+                                            </tr>
+                                        )}
                                     </tbody>
                                 </table>
                             </div>
