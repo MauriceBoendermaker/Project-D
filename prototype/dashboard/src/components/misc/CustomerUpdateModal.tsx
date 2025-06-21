@@ -24,6 +24,8 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
     onClose,
 }) => {
     const [formData, setFormData] = useState<EditedCustomer>(initialFormData);
+    const [postcodeValid, setPostcodeValid] = useState<boolean | null>(null);
+    const postcodeRegex = /^[1-9][0-9]{3}\s?[A-Z]{2}$/i;
 
     if (!isVisible) return null;
 
@@ -31,15 +33,29 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
     ) => {
         const { name, value } = e.target;
-
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        if (name === "zipCode") {
+            const formatted = value.toUpperCase();
+            if (formatted.trim() === "") {
+                setPostcodeValid(null);
+            } else {
+                setPostcodeValid(postcodeRegex.test(formatted));
+            }
+            setFormData((prev) => ({
+                ...prev,
+                [name]: formatted,
+            }));
+        } else {
+            setFormData((prev) => ({
+                ...prev,
+                [name]: value,
+            }));
+        }
     };
     const HandleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
+        if (postcodeValid === false) {
+            return;
+        }
         try {
             console.log(customerId);
             const response = await fetch(
@@ -56,7 +72,6 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
             }
         } catch (err) {
             onClose();
-            // handle error
         } finally {
             onClose();
         }
@@ -90,6 +105,7 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
                                         type="text"
                                         className="form-control"
                                         name="company"
+                                        placeholder="Bijv. Lafeber"
                                         value={formData.company}
                                         required
                                         onChange={handleChange}
@@ -102,6 +118,7 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
                                         type="text"
                                         className="form-control"
                                         name="contactPerson"
+                                        placeholder="Bijv. John Doe"
                                         required
                                         value={formData.contactPerson}
                                         onChange={handleChange}
@@ -114,6 +131,7 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
                                         type="email"
                                         className="form-control"
                                         name="email"
+                                        placeholder="Bijv. example@email.com"
                                         value={formData.email}
                                         required
                                         onChange={handleChange}
@@ -125,6 +143,7 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
                                         type="tel"
                                         className="form-control"
                                         name="telephoneNumber"
+                                        placeholder="Bijv. 0612345678"
                                         value={formData.telephoneNumber}
                                         required
                                         onChange={handleChange}
@@ -136,6 +155,7 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
                                         type="text"
                                         className="form-control"
                                         name="address"
+                                        placeholder="Bijv. Dorpsstraat 1"
                                         value={formData.address}
                                         required
                                         onChange={handleChange}
@@ -150,7 +170,17 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
                                         value={formData.zipCode}
                                         required
                                         onChange={handleChange}
+                                        placeholder="Bijv. 1234 AB"
                                     />
+                                    {postcodeValid !== null && (
+                                        <div
+                                            className={`small ${postcodeValid ? "text-success" : "text-danger"}`}
+                                        >
+                                            {postcodeValid
+                                                ? "✓ Geldige postcode"
+                                                : "✗ Ongeldige postcode"}
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Plaats</label>
@@ -163,7 +193,7 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <button type="submit" className="btn-primary">
+                                <button type="submit" className="btn-primary" disabled={postcodeValid === false}>
                                     Opslaan
                                 </button>
                             </form>

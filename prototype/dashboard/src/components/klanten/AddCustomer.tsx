@@ -12,7 +12,6 @@ interface CustomerForm {
 }
 
 export const AddCustomer = () => {
-  const [postcode, setPostcode] = useState("");
   const [postcodeValid, setPostcodeValid] = useState<boolean | null>(null);
   const [error, setError] = useState<any>("");
   const [added, setAdded] = useState<boolean>(false);
@@ -32,23 +31,24 @@ export const AddCustomer = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    if (name === "postcode") {
+    if (name === "zipCode") {
       const formatted = value.toUpperCase();
-      setPostcode(formatted);
-
       if (formatted.trim() === "") {
         setPostcodeValid(null);
       } else {
         setPostcodeValid(postcodeRegex.test(formatted));
       }
+      setFormData((prev) => ({
+        ...prev,
+        [name]: formatted,
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
     }
-
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -118,6 +118,7 @@ export const AddCustomer = () => {
                 type="company"
                 className="form-control"
                 name="company"
+                placeholder="Bijv. Lafeber"
                 value={formData.company}
                 onChange={handleChange}
                 required
@@ -129,6 +130,7 @@ export const AddCustomer = () => {
                 type="name"
                 className="form-control"
                 name="contactperson"
+                placeholder="Bijv. John Doe"
                 value={formData.contactperson}
                 onChange={handleChange}
               />
@@ -139,6 +141,7 @@ export const AddCustomer = () => {
                 type="email"
                 className="form-control"
                 name="email"
+                placeholder="Bijv. example@email.com"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -149,6 +152,7 @@ export const AddCustomer = () => {
                 type="tel"
                 className="form-control"
                 name="telephoneNumber"
+                placeholder="Bijv. 0612345678"
                 value={formData.telephoneNumber}
                 onChange={handleChange}
               />
