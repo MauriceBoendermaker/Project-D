@@ -52,7 +52,6 @@ export const AddCustomer = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const adres = `${formData.address}, ${formData.zipCode} ${formData.location}`;
 
     try {
       const response = await fetch("http://localhost:3000/api/klanten", {
@@ -64,12 +63,14 @@ export const AddCustomer = () => {
           company: formData.company,
           contactperson: formData.contactperson,
           email: formData.email,
-          telephoneNumber: formData.address,
-          address: adres,
+          telephoneNumber: formData.telephoneNumber,
+          address: formData.address,
+          zipCode: formData.zipCode,
+          location: formData.location
         }),
       });
 
-      if (response.status == 201) {
+      if (response.status === 201) {
         setAdded(true);
         setFormData({
           company: "",
@@ -168,8 +169,8 @@ export const AddCustomer = () => {
               <input
                 type="text"
                 className="form-control"
-                name="postcode"
-                value={postcode}
+                name="zipCode"
+                value={formData.zipCode}
                 onChange={handleChange}
                 placeholder="Bijv. 1234 AB"
                 required

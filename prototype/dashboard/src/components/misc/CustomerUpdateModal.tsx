@@ -6,6 +6,8 @@ export interface EditedCustomer {
     email: string;
     telephoneNumber: string;
     address: string;
+    zipCode: string;
+    location: string;
 }
 
 interface EditCustomerPopupProps {
@@ -139,7 +141,28 @@ export const CustomerFormModal: React.FC<EditCustomerPopupProps> = ({
                                         onChange={handleChange}
                                     />
                                 </div>
-
+                                <div className="mb-3">
+                                    <label className="form-label">Postcode</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        name="zipCode"
+                                        value={formData.zipCode}
+                                        required
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label className="form-label">Plaats</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        name="location"
+                                        value={formData.location}
+                                        required
+                                        onChange={handleChange}
+                                    />
+                                </div>
                                 <button type="submit" className="btn-primary">
                                     Opslaan
                                 </button>

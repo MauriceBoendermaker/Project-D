@@ -9,7 +9,7 @@ interface Customer {
     email: string;
     telephoneNumber: string;
     address: string;
-    zipcode: string;
+    zipCode: string;
     location: string;
 }
 
@@ -30,7 +30,9 @@ export const CustomerOverview = () => {
         contactPerson: "",
         email: "",
         telephoneNumber: "",
-        address: ""
+        address: "",
+        zipCode: "",
+        location: ""
     });
 
     const handleClose = () => {
@@ -46,7 +48,9 @@ export const CustomerOverview = () => {
             contactPerson: customer.contactperson,
             email: customer.email,
             telephoneNumber: customer.telephoneNumber,
-            address: customer.address
+            address: customer.address,
+            zipCode: customer.zipCode,
+            location: customer.location
         });
         setShowCustomerForm(true);
     };
@@ -163,7 +167,7 @@ export const CustomerOverview = () => {
                                                 <td>{e.telephoneNumber}</td>
                                                 <td>{e.address}</td>
                                                 <td>{e.location}</td>
-                                                <td>{e.zipcode}</td>
+                                                <td>{e.zipCode}</td>
                                                 <td>
                                                     <button onClick={() => HandleDelete(e.customerId)}>
                                                         <i className="fas fa-user-minus me-2">

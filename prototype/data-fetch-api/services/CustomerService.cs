@@ -46,6 +46,8 @@ namespace Services
                 existingCustomer.Email = customer.Email;
                 existingCustomer.TelephoneNumber = customer.TelephoneNumber;
                 existingCustomer.Address = customer.Address;
+                existingCustomer.ZipCode = customer.ZipCode;
+                existingCustomer.Location = customer.Location;
 
                 _context.Customers.Update(existingCustomer);
                 await _context.SaveChangesAsync();
