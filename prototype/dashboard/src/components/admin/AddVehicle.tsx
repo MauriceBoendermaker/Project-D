@@ -2,19 +2,19 @@ import { Popup } from "components/misc/Popup";
 import { useState } from "react";
 
 interface VehicleForm {
-  kenteken: string;
-  merk: string;
+  licensePlate: string;
+  brand: string;
   model: string;
-  brandstof_type: string;
+  fuelType: string;
   max_capaciteit: number;
 }
 
 export const AddVehicle = () => {
   const [formData, setFormData] = useState<VehicleForm>({
-    kenteken: "",
-    merk: "",
+    licensePlate: "",
+    brand: "",
     model: "",
-    brandstof_type: "",
+    fuelType: "",
     max_capaciteit: 0,
   });
 
@@ -69,7 +69,7 @@ export const AddVehicle = () => {
     const updatedValue =
       name === "max_capaciteit"
         ? parseInt(value)
-        : name === "kenteken"
+        : name === "licensePlate"
         ? formatKenteken(value)
         : value;
 
@@ -78,7 +78,7 @@ export const AddVehicle = () => {
       [name]: updatedValue,
     }));
 
-    if (name === "kenteken") {
+    if (name === "licensePlate") {
       const formatted = formatKenteken(value);
       setKentekenValid(
         formatted.trim() !== "" && kentekenRegex.test(formatted)
@@ -89,7 +89,8 @@ export const AddVehicle = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!kentekenRegex.test(formData.kenteken)) {
+    if (!kentekenRegex.test(formData.licensePlate)) {
+      console.log(formData.licensePlate);
       return;
     }
 
@@ -104,10 +105,10 @@ export const AddVehicle = () => {
 
       if (response.status == 201) {
         setFormData({
-          kenteken: "",
-          merk: "",
+          licensePlate: "",
+          brand: "",
           model: "",
-          brandstof_type: "",
+          fuelType: "",
           max_capaciteit: 0,
         });
 
@@ -147,8 +148,8 @@ export const AddVehicle = () => {
               <input
                 type="text"
                 className="form-control"
-                name="kenteken"
-                value={formData.kenteken}
+                name="licensePlate"
+                value={formData.licensePlate}
                 onChange={handleChange}
                 placeholder="Bijv. 9-XXX-99"
                 required
@@ -171,8 +172,8 @@ export const AddVehicle = () => {
                 <input
                   type="text"
                   className="form-control"
-                  name="merk"
-                  value={formData.merk}
+                  name="brand"
+                  value={formData.brand}
                   onChange={handleChange}
                   required
                 />
@@ -194,8 +195,8 @@ export const AddVehicle = () => {
               <label className="form-label">Brandstoftype</label>
               <select
                 className="form-select"
-                name="brandstof_type"
-                value={formData.brandstof_type}
+                name="fuelType"
+                value={formData.fuelType}
                 onChange={handleChange}
                 required
               >

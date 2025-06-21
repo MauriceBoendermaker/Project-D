@@ -61,9 +61,9 @@ namespace Services
                         await _context.SaveChangesAsync();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine("Fout met het toevoegen van een rit: " + ex.Message);
+                    throw new Exception("Een onverwachte fout is opgetreden");
                 }
             }
             else
