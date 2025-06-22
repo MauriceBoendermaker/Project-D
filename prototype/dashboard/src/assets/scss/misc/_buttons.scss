@@ -34,6 +34,7 @@ button {
     font-weight: 600;
     letter-spacing: 1.6px;
     text-transform: uppercase;
+    text-decoration: none;
     background-color: $primary-color;
     border-radius: $corner-radius;
     border: 1px solid $primary-color;
@@ -110,6 +111,16 @@ a.btn-link {
     }
 }
 
-.login-button {
-    margin: 25px auto 0;
+.logout-btn {
+    color: $white !important;
+    font-weight: 600 !important;
+    margin-right: 25px;
+
+    &:hover {
+        color: $primary-light !important;
+    }
+}
+
+.chart-button {
+    justify-content: end;
 }

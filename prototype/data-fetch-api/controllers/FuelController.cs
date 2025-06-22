@@ -1,4 +1,6 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using Services;
 
 namespace Controllers
@@ -17,34 +19,58 @@ namespace Controllers
         [HttpGet("voertuigen")]
         public async Task<IActionResult> GetVehicles()
         {
-            var result = await _fuelService.GetAllVehicles();
+            var result = await _fuelService.GetAllVehiclesAsync();
             if (result != null)
             {
-                return Ok(result);
+                return Ok(new Response { Data = result });
             }
-            return NotFound("Geen voertuigen gevonden");
+            return NotFound(new Response { Message = "Geen voertuigen gevonden" });
         }
 
-        [HttpGet("gemiddelde/{VehicleId}")]
-        public async Task<IActionResult> GetVehicleAverage([FromRoute] string VehicleId)
+        [HttpGet("ritten")]
+        public async Task<IActionResult> GetTrips()
         {
-            var result = await _fuelService.GetVehicleAverage(VehicleId);
-            if (result != 0)
+            IEnumerable<Trip>? result = await _fuelService.GetAllTripsAsync();
+            if (result != null)
             {
-                return Ok($"gemiddelde brandstof per rit voor {VehicleId}: {result} Liter");
+                return Ok(new Response { Data = result });
             }
-            return NotFound("Voertuig bestaat niet of geen ritten");
+            return NotFound("Geen ritten gevonden");
         }
 
-        [HttpGet("kosten/{VehicleId}/{RitId}")]
-        public async Task<IActionResult> GetRitCost([FromRoute] string VehicleId, [FromRoute] string RitId)
+
+        [HttpGet("gemiddelde/{voertuigId}")]
+        public async Task<IActionResult> GetVehicleAverage([FromRoute] int voertuigId)
         {
-            var result = await _fuelService.GetRitCost(VehicleId, RitId);
+            var result = await _fuelService.GetVehicleAverageAsync(voertuigId);
             if (result != 0)
             {
-                return Ok($"De Benzinekosten voor {RitId} van {VehicleId} zijn : {result} Euro");
+                return Ok(new Response { Message = $"Gemiddeld brandstofverbruik per rit voor voertuig {voertuigId}: {result} liter" });
             }
-            return NotFound("Voertuig bestaat niet of geen ritten");
+            return NotFound(new Response { Message = "Voertuig bestaat niet of geen ritten" });
+        }
+
+        [HttpGet("kosten/{VehicleId}/{TripId}")]
+        public async Task<IActionResult> GetRitCost([FromRoute] int VehicleId, [FromRoute] int TripId)
+        {
+            var result = await _fuelService.GetRitCostAsync(VehicleId, TripId);
+            if (result != 0)
+            {
+                return Ok(new Response { Message = $"De brandstofkosten voor rit {TripId} van voertuig {VehicleId} zijn: €{result}" });
+            }
+            return NotFound(new Response { Message = "Voertuig of rit niet gevonden" });
+        }
+
+        [HttpGet("totalekosten")]
+        public async Task<IActionResult> GetTotalFuelCost()
+        {
+            IEnumerable<TripCost>? result = await _fuelService.GetAllTripCostsAsync();
+
+            if (result != null)
+            {
+                return Ok(new Response { Data = result });
+            }
+            return NotFound(new Response { Message = "Er is een fout opgetreden tijdens het bereken van de kosten." });
         }
     }
 }

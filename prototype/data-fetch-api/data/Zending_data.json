@@ -1,402 +1,452 @@
 [
     {
-      "zending_id": 1,
-      "voertuig_id": "V5",
-      "bestemming": "Eindhoven",
-      "max_capaciteit": 14097,
-      "huidige_capaciteit": 6530,
-      "onbenutte_kilometers": 6
+        "Id": 1,
+        "VehicleNumber": "TRK-5",
+        "Destination": "Eindhoven",
+        "MaxCapacityKg": 14097,
+        "CurrentLoadKg": 6530,
+        "EmptyKilometers": 6,
+        "VehicleId": 5
     },
     {
-      "zending_id": 2,
-      "voertuig_id": "V9",
-      "bestemming": "Eindhoven",
-      "max_capaciteit": 17993,
-      "huidige_capaciteit": 107,
-      "onbenutte_kilometers": 5
+        "Id": 2,
+        "VehicleNumber": "TRK-9",
+        "Destination": "Eindhoven",
+        "MaxCapacityKg": 17993,
+        "CurrentLoadKg": 107,
+        "EmptyKilometers": 5,
+        "VehicleId": 9
     },
     {
-      "zending_id": 3,
-      "voertuig_id": "V3",
-      "bestemming": "Amsterdam",
-      "max_capaciteit": 9258,
-      "huidige_capaciteit": 2007,
-      "onbenutte_kilometers": 75
+        "Id": 3,
+        "VehicleNumber": "TRK-3",
+        "Destination": "Amsterdam",
+        "MaxCapacityKg": 9258,
+        "CurrentLoadKg": 2007,
+        "EmptyKilometers": 75,
+        "VehicleId": 3
     },
     {
-      "zending_id": 4,
-      "voertuig_id": "V6",
-      "bestemming": "Den Haag",
-      "max_capaciteit": 14268,
-      "huidige_capaciteit": 9599,
-      "onbenutte_kilometers": 12
+        "Id": 4,
+        "VehicleNumber": "TRK-6",
+        "Destination": "Den Haag",
+        "MaxCapacityKg": 14268,
+        "CurrentLoadKg": 9599,
+        "EmptyKilometers": 12,
+        "VehicleId": 6
     },
     {
-      "zending_id": 5,
-      "voertuig_id": "V8",
-      "bestemming": "Den Haag",
-      "max_capaciteit": 6540,
-      "huidige_capaciteit": 8824,
-      "onbenutte_kilometers": 55
+        "Id": 5,
+        "VehicleNumber": "TRK-8",
+        "Destination": "Den Haag",
+        "MaxCapacityKg": 6540,
+        "CurrentLoadKg": 8824,
+        "EmptyKilometers": 55,
+        "VehicleId": 8
     },
     {
-      "zending_id": 6,
-      "voertuig_id": "V2",
-      "bestemming": "Utrecht",
-      "max_capaciteit": 12531,
-      "huidige_capaciteit": 8854,
-      "onbenutte_kilometers": 29
+        "Id": 6,
+        "VehicleNumber": "TRK-2",
+        "Destination": "Utrecht",
+        "MaxCapacityKg": 12531,
+        "CurrentLoadKg": 8854,
+        "EmptyKilometers": 29,
+        "VehicleId": 2
     },
     {
-      "zending_id": 7,
-      "voertuig_id": "V5",
-      "bestemming": "Maastricht",
-      "max_capaciteit": 7238,
-      "huidige_capaciteit": 5742,
-      "onbenutte_kilometers": 8
+        "Id": 7,
+        "VehicleNumber": "TRK-5",
+        "Destination": "Maastricht",
+        "MaxCapacityKg": 7238,
+        "CurrentLoadKg": 5742,
+        "EmptyKilometers": 8,
+        "VehicleId": 5
     },
     {
-      "zending_id": 8,
-      "voertuig_id": "V9",
-      "bestemming": "Breda",
-      "max_capaciteit": 14150,
-      "huidige_capaciteit": 2293,
-      "onbenutte_kilometers": 82
+        "Id": 8,
+        "VehicleNumber": "TRK-9",
+        "Destination": "Breda",
+        "MaxCapacityKg": 14150,
+        "CurrentLoadKg": 2293,
+        "EmptyKilometers": 82,
+        "VehicleId": 9
     },
     {
-      "zending_id": 9,
-      "voertuig_id": "V7",
-      "bestemming": "Groningen",
-      "max_capaciteit": 14464,
-      "huidige_capaciteit": 3514,
-      "onbenutte_kilometers": 38
+        "Id": 9,
+        "VehicleNumber": "TRK-7",
+        "Destination": "Groningen",
+        "MaxCapacityKg": 14464,
+        "CurrentLoadKg": 3514,
+        "EmptyKilometers": 38,
+        "VehicleId": 7
     },
     {
-      "zending_id": 10,
-      "voertuig_id": "V8",
-      "bestemming": "Amsterdam",
-      "max_capaciteit": 8673,
-      "huidige_capaciteit": 6383,
-      "onbenutte_kilometers": 54
+        "Id": 10,
+        "VehicleNumber": "TRK-8",
+        "Destination": "Amsterdam",
+        "MaxCapacityKg": 8673,
+        "CurrentLoadKg": 6383,
+        "EmptyKilometers": 54,
+        "VehicleId": 8
     },
     {
-      "zending_id": 11,
-      "voertuig_id": "V4",
-      "bestemming": "Venlo",
-      "max_capaciteit": 18515,
-      "huidige_capaciteit": 8673,
-      "onbenutte_kilometers": 27
+        "Id": 11,
+        "VehicleNumber": "TRK-4",
+        "Destination": "Venlo",
+        "MaxCapacityKg": 18515,
+        "CurrentLoadKg": 8673,
+        "EmptyKilometers": 27,
+        "VehicleId": 4
     },
     {
-      "zending_id": 12,
-      "voertuig_id": "V4",
-      "bestemming": "Venlo",
-      "max_capaciteit": 11603,
-      "huidige_capaciteit": 1436,
-      "onbenutte_kilometers": 65
+        "Id": 12,
+        "VehicleNumber": "TRK-4",
+        "Destination": "Venlo",
+        "MaxCapacityKg": 11603,
+        "CurrentLoadKg": 1436,
+        "EmptyKilometers": 65,
+        "VehicleId": 4
     },
     {
-      "zending_id": 13,
-      "voertuig_id": "V8",
-      "bestemming": "Groningen",
-      "max_capaciteit": 16482,
-      "huidige_capaciteit": 6259,
-      "onbenutte_kilometers": 25
+        "Id": 13,
+        "VehicleNumber": "TRK-8",
+        "Destination": "Groningen",
+        "MaxCapacityKg": 16482,
+        "CurrentLoadKg": 6259,
+        "EmptyKilometers": 25,
+        "VehicleId": 8
     },
     {
-      "zending_id": 14,
-      "voertuig_id": "V10",
-      "bestemming": "Amsterdam",
-      "max_capaciteit": 18174,
-      "huidige_capaciteit": 1706,
-      "onbenutte_kilometers": 97
+        "Id": 14,
+        "VehicleNumber": "TRK-10",
+        "Destination": "Amsterdam",
+        "MaxCapacityKg": 18174,
+        "CurrentLoadKg": 1706,
+        "EmptyKilometers": 97,
+        "VehicleId": 1
     },
     {
-      "zending_id": 15,
-      "voertuig_id": "V8",
-      "bestemming": "Utrecht",
-      "max_capaciteit": 17509,
-      "huidige_capaciteit": 9304,
-      "onbenutte_kilometers": 8
+        "Id": 15,
+        "VehicleNumber": "TRK-8",
+        "Destination": "Utrecht",
+        "MaxCapacityKg": 17509,
+        "CurrentLoadKg": 9304,
+        "EmptyKilometers": 8,
+        "VehicleId": 8
     },
     {
-      "zending_id": 16,
-      "voertuig_id": "V5",
-      "bestemming": "Amsterdam",
-      "max_capaciteit": 12512,
-      "huidige_capaciteit": 3327,
-      "onbenutte_kilometers": 47
+        "Id": 16,
+        "VehicleNumber": "TRK-5",
+        "Destination": "Amsterdam",
+        "MaxCapacityKg": 12512,
+        "CurrentLoadKg": 3327,
+        "EmptyKilometers": 47,
+        "VehicleId": 5
     },
     {
-      "zending_id": 17,
-      "voertuig_id": "V4",
-      "bestemming": "Zwolle",
-      "max_capaciteit": 15101,
-      "huidige_capaciteit": 2154,
-      "onbenutte_kilometers": 76
+        "Id": 17,
+        "VehicleNumber": "TRK-4",
+        "Destination": "Zwolle",
+        "MaxCapacityKg": 15101,
+        "CurrentLoadKg": 2154,
+        "EmptyKilometers": 76,
+        "VehicleId": 4
     },
     {
-      "zending_id": 18,
-      "voertuig_id": "V9",
-      "bestemming": "Groningen",
-      "max_capaciteit": 8090,
-      "huidige_capaciteit": 375,
-      "onbenutte_kilometers": 31
+        "Id": 18,
+        "VehicleNumber": "TRK-9",
+        "Destination": "Groningen",
+        "MaxCapacityKg": 8090,
+        "CurrentLoadKg": 375,
+        "EmptyKilometers": 31,
+        "VehicleId": 9
     },
     {
-      "zending_id": 19,
-      "voertuig_id": "V3",
-      "bestemming": "Amsterdam",
-      "max_capaciteit": 10872,
-      "huidige_capaciteit": 1161,
-      "onbenutte_kilometers": 97
+        "Id": 19,
+        "VehicleNumber": "TRK-3",
+        "Destination": "Amsterdam",
+        "MaxCapacityKg": 10872,
+        "CurrentLoadKg": 1161,
+        "EmptyKilometers": 97,
+        "VehicleId": 3
     },
     {
-      "zending_id": 20,
-      "voertuig_id": "V4",
-      "bestemming": "Maastricht",
-      "max_capaciteit": 16363,
-      "huidige_capaciteit": 1865,
-      "onbenutte_kilometers": 65
+        "Id": 20,
+        "VehicleNumber": "TRK-4",
+        "Destination": "Maastricht",
+        "MaxCapacityKg": 16363,
+        "CurrentLoadKg": 1865,
+        "EmptyKilometers": 65,
+        "VehicleId": 4
     },
     {
-      "zending_id": 21,
-      "voertuig_id": "V9",
-      "bestemming": "Utrecht",
-      "max_capaciteit": 17978,
-      "huidige_capaciteit": 7278,
-      "onbenutte_kilometers": 26
+        "Id": 21,
+        "VehicleNumber": "TRK-9",
+        "Destination": "Utrecht",
+        "MaxCapacityKg": 17978,
+        "CurrentLoadKg": 7278,
+        "EmptyKilometers": 26,
+        "VehicleId": 9
     },
     {
-      "zending_id": 22,
-      "voertuig_id": "V6",
-      "bestemming": "Breda",
-      "max_capaciteit": 18047,
-      "huidige_capaciteit": 5215,
-      "onbenutte_kilometers": 34
+        "Id": 22,
+        "VehicleNumber": "TRK-6",
+        "Destination": "Breda",
+        "MaxCapacityKg": 18047,
+        "CurrentLoadKg": 5215,
+        "EmptyKilometers": 34,
+        "VehicleId": 6
     },
     {
-      "zending_id": 23,
-      "voertuig_id": "V9",
-      "bestemming": "Den Haag",
-      "max_capaciteit": 12702,
-      "huidige_capaciteit": 6969,
-      "onbenutte_kilometers": 63
+        "Id": 23,
+        "VehicleNumber": "TRK-9",
+        "Destination": "Den Haag",
+        "MaxCapacityKg": 12702,
+        "CurrentLoadKg": 6969,
+        "EmptyKilometers": 63,
+        "VehicleId": 9
     },
     {
-      "zending_id": 24,
-      "voertuig_id": "V4",
-      "bestemming": "Amsterdam",
-      "max_capaciteit": 10949,
-      "huidige_capaciteit": 1094,
-      "onbenutte_kilometers": 29
+        "Id": 24,
+        "VehicleNumber": "TRK-4",
+        "Destination": "Amsterdam",
+        "MaxCapacityKg": 10949,
+        "CurrentLoadKg": 1094,
+        "EmptyKilometers": 29,
+        "VehicleId": 4
     },
     {
-      "zending_id": 25,
-      "voertuig_id": "V7",
-      "bestemming": "Eindhoven",
-      "max_capaciteit": 13530,
-      "huidige_capaciteit": 7486,
-      "onbenutte_kilometers": 93
+        "Id": 25,
+        "VehicleNumber": "TRK-7",
+        "Destination": "Eindhoven",
+        "MaxCapacityKg": 13530,
+        "CurrentLoadKg": 7486,
+        "EmptyKilometers": 93,
+        "VehicleId": 7
     },
     {
-      "zending_id": 26,
-      "voertuig_id": "V9",
-      "bestemming": "Eindhoven",
-      "max_capaciteit": 13445,
-      "huidige_capaciteit": 7882,
-      "onbenutte_kilometers": 52
+        "Id": 26,
+        "VehicleNumber": "TRK-9",
+        "Destination": "Eindhoven",
+        "MaxCapacityKg": 13445,
+        "CurrentLoadKg": 7882,
+        "EmptyKilometers": 52,
+        "VehicleId": 9
     },
     {
-      "zending_id": 27,
-      "voertuig_id": "V10",
-      "bestemming": "Venlo",
-      "max_capaciteit": 11427,
-      "huidige_capaciteit": 5776,
-      "onbenutte_kilometers": 42
+        "Id": 27,
+        "VehicleNumber": "TRK-10",
+        "Destination": "Venlo",
+        "MaxCapacityKg": 11427,
+        "CurrentLoadKg": 5776,
+        "EmptyKilometers": 42,
+        "VehicleId": 1
     },
     {
-      "zending_id": 28,
-      "voertuig_id": "V10",
-      "bestemming": "Groningen",
-      "max_capaciteit": 8441,
-      "huidige_capaciteit": 1786,
-      "onbenutte_kilometers": 58
+        "Id": 28,
+        "VehicleNumber": "TRK-10",
+        "Destination": "Groningen",
+        "MaxCapacityKg": 8441,
+        "CurrentLoadKg": 1786,
+        "EmptyKilometers": 58,
+        "VehicleId": 1
     },
     {
-      "zending_id": 29,
-      "voertuig_id": "V5",
-      "bestemming": "Breda",
-      "max_capaciteit": 11325,
-      "huidige_capaciteit": 3003,
-      "onbenutte_kilometers": 16
+        "Id": 29,
+        "VehicleNumber": "TRK-5",
+        "Destination": "Breda",
+        "MaxCapacityKg": 11325,
+        "CurrentLoadKg": 3003,
+        "EmptyKilometers": 16,
+        "VehicleId": 5
     },
     {
-      "zending_id": 30,
-      "voertuig_id": "V9",
-      "bestemming": "Venlo",
-      "max_capaciteit": 19514,
-      "huidige_capaciteit": 9195,
-      "onbenutte_kilometers": 4
+        "Id": 30,
+        "VehicleNumber": "TRK-9",
+        "Destination": "Venlo",
+        "MaxCapacityKg": 19514,
+        "CurrentLoadKg": 9195,
+        "EmptyKilometers": 4,
+        "VehicleId": 9
     },
     {
-      "zending_id": 31,
-      "voertuig_id": "V10",
-      "bestemming": "Venlo",
-      "max_capaciteit": 9594,
-      "huidige_capaciteit": 8639,
-      "onbenutte_kilometers": 78
+        "Id": 31,
+        "VehicleNumber": "TRK-10",
+        "Destination": "Venlo",
+        "MaxCapacityKg": 9594,
+        "CurrentLoadKg": 8639,
+        "EmptyKilometers": 78,
+        "VehicleId": 1
     },
     {
-      "zending_id": 32,
-      "voertuig_id": "V8",
-      "bestemming": "Amsterdam",
-      "max_capaciteit": 9422,
-      "huidige_capaciteit": 3740,
-      "onbenutte_kilometers": 57
+        "Id": 32,
+        "VehicleNumber": "TRK-8",
+        "Destination": "Amsterdam",
+        "MaxCapacityKg": 9422,
+        "CurrentLoadKg": 3740,
+        "EmptyKilometers": 57,
+        "VehicleId": 8
     },
     {
-      "zending_id": 33,
-      "voertuig_id": "V10",
-      "bestemming": "Maastricht",
-      "max_capaciteit": 7957,
-      "huidige_capaciteit": 4394,
-      "onbenutte_kilometers": 58
+        "Id": 33,
+        "VehicleNumber": "TRK-10",
+        "Destination": "Maastricht",
+        "MaxCapacityKg": 7957,
+        "CurrentLoadKg": 4394,
+        "EmptyKilometers": 58,
+        "VehicleId": 1
     },
     {
-      "zending_id": 34,
-      "voertuig_id": "V5",
-      "bestemming": "Venlo",
-      "max_capaciteit": 7574,
-      "huidige_capaciteit": 2648,
-      "onbenutte_kilometers": 6
+        "Id": 34,
+        "VehicleNumber": "TRK-5",
+        "Destination": "Venlo",
+        "MaxCapacityKg": 7574,
+        "CurrentLoadKg": 2648,
+        "EmptyKilometers": 6,
+        "VehicleId": 5
     },
     {
-      "zending_id": 35,
-      "voertuig_id": "V9",
-      "bestemming": "Groningen",
-      "max_capaciteit": 9763,
-      "huidige_capaciteit": 9596,
-      "onbenutte_kilometers": 9
+        "Id": 35,
+        "VehicleNumber": "TRK-9",
+        "Destination": "Groningen",
+        "MaxCapacityKg": 9763,
+        "CurrentLoadKg": 9596,
+        "EmptyKilometers": 9,
+        "VehicleId": 9
     },
     {
-      "zending_id": 36,
-      "voertuig_id": "V1",
-      "bestemming": "Breda",
-      "max_capaciteit": 11093,
-      "huidige_capaciteit": 9254,
-      "onbenutte_kilometers": 49
+        "Id": 36,
+        "VehicleNumber": "TRK-1",
+        "Destination": "Breda",
+        "MaxCapacityKg": 11093,
+        "CurrentLoadKg": 9254,
+        "EmptyKilometers": 49,
+        "VehicleId": 1
     },
     {
-      "zending_id": 37,
-      "voertuig_id": "V9",
-      "bestemming": "Eindhoven",
-      "max_capaciteit": 8923,
-      "huidige_capaciteit": 2956,
-      "onbenutte_kilometers": 91
+        "Id": 37,
+        "VehicleNumber": "TRK-9",
+        "Destination": "Eindhoven",
+        "MaxCapacityKg": 8923,
+        "CurrentLoadKg": 2956,
+        "EmptyKilometers": 91,
+        "VehicleId": 9
     },
     {
-      "zending_id": 38,
-      "voertuig_id": "V4",
-      "bestemming": "Maastricht",
-      "max_capaciteit": 7050,
-      "huidige_capaciteit": 5737,
-      "onbenutte_kilometers": 54
+        "Id": 38,
+        "VehicleNumber": "TRK-4",
+        "Destination": "Maastricht",
+        "MaxCapacityKg": 7050,
+        "CurrentLoadKg": 5737,
+        "EmptyKilometers": 54,
+        "VehicleId": 4
     },
     {
-      "zending_id": 39,
-      "voertuig_id": "V10",
-      "bestemming": "Den Haag",
-      "max_capaciteit": 19726,
-      "huidige_capaciteit": 9750,
-      "onbenutte_kilometers": 39
+        "Id": 39,
+        "VehicleNumber": "TRK-10",
+        "Destination": "Den Haag",
+        "MaxCapacityKg": 19726,
+        "CurrentLoadKg": 9750,
+        "EmptyKilometers": 39,
+        "VehicleId": 1
     },
     {
-      "zending_id": 40,
-      "voertuig_id": "V8",
-      "bestemming": "Maastricht",
-      "max_capaciteit": 15131,
-      "huidige_capaciteit": 3226,
-      "onbenutte_kilometers": 31
+        "Id": 40,
+        "VehicleNumber": "TRK-8",
+        "Destination": "Maastricht",
+        "MaxCapacityKg": 15131,
+        "CurrentLoadKg": 3226,
+        "EmptyKilometers": 31,
+        "VehicleId": 8
     },
     {
-      "zending_id": 41,
-      "voertuig_id": "V6",
-      "bestemming": "Utrecht",
-      "max_capaciteit": 15664,
-      "huidige_capaciteit": 5440,
-      "onbenutte_kilometers": 70
+        "Id": 41,
+        "VehicleNumber": "TRK-6",
+        "Destination": "Utrecht",
+        "MaxCapacityKg": 15664,
+        "CurrentLoadKg": 5440,
+        "EmptyKilometers": 70,
+        "VehicleId": 6
     },
     {
-      "zending_id": 42,
-      "voertuig_id": "V3",
-      "bestemming": "Eindhoven",
-      "max_capaciteit": 19616,
-      "huidige_capaciteit": 3691,
-      "onbenutte_kilometers": 10
+        "Id": 42,
+        "VehicleNumber": "TRK-3",
+        "Destination": "Eindhoven",
+        "MaxCapacityKg": 19616,
+        "CurrentLoadKg": 3691,
+        "EmptyKilometers": 10,
+        "VehicleId": 3
     },
     {
-      "zending_id": 43,
-      "voertuig_id": "V7",
-      "bestemming": "Amsterdam",
-      "max_capaciteit": 7162,
-      "huidige_capaciteit": 4267,
-      "onbenutte_kilometers": 12
+        "Id": 43,
+        "VehicleNumber": "TRK-7",
+        "Destination": "Amsterdam",
+        "MaxCapacityKg": 7162,
+        "CurrentLoadKg": 4267,
+        "EmptyKilometers": 12,
+        "VehicleId": 7
     },
     {
-      "zending_id": 44,
-      "voertuig_id": "V10",
-      "bestemming": "Groningen",
-      "max_capaciteit": 12681,
-      "huidige_capaciteit": 707,
-      "onbenutte_kilometers": 58
+        "Id": 44,
+        "VehicleNumber": "TRK-10",
+        "Destination": "Groningen",
+        "MaxCapacityKg": 12681,
+        "CurrentLoadKg": 707,
+        "EmptyKilometers": 58,
+        "VehicleId": 1
     },
     {
-      "zending_id": 45,
-      "voertuig_id": "V10",
-      "bestemming": "Venlo",
-      "max_capaciteit": 18635,
-      "huidige_capaciteit": 9052,
-      "onbenutte_kilometers": 28
+        "Id": 45,
+        "VehicleNumber": "TRK-10",
+        "Destination": "Venlo",
+        "MaxCapacityKg": 18635,
+        "CurrentLoadKg": 9052,
+        "EmptyKilometers": 28,
+        "VehicleId": 1
     },
     {
-      "zending_id": 46,
-      "voertuig_id": "V10",
-      "bestemming": "Venlo",
-      "max_capaciteit": 13702,
-      "huidige_capaciteit": 8376,
-      "onbenutte_kilometers": 43
+        "Id": 46,
+        "VehicleNumber": "TRK-10",
+        "Destination": "Venlo",
+        "MaxCapacityKg": 13702,
+        "CurrentLoadKg": 8376,
+        "EmptyKilometers": 43,
+        "VehicleId": 1
     },
     {
-      "zending_id": 47,
-      "voertuig_id": "V3",
-      "bestemming": "Venlo",
-      "max_capaciteit": 13526,
-      "huidige_capaciteit": 243,
-      "onbenutte_kilometers": 34
+        "Id": 47,
+        "VehicleNumber": "TRK-3",
+        "Destination": "Venlo",
+        "MaxCapacityKg": 13526,
+        "CurrentLoadKg": 243,
+        "EmptyKilometers": 34,
+        "VehicleId": 3
     },
     {
-      "zending_id": 48,
-      "voertuig_id": "V9",
-      "bestemming": "Eindhoven",
-      "max_capaciteit": 14169,
-      "huidige_capaciteit": 1415,
-      "onbenutte_kilometers": 85
+        "Id": 48,
+        "VehicleNumber": "TRK-9",
+        "Destination": "Eindhoven",
+        "MaxCapacityKg": 14169,
+        "CurrentLoadKg": 1415,
+        "EmptyKilometers": 85,
+        "VehicleId": 9
     },
     {
-      "zending_id": 49,
-      "voertuig_id": "V7",
-      "bestemming": "Den Haag",
-      "max_capaciteit": 16612,
-      "huidige_capaciteit": 6696,
-      "onbenutte_kilometers": 2
+        "Id": 49,
+        "VehicleNumber": "TRK-7",
+        "Destination": "Den Haag",
+        "MaxCapacityKg": 16612,
+        "CurrentLoadKg": 6696,
+        "EmptyKilometers": 2,
+        "VehicleId": 7
     },
     {
-      "zending_id": 50,
-      "voertuig_id": "V7",
-      "bestemming": "Eindhoven",
-      "max_capaciteit": 16571,
-      "huidige_capaciteit": 8383,
-      "onbenutte_kilometers": 32
+        "Id": 50,
+        "VehicleNumber": "TRK-7",
+        "Destination": "Eindhoven",
+        "MaxCapacityKg": 16571,
+        "CurrentLoadKg": 8383,
+        "EmptyKilometers": 32,
+        "VehicleId": 7
     }
-  ]
+]

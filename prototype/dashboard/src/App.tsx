@@ -18,13 +18,20 @@ import { Footer } from "./components/misc/Footer";
 
 // Import components
 import { ChartsWrapper } from "./components/ChartsWrapper";
-import { FuelChart } from "./components/charts/FuelUsageChart";
-import { TripCostChart } from "./components/charts/TripCostChart";
+import { FuelUsageInfo } from "./components/ChartInfo/FuelChartInfo";
+import { LoadDegreeInfo } from "./components/ChartInfo/LoadChartInfo";
+import { CostChartInfo } from "./components/ChartInfo/CostChartInfo";
 import { LoginForm } from "components/Login";
 import { PrivateLayout } from "components/PrivateLayout";
 import { AuthProvider } from "components/Context/AuthContext";
 import { TripOverview } from "./components/planning/TripOverview";
+
 import { AddTrip } from "./components/planning/AddTrip";
+import { AddVehicle } from "./components/admin/AddVehicle";
+import { AddEmployee } from "./components/admin/AddEmployee";
+import { AddCustomer } from "./components/klanten/AddCustomer";
+import { Employees } from "components/admin/Employees";
+import { CustomerOverview } from "components/klanten/CustomerOverview";
 
 const App: React.FC = () => {
   return (
@@ -42,13 +49,28 @@ const App: React.FC = () => {
 
             <Route element={<PrivateLayout />}>
               {/* Planning routes */}
+              <Route
+                path="/planning/toon-rit-overzicht"
+                element={<TripOverview />}
+              />
               <Route path="/planning/voeg-rit-toe" element={<AddTrip />} />
-              <Route path="/planning/toon-rit-overzicht" element={<TripOverview />} />
-              
+
+              {/* Beheer routes */}
+              <Route path="/admin/voeg-voertuig-toe" element={<AddVehicle />} />
+              <Route
+                path="/admin/voeg-medewerker-toe"
+                element={<AddEmployee />}
+              />
+              <Route path="/admin/Medewerkers" element={<Employees />} />
+
+              {/* Klanten routes */}
+              <Route path="/klanten/voeg-klant-toe" element={<AddCustomer />} />
+              <Route path="/klanten/overzicht" element={<CustomerOverview />} />
               {/* Public routes */}
               <Route path="/" element={<ChartsWrapper />} />
-              <Route path="/verbruik" element={<FuelChart />} />
-              <Route path="/benzinekosten" element={<TripCostChart />} />
+              <Route path="/verbruik" element={<FuelUsageInfo />} />
+              <Route path="/benzinekosten" element={<CostChartInfo />} />
+              <Route path="/ladingsgraad" element={<LoadDegreeInfo />} />
 
               <Route
                 path="/404"

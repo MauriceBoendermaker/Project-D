@@ -3,141 +3,80 @@ using Models;
 
 namespace Services
 {
-    public class JsonShipmentService : IJsonShipmentService
+    public class JsonShipmentService : IShipmentService
     {
-        private string Path = "data/Zending_data.json";
-        public virtual async Task<IEnumerable<Zending>?> GetAllShipments()
+        private readonly string Path = "data/Zending_data.json";
+
+        public virtual async Task<IEnumerable<Shipment>?> GetAllShipments()
         {
-            // Read the JSON data
             try
             {
-                var ShipmentData = await File.ReadAllTextAsync(Path);
-                IEnumerable<Zending>? Shipments = JsonSerializer.Deserialize<IEnumerable<Zending>>(ShipmentData);
-                return Shipments;
+                var shipmentData = await File.ReadAllTextAsync(Path);
+                var shipments = JsonSerializer.Deserialize<IEnumerable<Shipment>>(shipmentData);
+                Console.WriteLine(shipments.ToString());
+                return shipments;
             }
             catch (JsonException)
             {
-                Console.WriteLine("Json Is invalid");
+                Console.WriteLine("JSON ongeldig");
                 return null;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error has occured: {ex.Message}");
+                Console.WriteLine("fout bij lezen JSON");
                 return null;
             }
+        }
 
+        public async Task<int> GetMaxCapacity(int shipmentId)
+        {
+            var shipments = await GetAllShipments();
+            if (shipments == null) return -1;
 
+            var shipment = shipments.FirstOrDefault(x => x.Id == shipmentId);
+            return shipment != null ? shipment.MaxCapacityKg : -1;
+        }
 
+        public async Task<int> GetTotalEmptyKilometers()
+        {
+            var shipments = await GetAllShipments();
+            if (shipments == null) return -1;
+
+            return shipments.Sum(x => x.EmptyKilometers);
         }
 
         public async Task<double> GetAverageLoadDegree()
         {
-            try
-            {
-                IEnumerable<Zending>? Shipments = await this.GetAllShipments();
-                if (Shipments != null)
-                {
-                    double TotalLoadDegree = Shipments.Select(x => (double)x.CurrentLoadKg / x.MaxCapacityKg).Sum();
-                    double AverageLoadDegree = double.Round(TotalLoadDegree / Shipments.Count(), 4);
-                    return AverageLoadDegree;
-                }
-                return -1;
-            }
-            catch (ArgumentNullException)
-            {
-                Console.WriteLine("Shipments is null");
-                return -1;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return -1;
-            }
+            var shipments = await GetAllShipments();
+            if (shipments == null || !shipments.Any()) return -1;
+
+            double totalLoadDegree = shipments.Sum(x => (double)x.CurrentLoadKg / x.MaxCapacityKg);
+            return Math.Round(totalLoadDegree / shipments.Count(), 4);
         }
 
-        public async Task<int> GetTotalEmptyMiles()
+        public async Task<double> GetLoadDegree(int shipmentId)
         {
-            try
-            {
-                IEnumerable<Zending>? Shipments = await this.GetAllShipments();
-                if (Shipments != null)
-                {
-                    int TotalEmptyMiles = Shipments.Select(x => x.EmptyKilometers).Sum();
-                    return TotalEmptyMiles;
-                }
-                return -1;
-            }
-            catch (ArgumentNullException)
-            {
-                Console.WriteLine("Shipments is null (List is empty)");
-                return -1;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return -1;
-            }
+            var shipments = await GetAllShipments();
+            if (shipments == null) return -1;
+
+            var shipment = shipments.FirstOrDefault(x => x.Id == shipmentId);
+            if (shipment == null) return -1;
+
+            return Math.Round((double)shipment.CurrentLoadKg / shipment.MaxCapacityKg, 4);
         }
 
-        public async Task<double> GetLoadDegree(int ZendingId)
+        public async Task<List<LoadDegree>?> GetTotalLoadDegree()
         {
-            try
-            {
-                IEnumerable<Zending>? Shipments = await this.GetAllShipments();
-                if (Shipments != null)
-                {
-                    Zending? Shipment = Shipments.FirstOrDefault(x => x.ShipmentId == ZendingId);
-                    return Shipment == null ? -1 : double.Round((double)Shipment.CurrentLoadKg / Shipment.MaxCapacityKg, 4);
-                }
-                return -1;
+            var shipments = await GetAllShipments();
+            if (shipments == null || !shipments.Any()) return null;
 
-            }
-            catch (ArgumentNullException)
+            var loadDegrees = shipments.Select(x => new LoadDegree
             {
-                Console.WriteLine("Shipments is null (List is empty)");
-                return -1;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return -1;
-            }
-        }
-
-        public async Task<int> GetMaxCapacity(int ZendingId)
-        {
-            try
-            {
-                IEnumerable<Zending>? Shipments = await this.GetAllShipments();
-                if (Shipments != null)
-                {
-                    Zending? Shipment = Shipments.FirstOrDefault(x => x.ShipmentId == ZendingId);
-                    return Shipment == null ? -1 : Shipment.MaxCapacityKg;
-                }
-                return -1;
-
-            }
-            catch (ArgumentNullException)
-            {
-                Console.WriteLine("Shipments is null (List is empty)");
-                return -1;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return -1;
-            }
-        }
-
-        public async Task<List<loadDegree>?> GetTotalLoadDegree()
-        {
-            IEnumerable<Zending>? Shipments = await this.GetAllShipments();
-            if (Shipments == null || Shipments.Count() == 0) return null;
-            List<loadDegree>? loadDegrees = Shipments.Select(x => new loadDegree { ShipmentId = x.ShipmentId, LoadDegree = double.Round((double)x.CurrentLoadKg / x.MaxCapacityKg, 4) }).ToList();
+                ShipmentId = x.Id,
+                Degree = Math.Round((double)x.CurrentLoadKg / x.MaxCapacityKg, 4)
+            }).ToList();
 
             return loadDegrees;
-
         }
     }
-
 }

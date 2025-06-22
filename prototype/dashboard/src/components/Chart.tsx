@@ -1,11 +1,10 @@
 import { color } from "echarts";
 import EChartsReact, { EChartsOption } from "echarts-for-react";
-import { data } from "react-router-dom";
+
 
 interface ChartProps {
   chartId: number;
   title: string;
-  subtitle: string;
   options: EChartsOption;
 }
 export const Chart = () => {

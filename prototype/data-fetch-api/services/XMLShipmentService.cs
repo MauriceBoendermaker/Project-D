@@ -4,13 +4,13 @@ using Models;
 
 namespace Services
 {
-    public class XMLShipmentService : JsonShipmentService, IJsonShipmentService
+    public class XMLShipmentService : JsonShipmentService, IShipmentService
     {
         private string Path = "data/Zendingen.xml";
 
-        public override async Task<IEnumerable<Zending>?> GetAllShipments()
+        public override async Task<IEnumerable<Shipment>?> GetAllShipments()
         {
-            var serializer = new XmlSerializer(typeof(List<Zending>), new XmlRootAttribute("Zendingen"));
+            var serializer = new XmlSerializer(typeof(List<Shipment>), new XmlRootAttribute("Zendingen"));
             try
             {
                 using (FileStream fs = new FileStream(Path, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, true))
@@ -20,8 +20,8 @@ namespace Services
                         await fs.CopyToAsync(memoryStream);
                         memoryStream.Position = 0;
 
-                        IEnumerable<Zending> zendingen = (List<Zending>)serializer.Deserialize(memoryStream)!;
-                        return zendingen;
+                        IEnumerable<Shipment> shipments = (List<Shipment>)serializer.Deserialize(memoryStream)!;
+                        return shipments;
                     }
                 }
 
@@ -32,6 +32,5 @@ namespace Services
                 return null;
             }
         }
-
     }
 }

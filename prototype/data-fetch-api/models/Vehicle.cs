@@ -1,24 +1,28 @@
+using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-public class Vehicle
+namespace Models
 {
-    public int Id { get; set; }
-    [JsonPropertyName("voertuig_id")]
-    public string? VoertuigId { get; set; }
+    public class Vehicle
+    {
+        [Key]
+        public int VehicleId { get; set; } // Primary key (auto increment)
 
-    [JsonPropertyName("kenteken")]
-    public string? Kenteken { get; set; }
+        public string VehicleNumber { get; set; } = string.Empty;
 
-    [JsonPropertyName("merk")]
-    public string? Merk { get; set; }
+        public string? LicensePlate { get; set; } = string.Empty;
 
-    [JsonPropertyName("model")]
-    public string? Model { get; set; }
+        public string? Brand { get; set; } = string.Empty;
 
-    [JsonPropertyName("brandstof_type")]
-    public string? BrandstofType { get; set; }
+        public string? Model { get; set; } = string.Empty;
 
-    [JsonPropertyName("ritten")]
-    public List<Rit>? Ritten { get; set; }
+        public string? FuelType { get; set; } = string.Empty;
+
+        public List<Trip>? Trips { get; set; }
+
+        public int MaximumCapacity { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    }
 }

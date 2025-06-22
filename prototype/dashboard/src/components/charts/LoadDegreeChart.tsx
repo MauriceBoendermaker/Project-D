@@ -4,7 +4,7 @@ import {
   error,
   TotalDegree,
 } from "api/fetchShipmentData";
-import { ChartsWrapper } from "components/ChartsWrapper";
+import { LOAD_DEGREE_TITLE } from "components/ChartTitles";
 import { StyledChartWrapper } from "components/StyledChartWrapper";
 import ReactECharts, { EChartsOption } from "echarts-for-react";
 import React, { useEffect, useState } from "react";
@@ -22,9 +22,11 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
       try {
         const totalLoadDegree: TotalDegreeResponse =
           await fetchTotalLoadDegree();
-        if ("message" in totalLoadDegree) setError(totalLoadDegree.message);
-        else {
-          setChartData(totalLoadDegree.response);
+
+        if (totalLoadDegree.message != null) {
+          setError(totalLoadDegree.message);
+        } else {
+          setChartData(totalLoadDegree.data);
         }
         setLoading(false);
       } catch (err: any) {
@@ -45,7 +47,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
       nameLocation: "middle",
       type: "category",
       nameGap: 50,
-      data: chartData.map((item: TotalDegree) => item.shipmentId),
+      data: chartData.map((item: TotalDegree) => String(item.shipmentId)),
     },
     yAxis: {
       name: "Beladingsgraad (%)",
@@ -56,7 +58,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
         name: "Zending",
         type: "bar",
         data: chartData.map((item: TotalDegree) =>
-          (item.loadDegree * 100).toFixed(2)
+          (item.degree * 100).toFixed(2)
         ),
         itemStyle: {
           color: "#95191D",
@@ -65,6 +67,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
       },
       {
         type: "bar",
+        data: chartData.map(() => 0),
         itemStyle: {
           color: "#FFA0A3",
           barBorderRadius: [5, 5, 0, 0],
@@ -77,7 +80,17 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
 
   return (
     <StyledChartWrapper
-      title="Beladingsgraad per zending"
+      title={
+        <a
+          href="http://localhost:5000/ladingsgraad"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          {LOAD_DEGREE_TITLE}
+        </a>
+      }
       delayIndex={delayIndex}
     >
       {chartData.length > 0 ? (
