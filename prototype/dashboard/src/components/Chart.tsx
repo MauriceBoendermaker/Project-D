@@ -5,7 +5,6 @@ import EChartsReact, { EChartsOption } from "echarts-for-react";
 interface ChartProps {
   chartId: number;
   title: string;
-  subtitle: string;
   options: EChartsOption;
 }
 export const Chart = () => {

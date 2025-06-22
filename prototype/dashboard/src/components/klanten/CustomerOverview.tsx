@@ -9,7 +9,7 @@ interface Customer {
     email: string;
     telephoneNumber: string;
     address: string;
-    zipcode: string;
+    zipCode: string;
     location: string;
 }
 
@@ -30,7 +30,9 @@ export const CustomerOverview = () => {
         contactPerson: "",
         email: "",
         telephoneNumber: "",
-        address: ""
+        address: "",
+        zipCode: "",
+        location: ""
     });
 
     const handleClose = () => {
@@ -46,7 +48,9 @@ export const CustomerOverview = () => {
             contactPerson: customer.contactperson,
             email: customer.email,
             telephoneNumber: customer.telephoneNumber,
-            address: customer.address
+            address: customer.address,
+            zipCode: customer.zipCode,
+            location: customer.location
         });
         setShowCustomerForm(true);
     };
@@ -86,6 +90,13 @@ export const CustomerOverview = () => {
         const fetchData = async () => {
             try {
                 const res = await fetch("http://localhost:3000/api/klanten");
+                if (res.status === 404) {
+                    if (isMounted) {
+                        setCustomers([]);
+                        setLoading(false);
+                    }
+                    return;
+                }
 
                 if (!res.ok) {
                     throw new Error(`HTTP error! Status: ${res.status}`);
@@ -93,7 +104,6 @@ export const CustomerOverview = () => {
 
                 const response = await res.json();
                 const data: Customer[] = response.data;
-                setCustomers(data);
                 if (isMounted) {
                     setCustomers(data);
                     setLoading(false);
@@ -157,7 +167,7 @@ export const CustomerOverview = () => {
                                                 <td>{e.telephoneNumber}</td>
                                                 <td>{e.address}</td>
                                                 <td>{e.location}</td>
-                                                <td>{e.zipcode}</td>
+                                                <td>{e.zipCode}</td>
                                                 <td>
                                                     <button onClick={() => HandleDelete(e.customerId)}>
                                                         <i className="fas fa-user-minus me-2">
@@ -182,6 +192,13 @@ export const CustomerOverview = () => {
                                                 </td>
                                             </tr>
                                         ))}
+                                        {customers.length === 0 && (
+                                            <tr>
+                                                <td colSpan={9} style={{ textAlign: "center", color: "#888" }}>
+                                                    Er zijn nog geen klanten toegevoegd.
+                                                </td>
+                                            </tr>
+                                        )}
                                     </tbody>
                                 </table>
                             </div>

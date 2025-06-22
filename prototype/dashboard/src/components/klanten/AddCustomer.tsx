@@ -12,7 +12,6 @@ interface CustomerForm {
 }
 
 export const AddCustomer = () => {
-  const [postcode, setPostcode] = useState("");
   const [postcodeValid, setPostcodeValid] = useState<boolean | null>(null);
   const [error, setError] = useState<any>("");
   const [added, setAdded] = useState<boolean>(false);
@@ -32,27 +31,27 @@ export const AddCustomer = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    if (name === "postcode") {
+    if (name === "zipCode") {
       const formatted = value.toUpperCase();
-      setPostcode(formatted);
-
       if (formatted.trim() === "") {
         setPostcodeValid(null);
       } else {
         setPostcodeValid(postcodeRegex.test(formatted));
       }
+      setFormData((prev) => ({
+        ...prev,
+        [name]: formatted,
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
     }
-
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const adres = `${formData.address}, ${formData.zipCode} ${formData.location}`;
 
     try {
       const response = await fetch("http://localhost:3000/api/klanten", {
@@ -64,12 +63,14 @@ export const AddCustomer = () => {
           company: formData.company,
           contactperson: formData.contactperson,
           email: formData.email,
-          telephoneNumber: formData.address,
-          address: adres,
+          telephoneNumber: formData.telephoneNumber,
+          address: formData.address,
+          zipCode: formData.zipCode,
+          location: formData.location
         }),
       });
 
-      if (response.status == 201) {
+      if (response.status === 201) {
         setAdded(true);
         setFormData({
           company: "",
@@ -117,6 +118,7 @@ export const AddCustomer = () => {
                 type="company"
                 className="form-control"
                 name="company"
+                placeholder="Bijv. Lafeber"
                 value={formData.company}
                 onChange={handleChange}
                 required
@@ -128,6 +130,7 @@ export const AddCustomer = () => {
                 type="name"
                 className="form-control"
                 name="contactperson"
+                placeholder="Bijv. John Doe"
                 value={formData.contactperson}
                 onChange={handleChange}
               />
@@ -138,6 +141,7 @@ export const AddCustomer = () => {
                 type="email"
                 className="form-control"
                 name="email"
+                placeholder="Bijv. example@email.com"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -148,6 +152,7 @@ export const AddCustomer = () => {
                 type="tel"
                 className="form-control"
                 name="telephoneNumber"
+                placeholder="Bijv. 0612345678"
                 value={formData.telephoneNumber}
                 onChange={handleChange}
               />
@@ -168,8 +173,8 @@ export const AddCustomer = () => {
               <input
                 type="text"
                 className="form-control"
-                name="postcode"
-                value={postcode}
+                name="zipCode"
+                value={formData.zipCode}
                 onChange={handleChange}
                 placeholder="Bijv. 1234 AB"
                 required
