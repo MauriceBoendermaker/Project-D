@@ -30,8 +30,7 @@ export const FuelChart: React.FC<FuelChartProps> = ({
       }
     };
     getTripData();
-    console.log(JSON.stringify(data));
-  }, []);
+  }, [chartData]);
 
   const processedData = data
     ? Object.values(
