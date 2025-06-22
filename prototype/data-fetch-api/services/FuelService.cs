@@ -34,6 +34,7 @@ namespace Services
         {
             try
             {
+                
                 return await _context.Trips.ToListAsync();
             }
             catch (Exception ex)

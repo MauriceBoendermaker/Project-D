@@ -16,7 +16,16 @@ namespace Services
 
         public async Task<List<Vehicle>> GetAllVehiclesAsync()
         {
-            return await _context.Vehicles.ToListAsync();
+            try
+            {
+
+                return await _context.Vehicles.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (not implemented here)
+                throw new Exception("Er is een fout opgetreden bij het ophalen van voertuigen.", ex);
+            }
         }
 
         public async Task<Vehicle?> GetVehicleByIdAsync(int voertuigId)

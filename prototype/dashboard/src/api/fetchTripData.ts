@@ -12,11 +12,8 @@ export interface Trip {
 }
 
 export const fetchTripData = async () => {
-
-      const response = await fetch(
-        "http://localhost:3000/api/brandstof/ritten"
-      );
-      if (!response.ok) throw new Error("Network response was not ok");
-      const result = await response.json();
-      return result.data;
-    };
+  const response = await fetch("http://localhost:3000/api/brandstof/ritten/");
+  if (!response.ok) throw new Error("Network response was not ok");
+  const result = await response.json();
+  return result.data;
+};
