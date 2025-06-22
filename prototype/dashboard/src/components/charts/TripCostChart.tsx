@@ -9,6 +9,7 @@ import {
 
 interface TripCostChartProps {
   delayIndex?: number;
+  data: TripCost[];
 }
 
 export type TripResponse = {
@@ -18,39 +19,49 @@ export type TripResponse = {
 
 export const TripCostChart: React.FC<TripCostChartProps> = ({
   delayIndex = 0,
+  data = [],
 }) => {
-  const [chartData, setChartData] = useState<TripCost[]>([]);
+  const [chartData, setChartData] = useState<TripCost[]>(data);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchKostenData = async () => {
-      try {
-        const ApiResponse = await fetch(
-          "http://localhost:3000/api/brandstof/totalekosten"
-        );
+      if (data.length > 0) {
+        setChartData(data);
+        setLoading(false);
+      } else {
+        try {
+          const ApiResponse = await fetch(
+            "http://localhost:3000/api/brandstof/totalekosten"
+          );
 
-        if (ApiResponse.ok) {
-          const json: TotalCostResponse = await ApiResponse.json();
-          if (json.message == null) {
-            setChartData(json.data);
-            setLoading(false);
+          if (ApiResponse.ok) {
+            const json: TotalCostResponse = await ApiResponse.json();
+            if (json.message == null) {
+              setChartData(json.data);
+              setLoading(false);
+            } else {
+              setError(json.message);
+              setLoading(false);
+            }
           } else {
-            setError(json.message);
+            setError("API response was not ok.");
             setLoading(false);
           }
-        } else {
-          setError("API response was not ok.");
+        } catch (e) {
+          console.error(e);
+          setError("Er is een fout opgetreden bij het ophalen van de data.");
           setLoading(false);
         }
-      } catch (e) {
-        console.error(e);
-        setError("Er is een fout opgetreden bij het ophalen van de data.");
-        setLoading(false);
       }
     };
+
     fetchKostenData();
-  }, []);
+  }, [data]);
+
+  const barWidth = chartData.length == 1 ? 30 : "auto";
+
   const chartOptions = {
     tooltip: {},
     xAxis: {
@@ -65,6 +76,7 @@ export const TripCostChart: React.FC<TripCostChartProps> = ({
       {
         name: "Kosten in Euro",
         type: "bar",
+        barWidth: barWidth,
         data: chartData.map((item) => item.cost),
         itemStyle: {
           color: "#95191D",

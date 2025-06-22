@@ -16,22 +16,11 @@ export type TotalCostResponse = {
 
 export const CostChartInfo: React.FC = () => {
   const [chartData, setChartData] = useState<TripCost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [filteredChartData, setFilteredChartData] = useState<TripCost[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const handleSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-    const row: TripCost | undefined = chartData.find(
-      (d) => d.vehicleId == parseInt(searchTerm)
-    );
-
-    if (row === undefined) {
-      setError("Geen data gevonden voor ID: " + searchTerm);
-    } else {
-      setChartData([row]);
-    }
-  };
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchKostenData = async () => {
@@ -44,6 +33,7 @@ export const CostChartInfo: React.FC = () => {
           const json: TotalCostResponse = await ApiResponse.json();
           if (json.message == null) {
             setChartData(json.data);
+            setFilteredChartData(json.data);
           } else {
             setError(json.message);
           }
@@ -54,10 +44,38 @@ export const CostChartInfo: React.FC = () => {
     };
     fetchKostenData();
   }, []);
+
+  useEffect(() => {
+    const changeChartData = () => {
+      if (searchTerm == "") {
+        setFilteredChartData(chartData);
+      } else {
+        const term = parseInt(
+          searchTerm.toLocaleUpperCase().includes("RIT-")
+            ? searchTerm.split("-")[1]
+            : searchTerm,
+          10
+        );
+
+        if (!isNaN(term)) {
+          const row: TripCost | undefined = chartData.find(
+            (t) => t.tripId == term
+          );
+          if (row != undefined) {
+            setFilteredChartData([row]);
+          } else {
+            setFilteredChartData(chartData);
+            console.log("Rit niet gevonden");
+          }
+        } else console.log("term is not a number");
+      }
+    };
+    changeChartData();
+  }, [searchTerm]);
   return (
     <div className="chart-table-card">
       <div className="chart-section">
-        <TripCostChart />
+        <TripCostChart delayIndex={0} data={filteredChartData} />
       </div>
       <div className="table-section">
         <h2>Kosten per rit</h2>
@@ -66,11 +84,10 @@ export const CostChartInfo: React.FC = () => {
             className="form-control"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder=""
+            placeholder="Zoek de rit RIT-"
           ></input>
-          <button className="btn-primary" onClick={(e) => handleSearch(e)}>
-            Zoeken
-          </button>
+
+          <option>{[""]}</option>
         </div>
         <div className="overflow-x-auto">
           <table>
@@ -83,7 +100,7 @@ export const CostChartInfo: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {chartData.map((tripcost) => (
+              {filteredChartData.map((tripcost) => (
                 <tr key={crypto.randomUUID()}>
                   <td>TRK-{tripcost.vehicleId}</td>
                   <td>RIT-{tripcost.tripId}</td>

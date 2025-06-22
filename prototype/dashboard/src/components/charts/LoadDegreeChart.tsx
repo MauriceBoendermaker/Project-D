@@ -10,36 +10,45 @@ import ReactECharts, { EChartsOption } from "echarts-for-react";
 import React, { useEffect, useState } from "react";
 interface LoadDegreeChartProps {
   delayIndex?: number;
+  data: TotalDegree[];
 }
 
-export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
-  const [chartData, setChartData] = useState<TotalDegree[]>([]);
+export const LoadDegreeChart = ({
+  delayIndex,
+  data = [],
+}: LoadDegreeChartProps) => {
+  const [chartData, setChartData] = useState<TotalDegree[]>(data);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchKostenData = async () => {
-      try {
-        const totalLoadDegree: TotalDegreeResponse =
-          await fetchTotalLoadDegree();
+      if (data.length > 0) {
+        setChartData(data);
+      } else {
+        try {
+          const totalLoadDegree: TotalDegreeResponse =
+            await fetchTotalLoadDegree();
 
-        if (totalLoadDegree.message != null) {
-          setError(totalLoadDegree.message);
-        } else {
-          setChartData(totalLoadDegree.data);
+          if (totalLoadDegree.message != null) {
+            setError(totalLoadDegree.message);
+          } else {
+            setChartData(totalLoadDegree.data);
+          }
+          setLoading(false);
+        } catch (err: any) {
+          console.error("Fout bij ophalen:", err);
+          setError(err.message);
+        } finally {
+          setLoading(false);
         }
-        setLoading(false);
-      } catch (err: any) {
-        console.error("Fout bij ophalen:", err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchKostenData();
-  }, []);
+  }, [data]);
 
+  const barWidth = chartData.length == 1 ? 30 : "auto";
   const chartOptions: EChartsOption = {
     tooltip: {},
     xAxis: {
@@ -57,6 +66,8 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
       {
         name: "Zending",
         type: "bar",
+        barWidth: barWidth,
+
         data: chartData.map((item: TotalDegree) =>
           (item.degree * 100).toFixed(2)
         ),
@@ -67,6 +78,7 @@ export const LoadDegreeChart = ({ delayIndex }: LoadDegreeChartProps) => {
       },
       {
         type: "bar",
+        barWidth: barWidth,
         data: chartData.map(() => 0),
         itemStyle: {
           color: "#FFA0A3",
