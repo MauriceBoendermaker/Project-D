@@ -19,7 +19,7 @@ export const SideNav = () => {
   const { isLoggedIn } = useAuth();
 
   useEffect(() => {
-    if (!isLoggedIn) setCollapsed(true);
+    if (!isLoggedIn) setCollapsed(false);
     if (collapsed) {
       document.body.classList.add("sidebar-collapsed");
     } else {
