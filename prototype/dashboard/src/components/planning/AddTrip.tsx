@@ -96,6 +96,7 @@ export const AddTrip = () => {
   const startCoords: [number, number] = [52.01152589199725, 4.6951698197121825];
   const [endCoords, setEndCoords] = useState<[number, number] | null>(null);
   const [routeCoords, setRouteCoords] = useState<[number, number][]>([]);
+  const [manualCityOverride, setManualCityOverride] = useState(false);
   const [postcodeValid, setPostcodeValid] = useState<boolean | null>(null);
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const [popupTitle, setPopupTitle] = useState<string>("");
@@ -265,6 +266,37 @@ export const AddTrip = () => {
     }
   };
 
+  useEffect(() => {
+    const delayDebounce = setTimeout(async () => {
+      if (straat && postcodeRegex.test(postcode) && !manualCityOverride) {
+        try {
+          const query = `${straat}, ${postcode}, Nederland`;
+          const response = await fetch(
+            `https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&q=${encodeURIComponent(query)}`,
+            {
+              headers: {
+                "User-Agent": "ELafeberTransport/1.0 (mauriceboendermaker@gmail.com)",
+              },
+            }
+          );
+          const data = await response.json();
+
+          if (data.length > 0) {
+            const address = data[0].address;
+            const city =
+              address.city || address.town || address.village || address.hamlet;
+
+            if (city) setStad(city);
+          }
+        } catch (err) {
+          console.error("Fout bij ophalen van plaatsnaam:", err);
+        }
+      }
+    }, 800);
+
+    return () => clearTimeout(delayDebounce);
+  }, [straat, postcode, manualCityOverride]);
+
   const handleSubmit = async () => {
     {
       const Rit: PostTripRequest = {
@@ -421,9 +453,8 @@ export const AddTrip = () => {
               />
               {postcodeValid !== null && (
                 <div
-                  className={`small ${
-                    postcodeValid ? "text-success" : "text-danger"
-                  }`}
+                  className={`small ${postcodeValid ? "text-success" : "text-danger"
+                    }`}
                 >
                   {postcodeValid
                     ? "✓ Geldige postcode"
@@ -434,14 +465,29 @@ export const AddTrip = () => {
 
             <div className="mb-3">
               <label className="form-label">Stad</label>
-              <input
-                type="text"
-                className="form-control"
-                value={stad}
-                onChange={(e) => setStad(e.target.value)}
-                placeholder="Bijv. Rotterdam"
-                required
-              />
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  value={stad}
+                  onChange={(e) => setStad(e.target.value)}
+                  placeholder=""
+                  readOnly={!manualCityOverride}
+                  disabled={!manualCityOverride}
+                />
+                <button
+                  type="button"
+                  className="btn btn-outline-secondary"
+                  onClick={() => setManualCityOverride(!manualCityOverride)}
+                >
+                  {manualCityOverride ? "Automatisch" : "Handmatig"}
+                </button>
+              </div>
+              {!manualCityOverride && (
+                <small className="text-muted">
+                  Wordt automatisch ingevuld op basis van straat en postcode.
+                </small>
+              )}
             </div>
 
             {loadingRoute && (

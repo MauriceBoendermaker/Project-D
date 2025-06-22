@@ -19,12 +19,20 @@ namespace Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllVehicles()
         {
-            var vehicles = await _vehicleService.GetAllVehiclesAsync();
-            if (vehicles == null || vehicles.Count == 0)
+            try
             {
-                return NotFound(new Response { Message = "Geen voertuigen gevonden." });
+
+                var vehicles = await _vehicleService.GetAllVehiclesAsync();
+                if (vehicles == null || vehicles.Count == 0)
+                {
+                    return NotFound(new Response { Message = "Geen voertuigen gevonden." });
+                }
+                return Ok(new Response { Data = vehicles });
             }
-            return Ok(new Response { Data = vehicles });
+            catch (Exception ex)
+            {
+                return StatusCode(500, new Response { Message = ex.Message });
+            }
         }
 
         [HttpGet("{id}")]
