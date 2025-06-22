@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Popup } from "../misc/Popup";
 
 interface CustomerForm {
@@ -15,6 +15,7 @@ export const AddCustomer = () => {
   const [postcodeValid, setPostcodeValid] = useState<boolean | null>(null);
   const [error, setError] = useState<any>("");
   const [added, setAdded] = useState<boolean>(false);
+  const [manualCityOverride, setManualCityOverride] = useState(false);
 
   const postcodeRegex = /^[1-9][0-9]{3}\s?[A-Z]{2}$/i;
 
@@ -49,9 +50,49 @@ export const AddCustomer = () => {
       }));
     }
   };
+
+  useEffect(() => {
+    const delayDebounce = setTimeout(async () => {
+      if (
+        formData.address &&
+        postcodeRegex.test(formData.zipCode) &&
+        !manualCityOverride
+      ) {
+        try {
+          const query = `${formData.address}, ${formData.zipCode}, Nederland`;
+          const response = await fetch(
+            `https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&q=${encodeURIComponent(query)}`,
+            {
+              headers: {
+                "User-Agent": "ELafeberTransport/1.0 (mauriceboendermaker@gmail.com)",
+              },
+            }
+          );
+          const data = await response.json();
+
+          if (data.length > 0) {
+            const address = data[0].address;
+            const city =
+              address.city || address.town || address.village || address.hamlet;
+
+            if (city) {
+              setFormData((prev) => ({
+                ...prev,
+                location: city,
+              }));
+            }
+          }
+        } catch (err) {
+          console.error("Fout bij ophalen plaatsnaam:", err);
+        }
+      }
+    }, 800);
+
+    return () => clearTimeout(delayDebounce);
+  }, [formData.address, formData.zipCode, manualCityOverride]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
 
     try {
       const response = await fetch("http://localhost:3000/api/klanten", {
@@ -118,7 +159,7 @@ export const AddCustomer = () => {
                 type="company"
                 className="form-control"
                 name="company"
-                placeholder="Bijv. Lafeber"
+                placeholder="Bijv. Lafeber B.V."
                 value={formData.company}
                 onChange={handleChange}
                 required
@@ -190,17 +231,35 @@ export const AddCustomer = () => {
                 </div>
               )}
             </div>
+
             <div className="mb-3">
               <label className="form-label">Plaatsnaam</label>
-              <input
-                type="text"
-                className="form-control"
-                name="location"
-                value={formData.location}
-                placeholder="Bijv. Rotterdam"
-                onChange={handleChange}
-              />
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  name="location"
+                  value={formData.location}
+                  placeholder=""
+                  onChange={handleChange}
+                  readOnly={!manualCityOverride}
+                  disabled={!manualCityOverride}
+                />
+                <button
+                  type="button"
+                  className="btn btn-outline-secondary"
+                  onClick={() => setManualCityOverride(!manualCityOverride)}
+                >
+                  {manualCityOverride ? "Automatisch" : "Handmatig"}
+                </button>
+              </div>
+              {!manualCityOverride && (
+                <small className="text-muted">
+                  Wordt automatisch ingevuld op basis van adres en postcode.
+                </small>
+              )}
             </div>
+
             <button type="submit" className="btn-primary">
               Toevoegen
             </button>
