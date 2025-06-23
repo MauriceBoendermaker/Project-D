@@ -10,6 +10,9 @@ import "assets/scss/components/tables/ChartTableCard.scss";
 export const LoadDegreeInfo: React.FC = () => {
   const [chartData, setChartData] = useState<TotalDegree[]>([]);
   const [filteredChartData, setFilteredChartData] = useState<TotalDegree[]>([]);
+
+  const [sortKey, setSortKey] = useState<"degree">("degree");
+  const [asc, setAsc] = useState<boolean>(true);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
 
@@ -35,27 +38,48 @@ export const LoadDegreeInfo: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const changeChartData = () => {
-      if (searchTerm == "") {
-        setFilteredChartData(chartData);
-      } else {
-        const term = parseInt(searchTerm, 10);
+    let filtered = chartData;
 
-        if (!isNaN(term)) {
-          const row: TotalDegree | undefined = chartData.find(
-            (t) => t.shipmentId == term
-          );
-          if (row != undefined) {
-            setFilteredChartData([row]);
-          } else {
-            setFilteredChartData(chartData);
-            console.log("Rit niet gevonden");
-          }
-        } else console.log("term is not a number");
+    if (searchTerm.trim() !== "") {
+      const term = parseInt(
+        searchTerm.toUpperCase().includes("RIT-")
+          ? searchTerm.split("-")[1]
+          : searchTerm,
+        10
+      );
+      if (!isNaN(term)) {
+        filtered = filtered.filter((t) => t.shipmentId === term);
       }
-    };
-    changeChartData();
-  }, [searchTerm]);
+    }
+    filtered.sort((a, b) => {
+      let first = a[sortKey];
+      let second = b[sortKey];
+
+      if (asc) {
+        return first < second ? 1 : -1;
+      } else {
+        return first > second ? 1 : -1;
+      }
+    });
+
+    setFilteredChartData(filtered);
+  }, [searchTerm, sortKey, asc]);
+
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
+    const value = e.target.value;
+
+    switch (value) {
+      case "Beladingsgraad oplopend":
+        setSortKey("degree");
+        setAsc(true);
+        break;
+      case "Beladingsgraad aflopend":
+        setSortKey("degree");
+        setAsc(false);
+        break;
+    }
+  };
 
   return (
     <div className="chart-table-card">
@@ -70,6 +94,10 @@ export const LoadDegreeInfo: React.FC = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Zoek de zending"
           ></input>
+          <select className="form-select" onChange={(e) => handleSortChange(e)}>
+            <option>Beladingsgraad oplopend</option>
+            <option>Beladingsgraad aflopend</option>
+          </select>
         </div>
         <h2>Beladingsgraad per zending</h2>
         <div className="overflow-x-auto">
