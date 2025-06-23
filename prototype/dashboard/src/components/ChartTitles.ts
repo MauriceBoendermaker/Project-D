@@ -4,4 +4,4 @@ export const LOAD_DEGREE_TITLE = "Beladingsgraad per zending";
 
 export const TRIP_COST_TITLE = "Kosten per rit";
 
-export const MONTHLY_NUMBERS_TITLE = "Huidige maand cijfers";
+export const MONTHLY_NUMBERS_TITLE = "Huidige maand statistieken";

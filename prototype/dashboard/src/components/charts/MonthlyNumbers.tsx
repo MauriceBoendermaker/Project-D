@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyledChartWrapper } from "../StyledChartWrapper";
 import { MONTHLY_NUMBERS_TITLE } from "components/ChartTitles";
-import { Trip, fetchTripMonth } from "api/fetchTripMonth";
+import { Trip, fetchTripMonth, mostCommonVehicleId} from "api/fetchTripMonth";
 
 interface MonthlyNumbersProps {
     delayIndex?: number;
@@ -56,6 +56,7 @@ export const MonthlyNumbers: React.FC<MonthlyNumbersProps> = ({ delayIndex = 0, 
                 <div>
                     <p>Totale ritten: {monthlyData.length}</p>
                     <p>Totale afstand gereden: {monthlyData.reduce((sum, trip) => sum + trip.distanceKm, 0)} KM</p>
+                    <p>Meest gebruikte voertuig deze maand: TRK-{mostCommonVehicleId(monthlyData)}</p>
                 </div>
             )}
         </StyledChartWrapper>
