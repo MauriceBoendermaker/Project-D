@@ -118,8 +118,9 @@ export const AddTrip = () => {
 
   useEffect(() => {
     const fetchVehicles = async () => {
+      if (!datum) return;
       try {
-        const response = await fetch("http://localhost:3000/api/voertuigen");
+        const response = await fetch(`http://localhost:3000/api/ritten?date=${datum}`);
 
         const data: GetVehiclesResponse = await response.json();
         setVehicles(data.data);
@@ -128,7 +129,7 @@ export const AddTrip = () => {
       }
     };
     fetchVehicles();
-  }, []);
+  }, [datum]);
 
   const handleVehicleChange = (vehicleId: string) => {
     const vehicle = vehicles.find((v) => v.vehicleId.toString() === vehicleId);

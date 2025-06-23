@@ -8,5 +8,6 @@ namespace Services
     {
         Task<List<TripOverview>> GetTripOverview();
         Task AddTrip(TripCreateDto rit);
+        Task<List<Vehicle>> GetAvailableVehicles(DateTime datetime);
     }
 }
