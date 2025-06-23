@@ -78,14 +78,51 @@ export const FuelUsageInfo: React.FC = () => {
         second = new Date(b.date).getTime();
       }
       if (asc) {
-        return first < second ? -1 : 1;
+        return first < second ? 1 : -1;
       } else {
-        return first > second ? -1 : 1;
+        return first > second ? 1 : -1;
       }
     });
 
     setFilteredTripData(filtered);
   }, [searchTerm, startDate, endDate, tripData, sortKey, asc]);
+
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
+    const value = e.target.value;
+
+    switch (value) {
+      case "Datum oplopend":
+        setSortKey("date");
+        setAsc(true);
+        break;
+      case "Datum aflopend":
+        setSortKey("date");
+        setAsc(false);
+        break;
+      case "Afstand oplopend":
+        setSortKey("distanceKm");
+        setAsc(true);
+        break;
+
+      case "Afstand aflopend":
+        setSortKey("distanceKm");
+        setAsc(false);
+        break;
+      case "Brandstofverbruik oplopend":
+        setSortKey("fuelUsage");
+        setAsc(true);
+        break;
+      case "Brandstofverbruik aflopend":
+        setSortKey("fuelUsage");
+        setAsc(false);
+        break;
+      default:
+        setSortKey("date");
+        setAsc(true);
+        break;
+    }
+  };
   return (
     <div className="chart-table-card">
       <div className="chart-section">
@@ -117,6 +154,21 @@ export const FuelUsageInfo: React.FC = () => {
             onChange={(e) => setEndDate(e.target.valueAsDate)}
             required
           />
+          <select
+            className="form-select"
+            onChange={(e) => {
+              handleSortChange(e);
+            }}
+            required
+          >
+            Sorteer
+            <option>Datum oplopend</option>
+            <option>Datum aflopend</option>
+            <option>Afstand oplopend</option>
+            <option>Afstand aflopend</option>
+            <option>Brandstofverbruik oplopend</option>
+            <option>Brandstofverbruik aflopend</option>
+          </select>
         </div>
         <div className="overflow-x-auto">
           <table>
@@ -124,57 +176,9 @@ export const FuelUsageInfo: React.FC = () => {
               <tr>
                 <th>Rit ID</th>
                 <th>Voertuig ID</th>
-                <th
-                  onClick={() => {
-                    setAsc(!asc);
-                    setSortKey("date");
-                  }}
-                >
-                  Datum{" "}
-                  {sortKey === "date" ? (
-                    <i
-                      className={`fa-sharp-duotone fa-solid ${
-                        asc ? "fa-sort-up" : "fa-sort-down"
-                      }`}
-                    />
-                  ) : (
-                    ""
-                  )}
-                </th>
-                <th
-                  onClick={() => {
-                    setAsc(!asc);
-                    setSortKey("distanceKm");
-                  }}
-                >
-                  Afstand{"(Km) "}
-                  {sortKey === "distanceKm" ? (
-                    <i
-                      className={`fa-sharp-duotone fa-solid ${
-                        asc ? "fa-sort-up" : "fa-sort-down"
-                      }`}
-                    />
-                  ) : (
-                    ""
-                  )}
-                </th>
-                <th
-                  onClick={() => {
-                    setAsc(!asc);
-                    setSortKey("fuelUsage");
-                  }}
-                >
-                  Brandstofverbruik {"(L) "}
-                  {sortKey === "fuelUsage" ? (
-                    <i
-                      className={`fa-sharp-duotone fa-solid ${
-                        asc ? "fa-sort-up" : "fa-sort-down"
-                      }`}
-                    />
-                  ) : (
-                    ""
-                  )}
-                </th>
+                <th>Datum</th>
+                <th>Afstand (Km)</th>
+                <th>Brandstofverbruik (L) </th>
               </tr>
             </thead>
             <tbody>

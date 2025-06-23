@@ -94,6 +94,34 @@ export const CostChartInfo: React.FC = () => {
 
     setFilteredChartData(filtered);
   }, [searchTerm, startDate, endDate, chartData, asc, sortKey]);
+
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
+    const value = e.target.value;
+
+    switch (value) {
+      case "Datum oplopend":
+        setSortKey("date");
+        setAsc(true);
+        break;
+      case "Datum aflopend":
+        setSortKey("date");
+        setAsc(false);
+        break;
+      case "Kosten oplopend":
+        setSortKey("cost");
+        setAsc(true);
+        break;
+      case "Kosten aflopend":
+        setSortKey("cost");
+        setAsc(false);
+        break;
+      default:
+        setSortKey("date");
+        setAsc(true);
+        break;
+    }
+  };
   return (
     <div className="chart-table-card">
       <div className="chart-section">
@@ -125,6 +153,19 @@ export const CostChartInfo: React.FC = () => {
               onChange={(e) => setEndDate(e.target.valueAsDate)}
               required
             />
+            <select
+              className="form-select"
+              onChange={(e) => {
+                handleSortChange(e);
+              }}
+              required
+            >
+              Sorteer
+              <option>Datum oplopend</option>
+              <option>Datum aflopend</option>
+              <option>Kosten oplopend</option>
+              <option>Kosten aflopend</option>
+            </select>
           </div>
         </div>
 
@@ -150,40 +191,8 @@ export const CostChartInfo: React.FC = () => {
               <tr>
                 <th>Voertuig ID</th>
                 <th>Rit ID</th>
-                <th
-                  onClick={() => {
-                    setAsc(!asc);
-                    setSortKey("date");
-                  }}
-                >
-                  Datum{" "}
-                  {sortKey === "date" ? (
-                    <i
-                      className={`fa-sharp-duotone fa-solid ${
-                        asc ? "fa-sort-up" : "fa-sort-down"
-                      }`}
-                    />
-                  ) : (
-                    ""
-                  )}
-                </th>
-                <th
-                  onClick={() => {
-                    setAsc(!asc);
-                    setSortKey("cost");
-                  }}
-                >
-                  Kosten{" "}
-                  {sortKey === "cost" ? (
-                    <i
-                      className={`fa-sharp-duotone fa-solid ${
-                        asc ? "fa-sort-up" : "fa-sort-down"
-                      }`}
-                    />
-                  ) : (
-                    ""
-                  )}
-                </th>
+                <th>Datum</th>
+                <th>Kosten </th>
               </tr>
             </thead>
             <tbody>
