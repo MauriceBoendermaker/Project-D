@@ -46,3 +46,10 @@ export const fetchTripMonth = async () => {
     });
   return recentTrips;
 };
+
+export const averageSpeed = (trips: Trip[]): number => {
+  const totalDistance = trips.reduce((sum, trip) => sum + trip.distanceKm, 0);
+  const totalTime = trips.reduce((sum, trip) => sum + trip.time/60, 0);
+
+  return totalTime > 0 ? totalDistance / totalTime : 0;
+};
