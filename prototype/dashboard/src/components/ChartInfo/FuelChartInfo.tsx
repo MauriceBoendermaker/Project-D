@@ -19,6 +19,10 @@ export const FuelUsageInfo: React.FC = () => {
   const [tripData, setTripData] = useState<Trip[]>([]);
   const [filteredTripData, setFilteredTripData] = useState<Trip[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
+
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
   const [voertuigenData, setVoertuigenData] = useState<Voertuig[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -37,31 +41,33 @@ export const FuelUsageInfo: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const changetripData = () => {
-      if (searchTerm == "") {
-        setFilteredTripData(tripData);
-      } else {
-        const term = parseInt(
-          searchTerm.toLocaleUpperCase().includes("RIT-")
-            ? searchTerm.split("-")[1]
-            : searchTerm,
-          10
-        );
+    let filtered = tripData;
 
-        if (!isNaN(term)) {
-          const rows: Trip[] | undefined = tripData.filter((t) => t.id == term);
-          console.log(rows);
-          if (rows != undefined) {
-            setFilteredTripData(rows);
-          } else {
-            setFilteredTripData(tripData);
-            console.log("Rit niet gevonden");
-          }
-        } else console.log("term is not a number");
+    if (startDate && endDate) {
+      filtered = filtered.filter((trip) => {
+        const tripDate = new Date(trip.date);
+        return (
+          tripDate.getTime() >= startDate.getTime() &&
+          tripDate.getTime() <= endDate.getTime()
+        );
+      });
+    }
+
+    if (searchTerm.trim() !== "") {
+      const term = parseInt(
+        searchTerm.toUpperCase().includes("RIT-")
+          ? searchTerm.split("-")[1]
+          : searchTerm,
+        10
+      );
+
+      if (!isNaN(term)) {
+        filtered = filtered.filter((t) => t.id === term);
       }
-    };
-    changetripData();
-  }, [searchTerm]);
+    }
+
+    setFilteredTripData(filtered);
+  }, [searchTerm, startDate, endDate, tripData]);
   return (
     <div className="chart-table-card">
       <div className="chart-section">
@@ -74,8 +80,25 @@ export const FuelUsageInfo: React.FC = () => {
             className="form-control"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Zoek de voertuig TRK-"
+            placeholder="Zoek de rit RIT-"
           ></input>
+        </div>
+        <div className="input-group">
+          <input
+            type="date"
+            className="form-control"
+            value={startDate ? startDate.toISOString().slice(0, 10) : ""}
+            onChange={(e) => setStartDate(e.target.valueAsDate)}
+            required
+          />
+          ___
+          <input
+            type="date"
+            className="form-control"
+            value={endDate ? endDate.toISOString().slice(0, 10) : ""}
+            onChange={(e) => setEndDate(e.target.valueAsDate)}
+            required
+          />
         </div>
         <div className="overflow-x-auto">
           <table>
@@ -93,7 +116,13 @@ export const FuelUsageInfo: React.FC = () => {
                 <tr key={rit.id}>
                   <td>RIT-{rit.id}</td>
                   <td>TRK-{rit.vehicleId}</td>
-                  <td>{rit.date}</td>
+                  <td>
+                    {new Date(rit.date).toLocaleDateString("nl-NL", {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
+                    })}
+                  </td>
                   <td>{rit.distanceKm} km</td>
                   <td>{rit.fuelUsage} L</td>
                 </tr>
