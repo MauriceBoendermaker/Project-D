@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyledChartWrapper } from "../StyledChartWrapper";
 import { MONTHLY_NUMBERS_TITLE } from "components/ChartTitles";
-import { Trip, fetchTripData } from "api/fetchTripData";
+import { Trip, fetchTripMonth } from "api/fetchTripMonth";
 
 interface MonthlyNumbersProps {
     delayIndex?: number;
@@ -24,7 +24,7 @@ export const MonthlyNumbers: React.FC<MonthlyNumbersProps> = ({ delayIndex = 0, 
                 setmonthlyData(Data);
             } else {
                 try {
-                    const data = await fetchTripData();
+                    const data = await fetchTripMonth();
                     setmonthlyData(data);
                     setLoading(false)
                 } catch (err: any) {
@@ -52,9 +52,10 @@ export const MonthlyNumbers: React.FC<MonthlyNumbersProps> = ({ delayIndex = 0, 
         >
             {loading && <div>Laden van data...</div>}
             {error && <div>Fout: {error}</div>}
-            {!loading && !error && Data.length > 0 && (
+            {!loading && !error && monthlyData.length > 0 && (
                 <div>
                     <p>Totale ritten: {monthlyData.length}</p>
+                    <p>Totale afstand gereden: {monthlyData.reduce((sum, trip) => sum + trip.distanceKm, 0)} KM</p>
                 </div>
             )}
         </StyledChartWrapper>
