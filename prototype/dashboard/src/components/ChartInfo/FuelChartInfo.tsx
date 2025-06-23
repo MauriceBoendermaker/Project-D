@@ -23,6 +23,11 @@ export const FuelUsageInfo: React.FC = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
 
+  const [sortKey, setSortKey] = useState<"date" | "distanceKm" | "fuelUsage">(
+    "date"
+  );
+  const [asc, setAsc] = useState<boolean>(true);
+
   const [voertuigenData, setVoertuigenData] = useState<Voertuig[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -60,14 +65,27 @@ export const FuelUsageInfo: React.FC = () => {
           : searchTerm,
         10
       );
-
       if (!isNaN(term)) {
         filtered = filtered.filter((t) => t.id === term);
       }
     }
+    filtered.sort((a, b) => {
+      let first = a[sortKey];
+      let second = b[sortKey];
+
+      if (sortKey == "date") {
+        first = new Date(a.date).getTime();
+        second = new Date(b.date).getTime();
+      }
+      if (asc) {
+        return first < second ? -1 : 1;
+      } else {
+        return first > second ? -1 : 1;
+      }
+    });
 
     setFilteredTripData(filtered);
-  }, [searchTerm, startDate, endDate, tripData]);
+  }, [searchTerm, startDate, endDate, tripData, sortKey, asc]);
   return (
     <div className="chart-table-card">
       <div className="chart-section">
@@ -106,9 +124,57 @@ export const FuelUsageInfo: React.FC = () => {
               <tr>
                 <th>Rit ID</th>
                 <th>Voertuig ID</th>
-                <th>Datum</th>
-                <th>Afstand (km)</th>
-                <th>Brandstof (L)</th>
+                <th
+                  onClick={() => {
+                    setAsc(!asc);
+                    setSortKey("date");
+                  }}
+                >
+                  Datum{" "}
+                  {sortKey === "date" ? (
+                    <i
+                      className={`fa-sharp-duotone fa-solid ${
+                        asc ? "fa-sort-up" : "fa-sort-down"
+                      }`}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </th>
+                <th
+                  onClick={() => {
+                    setAsc(!asc);
+                    setSortKey("distanceKm");
+                  }}
+                >
+                  Afstand{"(Km) "}
+                  {sortKey === "distanceKm" ? (
+                    <i
+                      className={`fa-sharp-duotone fa-solid ${
+                        asc ? "fa-sort-up" : "fa-sort-down"
+                      }`}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </th>
+                <th
+                  onClick={() => {
+                    setAsc(!asc);
+                    setSortKey("fuelUsage");
+                  }}
+                >
+                  Brandstofverbruik {"(L) "}
+                  {sortKey === "fuelUsage" ? (
+                    <i
+                      className={`fa-sharp-duotone fa-solid ${
+                        asc ? "fa-sort-up" : "fa-sort-down"
+                      }`}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </th>
               </tr>
             </thead>
             <tbody>

@@ -22,6 +22,9 @@ export const CostChartInfo: React.FC = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
 
+  const [sortKey, setSortKey] = useState<"date" | "cost">("date");
+  const [asc, setAsc] = useState<boolean>(true);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -74,8 +77,23 @@ export const CostChartInfo: React.FC = () => {
       }
     }
 
+    filtered.sort((a, b) => {
+      let first = a[sortKey];
+      let second = b[sortKey];
+
+      if (sortKey == "date") {
+        first = new Date(a.date).getTime();
+        second = new Date(b.date).getTime();
+      }
+      if (asc) {
+        return first < second ? -1 : 1;
+      } else {
+        return first > second ? -1 : 1;
+      }
+    });
+
     setFilteredChartData(filtered);
-  }, [searchTerm, startDate, endDate, chartData]);
+  }, [searchTerm, startDate, endDate, chartData, asc, sortKey]);
   return (
     <div className="chart-table-card">
       <div className="chart-section">
@@ -132,8 +150,40 @@ export const CostChartInfo: React.FC = () => {
               <tr>
                 <th>Voertuig ID</th>
                 <th>Rit ID</th>
-                <th>Datum</th>
-                <th>Kosten</th>
+                <th
+                  onClick={() => {
+                    setAsc(!asc);
+                    setSortKey("date");
+                  }}
+                >
+                  Datum{" "}
+                  {sortKey === "date" ? (
+                    <i
+                      className={`fa-sharp-duotone fa-solid ${
+                        asc ? "fa-sort-up" : "fa-sort-down"
+                      }`}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </th>
+                <th
+                  onClick={() => {
+                    setAsc(!asc);
+                    setSortKey("cost");
+                  }}
+                >
+                  Kosten{" "}
+                  {sortKey === "cost" ? (
+                    <i
+                      className={`fa-sharp-duotone fa-solid ${
+                        asc ? "fa-sort-up" : "fa-sort-down"
+                      }`}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </th>
               </tr>
             </thead>
             <tbody>
