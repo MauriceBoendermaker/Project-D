@@ -38,11 +38,11 @@ export const ChartsWrapper = () => {
               }`}
             >
               {cfg.type === "fuel" ? (
-                <FuelChart delayIndex={i} />
+                <FuelChart delayIndex={i} chartData={[]} />
               ) : cfg.type === "tripCost" ? (
-                <TripCostChart delayIndex={i} />
+                <TripCostChart delayIndex={i} data={[]} />
               ) : cfg.type === "Beladingsgraad" ? (
-                <LoadDegreeChart delayIndex={i} />
+                <LoadDegreeChart delayIndex={i} data={[]} />
               ) : (
                 cfg.type === "tripCost"
               )}

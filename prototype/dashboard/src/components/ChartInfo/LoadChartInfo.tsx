@@ -9,6 +9,8 @@ import "assets/scss/components/tables/ChartTableCard.scss";
 
 export const LoadDegreeInfo: React.FC = () => {
   const [chartData, setChartData] = useState<TotalDegree[]>([]);
+  const [filteredChartData, setFilteredChartData] = useState<TotalDegree[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -22,6 +24,7 @@ export const LoadDegreeInfo: React.FC = () => {
           setError(totalLoadDegree.message);
         } else {
           setChartData(totalLoadDegree.data);
+          setFilteredChartData(totalLoadDegree.data);
         }
       } catch (err: any) {
         setError(err.message);
@@ -31,12 +34,43 @@ export const LoadDegreeInfo: React.FC = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const changeChartData = () => {
+      if (searchTerm == "") {
+        setFilteredChartData(chartData);
+      } else {
+        const term = parseInt(searchTerm, 10);
+
+        if (!isNaN(term)) {
+          const row: TotalDegree | undefined = chartData.find(
+            (t) => t.shipmentId == term
+          );
+          if (row != undefined) {
+            setFilteredChartData([row]);
+          } else {
+            setFilteredChartData(chartData);
+            console.log("Rit niet gevonden");
+          }
+        } else console.log("term is not a number");
+      }
+    };
+    changeChartData();
+  }, [searchTerm]);
+
   return (
     <div className="chart-table-card">
       <div className="chart-section">
-        <LoadDegreeChart />
+        <LoadDegreeChart delayIndex={0} data={filteredChartData} />
       </div>
       <div className="table-section">
+        <div className="input-group">
+          <input
+            className="form-control"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Zoek de zending"
+          ></input>
+        </div>
         <h2>Beladingsgraad per zending</h2>
         <div className="overflow-x-auto">
           <table>
@@ -47,7 +81,7 @@ export const LoadDegreeInfo: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {chartData.map((item) => (
+              {filteredChartData.map((item) => (
                 <tr key={item.shipmentId}>
                   <td>{item.shipmentId}</td>
                   <td>{(item.degree * 100).toFixed(2)}%</td>
