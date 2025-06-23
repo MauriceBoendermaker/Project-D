@@ -19,6 +19,9 @@ export const CostChartInfo: React.FC = () => {
   const [filteredChartData, setFilteredChartData] = useState<TripCost[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -46,32 +49,33 @@ export const CostChartInfo: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const changeChartData = () => {
-      if (searchTerm == "") {
-        setFilteredChartData(chartData);
-      } else {
-        const term = parseInt(
-          searchTerm.toLocaleUpperCase().includes("RIT-")
-            ? searchTerm.split("-")[1]
-            : searchTerm,
-          10
-        );
+    let filtered = chartData;
 
-        if (!isNaN(term)) {
-          const row: TripCost | undefined = chartData.find(
-            (t) => t.tripId == term
-          );
-          if (row != undefined) {
-            setFilteredChartData([row]);
-          } else {
-            setFilteredChartData(chartData);
-            console.log("Rit niet gevonden");
-          }
-        } else console.log("term is not a number");
+    if (startDate && endDate) {
+      filtered = filtered.filter((trip) => {
+        const tripDate = new Date(trip.date);
+        return (
+          tripDate.getTime() >= startDate.getTime() &&
+          tripDate.getTime() <= endDate.getTime()
+        );
+      });
+    }
+
+    if (searchTerm.trim() !== "") {
+      const term = parseInt(
+        searchTerm.toUpperCase().includes("RIT-")
+          ? searchTerm.split("-")[1]
+          : searchTerm,
+        10
+      );
+
+      if (!isNaN(term)) {
+        filtered = filtered.filter((t) => t.tripId === term);
       }
-    };
-    changeChartData();
-  }, [searchTerm]);
+    }
+
+    setFilteredChartData(filtered);
+  }, [searchTerm, startDate, endDate, chartData]);
   return (
     <div className="chart-table-card">
       <div className="chart-section">
@@ -87,11 +91,41 @@ export const CostChartInfo: React.FC = () => {
             placeholder="Zoek de rit RIT-"
           ></input>
 
-          <button className="btn-primary">
-            Pas filter toe
-            <i className="fa-solid fa-filter " />
-          </button>
+          <div className="input-group">
+            <input
+              type="date"
+              className="form-control"
+              value={startDate ? startDate.toISOString().slice(0, 10) : ""}
+              onChange={(e) => setStartDate(e.target.valueAsDate)}
+              required
+            />
+            ___
+            <input
+              type="date"
+              className="form-control"
+              value={endDate ? endDate.toISOString().slice(0, 10) : ""}
+              onChange={(e) => setEndDate(e.target.valueAsDate)}
+              required
+            />
+          </div>
         </div>
+
+        {/* <div
+          className="btn-group"
+          role="group"
+          aria-label="Basic checkbox toggle button group"
+        >
+          <input
+            type="checkbox"
+            className="btn-check"
+            id="btncheck1"
+            autoComplete="off"
+          />
+          <label className="btn btn-outline-primary" htmlFor="btncheck1">
+            Checkbox 1
+          </label>
+        </div> */}
+
         <div className="overflow-x-auto">
           <table>
             <thead>
@@ -108,7 +142,7 @@ export const CostChartInfo: React.FC = () => {
                   <td>TRK-{tripcost.vehicleId}</td>
                   <td>RIT-{tripcost.tripId}</td>
                   <td>
-                    {new Date("2024-06-01").toLocaleDateString("nl-NL", {
+                    {new Date(tripcost.date).toLocaleDateString("nl-NL", {
                       day: "2-digit",
                       month: "2-digit",
                       year: "numeric",
@@ -121,7 +155,6 @@ export const CostChartInfo: React.FC = () => {
           </table>
         </div>
       </div>
-          <div>FILTER PLACE</div>
     </div>
   );
 };
