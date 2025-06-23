@@ -26,6 +26,7 @@ export const MonthlyNumbers: React.FC<MonthlyNumbersProps> = ({ delayIndex = 0, 
                 try {
                     const data = await fetchTripData();
                     setmonthlyData(data);
+                    setLoading(false)
                 } catch (err: any) {
                     setError(err.message);
                 }
