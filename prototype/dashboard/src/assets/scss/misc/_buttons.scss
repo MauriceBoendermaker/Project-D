@@ -70,6 +70,10 @@ button {
             background-color: $delete-red-hover !important;
         }
     }
+    &:disabled{
+        background-color: gray;
+        
+    }
 }
 
 .btn-simple {

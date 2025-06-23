@@ -87,7 +87,10 @@ export const CostChartInfo: React.FC = () => {
             placeholder="Zoek de rit RIT-"
           ></input>
 
-          <option>{[""]}</option>
+          <button className="btn-primary">
+            Pas filter toe
+            <i className="fa-solid fa-filter " />
+          </button>
         </div>
         <div className="overflow-x-auto">
           <table>
@@ -118,6 +121,7 @@ export const CostChartInfo: React.FC = () => {
           </table>
         </div>
       </div>
+          <div>FILTER PLACE</div>
     </div>
   );
 };

@@ -11,6 +11,7 @@ interface EmployeeForm {
 
 export const AddEmployee = () => {
   const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const [added, setAdded] = useState<boolean>(false);
   const [formData, setFormData] = useState<EmployeeForm>({
     name: "",
@@ -36,6 +37,7 @@ export const AddEmployee = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const response = await fetch(
         "http://localhost:3000/api/medewerkers/toevoegen",
         {
@@ -60,6 +62,8 @@ export const AddEmployee = () => {
       }
     } catch (error) {
       setError("Fout opgetreden bij het toevoegen bij de medewerker");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -137,11 +141,12 @@ export const AddEmployee = () => {
               />
             </div>
 
-            <button type="submit" className="btn-primary">
+            <button type="submit" className="btn-primary" disabled={loading}>
               Toevoegen
             </button>
           </form>
         </div>
+
         <Popup
           title={
             error.length > 0
@@ -149,7 +154,9 @@ export const AddEmployee = () => {
               : "Medewerker toegevoegd!"
           }
           body={
-            error.length > 0 ? error : "De medewerker is succesvol toegevoegd. Bekijk uw mail inbox voor een wachtwoord."
+            error.length > 0
+              ? error
+              : "De medewerker is succesvol toegevoegd. Bekijk uw mail inbox voor een wachtwoord."
           }
           isVisible={error.length > 0 || added}
           onFirstBtnClick={() => {
