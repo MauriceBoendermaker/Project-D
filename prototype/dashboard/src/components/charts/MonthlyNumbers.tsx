@@ -38,15 +38,7 @@ export const MonthlyNumbers: React.FC<MonthlyNumbersProps> = ({ delayIndex = 0, 
     return (
         <StyledChartWrapper
             title={
-                <a
-                    href="http://localhost:5000"
-                    style={{
-                        textDecoration: "none",
-                        color: "inherit",
-                    }}
-                >
-                    {MONTHLY_NUMBERS_TITLE}
-                </a>
+                    MONTHLY_NUMBERS_TITLE
             }
             delayIndex={delayIndex}
         >
