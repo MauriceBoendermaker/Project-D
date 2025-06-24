@@ -8,9 +8,7 @@ import { LoadDegreeChart } from "components/charts/LoadDegreeChart";
 import "assets/scss/components/tables/ChartTableCard.scss";
 
 export const LoadDegreeInfo: React.FC = () => {
-  const [chartData, setChartData] = useState<TotalDegree[]>([]);
   const [filteredChartData, setFilteredChartData] = useState<TotalDegree[]>([]);
-
   const [sortKey, setSortKey] = useState<"degree">("degree");
   const [asc, setAsc] = useState<boolean>(true);
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -19,15 +17,16 @@ export const LoadDegreeInfo: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const totalLoadDegree: TotalDegreeResponse =
-          await fetchTotalLoadDegree();
-
-        console.warn(totalLoadDegree);
-        if (totalLoadDegree.message != null) {
-          setError(totalLoadDegree.message);
+        const response: TotalDegreeResponse = await fetchTotalLoadDegree();
+        if (response.message) {
+          setError(response.message);
         } else {
-          setChartData(totalLoadDegree.data);
-          setFilteredChartData(totalLoadDegree.data);
+          let data = [...response.data];
+
+          // Apply default sort
+          data.sort((a, b) => a.degree - b.degree);
+
+          setFilteredChartData(data);
         }
       } catch (err: any) {
         setError(err.message);
@@ -38,35 +37,44 @@ export const LoadDegreeInfo: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    let filtered = chartData;
+    const fetchAndFilter = async () => {
+      try {
+        const response: TotalDegreeResponse = await fetchTotalLoadDegree();
+        if (response.message) {
+          setError(response.message);
+          return;
+        }
 
-    if (searchTerm.trim() !== "") {
-      const term = parseInt(
-        searchTerm.toUpperCase().includes("RIT-")
-          ? searchTerm.split("-")[1]
-          : searchTerm,
-        10
-      );
-      if (!isNaN(term)) {
-        filtered = filtered.filter((t) => t.shipmentId === term);
+        let filtered = [...response.data];
+
+        if (searchTerm.trim() !== "") {
+          const term = parseInt(
+            searchTerm.toUpperCase().includes("RIT-")
+              ? searchTerm.split("-")[1]
+              : searchTerm,
+            10
+          );
+          if (!isNaN(term)) {
+            filtered = filtered.filter((t) => t.shipmentId === term);
+          }
+        }
+
+        filtered.sort((a, b) => {
+          const first = a[sortKey];
+          const second = b[sortKey];
+          return asc ? first - second : second - first;
+        });
+
+        setFilteredChartData(filtered);
+      } catch (err: any) {
+        setError(err.message);
       }
-    }
-    filtered.sort((a, b) => {
-      let first = a[sortKey];
-      let second = b[sortKey];
+    };
 
-      if (asc) {
-        return first < second ? 1 : -1;
-      } else {
-        return first > second ? 1 : -1;
-      }
-    });
-
-    setFilteredChartData(filtered);
+    fetchAndFilter();
   }, [searchTerm, sortKey, asc]);
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    e.preventDefault();
     const value = e.target.value;
 
     switch (value) {
@@ -93,8 +101,8 @@ export const LoadDegreeInfo: React.FC = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Zoek de zending"
-          ></input>
-          <select className="form-select" onChange={(e) => handleSortChange(e)}>
+          />
+          <select className="form-select" onChange={handleSortChange}>
             <option>Beladingsgraad oplopend</option>
             <option>Beladingsgraad aflopend</option>
           </select>
