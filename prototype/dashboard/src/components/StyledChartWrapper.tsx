@@ -36,7 +36,7 @@ export const StyledChartWrapper: React.FC<StyledChartWrapperProps> = ({
           type="button"
           className="btn-link"
         >
-          {isOnChartPage ? (
+          {(!React.isValidElement(title) || title.type !== 'a') ? (<></>) : isOnChartPage ? (
             <>
               <i className="fa-solid fa-chevron-left"></i>&nbsp;Terug naar overzicht
             </>
