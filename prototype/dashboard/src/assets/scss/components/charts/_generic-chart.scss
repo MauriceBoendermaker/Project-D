@@ -11,6 +11,7 @@
 }
 
 .generic-chart {
+    min-height: 100%;
     background-color: $white;
     border-radius: $corner-radius;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
