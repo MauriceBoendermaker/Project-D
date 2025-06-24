@@ -37,9 +37,7 @@ export const MonthlyNumbers: React.FC<MonthlyNumbersProps> = ({ delayIndex = 0, 
 
     return (
         <StyledChartWrapper
-            title={
-                    MONTHLY_NUMBERS_TITLE
-            }
+            title={MONTHLY_NUMBERS_TITLE}
             delayIndex={delayIndex}
         >
             {loading && <div>Laden van data...</div>}
