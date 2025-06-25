@@ -84,7 +84,7 @@ namespace Services
             {
                 Vehicle? vehicle = vehicles.FirstOrDefault(v => v.VehicleId == vehicleId);
 
-                var rit = _context.Trips.Where(r => r.Id == ritId).FirstOrDefault(r => r.VehicleId == vehicleId);
+                var rit = _context.Trips.FirstOrDefault(r => r.Id == ritId && r.VehicleId == vehicleId);
                 if (vehicle == null || rit == null) return 0;
 
                 double cost = 0.0;

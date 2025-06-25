@@ -2,14 +2,15 @@ using System.Net;
 using System.Threading.Tasks;
 using Xunit;
 using Microsoft.AspNetCore.Mvc.Testing;
+using integrationTests;
 
 namespace integrationTests
 {
-    public class FuelTest : IClassFixture<WebApplicationFactory<Program>>
+    public class FuelTest : IClassFixture<CustomWebApplicationFactory>
     {
         private readonly HttpClient _client;
 
-        public FuelTest(WebApplicationFactory<Program> factory)
+        public FuelTest(CustomWebApplicationFactory factory)
         {
             _client = factory.CreateClient();
         }
@@ -19,9 +20,11 @@ namespace integrationTests
         {
             // Arrange
             var url = "/api/brandstof/voertuigen";
+            
 
             // Act
             var response = await _client.GetAsync(url);
+            Console.WriteLine($"response: {response.Content.ReadAsStringAsync()}");
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
