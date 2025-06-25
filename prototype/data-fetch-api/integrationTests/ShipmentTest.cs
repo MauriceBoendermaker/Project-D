@@ -2,14 +2,15 @@ using System.Net;
 using System.Threading.Tasks;
 using Xunit;
 using Microsoft.AspNetCore.Mvc.Testing;
+using integrationTests;
 
 namespace integrationTests
 {
-    public class ShipmentTest : IClassFixture<WebApplicationFactory<Program>>
+    public class ShipmentTest : IClassFixture<CustomWebApplicationFactory>
     {
         private readonly HttpClient _client;
 
-        public ShipmentTest(WebApplicationFactory<Program> factory)
+        public ShipmentTest(CustomWebApplicationFactory factory)
         {
             _client = factory.CreateClient();
         }
@@ -86,7 +87,6 @@ namespace integrationTests
         public async Task GetTotalLoadDegree_ReturnsOk()
         {
             // Arrange
-            var shipmentId = 1;
             var url = $"/api/zending/beladingsgraad/totaal";
 
             // Act
@@ -100,7 +100,6 @@ namespace integrationTests
         public async Task GetAverageLoadDegree_ReturnsOk()
         {
             // Arrange
-            var shipmentId = 1;
             var url = $"/api/zending/beladingsgraad/gemiddeld";
 
             // Act
@@ -114,7 +113,6 @@ namespace integrationTests
         public async Task GetUnusedKilometers_ReturnsOk()
         {
             // Arrange
-            var shipmentId = 1;
             var url = $"/api/zending/onbenutte-kilometers";
 
             // Act
