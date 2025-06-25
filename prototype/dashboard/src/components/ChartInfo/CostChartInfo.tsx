@@ -39,7 +39,6 @@ export const CostChartInfo: React.FC = () => {
           const json: TotalCostResponse = await ApiResponse.json();
           if (json.message == null) {
             setChartData(json.data);
-            setFilteredChartData(json.data);
           } else {
             setError(json.message);
           }
@@ -52,7 +51,7 @@ export const CostChartInfo: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    let filtered = chartData;
+    let filtered = [...chartData];
 
     if (startDate && endDate) {
       filtered = filtered.filter((trip) => {
@@ -91,6 +90,7 @@ export const CostChartInfo: React.FC = () => {
         return first > second ? -1 : 1;
       }
     });
+    console.log(filtered);
 
     setFilteredChartData(filtered);
   }, [searchTerm, startDate, endDate, chartData, asc, sortKey]);

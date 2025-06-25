@@ -36,7 +36,6 @@ export const FuelUsageInfo: React.FC = () => {
       try {
         const data = await fetchTripData();
         setTripData(data);
-        setFilteredTripData(data);
       } catch (err: any) {
         setError(err.message);
       }
@@ -46,7 +45,7 @@ export const FuelUsageInfo: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    let filtered = tripData;
+    let filtered = [...tripData];
 
     if (startDate && endDate) {
       filtered = filtered.filter((trip) => {
@@ -78,9 +77,9 @@ export const FuelUsageInfo: React.FC = () => {
         second = new Date(b.date).getTime();
       }
       if (asc) {
-        return first < second ? 1 : -1;
+        return first < second ? -1 : 1;
       } else {
-        return first > second ? 1 : -1;
+        return first > second ? -1 : 1;
       }
     });
 

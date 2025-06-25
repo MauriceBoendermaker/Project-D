@@ -6,7 +6,7 @@ interface VehicleForm {
   brand: string;
   model: string;
   fuelType: string;
-  max_capaciteit: number;
+  maximumCapacity: number;
 }
 
 export const AddVehicle = () => {
@@ -15,7 +15,7 @@ export const AddVehicle = () => {
     brand: "",
     model: "",
     fuelType: "",
-    max_capaciteit: 0,
+    maximumCapacity: 0,
   });
 
   const [added, setAdded] = useState<boolean>(false);
@@ -67,7 +67,7 @@ export const AddVehicle = () => {
   ) => {
     const { name, value } = e.target;
     const updatedValue =
-      name === "max_capaciteit"
+      name === "maximumCapacity"
         ? parseInt(value)
         : name === "licensePlate"
         ? formatKenteken(value)
@@ -109,7 +109,7 @@ export const AddVehicle = () => {
           brand: "",
           model: "",
           fuelType: "",
-          max_capaciteit: 0,
+          maximumCapacity: 0,
         });
 
         setKentekenValid(null);
@@ -215,8 +215,8 @@ export const AddVehicle = () => {
                 type="number"
                 min="0"
                 className="form-control"
-                name="max_capaciteit"
-                value={formData.max_capaciteit}
+                name="maximumCapacity"
+                value={formData.maximumCapacity}
                 onChange={handleChange}
                 required
               />
