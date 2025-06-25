@@ -20,7 +20,7 @@ namespace integrationTests
         {
             // Arrange
             var url = "/api/brandstof/voertuigen";
-            
+
 
             // Act
             var response = await _client.GetAsync(url);
@@ -34,7 +34,7 @@ namespace integrationTests
         public async Task GetVehicleAverage_ReturnsOk()
         {
             // Arrange
-            var vehicleId = 16; 
+            var vehicleId = 16;
             var url = $"/api/brandstof/gemiddelde/{vehicleId}";
 
             // Act
@@ -47,7 +47,8 @@ namespace integrationTests
         }
 
         [Fact]
-        public async Task GetVehicleAverage_ReturnsNotFound() {
+        public async Task GetVehicleAverage_ReturnsNotFound()
+        {
             // Arrange
             var vehicleId = 999;
             var url = $"/api/brandstof/gemiddelde/{vehicleId}";
@@ -65,8 +66,8 @@ namespace integrationTests
         public async Task GetRitCost_ReturnsOk()
         {
             // Arrange
-            var vehicleId = 16; 
-            var ritId = 121;     
+            var vehicleId = 16;
+            var ritId = 121;
             var url = $"/api/brandstof/kosten/{vehicleId}/{ritId}";
 
             // Act
@@ -82,8 +83,8 @@ namespace integrationTests
         public async Task GetRitCost_ReturnsNotFound()
         {
             // Arrange
-            var vehicleId = 999; 
-            var ritId = 999;     
+            var vehicleId = 999;
+            var ritId = 999;
             var url = $"/api/brandstof/kosten/{vehicleId}/{ritId}";
 
             // Act
@@ -93,6 +94,21 @@ namespace integrationTests
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
             var body = await response.Content.ReadAsStringAsync();
             Assert.Contains("niet gevonden", body);
+        }
+        
+        [Fact]
+        public async Task GetTotalCost_Ok()
+        {
+            // Arrange 
+            var url = $"/api/brandstof/totalekosten";
+
+            // Act
+            var response = await _client.GetAsync(url);
+
+            // Assert
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            var body = await response.Content.ReadAsStringAsync();
+            Assert.Contains("data", body);
         }
 
     }

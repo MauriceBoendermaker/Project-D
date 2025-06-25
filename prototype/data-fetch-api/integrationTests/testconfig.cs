@@ -22,8 +22,6 @@ namespace integrationTests
                 var dbPath = Path.GetFullPath(
                     Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "DashboardData.db"));
 
-                Console.WriteLine($"Using real DB path: {dbPath}");
-
                 services.AddDbContext<AppDbContext>(options =>
                 {
                     options.UseSqlite($"Data Source={dbPath}");
