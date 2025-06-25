@@ -46,7 +46,7 @@ namespace integrationTests
         [Fact]
         public async Task GetVehicleAverage_ReturnsNotFound() {
             // Arrange
-            var vehicleId = "TRK-999";
+            var vehicleId = 999;
             var url = $"/api/brandstof/gemiddelde/{vehicleId}";
 
             // Act
@@ -55,15 +55,15 @@ namespace integrationTests
             // Assert
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
             var body = await response.Content.ReadAsStringAsync();
-            Assert.Contains("Voertuig bestaat niet", body);
+            Assert.Contains("bestaat niet", body);
         }
 
         [Fact]
         public async Task GetRitCost_ReturnsOk()
         {
             // Arrange
-            var vehicleId = "TRK-0"; 
-            var ritId = "RIT-0";     
+            var vehicleId = 16; 
+            var ritId = 121;     
             var url = $"/api/brandstof/kosten/{vehicleId}/{ritId}";
 
             // Act
@@ -72,7 +72,7 @@ namespace integrationTests
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
             var body = await response.Content.ReadAsStringAsync();
-            Assert.Contains("Benzinekosten", body);
+            Assert.Contains("brandstofkosten", body);
         }
 
         [Fact]

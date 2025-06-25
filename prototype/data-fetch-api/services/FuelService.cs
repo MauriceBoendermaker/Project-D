@@ -21,7 +21,7 @@ namespace Services
         {
             try
             {
-                return await _context.Vehicles.Include(v => v.Trips).ToListAsync();
+                return _context.Vehicles.ToList();
             }
             catch (Exception ex)
             {
@@ -68,7 +68,7 @@ namespace Services
         public async Task<int> GetRitCostAsync(int vehicleId, int ritId)
         {
             List<Vehicle>? vehicles = await GetAllVehiclesAsync();
-            if (vehicles == null || vehicles.Count() < 0)
+            if (vehicles == null)
             {
                 return 0;
             }
@@ -79,12 +79,9 @@ namespace Services
         {
             try
             {
-
-                if (vehicles == null) return 0;
-
                 Vehicle? vehicle = vehicles.FirstOrDefault(v => v.VehicleId == vehicleId);
 
-                var rit = _context.Trips.Where(r => r.Id == ritId).FirstOrDefault(r => r.VehicleId == vehicle.VehicleId);
+                var rit = _context.Trips.Where(r => r.Id == ritId).FirstOrDefault(r => r.VehicleId == vehicleId);
                 if (vehicle == null || rit == null) return 0;
 
                 double cost = 0.0;
