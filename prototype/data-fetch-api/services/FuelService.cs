@@ -53,10 +53,13 @@ namespace Services
                 if (vehicles == null) return 0;
 
                 var vehicle = vehicles.FirstOrDefault(v => v.VehicleId == voertuigId);
-                if (vehicle == null || vehicle.Trips == null || vehicle.Trips.Count == 0) return 0;
+                if (vehicle == null) return 0;
 
-                int totaalVerbruik = vehicle.Trips.Sum(rit => rit.FuelUsage);
-                return totaalVerbruik / vehicle.Trips.Count;
+                var trips = _context.Trips.Where(t => t.VehicleId == voertuigId).ToList();
+                if (trips.Count == 0) return 0;
+
+                int totaalVerbruik = trips.Sum(rit => rit.FuelUsage);
+                return totaalVerbruik / trips.Count;
             }
             catch (Exception ex)
             {

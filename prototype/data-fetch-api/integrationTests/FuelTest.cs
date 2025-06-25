@@ -31,7 +31,7 @@ namespace integrationTests
         public async Task GetVehicleAverage_ReturnsOk()
         {
             // Arrange
-            var vehicleId = "TRK-0"; 
+            var vehicleId = 16; 
             var url = $"/api/brandstof/gemiddelde/{vehicleId}";
 
             // Act
@@ -40,7 +40,7 @@ namespace integrationTests
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
             var body = await response.Content.ReadAsStringAsync();
-            Assert.Contains("gemiddelde brandstof", body);
+            Assert.Contains("Gemiddeld brandstofverbruik", body);
         }
 
         [Fact]
