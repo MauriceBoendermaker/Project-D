@@ -95,6 +95,7 @@ export const LoadDegreeInfo: React.FC = () => {
         <LoadDegreeChart delayIndex={0} data={filteredChartData} />
       </div>
       <div className="table-section">
+        <h2>Beladingsgraad per zending</h2>
         <div className="input-group">
           <input
             className="form-control"
@@ -107,7 +108,6 @@ export const LoadDegreeInfo: React.FC = () => {
             <option>Beladingsgraad aflopend</option>
           </select>
         </div>
-        <h2>Beladingsgraad per zending</h2>
         <div className="overflow-x-auto">
           <table>
             <thead>
