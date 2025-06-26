@@ -126,20 +126,14 @@ namespace Services
             List<TripCost> costs = new List<TripCost>();
             List<Vehicle>? Vehicles = await GetAllVehiclesAsync();
             if (Vehicles == null || Vehicles.Count() == 0) return null;
-            foreach (Vehicle v in Vehicles)
+
+            var trips = _context.Trips;
+            foreach (Trip t in trips)
             {
-                if (v.Trips == null) continue;
-                foreach (Trip t in v.Trips)
-                {
-                    double cost = await GetRitCostAsync(v.VehicleId, t.Id, Vehicles);
-                    TripCost tripCost = new TripCost(t.Id, v.VehicleId, t.Date, cost);
-
-
-                    costs.Add(tripCost);
-
-                }
+                double cost = await GetRitCostAsync(t.VehicleId, t.Id, Vehicles);
+                TripCost tripCost = new TripCost(t.Id, t.VehicleId, t.Date, cost);
+                costs.Add(tripCost);
             }
-
             return costs;
         }
     }
