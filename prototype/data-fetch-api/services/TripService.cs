@@ -72,5 +72,35 @@ namespace Services
             }
         }
 
+        public async Task<List<Vehicle>> GetAvailableVehicles(DateTime datetime)
+        {
+            try
+            {
+                if (datetime == null)
+                {
+                    return await _context.Vehicles.ToListAsync();
+                }
+                var busyVehicleIds = await _context.Trips
+                    .Where(t => t.Date.HasValue && t.Date.Value.Date == datetime.Date)
+                    .Select(t => t.VehicleId)
+                    .Distinct()
+                    .ToListAsync();
+
+                var availableVehicles = await _context.Vehicles
+                    .Where(v => !busyVehicleIds.Contains(v.VehicleId))
+                    .ToListAsync();
+
+                return availableVehicles;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Fout bij ophalen van beschikbare voertuigen: " + ex.Message);
+                return new List<Vehicle>();
+            }
+        }
+
+
+
+
     }
 }

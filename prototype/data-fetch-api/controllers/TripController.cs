@@ -42,5 +42,19 @@ namespace Controllers
                 return BadRequest(new Response { Message = $"Fout bij toevoegen rit: {ex.Message}" });
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAvailableTrucks([FromQuery] DateTime date)
+        {
+            try
+            {
+                var result = await _tripService.GetAvailableVehicles(date);
+                return Ok(new Response { Data = result });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new Response { Message = $"Fout bij ophalen beschikbare voertuigen: {ex.Message}" });
+            }
+        }
     }
 }

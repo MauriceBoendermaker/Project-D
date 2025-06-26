@@ -16,6 +16,15 @@ export type TotalCostResponse = {
 
 export const CostChartInfo: React.FC = () => {
   const [chartData, setChartData] = useState<TripCost[]>([]);
+  const [filteredChartData, setFilteredChartData] = useState<TripCost[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  const [sortKey, setSortKey] = useState<"date" | "cost">("date");
+  const [asc, setAsc] = useState<boolean>(true);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -40,13 +49,142 @@ export const CostChartInfo: React.FC = () => {
     };
     fetchKostenData();
   }, []);
+
+  useEffect(() => {
+    let filtered = [...chartData];
+
+    if (startDate && endDate) {
+      filtered = filtered.filter((trip) => {
+        const tripDate = new Date(trip.date);
+        return (
+          tripDate.getTime() >= startDate.getTime() &&
+          tripDate.getTime() <= endDate.getTime()
+        );
+      });
+    }
+
+    if (searchTerm.trim() !== "") {
+      const term = parseInt(
+        searchTerm.toUpperCase().includes("RIT-")
+          ? searchTerm.split("-")[1]
+          : searchTerm,
+        10
+      );
+
+      if (!isNaN(term)) {
+        filtered = filtered.filter((t) => t.tripId === term);
+      }
+    }
+
+    filtered.sort((a, b) => {
+      let first = a[sortKey];
+      let second = b[sortKey];
+
+      if (sortKey == "date") {
+        first = new Date(a.date).getTime();
+        second = new Date(b.date).getTime();
+      }
+      if (asc) {
+        return first < second ? -1 : 1;
+      } else {
+        return first > second ? -1 : 1;
+      }
+    });
+    console.log(filtered);
+
+    setFilteredChartData(filtered);
+  }, [searchTerm, startDate, endDate, chartData, asc, sortKey]);
+
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
+    const value = e.target.value;
+
+    switch (value) {
+      case "Datum oplopend":
+        setSortKey("date");
+        setAsc(true);
+        break;
+      case "Datum aflopend":
+        setSortKey("date");
+        setAsc(false);
+        break;
+      case "Kosten oplopend":
+        setSortKey("cost");
+        setAsc(true);
+        break;
+      case "Kosten aflopend":
+        setSortKey("cost");
+        setAsc(false);
+        break;
+      default:
+        setSortKey("date");
+        setAsc(true);
+        break;
+    }
+  };
   return (
     <div className="chart-table-card">
       <div className="chart-section">
-        <TripCostChart />
+        <TripCostChart delayIndex={0} data={filteredChartData} />
       </div>
       <div className="table-section">
         <h2>Kosten per rit</h2>
+        <div className="input-group">
+          <input
+            className="form-control"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Zoek de rit RIT-"
+          ></input>
+
+          <div className="input-group">
+            <input
+              type="date"
+              className="form-control"
+              value={startDate ? startDate.toISOString().slice(0, 10) : ""}
+              onChange={(e) => setStartDate(e.target.valueAsDate)}
+              required
+            />
+            ___
+            <input
+              type="date"
+              className="form-control"
+              value={endDate ? endDate.toISOString().slice(0, 10) : ""}
+              onChange={(e) => setEndDate(e.target.valueAsDate)}
+              required
+            />
+            <select
+              className="form-select"
+              onChange={(e) => {
+                handleSortChange(e);
+              }}
+              required
+            >
+              Sorteer
+              <option>Datum oplopend</option>
+              <option>Datum aflopend</option>
+              <option>Kosten oplopend</option>
+              <option>Kosten aflopend</option>
+            </select>
+          </div>
+        </div>
+
+        {/* <div
+          className="btn-group"
+          role="group"
+          aria-label="Basic checkbox toggle button group"
+        >
+          <input
+            type="checkbox"
+            className="btn-check"
+            id="btncheck1"
+            autoComplete="off"
+          />
+          <label className="btn btn-outline-primary" htmlFor="btncheck1">
+            Checkbox 1
+          </label>
+        </div> */}
+
         <div className="overflow-x-auto">
           <table>
             <thead>
@@ -54,16 +192,16 @@ export const CostChartInfo: React.FC = () => {
                 <th>Voertuig ID</th>
                 <th>Rit ID</th>
                 <th>Datum</th>
-                <th>Kosten</th>
+                <th>Kosten </th>
               </tr>
             </thead>
             <tbody>
-              {chartData.map((tripcost) => (
+              {filteredChartData.map((tripcost) => (
                 <tr key={crypto.randomUUID()}>
                   <td>TRK-{tripcost.vehicleId}</td>
                   <td>RIT-{tripcost.tripId}</td>
                   <td>
-                    {new Date("2024-06-01").toLocaleDateString("nl-NL", {
+                    {new Date(tripcost.date).toLocaleDateString("nl-NL", {
                       day: "2-digit",
                       month: "2-digit",
                       year: "numeric",

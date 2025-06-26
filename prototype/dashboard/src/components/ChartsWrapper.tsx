@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { FuelChart } from "./charts/FuelUsageChart";
 import { TripCostChart } from "./charts/TripCostChart";
 import { LoadDegreeChart } from "./charts/LoadDegreeChart";
+import { MonthlyNumbers } from "./charts/MonthlyNumbers";
 
 export const ChartsWrapper = () => {
   const [zoomedChart, setZoomedChart] = useState<number | null>(null);
@@ -12,6 +13,7 @@ export const ChartsWrapper = () => {
     { type: "fuel", id: "fuelChart" },
     { type: "tripCost", id: "tripChart" },
     { type: "Beladingsgraad", id: "beladingsgraadChart" },
+    {type: "MonthlyNumbers", id: "Monthly"},
   ];
 
   useEffect(() => {
@@ -38,14 +40,14 @@ export const ChartsWrapper = () => {
               }`}
             >
               {cfg.type === "fuel" ? (
-                <FuelChart delayIndex={i} />
+                <FuelChart delayIndex={i} chartData={[]} />
               ) : cfg.type === "tripCost" ? (
-                <TripCostChart delayIndex={i} />
+                <TripCostChart delayIndex={i} data={[]} />
               ) : cfg.type === "Beladingsgraad" ? (
-                <LoadDegreeChart delayIndex={i} />
-              ) : (
-                cfg.type === "tripCost"
-              )}
+                <LoadDegreeChart delayIndex={i} data={[]} />
+              ) : cfg.type === "MonthlyNumbers" ? (
+                <MonthlyNumbers delayIndex={i} Data={[]} />
+              ) : <MonthlyNumbers delayIndex={i} Data={[]} />}
             </div>
           );
         })}
