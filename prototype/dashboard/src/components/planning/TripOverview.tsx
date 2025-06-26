@@ -111,15 +111,31 @@ export const TripOverview = () => {
                   <p>
                     <strong>Rit nummer:</strong> RIT-{selectedRit.tripId}
                   </p>
-                  <p>
+                    <p>
                     <strong>Datum:</strong>{" "}
-                    {new Date(selectedRit.date).toLocaleString()}
-                  </p>
+                    {new Date(selectedRit.date).toLocaleString(undefined, {
+                      year: "numeric",
+                      month: "2-digit",
+                      day: "2-digit",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      second: undefined,
+                    })}
+                    </p>
                   <p>
                     <strong>Afstand:</strong> {selectedRit.distanceKm} km
                   </p>
                   <p>
                     <strong>Duur:</strong> {selectedRit.time} minuten
+                  </p>
+                  <p>
+                    <strong>Eindtijd:</strong>{" "}
+                    {new Date(
+                      new Date(selectedRit.date).getTime() + selectedRit.time * 60000
+                    ).toLocaleString(undefined, {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
                   </p>
                 </>
               )}
