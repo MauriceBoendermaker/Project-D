@@ -34,7 +34,7 @@ namespace Controllers
             {
                 return NotFound(new Response { Message = $"Medewerker met id: {id} niet gevonden." });
             }
-            return Ok(new Response { Data = Response });
+            return Ok(new Response { Data = employee });
         }
 
         [HttpPost("toevoegen")]
@@ -42,7 +42,6 @@ namespace Controllers
         {
             try
             {
-
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
