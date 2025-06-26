@@ -21,7 +21,7 @@ namespace Services
         {
             try
             {
-                return await _context.Vehicles.Include(v => v.Trips).ToListAsync();
+                return _context.Vehicles.ToList();
             }
             catch (Exception ex)
             {
@@ -53,10 +53,13 @@ namespace Services
                 if (vehicles == null) return 0;
 
                 var vehicle = vehicles.FirstOrDefault(v => v.VehicleId == voertuigId);
-                if (vehicle == null || vehicle.Trips == null || vehicle.Trips.Count == 0) return 0;
+                if (vehicle == null) return 0;
 
-                int totaalVerbruik = vehicle.Trips.Sum(rit => rit.FuelUsage);
-                return totaalVerbruik / vehicle.Trips.Count;
+                var trips = _context.Trips.Where(t => t.VehicleId == voertuigId).ToList();
+                if (trips.Count == 0) return 0;
+
+                int totaalVerbruik = trips.Sum(rit => rit.FuelUsage);
+                return totaalVerbruik / trips.Count;
             }
             catch (Exception ex)
             {
@@ -68,7 +71,7 @@ namespace Services
         public async Task<int> GetRitCostAsync(int vehicleId, int ritId)
         {
             List<Vehicle>? vehicles = await GetAllVehiclesAsync();
-            if (vehicles == null || vehicles.Count() < 0)
+            if (vehicles == null)
             {
                 return 0;
             }
@@ -79,12 +82,9 @@ namespace Services
         {
             try
             {
-
-                if (vehicles == null) return 0;
-
                 Vehicle? vehicle = vehicles.FirstOrDefault(v => v.VehicleId == vehicleId);
 
-                var rit = _context.Trips.Where(r => r.Id == ritId).FirstOrDefault(r => r.VehicleId == vehicle.VehicleId);
+                var rit = _context.Trips.FirstOrDefault(r => r.Id == ritId && r.VehicleId == vehicleId);
                 if (vehicle == null || rit == null) return 0;
 
                 double cost = 0.0;
