@@ -128,7 +128,7 @@ export const CostChartInfo: React.FC = () => {
         <TripCostChart delayIndex={0} data={filteredChartData} />
       </div>
       <div className="table-section">
-        <h2>Kosten per rit</h2>
+        <h2>Benzinekosten per rit</h2>
         <div className="input-group">
           <input
             className="form-control"
